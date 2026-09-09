@@ -44,15 +44,15 @@ import java.util.Set;
 /**
  * 归档系统 DownloadManager 任务的完成处理：Application 级广播、enqueue 后补查、轮询兜底、进程重启恢复。
  */
-public class ArchiverDownloadCompleter {
+public class LegacyArchiverDownloadCompleter {
 
-    private static final String TAG = "ArchiverDownloadCompleter";
+    private static final String TAG = "LegacyArchiverDownloadCompleter";
 
     private static final int MAX_ARCHIVER_BASENAME_UTF8_BYTES =
             255 - ".zip".getBytes(StandardCharsets.UTF_8).length;
 
     @Nullable
-    private static ArchiverDownloadCompleter sInstance;
+    private static LegacyArchiverDownloadCompleter sInstance;
 
     private final Context appContext;
     private final Handler mainHandler;
@@ -62,26 +62,28 @@ public class ArchiverDownloadCompleter {
     @Nullable
     private BroadcastReceiver downloadReceiver;
 
-    private ArchiverDownloadCompleter(Context appContext) {
+    private LegacyArchiverDownloadCompleter(Context appContext) {
         this.appContext = appContext;
         mainHandler = new Handler(Looper.getMainLooper());
     }
 
-    public static ArchiverDownloadCompleter getInstance(@Nullable Context context) {
+    public static LegacyArchiverDownloadCompleter getInstance(@Nullable Context context) {
         if (sInstance == null && context != null) {
-            sInstance = new ArchiverDownloadCompleter(context.getApplicationContext());
+            sInstance = new LegacyArchiverDownloadCompleter(context.getApplicationContext());
         }
         return sInstance;
     }
 
     public static void resumePendingDownloads(Context context) {
-        ArchiverDownloadCompleter completer = getInstance(context);
+        LegacyArchiverDownloadCompleter completer = getInstance(context);
         if (completer == null) {
             return;
         }
-        completer.ensureReceiverRegistered();
         for (long downloadId : Settings.getPendingArchiverDownloadIds()) {
-            completer.checkAndHandleStatus(downloadId);
+            if (Settings.getArchiverDownloadUrl(downloadId).isEmpty()) {
+                completer.ensureReceiverRegistered();
+                completer.checkAndHandleStatus(downloadId);
+            }
         }
     }
 
@@ -129,7 +131,7 @@ public class ArchiverDownloadCompleter {
      * enqueue 之后调用，捕获「注册前已完成」的竞态。
      */
     public void checkAndHandleStatus(long downloadId) {
-        if (downloadId < 0 || Settings.getArchiverDownload(downloadId) == null) {
+        if (downloadId < 0 || !Settings.getArchiverDownloadUrl(downloadId).isEmpty() || Settings.getArchiverDownload(downloadId) == null) {
             return;
         }
         DownloadManager dm = (DownloadManager) appContext.getSystemService(Context.DOWNLOAD_SERVICE);
@@ -178,7 +180,9 @@ public class ArchiverDownloadCompleter {
         if (info == null) {
             return;
         }
-        Settings.deleteArchiverDownloadId(info.gid);
+        if (Settings.getArchiverDownloadId(info.gid) == downloadId) {
+            Settings.deleteArchiverDownloadId(info.gid);
+        }
         Settings.deleteArchiverDownload(downloadId);
         mainHandler.post(() ->
                 Toast.makeText(appContext, R.string.download_state_failed, Toast.LENGTH_LONG).show());
@@ -345,7 +349,9 @@ public class ArchiverDownloadCompleter {
             Toast.makeText(appContext,
                     appContext.getString(R.string.stat_download_done_line_succeeded, finalFileName),
                     Toast.LENGTH_LONG).show();
-            Settings.deleteArchiverDownloadId(galleryInfo.gid);
+            if (Settings.getArchiverDownloadId(galleryInfo.gid) == downloadId) {
+                Settings.deleteArchiverDownloadId(galleryInfo.gid);
+            }
             Settings.deleteArchiverDownload(downloadId);
             endHandling(downloadId);
             unregisterReceiverIfIdle();

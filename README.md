@@ -54,8 +54,8 @@
 当前功能仅针对调试版构建和验证：
 
 - applicationId：`com.ehviewer.manbo.debug`
-- versionName：`2.0.2.25`
-- versionCode：`150`
+- versionName：`2.0.2.26`
+- versionCode：`151`
 
 
 Windows：
@@ -76,7 +76,7 @@ Linux：
 app/build/outputs/apk/appRelease/debug/app-appRelease-debug.apk
 ```
 
-当前 v150 APK 为 `appReleaseDebug / com.ehviewer.manbo.debug / 2.0.2.25 / 150`，大小为 `32617391` 字节，SHA-256 为 `7699B978F71443C7CC17B4207C36E9481EFE0D14361A4D2EB93FDF9AE3D2029A`。
+当前 v151 APK 为 `appReleaseDebug / com.ehviewer.manbo.debug / 2.0.2.26 / 151`，大小为 `33117701` 字节，SHA-256 为 `EB135809776EA92EF39BA02DCF8E65FA7400122DE63264D38A4F32DA2348015C`。已同步上游 `2.0.2.4`，保留本地增强功能；编译和签名核验通过，测试限制见 `说明.md`。
 
 ------
 
