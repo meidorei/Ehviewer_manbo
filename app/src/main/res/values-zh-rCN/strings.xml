@@ -1181,4 +1181,20 @@
     <string name="settings_reading_queue_file_warning">开启自动删除后，会永久删除旧漫画的整个本地下载目录，文件无法恢复。</string>
     <string name="settings_reading_queue_cleanup_title">删除旧下载？</string>
     <string name="settings_reading_queue_cleanup_message">将永久删除阅读队列中最早观看的 %1$d 部漫画的整个本地下载目录，此操作无法撤销。</string>
+    <string name="settings_advanced_reset_bookmark_baselines">重置所有书签扫描基线</string>
+    <string name="settings_advanced_reset_bookmark_baselines_summary">跳过尚未检查的历史更新，从现在开始检查；保留未读数字和分割线。</string>
+    <string name="bookmark_baseline_reset_confirm">将从现在开始检查书签更新，跳过此前尚未检查的历史更新。已有未读数字和“上次更新到这”分割线保持不变。</string>
+    <string name="bookmark_baseline_reset_action">重置基线</string>
+    <string name="bookmark_baseline_reset_busy">请先停止运行中或已暂停的更新任务，再重置基线。</string>
+    <string name="bookmark_baseline_reset_running">正在重置书签扫描基线…</string>
+    <string name="bookmark_baseline_reset_empty">没有需要重置的书签。</string>
+    <string name="bookmark_baseline_reset_success">已重置 %1$d 个书签的扫描基线，未读数字和分割线已保留。</string>
+    <string name="bookmark_baseline_reset_failed">重置书签基线失败，未保存任何修改，请重试。</string>
+    <string name="settings_advanced_reset_follow_baselines">重置所有追更扫描基线</string>
+    <string name="settings_advanced_reset_follow_baselines_summary">跳过追更尚未检查的历史更新；保留未读数字和分割线。</string>
+    <string name="follow_baseline_reset_confirm">将从现在开始检查追更更新，跳过此前尚未检查的历史更新。已有未读数字和“上次更新到这”分割线保持不变。</string>
+    <string name="follow_baseline_reset_running">正在重置追更扫描基线…</string>
+    <string name="follow_baseline_reset_empty">没有需要重置的追更。</string>
+    <string name="follow_baseline_reset_success">已重置 %1$d 个追更标签的扫描基线，未读数字和分割线已保留。</string>
+    <string name="follow_baseline_reset_failed">重置追更基线失败，未保存任何修改，请重试。</string>
 </resources>

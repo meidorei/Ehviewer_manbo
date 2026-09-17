@@ -1,0 +1,139 @@
+{
+  "formatVersion": 2,
+  "snapshotFingerprint": "7a307b853afc8b3914b20b47749c84fff9a17e286c26eaaf4573d3f643cbd8e8",
+  "metadataFingerprint": "12f910f3218e6acb7fb834def3136037c69337e34d8f48b38ea0038ec22f5eef",
+  "authorBucketCount": 4,
+  "buckets": [
+    {
+      "authorKey": "星野",
+      "itemCount": 7,
+      "gids": [
+        101,
+        103,
+        104,
+        105,
+        106,
+        107,
+        108
+      ],
+      "batches": [
+        [
+          {
+            "gid": 101,
+            "originalPosition": 1,
+            "title": "(C104) [星野] 星の旅 第0話",
+            "titleJpn": null
+          },
+          {
+            "gid": 103,
+            "originalPosition": 3,
+            "title": "[星野] 星之旅 第2话",
+            "titleJpn": null
+          },
+          {
+            "gid": 104,
+            "originalPosition": 4,
+            "title": "[星野] 星の旅 第2話 [English]",
+            "titleJpn": null
+          },
+          {
+            "gid": 105,
+            "originalPosition": 5,
+            "title": "[星野] 星の旅 番外編",
+            "titleJpn": null
+          },
+          {
+            "gid": 106,
+            "originalPosition": 6,
+            "title": "[星野] 星の旅 総集編 0-2",
+            "titleJpn": null
+          },
+          {
+            "gid": 107,
+            "originalPosition": 7,
+            "title": "[星野] 星の旅 Remaster Chapter 1",
+            "titleJpn": null
+          },
+          {
+            "gid": 108,
+            "originalPosition": 8,
+            "title": "[星野] 海辺の庭",
+            "titleJpn": null
+          }
+        ]
+      ]
+    },
+    {
+      "authorKey": "hoshino",
+      "itemCount": 2,
+      "gids": [
+        102,
+        109
+      ],
+      "batches": [
+        [
+          {
+            "gid": 102,
+            "originalPosition": 2,
+            "title": "[Hoshino] Journey of Stars Chapter 1",
+            "titleJpn": null
+          },
+          {
+            "gid": 109,
+            "originalPosition": 9,
+            "title": "[Hoshino] Seaside Garden Part 2",
+            "titleJpn": null
+          }
+        ]
+      ]
+    },
+    {
+      "authorKey": "山川",
+      "itemCount": 2,
+      "gids": [
+        114,
+        116
+      ],
+      "batches": [
+        [
+          {
+            "gid": 114,
+            "originalPosition": 14,
+            "title": "[山川] 森の図書館 Vol. 1 Ch. 10",
+            "titleJpn": null
+          },
+          {
+            "gid": 116,
+            "originalPosition": 16,
+            "title": "[山川] 森の図書館 別世界編 第1話",
+            "titleJpn": null
+          }
+        ]
+      ]
+    },
+    {
+      "authorKey": "青月",
+      "itemCount": 2,
+      "gids": [
+        111,
+        113
+      ],
+      "batches": [
+        [
+          {
+            "gid": 111,
+            "originalPosition": 11,
+            "title": "[青月] 雨の手紙 前編",
+            "titleJpn": null
+          },
+          {
+            "gid": 113,
+            "originalPosition": 13,
+            "title": "[青月] 雨中来信 后篇",
+            "titleJpn": null
+          }
+        ]
+      ]
+    }
+  ]
+}

@@ -12,6 +12,15 @@ public final class FeedCheckpointKeys {
         return new CheckpointKey(SHARED_ACCOUNT, HOME_MANUAL_TYPE, "home", "");
     }
 
+    public static CheckpointKey bookmarkReset(String sourceKey, String signature) {
+        return new CheckpointKey(SHARED_ACCOUNT, "BOOKMARK_RESET", sourceKey, signature);
+    }
+
+    public static CheckpointKey followReset(String tag, String signature) {
+        return new CheckpointKey(SHARED_ACCOUNT, "LOCAL_FOLLOW_RESET",
+                SubscriptionRepository.normalizeTagName(tag), signature);
+    }
+
     public static CheckpointKey seen(String accountKey, FeedSourceContext context) {
         String type;
         if (context.type == FeedSourceContext.Type.SUBSCRIPTION_AGGREGATE) {

@@ -34,7 +34,7 @@ android {
         //noinspection ExpiredTargetSdkVersion
         targetSdkVersion 30
         versionCode 112
-        versionName "151"
+        versionName "154"
         vectorDrawables.useSupportLibrary = true
         resourceConfigurations += ['zh', 'zh-rCN', 'zh-rHK', 'zh-rTW', 'es', 'ja', 'ko', 'fr', 'de', 'th']
         testOptions.unitTests.includeAndroidResources = true
@@ -85,7 +85,7 @@ android {
     applicationVariants.all { variant ->
         if (variant.buildType.name == "debug") {
             variant.outputs.all { output ->
-                output.versionCodeOverride = 151
+                output.versionCodeOverride = 154
             }
         }
     }

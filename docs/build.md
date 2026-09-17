@@ -18,7 +18,7 @@
 | ABI | armeabi-v7a、arm64-v8a、x86、x86_64 |
 | namespace | `com.hippo.ehviewer` |
 | Debug applicationId | `com.ehviewer.manbo.debug` |
-| versionName / Debug versionCode | 151 / 151 |
+| versionName / Debug versionCode | 154 / 154 |
 | Release applicationId / versionCode | `com.ehviewer.manbo` / 112（仅配置参考） |
 | GreenDAO schema | 13 |
 

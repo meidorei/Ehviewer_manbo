@@ -1,0 +1,20 @@
+{
+  "phoneBackup": "files/manga-sort-backup-20260911-160413",
+  "phoneBackupVerified": true,
+  "phase": "complete",
+  "package": "com.ehviewer.manbo.debug",
+  "databaseMatches": true,
+  "actualOrderMatches": true,
+  "itemCount": 3192,
+  "afterLaunchVerification": {
+    "launchStatus": "ok",
+    "processObserved": "19225",
+    "afterLaunchItemCount": 3192,
+    "afterLaunchOrderMatches": true,
+    "afterLaunchAllDataMatches": true,
+    "afterLaunchNonTimeDataMatches": true,
+    "integrityCheck": "ok"
+  },
+  "finalLaunchStatus": "ok",
+  "finalProcessId": "22237"
+}

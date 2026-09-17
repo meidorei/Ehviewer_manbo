@@ -1,0 +1,787 @@
+--- before/assets/review.js
++++ after/assets/review.js
+@@ -77,11 +77,11 @@
+ $('redo').onclick=()=>{if(cursor<operations.length){cursor++;state=replay(operations.slice(0,cursor));$('confirm').checked=false;render();}};
+ $('reset').onclick=()=>{if(window.confirm('恢复最初模型结果？已保存的 JSON 文件不会被删除。')){operations=[];cursor=0;selected.clear();state=initial();$('confirm').checked=false;render();}};
+ $('search').oninput=filter;$('pending-only').onchange=filter;
+-function payload(confirmed){if(confirmed&&(!$('confirm').checked||state.decisions.some(r=>r.needsHumanReview)))throw Error('请逐项或选择条目确认保留现状，再勾选最终确认。');return {formatVersion:3,snapshotFingerprint:catalog.snapshotFingerprint,metadataFingerprint:catalog.metadataFingerprint,auditTrail:clone(model.auditTrail),baseModelDigest:config.modelHash,reviewStatus:confirmed?'confirmed':'draft',operations:clone(operations.slice(0,cursor)),...clone(state)};}
++function payload(confirmed){if(confirmed&&(!$('confirm').checked||state.decisions.some(r=>r.needsHumanReview)))throw Error('请逐项或选择条目确认保留现状，再勾选最终确认。');return {formatVersion:3,snapshotFingerprint:catalog.snapshotFingerprint,metadataFingerprint:catalog.metadataFingerprint,auditMode:model.auditMode??'deep',auditTrail:clone(model.auditTrail),baseModelDigest:config.modelHash,reviewStatus:confirmed?'confirmed':'draft',operations:clone(operations.slice(0,cursor)),...clone(state)};}
+ function save(confirmed){try{const data=payload(confirmed),a=document.createElement('a');a.href=URL.createObjectURL(new Blob([JSON.stringify(data,null,2)+'\n'],{type:'application/json'}));a.download=confirmed?'ehviewer-confirmed-v3.json':'ehviewer-review-draft-v3.json';a.click();setTimeout(()=>URL.revokeObjectURL(a.href),1000);notice(confirmed?'已导出确认结果；写回前仍须通过命令行校验。':'已保存审核进度。');}catch(e){notice(e.message,true);}}
+ $('save-draft').onclick=()=>save(false);$('export').onclick=()=>save(true);
+ const normalized=x=>Array.isArray(x)?x.map(normalized):x&&typeof x==='object'?Object.fromEntries(Object.keys(x).sort().map(k=>[k,normalized(x[k])])):x;
+-$('import').onchange=async e=>{try{const file=e.target.files[0];if(!file)return;const value=JSON.parse(await file.text());if(value.formatVersion!==3||value.baseModelDigest!==config.modelHash||value.metadataFingerprint!==catalog.metadataFingerprint||value.snapshotFingerprint!==catalog.snapshotFingerprint||JSON.stringify(normalized(value.auditTrail))!==JSON.stringify(normalized(model.auditTrail)))throw Error('该进度不属于当前模型结果与书库');const next=replay(value.operations);const imported=Object.fromEntries(stateKeys.map(k=>[k,value[k]]));if(JSON.stringify(normalized(next))!==JSON.stringify(normalized(imported)))throw Error('修改记录不能重现导入内容');operations=clone(value.operations);cursor=operations.length;state=next;selected.clear();$('confirm').checked=false;render();notice('审核进度已恢复，最终确认需要重新勾选。');}catch(err){notice(err.message,true);}e.target.value='';};
++$('import').onchange=async e=>{try{const file=e.target.files[0];if(!file)return;const value=JSON.parse(await file.text());if(value.formatVersion!==3||(value.auditMode??'deep')!==(model.auditMode??'deep')||value.baseModelDigest!==config.modelHash||value.metadataFingerprint!==catalog.metadataFingerprint||value.snapshotFingerprint!==catalog.snapshotFingerprint||JSON.stringify(normalized(value.auditTrail))!==JSON.stringify(normalized(model.auditTrail)))throw Error('该进度不属于当前模型结果与书库');const next=replay(value.operations);const imported=Object.fromEntries(stateKeys.map(k=>[k,value[k]]));if(JSON.stringify(normalized(next))!==JSON.stringify(normalized(imported)))throw Error('修改记录不能重现导入内容');operations=clone(value.operations);cursor=operations.length;state=next;selected.clear();$('confirm').checked=false;render();notice('审核进度已恢复，最终确认需要重新勾选。');}catch(err){notice(err.message,true);}e.target.value='';};
+ // No hidden network requests, storage, or external libraries. JSON files are the durable saved state.
+ render();
+ })();
+--- before/references/prompts.md
++++ after/references/prompts.md
+@@ -2,13 +2,13 @@
+ 
+ 使用 [v3 数据契约](schema.md)。模型输入只提供安全题名元数据和相关决策／公开来源，不发送数据库二进制、账号、设备／下载路径或凭证。每次只处理有界批次；输出严格 JSON，不附 Markdown 或解释前后缀。
+ 
+-## 全库 discovery
++## 可选全库 discovery
+ 
+ 对当前 batch 每个 GID 独立标注一次。输入仅有 gid/originalPosition/title/titleJpn；输出 formatVersion=1、原样复制双指纹与 batchId、annotations。
+ 
+ 提取活动前缀后真正的作者／社团名、可信跨语言作品别名、紧凑语义键及篇章线索。不要把汉化组、语言标签、活动名当成作者。仅保留有把握的别名；证据不够则空数组或 null，不凭空翻译出唯一身份。此阶段不宣称最终系列归属。
+ 
+-## 候选审核 candidate
++## 默认一次语义审核 semantic
+ 
+ 候选、相似度、共享作者和连通分量是高召回线索，允许误召回。一起检查作者身份、主标题语义、作品支系和卷章证据：
+ 
+@@ -21,17 +21,23 @@
+ 
+ 每个系列应使用稳定、无歧义的 canonicalSeriesId；不可仅用通用语义词作为跨作者身份。分批时携带先前接受的 ID／标题索引。
+ 
+-## 作者审核 author
++## 按疑点复查 focused
++
++只检查明确选中的 GID 和必要的系列/作者上下文。关注新增关联、作者别名、跨批译名、合集或编号冲突。已审且未受变化影响的条目沿用结论；没有新证据就保留独立或未知并结束复查。人类待审标记不构成重新跑全库的理由。输出只含实际复查 GID；不得修改其他条目。
++
++以下 author/unresolved/global 是可选 deep 模式的检查侧重；默认模式有具体疑点时也可按需使用这些观察点，不要求逐轮重扫全库。deep 的首轮 candidate 使用上述 semantic 判断原则。
++
++## 深度模式：作者审核 author
+ 
+ 审核完整作者桶的全部子批和已接受系列。关注带活动前缀标题、异体／罗马音作者名、跨语言题名、不同系列混入、缺成员、缩写续篇、番外和合集。作者一致不构成合并理由。桶的子批之间必须通过完整 GID 索引和相关系列卡片交叉检查。
+ 
+-## 未决审核 unresolved
++## 深度模式：未决审核 unresolved
+ 
+ 使用本轮最新决策重新生成的未决索引，而非最初候选生成时的单例列表。复查被拒绝候选、新拆出的条目、跨批译名和待审关系，尝试寻找支持的关联；没有依据则明确保留独立。独立不等于遗漏，也不自动降低其展示优先级。
+ 
+-## 全局审核 global
++## 深度模式：全局审核 global
+ 
+-按有界批次检查所有系列卡片、独立条目摘要和高频碰撞审核。低置信、跨语言、合集、番外和重制版附原始题名。检查重复系列身份、跨批拆散、同 ID 异名、错作者、错分支、顺序矛盾及遗漏。四轮均需完整覆盖，变化应进入本轮决策，不用文本备注掩盖数据冲突。
++按有界批次检查所有系列卡片、独立条目摘要和高频碰撞审核。低置信、跨语言、合集、番外和重制版附原始题名。检查重复系列身份、跨批拆散、同 ID 异名、错作者、错分支、顺序矛盾及遗漏。仅 deep 的四轮均需完整覆盖，变化应进入本轮决策，不用文本备注掩盖数据冲突。
+ 
+ ## 按需联网
+ 
+@@ -41,6 +47,6 @@
+ 
+ ## 本轮交付
+ 
+-从当前 prepare 文件复制双指纹和 inputArtifactDigest。返回 schema 中的完整 v3 decisions，以及 reviewedGids、conflicts、summary。只有真实完成审核后才登记覆盖；不得生成空泛的“全部通过”记录代替判断。
++从当前 prepare 文件复制双指纹和 inputArtifactDigest。返回 schema 中的 v3 decisions，以及 reviewedGids、conflicts、summary。只有真实完成审核后才登记覆盖；不得生成空泛的“全部通过”记录代替判断。
+ 
+-每批只返回实际审核的 GID；跨候选重复 GID 的最终结论必须一致，否则先在主模型中解决。`audit merge` 会拒绝冲突；`audit record` 接受已汇总的完整一轮。完成四轮后才能 build 和生成可确认审核页。
++每批只返回实际审核的 GID；跨候选重复 GID 的最终结论必须一致，否则先在主模型中解决。`audit merge` 会拒绝冲突；`audit record` 接受已汇总的结果。lightweight 首次 semantic 必须全量覆盖，后续 focused 仅含实际复查 GID；一次完整 semantic 后即可 build。deep 仍要求完整四轮。
+--- before/references/schema.md
++++ after/references/schema.md
+@@ -68,11 +68,16 @@
+ 
+ ## 审核结果与链
+ 
+-初始与每轮完整决策外层为 formatVersion、双指纹、decisions、auditTrail。四轮顺序为 candidate/author/unresolved/global。
++初始与每轮决策保留 formatVersion=3、双指纹、完整 decisions、auditTrail；新增可选外层 `auditMode`：
+ 
+-模型的一轮结果需要 formatVersion、双指纹、完整 decisions、`inputArtifactDigest`、`reviewedGids`、`conflicts: []` 和非空 summary。分批输出时 decisions 与 reviewedGids 只含本批实际审核的记录；合并后必须覆盖全库。冲突不得自行填写为空，先解决语义冲突再提交。
++- `lightweight`：新建任务默认。首条记录 `semantic` 完整覆盖全库，之后可追加任意数量 `focused`，只记录实际复查的子集。一次 semantic 后即可构建。
++- `deep`：candidate → author → unresolved → global 四轮，各轮全量覆盖。既有文件省略 auditMode 时按 deep 解释，保持兼容。未知模式被拒绝。
+ 
+-`audit record/merge` 写入每轮：round、metadataFingerprint、inputArtifactDigest、inputDecisionsDigest、outputDecisionsDigest、reviewedGids、conflicts、summary。前后决策摘要链必须连接，末轮摘要必须等于当前 decisions。完整审核链只能证明工件关联和覆盖声明，不能代替独立语义评测。
++模型结果需要 formatVersion、双指纹、`inputArtifactDigest`、`decisions`、`reviewedGids`、`conflicts: []` 和具体 summary。可携带匹配输入的 auditMode。每批 decisions 与 reviewedGids 必须精确匹配，不能把上下文条目算作已审。首次 semantic 与 deep 轮次的分批结果合并后须完整覆盖；focused 可只提交选中的子集，未提交记录从输入原样保留。
++
++`audit record/merge` 每条记录包含 round、metadataFingerprint、inputArtifactDigest、inputDecisionsDigest、outputDecisionsDigest、reviewedGids、conflicts、summary；focused 还记录 `changedGids`，必须属于 reviewedGids。前后完整决策摘要必须连接，末条摘要必须匹配当前全部决策。聚合后检查所有 GID、类型与同系列名称，即使局部修正也不能绕过全量校验。
++
++`audit init --input` 显式续接其他模式时记录 seedSourceDigest，保留决策并重新标记人类待审，新链为空；不伪造完成记录。实际读取和历史复用依据必须由模型说明，摘要链不证明语义正确。
+ 
+ ## 模型顺序与人工导出
+ 
+@@ -83,7 +88,7 @@
+ - gidOrder：完整 GID 列表；decisions 与其逐项对齐。
+ - seriesOrder：系列 ID 按首次出现顺序排列，无重复。
+ 
+-模型结果必须严格符合锚点、类别、分支、已知／未知及卷章顺序。人工导出保留双指纹和原 auditTrail，增加原模型文件原始字节的 SHA-256 `baseModelDigest`、operations，以及 reviewStatus="draft" 或 "confirmed"。后端重放 operations 后，四个状态字段 decisions/gidOrder/seriesOrder/direction 必须与导出完全一致。
++模型结果必须严格符合锚点、类别、分支、已知／未知及卷章顺序。人工导出保留 auditMode、双指纹和原 auditTrail，增加原模型文件原始字节的 SHA-256 `baseModelDigest`、operations，以及 reviewStatus="draft" 或 "confirmed"。后端重放 operations 后，四个状态字段 decisions/gidOrder/seriesOrder/direction 必须与导出完全一致。
+ 
+ 操作协议：
+ 
+--- before/references/testing.md
++++ after/references/testing.md
+@@ -10,7 +10,7 @@
+ python -B -m unittest discover -s tests -v
+ ```
+ 
+-保留原来的 11 项回归覆盖，旧版写回及清理测试夹具改为新版确认与强绑定报告；另外覆盖 v3 类型、重复键／非有限数字、审核链、历史迁移、作者召回、排序分支、人工操作重放、空库、WAL 和全部表保护。测试只使用合成题名、临时 SQLite 和临时文件，不需要实际书库或设备。
++保留原来的 11 项回归覆盖，旧版写回及清理测试夹具改为新版确认与强绑定报告；另外覆盖 v3 类型、重复键／非有限数字、单轮默认模式、局部修正不改变未审条目、深度模式兼容、模式绑定、审核链、历史迁移、作者召回、排序分支、人工操作重放、空库、WAL 和全部表保护。测试只使用合成题名、临时 SQLite 和临时文件，不需要实际书库或设备。
+ 
+ `build_stable_order` 内部保留版本 2 的旧行为供原测试和旧 Python 调用兼容；CLI 构建与写回仅支持 v3，并要求显式迁移。旧回归不是新版默认排序的说明。
+ 
+@@ -25,7 +25,7 @@
+ 
+ 浏览器测试需要已有的 Playwright 模块和 Edge。可用 `PLAYWRIGHT_MODULE` 指定已安装模块的绝对路径；不自动安装依赖。测试会启动 headless Edge，使用 12 条和 3184 条清单检查合并／拆分、重命名、编辑第 0 章、方向、置顶、撤销重做、筛选下完整导出、导入恢复、拒绝篡改、最终确认、键盘按钮及手机宽度。实际导出的 JSON 交给 Python 验证器，记录浏览器错误、网络请求与加载时间，保存桌面／手机宽度截图。截图还需要人工视觉检查。
+ 
+-`build_test_artifacts.py` 的审核链是合成测试数据，不代表真实模型已审核任何用户漫画；禁止将该工具用于跳过实际四轮语义工作。
++`build_test_artifacts.py` 的审核链是合成测试数据，不代表真实模型已审核任何用户漫画；禁止将该工具用于冒充真实语义审核。浏览器夹具默认使用 lightweight，旧 deep 路径保留单元回归。
+ 
+ ## 多语言评测
+ 
+--- before/references/workflow.md
++++ after/references/workflow.md
+@@ -19,69 +19,85 @@
+ python scripts/organize.py migrate-v2 --catalog old-catalog.json --decisions old-decisions.json --output-catalog run/catalog.json --output-decisions run/seed.json
+ ```
+ 
+-迁移后位置与类别不猜测，保留旧语义字段作历史证据，重新四轮审核。版本 2 不可直接通过新版写回。
++迁移后位置与类别不猜测，保留旧语义字段作历史证据，进入默认简化审核。版本 2 不可直接通过新版写回。
+ 
+ 可选 ADB 导入须提供 `--adb`、当次 `adb devices -l` 中授权的 `--serial` 和明确的 `--package`。`adb export` force-stop 指定包，检查应用数据库目录；存在 WAL、SHM 或 journal 即停止，要求应用导出或解决一致性快照后再继续，不删除 sidecar。通过 `exec-out run-as ... cat` 导出二进制；不尝试 root 或其他包。随后仍需运行上述 SQLite 导入。
+ 
+-## 2. Discovery 与候选
++## 2. 默认简化模式：准备候选与一次语义审核
++
++不必先运行 discovery。程序只做原题召回，完整主标题、作者身份和阅读顺序仍由主智能体判断：
+ 
+ ```text
+-python scripts/organize.py discover --catalog run/catalog.json --output-dir run --manifest run/run-manifest.json
+-python scripts/organize.py discovery-validate --manifest run/run-manifest.json --results-dir run --annotations run/discovery.json --report run/discovery-report.json
+-python scripts/organize.py audit init --catalog run/catalog.json --output run/audit-0.json
+-python scripts/organize.py candidates --catalog run/catalog.json --discovery run/discovery.json --decisions run/audit-0.json --candidates run/candidates-0.json --author-buckets run/authors-0.json --unresolved run/unresolved-0.json
++python scripts/organize.py manifest init --catalog run/catalog.json --manifest run/run-manifest.json
++python scripts/organize.py audit init --catalog run/catalog.json --output run/seed.json
++python scripts/organize.py candidates --catalog run/catalog.json --decisions run/seed.json --candidates run/candidates.json --author-buckets run/authors.json --unresolved run/unresolved.json
++python scripts/organize.py audit prepare --catalog run/catalog.json --input run/seed.json --output run/semantic-input.json
+ ```
+ 
+-由当前主模型填写每个 discovery batch 对应的 resultFile；不能用测试夹具或循环复制默认注释代替语义工作。75 是默认批大小，支持 1–100；真实模型输入默认保持最多 75 条。空库产生零批次，可正常完成空流程。
++`manifest init` 创建空运行清单并登记 catalog；后续快照、审核输入/结果等按第 6 节逐个登记。它不声称完成 discovery。若之后需要生成 discovery 批次，使用独立子目录及其清单，避免覆盖当前清单。
+ 
+-候选文件包括完整关联边 `edges`、有界 `candidates[].items`、`componentId/componentGids`、高频碰撞的有界 `batches`。作者桶含完整 GID 索引和最多 75 条的子批。大集合不得一次全部塞进模型；同时提供跨批成员 ID、边理由和已接受系列的简明索引，以免人为分批切断关系。
++`audit init` 默认 `auditMode="lightweight"`。`prepare` 按每批最多 75 条给出安全原题与最新决策，并保留完整系列成员索引。主智能体结合候选、必要的作者桶与已接受系列索引，一次处理作者、系列、分支和编号。每个 GID 至少实际审核一次；不把整个作者桶重复交给多个代理。超过上下文容量时保存分批结果和真实未读范围，不能靠填写覆盖数组代替工作。
+ 
+-`--decisions` 每轮传入最新完整决策；独立或待审的条目重新进入未决索引，即便它原先在候选中。初始独立条目全部待审是正常现象。
+-
+-## 3. 四轮审核与历史复用
+-
+-顺序固定：`candidate` → `author` → `unresolved` → `global`。每轮检查全部 GID；不涉及变化的条目也应经过对应审核并保留原结论。
++把实际完成的分批结果放进只含本次结果的目录，再合并：
+ 
+ ```text
+-python scripts/organize.py audit prepare --catalog run/catalog.json --input run/audit-0.json --output run/round-1-input.json
+-python scripts/organize.py audit record --catalog run/catalog.json --input run/audit-0.json --result run/round-1-result.json --round candidate --output run/audit-1.json
++python scripts/organize.py audit merge --catalog run/catalog.json --input run/seed.json --results-dir run/semantic-results --output run/reviewed.json
+ ```
+ 
+-`prepare` 含安全元数据子批、最新系列索引和未决 GID。将本轮候选、作者桶、未决和碰撞材料按需一起提供给主模型。结果的 `inputArtifactDigest` 使用 prepare 中的同名值，它绑定 audit-0 输入文件。不要自行伪造摘要或把准备文件的摘要误当作决策输入摘要。
++也可将完整结果以 `audit record --round semantic --result run/semantic-result.json` 登记。结果须绑定 `semantic-input.json` 中的双指纹与 `inputArtifactDigest`。首轮必须完整覆盖全库；重叠记录有冲突时不能自动选一个结论。记录只能证明工件关联及覆盖声明，不能证明语义准确率。
+ 
+-也可以把本轮分批模型输出存入只含本轮结果的目录，再合并并记录：
++可选 discovery：已有可靠别名注释时，给 `candidates` 增加 `--discovery run/discovery.json`；工具会校验完整覆盖与双指纹。需要新做全库别名发现时才使用 `discover` / `discovery-validate`。未提供 discovery 时仅基于原题召回，不生成冒充模型注释的文件；跨语言遗漏由本次语义阅读和针对性查看作者成员补充。
++
++## 3. 按疑点复查、续接及深度模式
++
++### 局部复查
++
++归属未定、跨批遗漏、主标题冲突或编号口径不一致时，仅选受影响的 GID。`needsHumanReview=true` 是人类待审状态；不能因此不断重新审核所有条目。没有具体疑点就直接构建审核页。
+ 
+ ```text
+-python scripts/organize.py audit merge --catalog run/catalog.json --input run/audit-0.json --results-dir run/round-1-results --output run/audit-1.json
++python scripts/organize.py audit prepare --catalog run/catalog.json --input run/reviewed.json --gids 101 205 --output run/focused-input.json
++python scripts/organize.py audit record --catalog run/catalog.json --input run/reviewed.json --result run/focused-result.json --round focused --output run/revised.json
+ ```
+ 
+-每份子结果使用同一输入摘要与双指纹，`reviewedGids` 精确匹配该文件的 decisions。跨批重复成员仅允许结论完全一致；不一致、漏项或显式 conflict 必须由主模型解决，脚本不替它选一个。该命令记录下一个应完成的轮次。以后各轮对最新 audit 文件重新 candidates 和 prepare，最终得到 audit-4。
++示例 GID 必须换成实际待查条目。此时结果的 `decisions` 和 `reviewedGids` 只含实际复查的条目；脚本把它们替换进原决策，并验证其余记录不变。也可用 `audit merge` 合并局部结果。修改一个系列的名字需要包含该系列所有受影响成员，否则全量一致性校验会拒绝。`prepare` 给出的 `contextBatches` 仅供参考，不自动算入审核覆盖；确需修改参考条目时把它加入本次选定范围。
+ 
+-可选历史入口：`history --catalog CURRENT --history-catalog OLD --history-decisions OLD_DECISIONS --output SEED`。旧目录与决策均须 v3 且绑定匹配；只复用同 GID、相同 title/titleJpn 的语义，保留历史摘要并重新待审。没有特定 GID 覆盖或必需作品。历史 seed 仍要走四轮。
++归属或别名变化可能影响其他条目时，用最新结果重建 candidates，再检查新增关系即可。没有新证据就保持独立、未知位置和待审标记，结束本轮，不设无收益的固定重复轮次。
+ 
+-审核链记录覆盖与工件关联，不能证明模型真的理解了作品；必须保留原始结果供检查，不能把程序生成的覆盖记录称为真实分类评测。
++### 续接已有工作
++
++保留原始文件，显式生成新种子：
++
++```text
++python scripts/organize.py audit init --catalog run/catalog.json --input old-run/audit-1.json --mode lightweight --output run/seed.json
++```
++
++它校验旧输入、保留全部决策、记录 `seedSourceDigest` 并清空新模式审核链；所有条目重新标为人类待审。它不自动声明旧工作满足新流程。主智能体可以依据已保存、确实完成的逐条审核沿用未变更结论，仅补未读或受变更影响的条目，并在新 `semantic` 结果 summary 写清复用来源和本次补查范围。禁止把未完成的旧轮次或程序默认注释算作已审。
++
++跨书库历史入口 `history --catalog CURRENT --history-catalog OLD --history-decisions OLD --output SEED` 仍只复用同 GID 且 title/titleJpn 未变化的字段，保留历史证据并进入默认简化审核。v2 须显式 `migrate-v2`，不猜原版混用的位置及类别语义。
++
++### 可选深度模式
++
++仅在用户指定或确有系统性错分需要扩大检查时，`audit init --mode deep`；`prepare` / `record` / `merge` 依次进行 candidate、author、unresolved、global 四轮，每轮按最新决策刷新候选并完整覆盖。具体观察点见 [提示](prompts.md)。缺少 `auditMode` 的既有 v3 文件按 deep 解释，不会悄悄降低原结果的完成标准。不能直接改模式字段或伪造后两轮。
+ 
+ ## 4. 构建与人工修正
+ 
++一次完整 semantic 审核即可构建；若做过局部复查则使用最后一份结果。deep 模式须完成原四轮。
++
+ ```text
+-python scripts/organize.py build --catalog run/catalog.json --decisions run/audit-4.json --output run/model-order.json
++python scripts/organize.py build --catalog run/catalog.json --decisions run/reviewed.json --output run/model-order.json
+ python scripts/organize.py validate --catalog run/catalog.json --order run/model-order.json --report run/model-validation.json
+ python scripts/organize.py review --catalog run/catalog.json --order run/model-order.json --output run/review.html
+ ```
+ 
+-默认升序；可在 audit-4 加 `direction: "descending"` 后构建，或在页面切换。变更方向不改变语义审核结论，但模型基线文件摘要随文件改变，旧页面进度不能混用。
++默认组内升序。页面可切换方向，合并、拆分、改名、编辑类别/分支/卷章范围、移动系列或单本、撤销重做、保存草稿及恢复进度。所有原题和 GID 均静态保留，筛选只影响显示，导出永远包含全库。归属或属性修改先重新规则排序，手动位置微调放最后。
+ 
+-页面支持：系列及单本移动、筛选、选中整个系列、移入目标系列、所选拆为新系列、改名、编辑类别／故事分支／卷章范围、待审确认、撤销重做、保存草稿、导入进度和完整导出。所有操作均有按钮；键盘可完成操作，拖拽仅作补充。归属或属性编辑会重新按默认规则排序；最后执行手动顺序微调。
+-
+-不同翻译保留为同组同位置条目，翻译信息保留在原标题和证据，不使用 translation 当作故事分支。没有位置的条目显示在对应类别和分支的待定位置组。
+-
+-用户可确认“保持独立／未知位置”来处理无法核实的条目。确认所有待审条目后还须勾选最终确认才能导出 confirmed。保存草稿不会确认，也不会操作设备。导入只接受匹配当前模型和双指纹且可重放的记录。
++不同翻译保留同类别、分支及位置；未知位置不等于第 0 章。用户可确认保留独立或未知。全部待审确认后还需勾选最终确认，才能导出 confirmed；保存草稿不确认也不操作设备。
+ 
+ ```text
+ python scripts/organize.py validate --catalog run/catalog.json --model run/model-order.json --order run/confirmed.json --confirmed --report run/human-validation.json
+ ```
+ 
+-保留原模型文件原始字节；改变格式也会改变其 SHA-256。人工结果不要求机械排序连续，但所有例外必须由重放记录解释。筛选只影响显示，导出永远包含全库。
++保留模型原始字节。导出绑定审核模式、双指纹、审核链和原模型 SHA-256，所有人工修改须能由操作日志重放。软件确认字段不能替代真实用户对本书库的确认。
+ 
+ ## 5. 副本写回与设备验证
+ 
+--- before/scripts/audit_round.py
++++ after/scripts/audit_round.py
+@@ -1,65 +1,145 @@
+ #!/usr/bin/env python3
+-"""Record complete primary-model round results with a verifiable artifact chain."""
++"""Record one full semantic pass plus selected follow-ups, or optional deep audits."""
+ import argparse
++import copy
+ from pathlib import Path
+ from common import *
+ 
++
+ def record(catalog, source, result, round_name, input_hash):
+-    validate_binding(catalog,source);validate_audits(catalog,source,complete=False)
+-    index=len(source['auditTrail'])
+-    require(index<4 and ROUNDS[index]==round_name,'round must be the next required audit')
+-    validate_binding(catalog,result)
+-    require(result.get("inputArtifactDigest")==input_hash,"round result references a different input artifact")
+-    require(result.get('reviewedGids') is not None and result.get('conflicts')==[],'complete reviewedGids and no conflicts required')
+-    require(nonempty(result.get('summary')),'round requires a semantic summary')
+-    entry=dict(round=round_name,metadataFingerprint=catalog['metadataFingerprint'],inputArtifactDigest=input_hash,
+-               inputDecisionsDigest=decision_digest(source['decisions']),outputDecisionsDigest=decision_digest(result['decisions']),
+-               reviewedGids=result['reviewedGids'],conflicts=[],summary=result['summary'])
+-    output=envelope(catalog,result['decisions'],source['auditTrail']+[entry]);validate_audits(catalog,output,complete=False)
++    validate_binding(catalog, source)
++    validate_audits(catalog, source, complete=False)
++    require(next_round(source) == round_name, 'round must be the next required audit')
++    require(type(result.get('formatVersion')) is int and result['formatVersion'] == 3, 'v3 result required')
++    for key in ('snapshotFingerprint', 'metadataFingerprint'):
++        require(result.get(key) == catalog[key], key + ' mismatch')
++    if 'auditMode' in result:
++        require(audit_mode(result) == audit_mode(source), 'result audit mode mismatch')
++    require(result.get('inputArtifactDigest') == input_hash, 'round result references a different input artifact')
++    gids = result.get('reviewedGids')
++    rows = result.get('decisions')
++    require(isinstance(gids, list) and all(integer(g) for g in gids) and len(gids) == len(set(gids)), 'invalid reviewedGids')
++    require(result.get('conflicts') == [], 'no conflicts required')
++    require(nonempty(result.get('summary')), 'round requires a semantic summary')
++    require(isinstance(rows, list) and all(isinstance(r, dict) and integer(r.get('gid')) for r in rows), 'invalid result decisions')
++    require(len(rows) == len(gids) and {r['gid'] for r in rows} == set(gids), 'result decision/coverage mismatch')
++    changed = []
++    if round_name == 'focused':
++        all_gids = {x['gid'] for x in catalog['items']}
++        require(bool(gids) and set(gids) <= all_gids, 'focused audit needs valid selected GIDs')
++        replacements = {r['gid']: r for r in rows}
++        changed = sorted(r['gid'] for r in source['decisions'] if r['gid'] in replacements and r != replacements[r['gid']])
++        # Only selected rows may change; no unreviewed row is taken from the result.
++        rows = [replacements.get(r['gid'], r) for r in source['decisions']]
++    validate_decisions(catalog, rows)
++    entry = dict(round=round_name, metadataFingerprint=catalog['metadataFingerprint'], inputArtifactDigest=input_hash,
++                 inputDecisionsDigest=decision_digest(source['decisions']), outputDecisionsDigest=decision_digest(rows),
++                 reviewedGids=gids, conflicts=[], summary=result['summary'])
++    if round_name == 'focused':
++        entry['changedGids'] = changed
++    output = envelope(catalog, rows, source['auditTrail'] + [entry])
++    if 'auditMode' in source:
++        output['auditMode'] = source['auditMode']
++    if 'seedSourceDigest' in source:
++        output['seedSourceDigest'] = source['seedSourceDigest']
++    validate_audits(catalog, output, complete=False)
+     return output
+ 
++
+ def main():
+-    p=argparse.ArgumentParser(description='Initialize review decisions, prepare bounded audit inputs, or record the next completed round.')
+-    p.add_argument('operation',choices=('init','prepare','record','merge'))
+-    p.add_argument('--catalog',required=True,type=Path);p.add_argument('--input',type=Path);p.add_argument('--result',type=Path)
+-    p.add_argument('--results-dir',type=Path);p.add_argument('--round',choices=ROUNDS);p.add_argument('--output',required=True,type=Path)
+-    a=p.parse_args();catalog=read_json(a.catalog);validate_catalog(catalog)
+-    if a.operation=='init':write_json(a.output,envelope(catalog,[singleton(x) for x in catalog['items']]));return
+-    require(a.input is not None,'--input required');source=read_json(a.input);validate_binding(catalog,source);validate_audits(catalog,source,False)
+-    if a.operation=='merge':
+-        require(a.results_dir is not None, 'merge needs --results-dir containing only this round batch results')
+-        rows = {}; reviewed = set(); summaries = []
++    p = argparse.ArgumentParser(description='One semantic pass by default; focused revisions or optional four-round deep review.')
++    p.add_argument('operation', choices=('init', 'prepare', 'record', 'merge'))
++    p.add_argument('--catalog', required=True, type=Path)
++    p.add_argument('--input', type=Path)
++    p.add_argument('--result', type=Path)
++    p.add_argument('--results-dir', type=Path)
++    p.add_argument('--round', choices=(*ROUNDS, 'semantic', 'focused'))
++    p.add_argument('--mode', choices=AUDIT_MODES, help='init only; defaults to lightweight. Missing mode in old files remains deep.')
++    p.add_argument('--gids', nargs='+', type=int, help='prepare a focused follow-up for these GIDs only')
++    p.add_argument('--output', required=True, type=Path)
++    a = p.parse_args()
++    catalog = read_json(a.catalog)
++    validate_catalog(catalog)
++    if a.operation == 'init':
++        require(a.gids is None, '--gids is only for focused prepare')
++        if a.input:
++            seed = read_json(a.input)
++            validate_binding(catalog, seed)
++            validate_audits(catalog, seed, complete=False)
++            rows = copy.deepcopy(seed['decisions'])
++            for row in rows:
++                row['needsHumanReview'] = True
++        else:
++            rows = [singleton(x) for x in catalog['items']]
++        output = envelope(catalog, rows)
++        output['auditMode'] = a.mode or 'lightweight'
++        if a.input:
++            output['seedSourceDigest'] = sha256_file(a.input)
++        write_json(a.output, output)
++        return
++    require(a.mode is None, '--mode is init-only; use init --input to explicitly seed another mode')
++    require(a.gids is None or a.operation == 'prepare', '--gids is only for focused prepare')
++    require(a.input is not None, '--input required')
++    source = read_json(a.input)
++    validate_binding(catalog, source)
++    validate_audits(catalog, source, False)
++    round_name = next_round(source)
++    if a.operation == 'merge':
++        require(a.results_dir is not None, 'merge needs --results-dir containing only this pass batch results')
++        rows = {}
++        reviewed = set()
++        summaries = []
+         input_hash = sha256_file(a.input)
+         files = sorted(a.results_dir.glob('*.json'))
+         require(files or not catalog['items'], 'no batch results found')
+         for file in files:
+             batch = read_json(file)
+-            require(batch.get('formatVersion') == 3 and batch.get('inputArtifactDigest') == input_hash, 'batch input binding mismatch')
++            require(type(batch.get('formatVersion')) is int and batch['formatVersion'] == 3 and batch.get('inputArtifactDigest') == input_hash, 'batch input binding mismatch')
+             require(batch.get('snapshotFingerprint') == catalog['snapshotFingerprint'] and batch.get('metadataFingerprint') == catalog['metadataFingerprint'], 'batch catalog binding mismatch')
++            if 'auditMode' in batch:
++                require(audit_mode(batch) == audit_mode(source), 'batch audit mode mismatch')
+             require(batch.get('conflicts') == [] and nonempty(batch.get('summary')), 'batch has conflicts or no summary')
+-            decisions = batch.get('decisions'); gids = batch.get('reviewedGids')
++            decisions = batch.get('decisions')
++            gids = batch.get('reviewedGids')
+             require(isinstance(decisions, list) and isinstance(gids, list) and all(integer(g) for g in gids) and len(gids) == len(set(gids)), 'invalid batch coverage')
+             require(all(isinstance(row, dict) and integer(row.get('gid')) for row in decisions), 'invalid batch decision')
+             require(set(gids) == {row['gid'] for row in decisions} and len(decisions) == len(gids), 'batch decision/coverage mismatch')
+             for row in decisions:
+                 require(row['gid'] not in rows or rows[row['gid']] == row, 'conflicting overlapping batch decisions; resolve explicitly')
+                 rows[row['gid']] = row
+-            reviewed.update(gids); summaries.append(batch['summary'])
++            reviewed.update(gids)
++            summaries.append(batch['summary'])
+         result = {**envelope(catalog, list(rows.values())), 'reviewedGids': sorted(reviewed), 'inputArtifactDigest': input_hash,
+                   'conflicts': [], 'summary': '\n'.join(summaries) or 'Empty catalog; no semantic items.'}
+-        require(len(source['auditTrail']) < 4, 'all rounds already completed')
+-        write_json(a.output, record(catalog, source, result, ROUNDS[len(source['auditTrail'])], input_hash)); return
+-    if a.operation=='record':
+-        require(a.result is not None and a.round is not None,'record needs --result and --round')
+-        write_json(a.output,record(catalog,source,read_json(a.result),a.round,sha256_file(a.input)));return
+-    require(len(source['auditTrail'])<4,'all rounds already completed')
+-    rows={r['gid']:r for r in source['decisions']};counts={}
+-    for r in rows.values():counts[r['canonicalSeriesId']]=counts.get(r['canonicalSeriesId'],0)+1
+-    safe=[dict(item,decision=rows[item['gid']]) for item in catalog['items']]
+-    output=dict(formatVersion=3,round=ROUNDS[len(source['auditTrail'])],inputArtifactDigest=sha256_file(a.input),
+-                metadataFingerprint=catalog['metadataFingerprint'],snapshotFingerprint=catalog['snapshotFingerprint'],
+-                batches=[dict(batchId=i//75+1,items=safe[i:i+75]) for i in range(0,len(safe),75)],
+-                unresolvedGids=[r['gid'] for r in rows.values() if counts[r['canonicalSeriesId']]==1 or r['needsHumanReview']],
+-                seriesIndex=[dict(seriesId=s,gids=[r['gid'] for r in rows.values() if r['canonicalSeriesId']==s]) for s in counts])
+-    write_json(a.output,output)
+-if __name__=='__main__':main()
++        write_json(a.output, record(catalog, source, result, round_name, input_hash))
++        return
++    if a.operation == 'record':
++        require(a.result is not None and a.round is not None, 'record needs --result and --round')
++        write_json(a.output, record(catalog, source, read_json(a.result), a.round, sha256_file(a.input)))
++        return
++    rows = {r['gid']: r for r in source['decisions']}
++    if round_name == 'focused':
++        require(a.gids and all(integer(g) for g in a.gids) and len(a.gids) == len(set(a.gids)) and set(a.gids) <= set(rows), 'focused prepare requires unique catalog --gids')
++        selected = set(a.gids)
++    else:
++        require(a.gids is None, 'initial/deep review covers the full catalog; --gids is for focused review')
++        selected = set(rows)
++    series = {}
++    for row in rows.values():
++        series.setdefault(row['canonicalSeriesId'], []).append(row['gid'])
++    safe = [dict(item, decision=rows[item['gid']]) for item in catalog['items'] if item['gid'] in selected]
++    related_ids = {rows[g]['canonicalSeriesId'] for g in selected}
++    context = [dict(item, decision=rows[item['gid']]) for item in catalog['items']
++               if item['gid'] not in selected and rows[item['gid']]['canonicalSeriesId'] in related_ids] if round_name == 'focused' else []
++    output = dict(formatVersion=3, auditMode=audit_mode(source), round=round_name, inputArtifactDigest=sha256_file(a.input),
++                  metadataFingerprint=catalog['metadataFingerprint'], snapshotFingerprint=catalog['snapshotFingerprint'],
++                  reviewGids=sorted(selected),
++                  batches=[dict(batchId=i//75+1, items=safe[i:i+75]) for i in range(0, len(safe), 75)],
++                  contextBatches=[context[i:i+75] for i in range(0, len(context), 75)],
++                  unresolvedGids=[r['gid'] for r in rows.values() if len(series[r['canonicalSeriesId']]) == 1 or r['needsHumanReview']],
++                  seriesIndex=[dict(seriesId=s, gids=gids) for s, gids in series.items()])
++    write_json(a.output, output)
++
++
++if __name__ == '__main__':
++    main()
+--- before/scripts/common.py
++++ after/scripts/common.py
+@@ -11,6 +11,7 @@
+ MAX_GID = 9007199254740991  # lossless in the offline JavaScript editor
+ CATEGORIES = ('main', 'extra', 'collection', 'remaster', 'other')
+ ROUNDS = ('candidate', 'author', 'unresolved', 'global')
++AUDIT_MODES = ('lightweight', 'deep')
+ POSITION_FIELDS = ('volume', 'chapter', 'part', 'rangeEnd')
+ DECISION_FIELDS = {'gid', 'canonicalSeriesId', 'canonicalSeriesTitle', 'category', 'branch',
+                    'position', 'orderReliable', 'orderConfidence', 'confidence', 'reason',
+@@ -201,17 +202,44 @@
+     validate_decisions(catalog, value.get('decisions'))
+ 
+ 
++def audit_mode(value):
++    # Existing v3 files without a mode retain the original four-round contract.
++    mode = value.get('auditMode', 'deep')
++    require(mode in AUDIT_MODES, 'invalid auditMode')
++    return mode
++
++
++def next_round(value):
++    if audit_mode(value) == 'lightweight':
++        return 'focused' if value['auditTrail'] else 'semantic'
++    index = len(value['auditTrail'])
++    require(index < len(ROUNDS), 'all deep rounds already completed')
++    return ROUNDS[index]
++
++
+ def validate_audits(catalog, value, complete=True):
+     trail = value.get('auditTrail')
+     require(isinstance(trail, list), 'auditTrail must be a list')
+-    require(len(trail) == 4 if complete else len(trail) <= 4, 'four completed semantic audit rounds required')
++    mode = audit_mode(value)
++    if mode == 'deep':
++        require(len(trail) == 4 if complete else len(trail) <= 4, 'four completed deep semantic audit rounds required')
++    elif complete:
++        require(bool(trail), 'one complete semantic audit required')
+     previous = None
++    all_gids = {x['gid'] for x in catalog['items']}
+     for i, entry in enumerate(trail):
+-        require(isinstance(entry, dict) and entry.get('round') == ROUNDS[i], 'audit round missing or out of order')
++        expected = ROUNDS[i] if mode == 'deep' else ('semantic' if i == 0 else 'focused')
++        require(isinstance(entry, dict) and entry.get('round') == expected, 'audit round missing or out of order')
+         require(entry.get('metadataFingerprint') == catalog['metadataFingerprint'], 'audit metadata mismatch')
+         reviewed = entry.get('reviewedGids')
+-        require(isinstance(reviewed, list) and all(integer(x) for x in reviewed) and len(reviewed) == len(set(reviewed))
+-                and set(reviewed) == {x['gid'] for x in catalog['items']}, 'audit coverage incomplete')
++        require(isinstance(reviewed, list) and all(integer(x) for x in reviewed) and len(reviewed) == len(set(reviewed)), 'invalid audit coverage')
++        if expected == 'focused':
++            require(bool(reviewed) and set(reviewed) <= all_gids, 'focused audit needs valid selected GIDs')
++            changed = entry.get('changedGids')
++            require(isinstance(changed, list) and all(integer(x) for x in changed) and len(changed) == len(set(changed))
++                    and set(changed) <= set(reviewed), 'focused changes outside reviewed GIDs')
++        else:
++            require(set(reviewed) == all_gids, 'audit coverage incomplete')
+         require(entry.get('conflicts') == [], 'unresolved audit conflicts')
+         for key in ('inputDecisionsDigest', 'outputDecisionsDigest', 'inputArtifactDigest'):
+             require(isinstance(entry.get(key), str) and len(entry[key]) == 64 and all(c in '0123456789abcdef' for c in entry[key]), 'invalid audit digest')
+@@ -332,6 +360,7 @@
+         validate_order(catalog, model)
+         require(order.get('baseModelDigest') == model_hash, 'review base model digest mismatch')
+         require(order.get('auditTrail') == model.get('auditTrail'), 'review changed audit trail')
++        require(audit_mode(order) == audit_mode(model), 'review changed audit mode')
+         require(order.get('reviewStatus') in ('draft', 'confirmed'), 'invalid review status')
+         expected = replay(catalog, model, order.get('operations'))
+         require(state_of(order) == expected, 'review operations do not reproduce exported decisions/order')
+--- before/scripts/generate_candidates.py
++++ after/scripts/generate_candidates.py
+@@ -132,7 +132,7 @@
+     parser = argparse.ArgumentParser(description="Generate overlapping high-recall manga-series candidates and author buckets.")
+     parser.add_argument("--catalog", required=True, type=Path)
+     parser.add_argument("--decisions", type=Path, help="Latest v3 decisions; rebuild unresolved after every round.")
+-    parser.add_argument("--discovery", required=True, type=Path, help="Validated full-library discovery annotations.")
++    parser.add_argument("--discovery", type=Path, help="Optional validated discovery annotations; omitted for title-only recall.")
+     parser.add_argument("--candidates", required=True, type=Path)
+     parser.add_argument("--author-buckets", required=True, type=Path)
+     parser.add_argument("--unresolved", required=True, type=Path, help="Output index for entries not placed in any candidate component.")
+@@ -146,7 +146,7 @@
+         from common import validate_catalog
+         validate_catalog(catalog)
+     by_gid = {int(item["gid"]): item for item in items}
+-    discovery_by_gid = load_discovery(args.discovery, catalog)
++    discovery_by_gid = load_discovery(args.discovery, catalog) if args.discovery else {gid: {} for gid in by_gid}
+     derived = {}
+     author_buckets = defaultdict(list)
+     skeleton_buckets = defaultdict(list)
+@@ -310,6 +310,7 @@
+         "snapshotFingerprint": catalog["snapshotFingerprint"],
+         "metadataFingerprint": catalog.get("metadataFingerprint"),
+         "edges": [{"gids": list(pair), "reasons": sorted(values)} for pair,values in sorted(reasons.items())],
++        "recallSource": "discovery-and-titles" if args.discovery else "titles-only",
+         "candidateCount": len(candidate_rows),
+         "collisionAuditCount": len(collision_audits),
+         "candidates": candidate_rows,
+--- before/scripts/migrate_v2.py
++++ after/scripts/migrate_v2.py
+@@ -19,7 +19,7 @@
+             # v2 conflated translation variants, category, branches and unknown/zero numbers.
+             row['evidence']=[{'kind':'history','claim':'旧版结论仅作为待审线索。','sourceDigest':source_hash,'legacyDecision':{k:r.get(k) for k in ('gid','canonicalSeriesId','canonicalSeriesTitle','branch','itemOrder','confidence','reason')}}]
+         require(seen==set(rows),'legacy decisions must cover catalog')
+-    result=envelope(current,list(rows.values()));result['migrationStatus']='pending-four-round-review'
++    result=envelope(current,list(rows.values()));result['auditMode']='lightweight';result['migrationStatus']='pending-semantic-review'
+     return current,result
+ 
+ def main():
+--- before/scripts/run_manifest.py
++++ after/scripts/run_manifest.py
+@@ -42,8 +42,11 @@
+ 
+ 
+ def main():
+-    parser = argparse.ArgumentParser(description="Register cleanup artifacts and verified reports for an EhViewer discovery run.")
++    parser = argparse.ArgumentParser(description="Initialize an EhViewer run, register artifacts, and record verified reports.")
+     subparsers = parser.add_subparsers(dest="command", required=True)
++    init = subparsers.add_parser("init", help="Start a run without requiring discovery batches.")
++    init.add_argument("--manifest", required=True, type=Path)
++    init.add_argument("--catalog", required=True, type=Path)
+     register = subparsers.add_parser("register", help="Register a generated file for temporary or preserved retention.")
+     register.add_argument("--manifest", required=True, type=Path)
+     register.add_argument("--path", required=True, type=Path)
+@@ -55,6 +58,19 @@
+     args = parser.parse_args()
+     manifest_path = args.manifest.resolve()
+     root = manifest_path.parent
++    if args.command == "init":
++        from common import validate_catalog, write_json as write_new
++        catalog = strict_json(args.catalog)
++        validate_catalog(catalog)
++        relative, _ = relative_existing_file(root, args.catalog)
++        if args.catalog.resolve() == manifest_path:
++            raise RuntimeError("manifest cannot overwrite catalog")
++        write_new(manifest_path, dict(formatVersion=1, kind="ehviewer-discovery-run",
++                  snapshotFingerprint=catalog["snapshotFingerprint"], metadataFingerprint=catalog["metadataFingerprint"],
++                  itemCount=len(catalog["items"]), discoveryPerformed=False, batchCount=0, batches=[],
++                  artifacts=[dict(path=relative, retention="preserve")], verification={}, cleanup={"state":"pending"}))
++        print(json.dumps({"status":"passed", "command":"init"}))
++        return
+     manifest = load_manifest(manifest_path)
+     if args.command == "register":
+         relative, _path = relative_existing_file(root, args.path)
+--- before/scripts/seed_historical_decisions.py
++++ after/scripts/seed_historical_decisions.py
+@@ -21,6 +21,7 @@
+             else:new+=1
+         rows.append(row)
+     result=envelope(current,rows)
++    result['auditMode']='lightweight'
+     result['historyReuse']=dict(reusedUnchangedGids=reused,changedMetadataGids=changed,newGids=new)
+     return result
+ 
+--- before/SKILL.md
++++ after/SKILL.md
+@@ -29,17 +29,19 @@
+ - 生成 discovery 或语义审核结果前读 [主模型提示与审核规则](references/prompts.md) 和 [v3 数据契约](references/schema.md)。
+ - 更新工具或验证行为时读 [测试与评测](references/testing.md)。
+ 
+-## 完整流程
++## 默认流程：单主智能体，按疑点复查
+ 
+-1. 建立本次独立输出目录，默认位于 Android 工程之外；不覆盖已有文件。SQLite 用一致性备份导入，JSON 清单统一为 v3。已有 v2 结果必须显式迁移。
+-2. 全库 discovery 默认每批 75 条，只提供 GID、原位置、原题、日文题；每条恰好一个简短注释，验证完整覆盖与双指纹。
+-3. 生成有边证据的候选、完整作者桶、碰撞审核和未决索引。大集合按最多 75 条分批，跨批关系必须保留。
+-4. 当前主模型依次完成候选、作者、未决、全局四轮审核。每轮使用最新决策重新生成候选／未决索引；记录输入摘要、全部 GID 覆盖及无冲突结果。主模型语义判断不委派给子代理，除非用户明确要求。
+-5. `build` 验证完整审核链并生成模型顺序。`review` 生成自包含离线页面，所有题名与 GID 均存在于静态 HTML。
+-6. 将审核页交给用户。用户可以合并、拆分、修改归属、编辑位置、移动系列／单本、撤销、保存和恢复进度；确认保留所有待审条目的现状后导出确认 JSON。
+-7. 停在审核结果阶段，直到用户返回或明确确认导出的完整结果。不得以脚本测试或模型自评替代真实书库的人类确认。
+-8. 有写回授权时，用原模型文件重放校验人工操作，再对新鲜一致性快照核对 GID 与标题元数据指纹。`apply` 只生成备份、排序副本和报告。
+-9. 设备替换前后按工作流复验；保留电脑和手机备份。任何指纹、权限、数据、顺序、完整性或哈希异常都停止。
++普通个人书库（包括不足一万条）默认使用 `lightweight`。一个主智能体分批处理即可；条目数不是增加代理或固定审核轮次的理由。只在用户明确要求委派时使用子代理。
++
++1. 建立独立输出目录，SQLite 用一致性备份导入，JSON 清单统一为 v3；不覆盖已有文件。
++2. 先从原题生成候选与作者索引，不要求另做全库 discovery。需要多语言别名补召回时可使用已有有效 discovery；不得为通过工具检查而伪造注释。
++3. 主智能体分批读取全库原题，完成一次 `semantic` 审核，同时判断系列、作者、分支、类别和编号。默认每批 75 条，沿用已确认的系列 ID；候选只是线索，不能让程序直接决定归属。已经实际审核且未变化的条目可沿用，不重复阅读；保存真实覆盖边界。
++4. 只复查具体疑点：跨语言或跨批关系、冲突、缺失作者、合集范围及编号口径。有疑点时查看相关作者桶或系列成员；只在变更可能影响候选时刷新索引。`focused` 接受明确选择的 GID，只更新这些条目。没有新证据则保留独立或未知位置，并结束复查。`needsHumanReview` 表示等待人类确认，不是反复召回全库的条件。
++5. `build` / `validate` 检查全量 GID、字段、模式与摘要链、系列名称和完整顺序；`review` 生成自包含离线审核页。简化的是重复语义工作，不是数据校验。
++6. 交给用户检查、修改或确认保留现状，再导出确认 JSON。停在审核结果阶段，直到用户返回或明确确认导出的完整结果。不得以脚本测试或模型自评替代真实书库的人类确认。
++7. 有写回授权时，重放人工操作，重新获取一致性快照并核对 GID 与标题双指纹；`apply` 仅生成备份和排序副本。设备替换前后按工作流复验，保留电脑和手机备份。
++
++具体命令、续接旧进度与可选深度模式见 [工作流](references/workflow.md)。只有用户要求深度复查，或已发现系统性错分且需要扩大核查时，才选择 `deep` 的候选、作者、未决、全局四轮；不作为默认完成门槛。旧 v3 文件缺少 `auditMode` 时继续按原四轮契约解释，禁止删改审核记录假装已完成新流程。
+ 
+ ## 数据与输出保护
+ 
+--- before/tests/build_test_artifacts.py
++++ after/tests/build_test_artifacts.py
+@@ -13,7 +13,7 @@
+         catalog=test_catalog(n);rows=[test_row(x,'series:'+str((x['gid']-1)//4+1),chapter=(x['gid']-1)%4) for x in catalog['items']]
+         if n==12:
+             catalog['items'][0]['title']='星の旅 第0話';catalog['items'][1]['title']='Journey of Stars Chapter 1';catalog=make_catalog(catalog['items']);rows[2].update(category='extra',orderReliable=False,orderConfidence=0,position=None)
+-        model=test_model(catalog,rows)
++        model=test_model(catalog,rows,mode="lightweight")
+         write_json(a.output/(name+'-catalog.json'),catalog);write_json(a.output/(name+'-model.json'),model)
+         (a.output/(name+'.html')).write_text(generate(catalog,model,sha256_file(a.output/(name+'-model.json'))),encoding='utf-8')
+     gold=read_json(Path(__file__).parent/'fixtures/multilingual-gold.json')
+--- before/tests/fixture_support.py
++++ after/tests/fixture_support.py
+@@ -20,10 +20,11 @@
+     return row
+ 
+ 
+-def test_model(catalog,rows=None):
++def test_model(catalog,rows=None,mode="deep"):
+     rows=copy.deepcopy(rows) if rows is not None else [test_row(x,chapter=x['originalPosition']) for x in catalog['items']]
+     source=envelope(catalog,rows)
+-    for name in ROUNDS:
++    if mode == 'lightweight':source['auditMode']=mode
++    for name in (('semantic',) if mode == 'lightweight' else ROUNDS):
+         hash_=digest(source)
+         result={**envelope(catalog,copy.deepcopy(source['decisions'])), 'reviewedGids':[x['gid'] for x in catalog['items']],
+                 'conflicts':[],'summary':'Synthetic test fixture, no real-library semantic claim.','inputArtifactDigest':hash_}
+@@ -34,4 +35,4 @@
+ def confirmed_export(catalog,model,model_hash,operations=None):
+     ops=list(operations or [])+[dict(type='acknowledge',gids=[x['gid'] for x in catalog['items']])]
+     return {**envelope(catalog,[],copy.deepcopy(model['auditTrail'])),**replay(catalog,model,ops),
+-            'baseModelDigest':model_hash,'operations':ops,'reviewStatus':'confirmed'}
++            'auditMode':audit_mode(model),'baseModelDigest':model_hash,'operations':ops,'reviewStatus':'confirmed'}
+--- before/tests/test_audit_cli.py
++++ after/tests/test_audit_cli.py
+@@ -10,7 +10,7 @@
+         with tempfile.TemporaryDirectory() as tmp:
+             root=Path(tmp);c=test_catalog(3);write_json(root/'catalog.json',c)
+             args=['--catalog',root/'catalog.json']
+-            self.assertEqual(0,run_script('audit_round','init',*args,'--output',root/'audit0.json').returncode)
++            self.assertEqual(0,run_script('audit_round','init','--mode','deep',*args,'--output',root/'audit0.json').returncode)
+             for i in range(4):
+                 input_path=root/f'audit{i}.json';source=read_json(input_path);result_dir=root/f'results{i}';result_dir.mkdir()
+                 prepared=root/f'prepared{i}.json';r=run_script('audit_round','prepare',*args,'--input',input_path,'--output',prepared);self.assertEqual(0,r.returncode,r.stderr)
+--- before/tests/test_review_browser.cjs
++++ after/tests/test_review_browser.cjs
+@@ -30,6 +30,7 @@
+  await page.reload();await page.locator('#count').filter({hasText:'12'}).waitFor();await page.locator('#import').setInputFiles(draft);await page.locator('#message').filter({hasText:'审核进度已恢复'}).waitFor();
+  const restored=await download('#save-draft','restored');assert.deepEqual(JSON.parse(fs.readFileSync(restored)),draftData);validate(restored);
+  const tampered=path.join(out,`${runId}-tampered.json`),bad=structuredClone(draftData);bad.decisions[0].reason='Unlogged change';fs.writeFileSync(tampered,JSON.stringify(bad));await page.locator('#import').setInputFiles(tampered);await page.locator('#message.error').waitFor();
++ const badMode=path.join(out,`${runId}-bad-mode.json`);fs.writeFileSync(badMode,JSON.stringify({...draftData,auditMode:'deep'}));await page.locator('#import').setInputFiles(badMode);await page.locator('#message.error').waitFor();
+  await page.locator('#search').fill('');await page.locator('#select-visible').click();await page.locator('#ack-selected').click();await page.locator('#confirm').check();
+  const confirmed=await download('#export','confirmed');validate(confirmed,true);
+  await page.evaluate(()=>{document.querySelectorAll('.group').forEach(x=>x.open=true);scrollTo(0,0);});await page.screenshot({path:path.join(out,'review-desktop.png')});
+@@ -42,6 +43,6 @@
+  await page.locator('#search').fill('');await page.locator('#select-visible').click();await page.locator('#ack-selected').click();await page.locator('#confirm').check();const largeConfirmed=await download('#export','large-confirmed');validate(largeConfirmed,true,'large-review');
+  assert.deepEqual(errors,[]);assert.deepEqual(requests,[]);
+  const report={status:'passed',browser:'Edge headless',smallItemCount:12,largeItemCount:3184,largeLoadMs,smallFlowMs:smallMs,
+-  checked:['split','merge','rename','edit-category-and-zero-position','direction','pin','undo','redo','filtered-complete-export','save-import-replay','tampered-import-rejected','human-confirmation','backend-validation','mobile-width','keyboard-undo-redo','large-library'],consoleErrors:errors,networkRequests:requests,confirmedExport:confirmed,largeConfirmedExport:largeConfirmed};
++  checked:['split','merge','rename','edit-category-and-zero-position','direction','pin','undo','redo','filtered-complete-export','save-import-replay','tampered-import-rejected','audit-mode-tampering-rejected','human-confirmation','backend-validation','mobile-width','keyboard-undo-redo','large-library'],consoleErrors:errors,networkRequests:requests,confirmedExport:confirmed,largeConfirmedExport:largeConfirmed};
+  fs.writeFileSync(path.join(out,'browser-report.json'),JSON.stringify(report,null,2));console.log(JSON.stringify(report));await browser.close();
+ })().catch(e=>{console.error(e);process.exit(1);});
+--- /dev/null
++++ after/tests/test_lightweight.py
+@@ -0,0 +1,111 @@
++"""Synthetic lightweight workflow tests; never use these fixtures on a real library."""
++import copy
++import tempfile
++import unittest
++from fixture_support import *
++from test_v3_toolkit import run_script
++
++
++class LightweightTest(unittest.TestCase):
++    def result(self, catalog, source, gids=None, hash_='a'*64):
++        gids = [x['gid'] for x in catalog['items']] if gids is None else gids
++        return dict(formatVersion=3, snapshotFingerprint=catalog['snapshotFingerprint'], metadataFingerprint=catalog['metadataFingerprint'],
++                    inputArtifactDigest=hash_, decisions=[copy.deepcopy(r) for r in source['decisions'] if r['gid'] in gids],
++                    reviewedGids=gids, conflicts=[], summary='Synthetic semantic/focused result, not real-library review.')
++
++    def test_default_cli_single_pass_build_and_selected_prepare(self):
++        with tempfile.TemporaryDirectory() as tmp:
++            root=Path(tmp);c=test_catalog(80);write_json(root/'catalog.json',c)
++            args=['--catalog',root/'catalog.json']
++            r=run_script('audit_round','init',*args,'--output',root/'initial.json');self.assertEqual(0,r.returncode,r.stderr)
++            source=read_json(root/'initial.json');self.assertEqual('lightweight',source['auditMode'])
++            r=run_script('audit_round','prepare',*args,'--input',root/'initial.json','--output',root/'prepared.json');self.assertEqual(0,r.returncode,r.stderr)
++            prepared=read_json(root/'prepared.json');self.assertEqual('semantic',prepared['round']);self.assertEqual([75,5],[len(b['items']) for b in prepared['batches']])
++            out=self.result(c,source,hash_=sha256_file(root/'initial.json'));write_json(root/'result.json',out)
++            r=run_script('audit_round','record',*args,'--input',root/'initial.json','--result',root/'result.json','--round','semantic','--output',root/'reviewed.json');self.assertEqual(0,r.returncode,r.stderr)
++            r=run_script('build_order',*args,'--decisions',root/'reviewed.json','--output',root/'model.json');self.assertEqual(0,r.returncode,r.stderr)
++            m=read_json(root/'model.json');validate_order(c,m);self.assertEqual(1,len(m['auditTrail']))
++            r=run_script('audit_round','prepare',*args,'--input',root/'reviewed.json','--gids','3','7','--output',root/'focused.json');self.assertEqual(0,r.returncode,r.stderr)
++            f=read_json(root/'focused.json');self.assertEqual([3,7],f['reviewGids']);self.assertEqual(2,sum(len(b['items']) for b in f['batches']))
++            r=run_script('audit_round','prepare',*args,'--input',root/'reviewed.json','--output',root/'unbounded.json');self.assertNotEqual(0,r.returncode)
++
++    def test_focused_patch_preserves_all_unreviewed_rows(self):
++        c=test_catalog(4);m=test_model(c,mode='lightweight');result=self.result(c,m,[2])
++        result['decisions'][0]['reason']='Synthetic correction after checking chapter marker.'
++        out=record(c,m,result,'focused','a'*64)
++        self.assertEqual([2],out['auditTrail'][-1]['reviewedGids']);self.assertEqual([2],out['auditTrail'][-1]['changedGids'])
++        self.assertEqual([r for r in m['decisions'] if r['gid']!=2],[r for r in out['decisions'] if r['gid']!=2])
++        from build_order import build_stable_order
++        validate_order(c,build_stable_order(c,out))
++
++    def test_partial_first_pass_and_fake_focused_coverage_rejected(self):
++        c=test_catalog(3);source=envelope(c,[singleton(x) for x in c['items']]);source['auditMode']='lightweight'
++        with self.assertRaises(ValueError):record(c,source,self.result(c,source,[1]),'semantic','a'*64)
++        m=test_model(c,mode='lightweight');result=self.result(c,m,[1]);result['decisions'].append(copy.deepcopy(m['decisions'][1]))
++        with self.assertRaises(ValueError):record(c,m,result,'focused','a'*64)
++        with self.assertRaises(ValueError):record(c,m,self.result(c,m,[]),'focused','a'*64)
++
++    def test_focused_cannot_rename_half_a_series(self):
++        c=test_catalog(2);m=test_model(c,mode='lightweight');result=self.result(c,m,[1]);result['decisions'][0]['canonicalSeriesTitle']='Wrong partial rename'
++        with self.assertRaises(ValueError):record(c,m,result,'focused','a'*64)
++
++    def test_modes_chain_and_input_tampering_rejected(self):
++        c=test_catalog(2);m=test_model(c,mode='lightweight')
++        for mode in ('deep','bogus',None):
++            bad=copy.deepcopy(m);bad['auditMode']=mode
++            with self.subTest(mode=mode),self.assertRaises(ValueError):validate_order(c,bad)
++        legacy=test_model(c);legacy['auditMode']='lightweight'
++        with self.assertRaises(ValueError):validate_order(c,legacy)
++        result=self.result(c,m,[1]);result['inputArtifactDigest']='b'*64
++        with self.assertRaises(ValueError):record(c,m,result,'focused','a'*64)
++        out=record(c,m,self.result(c,m,[1]),'focused','a'*64);out['decisions'][1]['reason']='unlogged'
++        with self.assertRaises(ValueError):validate_audits(c,out)
++
++    def test_lightweight_human_replay_still_requires_real_confirmed_payload(self):
++        c=test_catalog(2);m=test_model(c,mode='lightweight');e=confirmed_export(c,m,'a'*64)
++        validate_order(c,e,m,'a'*64,True)
++        for field,value in (('auditMode','deep'),('reviewStatus','draft'),('baseModelDigest','b'*64)):
++            bad=copy.deepcopy(e);bad[field]=value
++            with self.subTest(field=field),self.assertRaises(ValueError):validate_order(c,bad,m,'a'*64,True)
++        pending={**m,'baseModelDigest':'a'*64,'operations':[],'reviewStatus':'confirmed'}
++        with self.assertRaises(ValueError):validate_order(c,pending,m,'a'*64,True)
++
++    def test_seed_preserves_decisions_without_fabricating_completion(self):
++        with tempfile.TemporaryDirectory() as tmp:
++            p=Path(tmp);c=test_catalog(2);m=test_model(c);write_json(p/'c.json',c);write_json(p/'old.json',m)
++            r=run_script('audit_round','init','--catalog',p/'c.json','--input',p/'old.json','--output',p/'seed.json');self.assertEqual(0,r.returncode,r.stderr)
++            seed=read_json(p/'seed.json');self.assertEqual([],seed['auditTrail']);self.assertEqual('lightweight',seed['auditMode']);self.assertEqual(m['decisions'],seed['decisions']);self.assertEqual(sha256_file(p/'old.json'),seed['seedSourceDigest'])
++            with self.assertRaises(ValueError):validate_audits(c,seed)
++
++    def test_title_only_recall_without_fabricated_discovery(self):
++        with tempfile.TemporaryDirectory() as tmp:
++            p=Path(tmp);c=test_catalog(3);write_json(p/'c.json',c)
++            r=run_script('generate_candidates','--catalog',p/'c.json','--candidates',p/'out.json','--author-buckets',p/'authors.json','--unresolved',p/'u.json');self.assertEqual(0,r.returncode,r.stderr)
++            out=read_json(p/'out.json');self.assertEqual('titles-only',out['recallSource']);self.assertGreater(out['candidateCount'],0)
++            self.assertTrue(all(item['derived']['discovery']=={} for b in out['candidates'] for item in b['items']))
++
++    def test_manifest_init_without_discovery_refuses_overwrite(self):
++        with tempfile.TemporaryDirectory() as tmp:
++            p=Path(tmp);write_json(p/'catalog.json',test_catalog(2))
++            args=['init','--catalog',p/'catalog.json','--manifest',p/'run-manifest.json']
++            r=run_script('run_manifest',*args);self.assertEqual(0,r.returncode,r.stderr)
++            manifest=read_json(p/'run-manifest.json');self.assertEqual(False,manifest['discoveryPerformed']);self.assertEqual([],manifest['batches'])
++            self.assertEqual([{'path':'catalog.json','retention':'preserve'}],manifest['artifacts'])
++            original=(p/'run-manifest.json').read_bytes();r=run_script('run_manifest',*args);self.assertNotEqual(0,r.returncode)
++            self.assertEqual(original,(p/'run-manifest.json').read_bytes())
++
++    def test_focused_batch_merge_and_real_subset_coverage(self):
++        with tempfile.TemporaryDirectory() as tmp:
++            p=Path(tmp);c=test_catalog(3);m=test_model(c,mode='lightweight');write_json(p/'c.json',c);write_json(p/'m.json',m)
++            results=p/'results';results.mkdir()
++            for gid in [1,3]:
++                result=self.result(c,m,[gid],sha256_file(p/'m.json'));result['decisions'][0]['reason']='Synthetic reviewed item '+str(gid);write_json(results/(str(gid)+'.json'),result)
++            r=run_script('audit_round','merge','--catalog',p/'c.json','--input',p/'m.json','--results-dir',results,'--output',p/'out.json');self.assertEqual(0,r.returncode,r.stderr)
++            out=read_json(p/'out.json');self.assertEqual([1,3],out['auditTrail'][-1]['reviewedGids']);self.assertEqual(m['decisions'][1],out['decisions'][1])
++
++    def test_empty_catalog_single_pass(self):
++        c=test_catalog(0);m=test_model(c,mode='lightweight');validate_order(c,m)
++        self.assertEqual([],m['gidOrder'])
++
++
++if __name__=='__main__':unittest.main()

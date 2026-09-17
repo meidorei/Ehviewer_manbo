@@ -1,0 +1,6 @@
+{
+  "method": "adb push into mode-700 shell staging directory, device-local pipe to app UID",
+  "shellStaging": "/data/local/tmp/ehviewer-sort-20260911-160413",
+  "stagedPath": "databases/eh.db.sorted-v3-20260911-160413",
+  "sha256": "eccd65c8fc74f5e080799f501b5a43cf6ee1ba0932ab21ff242c4ee455fd535d"
+}

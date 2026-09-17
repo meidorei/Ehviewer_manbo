@@ -53,6 +53,22 @@ public class LocalRefreshJobStoreTest {
     }
 
     @Test
+    public void stoppingPausedJobRecordsCancellationWithoutClaimingSuccess() {
+        for (String type : new String[]{LocalRefreshJobStore.TYPE_FOLLOW,
+                LocalRefreshJobStore.TYPE_BOOKMARK, LocalRefreshJobStore.TYPE_BASELINE}) {
+            LocalRefreshJobStore.Snapshot paused = new LocalRefreshJobStore.Snapshot(
+                    type, "GLOBAL", LocalRefreshJobStore.STATUS_PAUSED,
+                    3, 10, 2, 40, "current", "host", "", 1L, 2L);
+            assertEquals(LocalRefreshJobStore.RESULT_CANCELLED,
+                    LocalRefreshJobStore.deriveAttemptResult(paused,
+                            LocalRefreshJobStore.STATUS_CANCELLED, 0));
+            assertEquals(!LocalRefreshJobStore.TYPE_BASELINE.equals(type),
+                    LocalRefreshJobStore.shouldRecordAttempt(paused,
+                            LocalRefreshJobStore.STATUS_CANCELLED));
+        }
+    }
+
+    @Test
     public void failureCountIgnoresEmptyLines() {
         assertEquals(0, LocalRefreshJobStore.failureCount(""));
         assertEquals(0, LocalRefreshJobStore.failureCount(null));

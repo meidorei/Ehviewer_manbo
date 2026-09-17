@@ -1,0 +1,19 @@
+[
+  "assets/review.js",
+  "references/prompts.md",
+  "references/schema.md",
+  "references/testing.md",
+  "references/workflow.md",
+  "scripts/audit_round.py",
+  "scripts/common.py",
+  "scripts/generate_candidates.py",
+  "scripts/migrate_v2.py",
+  "scripts/run_manifest.py",
+  "scripts/seed_historical_decisions.py",
+  "SKILL.md",
+  "tests/build_test_artifacts.py",
+  "tests/fixture_support.py",
+  "tests/test_audit_cli.py",
+  "tests/test_review_browser.cjs",
+  "tests/test_lightweight.py"
+]

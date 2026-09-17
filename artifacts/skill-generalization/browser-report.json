@@ -1,0 +1,29 @@
+{
+  "status": "passed",
+  "browser": "Edge headless",
+  "smallItemCount": 12,
+  "largeItemCount": 3184,
+  "largeLoadMs": 652,
+  "smallFlowMs": 1524,
+  "checked": [
+    "split",
+    "merge",
+    "rename",
+    "edit-category-and-zero-position",
+    "direction",
+    "pin",
+    "undo",
+    "redo",
+    "filtered-complete-export",
+    "save-import-replay",
+    "tampered-import-rejected",
+    "human-confirmation",
+    "backend-validation",
+    "mobile-width",
+    "large-library"
+  ],
+  "consoleErrors": [],
+  "networkRequests": [],
+  "confirmedExport": "C:\\CWorkWork\\Ehviewer_manbo\\artifacts\\skill-generalization\\1789107224271-confirmed.json",
+  "largeConfirmedExport": "C:\\CWorkWork\\Ehviewer_manbo\\artifacts\\skill-generalization\\1789107224271-large-confirmed.json"
+}

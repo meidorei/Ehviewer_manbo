@@ -39,7 +39,6 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 import java.util.concurrent.CopyOnWriteArrayList;
-import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicReference;
 
 import okhttp3.Call;
@@ -61,7 +60,7 @@ public final class LocalUpdateService extends Service {
     public static final String METHOD_FIRST_PAGE = "FIRST_PAGE";
     private static final String CHANNEL_ID = "local_update";
     private static final int NOTIFICATION_ID = 8042;
-    private static final AtomicBoolean ACTIVE = new AtomicBoolean();
+    private static final LocalUpdateGate GATE = new LocalUpdateGate();
     private static final CopyOnWriteArrayList<WeakReference<Listener>> LISTENERS =
             new CopyOnWriteArrayList<>();
 
@@ -82,11 +81,34 @@ public final class LocalUpdateService extends Service {
     }
 
     public static boolean isActive() {
-        return ACTIVE.get();
+        return GATE.isBusy();
+    }
+
+    /** Returns -1 when an update owns the gate or a saved job must be stopped first. */
+    public static int resetBookmarkBaselines() {
+        return resetBaselines(false);
+    }
+
+    public static int resetFollowBaselines() {
+        return resetBaselines(true);
+    }
+
+    private static int resetBaselines(boolean follows) {
+        if (!GATE.tryStartMaintenance()) return -1;
+        try {
+            LocalRefreshJobStore.Snapshot snapshot = LocalRefreshJobStore.read();
+            if (snapshot != null && LocalBaselineResetPolicy.requiresStoppedJob(snapshot.status)) return -1;
+            LocalFollowRepository repository = LocalFollowRepository.getInstance();
+            long now = System.currentTimeMillis();
+            return follows ? repository.resetFollowBaselines(now)
+                    : repository.resetBookmarkBaselines(now);
+        } finally {
+            GATE.finishMaintenance();
+        }
     }
 
     public static boolean startFollow(Context context, String method) {
-        if (!ACTIVE.compareAndSet(false, true)) return false;
+        if (!GATE.tryStartUpdate()) return false;
         Intent intent = new Intent(context, LocalUpdateService.class)
                 .setAction(ACTION_START_FOLLOW)
                 .putExtra(EXTRA_METHOD, method);
@@ -98,7 +120,7 @@ public final class LocalUpdateService extends Service {
     }
 
     public static boolean startBookmarks(Context context, String method) {
-        if (!ACTIVE.compareAndSet(false, true)) return false;
+        if (!GATE.tryStartUpdate()) return false;
         Intent intent = new Intent(context, LocalUpdateService.class)
                 .setAction(ACTION_START_BOOKMARKS)
                 .putExtra(EXTRA_METHOD, METHOD_GLOBAL.equals(method)
@@ -107,7 +129,7 @@ public final class LocalUpdateService extends Service {
     }
 
     public static boolean startBookmark(Context context, long id) {
-        if (!ACTIVE.compareAndSet(false, true)) return false;
+        if (!GATE.tryStartUpdate()) return false;
         Intent intent = new Intent(context, LocalUpdateService.class)
                 .setAction(ACTION_START_BOOKMARK)
                 .putExtra(EXTRA_BOOKMARK_ID, id);
@@ -129,7 +151,12 @@ public final class LocalUpdateService extends Service {
 
     private static boolean startBaselines(Context context) {
         if (!LocalBaselineQueue.hasPending()) return false;
-        if (!ACTIVE.compareAndSet(false, true)) return false;
+        if (!GATE.tryStartUpdate()) return false;
+        // A reset may have cleared the queue between the first read and acquiring the gate.
+        if (!LocalBaselineQueue.hasPending()) {
+            GATE.finishUpdate();
+            return false;
+        }
         Intent intent = new Intent(context, LocalUpdateService.class)
                 .setAction(ACTION_START_BASELINES);
         return startServiceSafely(context, intent);
@@ -140,11 +167,38 @@ public final class LocalUpdateService extends Service {
     }
 
     public static boolean requestCancel(Context context) {
-        return sendControl(context, ACTION_CANCEL);
+        if (GATE.isUpdating()) return sendControl(context, ACTION_CANCEL);
+        // Paused jobs have no running service to receive a control Intent.
+        if (!GATE.tryStartMaintenance()) return false;
+        try {
+            LocalRefreshJobStore.Snapshot snapshot = LocalRefreshJobStore.read();
+            if (snapshot == null
+                    || !LocalRefreshJobStore.STATUS_PAUSED.equals(snapshot.status)) return false;
+            org.greenrobot.greendao.database.Database db = EhDB.getDatabase();
+            db.beginTransaction();
+            try {
+                if (LocalRefreshJobStore.TYPE_BASELINE.equals(snapshot.type)) {
+                    LocalBaselineQueue.cancelOutstanding();
+                }
+                LocalRefreshJobStore.finish(LocalRefreshJobStore.STATUS_CANCELLED, false);
+                db.setTransactionSuccessful();
+            } finally {
+                db.endTransaction();
+            }
+            NotificationManager manager = context.getSystemService(NotificationManager.class);
+            if (manager != null) manager.cancel(NOTIFICATION_ID);
+        } catch (RuntimeException error) {
+            android.util.Log.e("LocalUpdateService", "Unable to stop paused job", error);
+            return false;
+        } finally {
+            GATE.finishMaintenance();
+        }
+        notifyListeners();
+        return true;
     }
 
     private static boolean sendControl(Context context, String action) {
-        if (!ACTIVE.get()) return false;
+        if (!GATE.isUpdating()) return false;
         try {
             context.startService(new Intent(context, LocalUpdateService.class).setAction(action));
             return true;
@@ -158,7 +212,7 @@ public final class LocalUpdateService extends Service {
             ContextCompat.startForegroundService(context, intent);
             return true;
         } catch (RuntimeException error) {
-            ACTIVE.set(false);
+            GATE.finishUpdate();
             return false;
         }
     }
@@ -186,7 +240,7 @@ public final class LocalUpdateService extends Service {
             stopSelf(startId);
             return START_NOT_STICKY;
         }
-        ACTIVE.set(true);
+        if (!GATE.isUpdating() && !GATE.tryStartUpdate()) return START_NOT_STICKY;
         startForeground(NOTIFICATION_ID, notification("准备检查更新", 0, 0, true));
         worker = new Thread(() -> runJob(intent, startId), "local-update-worker");
         worker.start();
@@ -240,7 +294,7 @@ public final class LocalUpdateService extends Service {
                     LocalBaselineQueue.resetRunning();
                 }
             }
-            ACTIVE.set(false);
+            GATE.finishUpdate();
             notifyListeners();
             updateNotification(terminalSummary(LocalRefreshJobStore.read()), 0, 0, false);
             stopForeground(false);
@@ -556,7 +610,8 @@ public final class LocalUpdateService extends Service {
                     LocalFollowRepository.FIXED_CHINESE_SIGNATURE,
                     followCheckpoint(contextKey, tag), globalTop);
             LocalGlobalCursorStore.write(contextKey, LocalGlobalCursorStore.TYPE_FOLLOW,
-                    LocalFollowRepository.FIXED_CHINESE_SIGNATURE, globalTop);
+                    LocalFollowRepository.FIXED_CHINESE_SIGNATURE,
+                    LocalBaselineResetPolicy.newer(globalTop, globalCursor));
             LocalRefreshJobStore.progress(tags.size(), pages, galleries, "", "");
             return;
         }
@@ -567,7 +622,8 @@ public final class LocalUpdateService extends Service {
                         followCheckpoint(contextKey, tag), globalTop, matches.get(tag));
             }
             LocalGlobalCursorStore.write(contextKey, LocalGlobalCursorStore.TYPE_FOLLOW,
-                    LocalFollowRepository.FIXED_CHINESE_SIGNATURE, globalTop);
+                    LocalFollowRepository.FIXED_CHINESE_SIGNATURE,
+                    LocalBaselineResetPolicy.newer(globalTop, globalCursor));
             LocalRefreshJobStore.progress(tags.size(), pages, galleries, "", "");
             return;
         }
@@ -575,7 +631,8 @@ public final class LocalUpdateService extends Service {
         runTagQueue(tags, effectiveHost, 0, 0, tags.size(), pages, galleries);
         throwIfStopRequested();
         LocalGlobalCursorStore.write(contextKey, LocalGlobalCursorStore.TYPE_FOLLOW,
-                LocalFollowRepository.FIXED_CHINESE_SIGNATURE, globalTop);
+                LocalFollowRepository.FIXED_CHINESE_SIGNATURE,
+                    LocalBaselineResetPolicy.newer(globalTop, globalCursor));
     }
 
     private void runTagQueue(List<String> tags, String host, int startIndex) throws Throwable {
@@ -807,7 +864,8 @@ public final class LocalUpdateService extends Service {
             }
             LocalGlobalCursorStore.write(contextKey,
                     LocalGlobalCursorStore.TYPE_BOOKMARK,
-                    LocalFollowRepository.FIXED_CHINESE_SIGNATURE, globalTop);
+                    LocalFollowRepository.FIXED_CHINESE_SIGNATURE,
+                    LocalBaselineResetPolicy.newer(globalTop, globalCursor));
         } else if (!exact.isEmpty() && reachedGlobalCursor) {
             for (GlobalBookmark work : exact) {
                 String key = Long.toString(work.search.id);
@@ -819,7 +877,8 @@ public final class LocalUpdateService extends Service {
             }
             LocalGlobalCursorStore.write(contextKey,
                     LocalGlobalCursorStore.TYPE_BOOKMARK,
-                    LocalFollowRepository.FIXED_CHINESE_SIGNATURE, globalTop);
+                    LocalFollowRepository.FIXED_CHINESE_SIGNATURE,
+                    LocalBaselineResetPolicy.newer(globalTop, globalCursor));
         } else {
             for (GlobalBookmark work : exact) cursorFallback.add(work.search);
         }
@@ -838,7 +897,8 @@ public final class LocalUpdateService extends Service {
             throwIfStopRequested();
             LocalGlobalCursorStore.write(contextKey,
                     LocalGlobalCursorStore.TYPE_BOOKMARK,
-                    LocalFollowRepository.FIXED_CHINESE_SIGNATURE, globalTop);
+                    LocalFollowRepository.FIXED_CHINESE_SIGNATURE,
+                    LocalBaselineResetPolicy.newer(globalTop, globalCursor));
         }
         if (!bridgeFallback.isEmpty()) {
             runBookmarkQueue(bridgeFallback, effectiveHost, 0, completed,
@@ -1223,7 +1283,7 @@ public final class LocalUpdateService extends Service {
         return false;
     }
 
-    private void notifyListeners() {
+    private static void notifyListeners() {
         LocalRefreshJobStore.Snapshot snapshot = LocalRefreshJobStore.read();
         for (WeakReference<Listener> reference : LISTENERS) {
             Listener listener = reference.get();
@@ -1259,8 +1319,8 @@ public final class LocalUpdateService extends Service {
                 .setContentText(text)
                 .setContentIntent(content)
                 .setOnlyAlertOnce(true)
-                .setOngoing(ACTIVE.get());
-        if (ACTIVE.get()) {
+                .setOngoing(GATE.isUpdating());
+        if (GATE.isUpdating()) {
             builder.setProgress(total, progress, indeterminate)
                     .addAction(0, "暂停", pause)
                     .addAction(0, "取消", cancel);

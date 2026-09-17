@@ -78,6 +78,10 @@ final class LocalUpdateTaskDialog {
                             ? R.string.update_action_continue : R.string.update_action_retry,
                     (ignored, which) -> resume.run());
         }
+        if (LocalRefreshJobStore.STATUS_PAUSED.equals(snapshot.status)) {
+            dialog.setNeutralButton(R.string.update_action_stop,
+                    (ignored, which) -> confirmStop(context, snapshot));
+        }
         dialog.show();
     }
 

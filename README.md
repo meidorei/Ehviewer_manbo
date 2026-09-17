@@ -30,10 +30,10 @@
 | Android 最低版本 | Android 6.0（API 23） |
 | 本机维护变体 | `appReleaseDebug` |
 | Debug applicationId | `com.ehviewer.manbo.debug` |
-| versionName / Debug versionCode | `151 / 151` |
+| versionName / Debug versionCode | `154 / 154` |
 | 数据库 schema | `13` |
 
-历史 v151 APK 的 versionName 仍为 `2.0.2.26`；数字名称修改只完成了编译验证，尚未重新组装。历史 APK 信息与验证限制见[变更记录](说明.md)。
+已构建并覆盖安装数字版本 `154 / 154`，包含独立的追更与书签扫描基线重置；APK 输出为 `app/build/outputs/apk/appRelease/debug/app-appRelease-debug.apk`。实际组装、核验与安装结果见[变更记录](说明.md)。
 
 ## 开始使用与开发
 

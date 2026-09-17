@@ -63,6 +63,18 @@ UI 发起刷新，Service 串行请求与计算，Repository 提交数据库，�
 
 旧 `daogenerator` 仍声明 schema 6，生成任务会先删除 DAO 目录，禁止直接执行。
 
+## 书签手动重置状态
+
+`FEED_CHECKPOINT` 的 `BOOKMARK_RESET` 逻辑来源保存按书签 ID、查询签名隔离的重置下限，账号键固定 `shared`；数据库 schema 仍为 13，无新增表或字段。`SubscriptionRepository` 仅在扫描读取 `BOOKMARK_SYNC` 时应用下限；写入时读取原始 checkpoint，保存实际内容顶部和 previous，同秒合并已知 GID，允许普通自动基线细化到较早的真实顶部。原检查时间及独立阅读边界在重置时保持不变，联动已读继续使用已保存的实际同步顶部。`LocalBaselineResetPolicy` 负责纯 Java 边界合并，`LocalUpdateGate` 串行化更新与重置，`LocalFollowRepository` 在事务中完成批量写入和队列/游标失效。
+
+重置沿用 `EhDB` 的书签操作锁顺序（先书签锁，再事务），避免与删除、改名和导入交错。删除书签和查询签名变化同时清理重置记录，改名不清理。现有数据库导出仅复制书签主体等既有数据，不导出同步 checkpoint、未读或重置记录；导入新增书签重新建立基线，保留在本机的已有书签状态不变。该功能不改变备份范围或升级/恢复流程。
+
+## 追更手动重置状态
+
+追更使用同表中的 `shared / LOCAL_FOLLOW_RESET / 标准化标签 / 固定中文查询签名`，schema 保持 13。`LocalBaselineResetPolicy` 由书签原策略改名而来，复用时间和同秒 GID 合并规则；追更、书签分别持有重置记录、基线队列与共享游标。`LocalFollowRepository.resetFollowBaselines()` 在同一数据库事务内读取追更列表并写入下限；`LocalUpdateGate` 防止重置与更新交错，设置页两个入口共用确认和执行反馈。
+
+追更扫描读取有效边界，写入继续使用原始内容历史；不改变阅读队列、打开分割线、未读保留量及检查时间。删除和替换导入通过统一清理方法删除被移除标签的重置状态，保留标签的重置状态继续有效。现有备份范围不变，重置状态与同步 checkpoint 一样不导出；新增恢复标签继续按原流程初始化。
+
 ## 下载、JM 与登录
 
 新归档任务的恢复信息存于 `Settings` 的 SharedPreferences。字段调整必须覆盖暂停、继续、进程重启和完成导入。无保存 URL 的旧系统任务由 `LegacyArchiverDownloadCompleter` 处理，新下载器跳过而不是清理它们。

@@ -1,0 +1,40 @@
+{
+  "itemCount": 3192,
+  "groupCount": 390,
+  "groupedItemCount": 1042,
+  "independentItemCount": 2150,
+  "movedItemCount": 3150,
+  "allGidsPreserved": true,
+  "allOriginalTitlesPreserved": true,
+  "confirmed": true,
+  "phoneWriteback": true,
+  "uncertainPositions": [
+    76,
+    89,
+    90,
+    284,
+    1144,
+    1697,
+    2083,
+    449,
+    962,
+    963,
+    2877,
+    3050,
+    1682,
+    372,
+    374,
+    2801
+  ],
+  "browserChecks": {
+    "allItemsRendered": true,
+    "searchPassed": true,
+    "groupingAndUndoPassed": true,
+    "javascriptErrors": [],
+    "visualCheckPassed": true
+  },
+  "originalDatabaseUnchanged": true,
+  "writebackDirectory": "C:\\CWorkWork\\Ehviewer_manbo\\artifacts\\manga-organize-20260911\\import-20260911-160413",
+  "onlyDownloadsTimeChanged": true,
+  "afterLaunchAllDataMatches": true
+}

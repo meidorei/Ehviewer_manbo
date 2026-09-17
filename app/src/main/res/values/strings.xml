@@ -1271,4 +1271,20 @@
     <string name="settings_reading_queue_file_warning">When automatic deletion is enabled, an old gallery’s entire local download folder will be permanently deleted and cannot be recovered.</string>
     <string name="settings_reading_queue_cleanup_title">Delete old downloads?</string>
     <string name="settings_reading_queue_cleanup_message">This will permanently delete the entire local download folder for the %1$d oldest galleries. This cannot be undone.</string>
+    <string name="settings_advanced_reset_bookmark_baselines">Reset all bookmark scan baselines</string>
+    <string name="settings_advanced_reset_bookmark_baselines_summary">Skip unchecked history and check from now on; keep unread counts and reading markers.</string>
+    <string name="bookmark_baseline_reset_confirm">Future bookmark checks will start from now, skipping previously unchecked history. Existing unread counts and last-opened markers will be kept.</string>
+    <string name="bookmark_baseline_reset_action">Reset baselines</string>
+    <string name="bookmark_baseline_reset_busy">Please stop the running or paused update task before resetting baselines.</string>
+    <string name="bookmark_baseline_reset_running">Resetting bookmark scan baselines…</string>
+    <string name="bookmark_baseline_reset_empty">No bookmarks to reset.</string>
+    <string name="bookmark_baseline_reset_success">Reset scan baselines for %1$d bookmarks. Unread counts and reading markers were kept.</string>
+    <string name="bookmark_baseline_reset_failed">Could not reset bookmark baselines. No changes were saved. Please try again.</string>
+    <string name="settings_advanced_reset_follow_baselines">Reset all local follow scan baselines</string>
+    <string name="settings_advanced_reset_follow_baselines_summary">Skip unchecked local follow history; keep unread counts and reading markers.</string>
+    <string name="follow_baseline_reset_confirm">Future local follow checks will start from now, skipping previously unchecked history. Existing unread counts and last-opened markers will be kept.</string>
+    <string name="follow_baseline_reset_running">Resetting local follow scan baselines…</string>
+    <string name="follow_baseline_reset_empty">No local follows to reset.</string>
+    <string name="follow_baseline_reset_success">Reset scan baselines for %1$d followed tags. Unread counts and reading markers were kept.</string>
+    <string name="follow_baseline_reset_failed">Could not reset local follow baselines. No changes were saved. Please try again.</string>
 </resources>

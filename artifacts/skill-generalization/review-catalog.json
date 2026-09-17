@@ -1,0 +1,83 @@
+{
+  "formatVersion": 3,
+  "snapshotFingerprint": "00f379febcec01fde4af1c537d5da7ff027a3b4942e49b2d49399222b31deac9",
+  "metadataFingerprint": "51a5dcea4f2b9161b0c23cb621c2716f3b564c9aed1e15d1bbf75288b27b0f03",
+  "items": [
+    {
+      "gid": 1,
+      "originalPosition": 1,
+      "title": "星の旅 第0話",
+      "titleJpn": null
+    },
+    {
+      "gid": 2,
+      "originalPosition": 2,
+      "title": "Journey of Stars Chapter 1",
+      "titleJpn": null
+    },
+    {
+      "gid": 3,
+      "originalPosition": 3,
+      "title": "[Artist] Work Chapter 3",
+      "titleJpn": null
+    },
+    {
+      "gid": 4,
+      "originalPosition": 4,
+      "title": "[Artist] Work Chapter 4",
+      "titleJpn": null
+    },
+    {
+      "gid": 5,
+      "originalPosition": 5,
+      "title": "[Artist] Work Chapter 5",
+      "titleJpn": null
+    },
+    {
+      "gid": 6,
+      "originalPosition": 6,
+      "title": "[Artist] Work Chapter 6",
+      "titleJpn": null
+    },
+    {
+      "gid": 7,
+      "originalPosition": 7,
+      "title": "[Artist] Work Chapter 7",
+      "titleJpn": null
+    },
+    {
+      "gid": 8,
+      "originalPosition": 8,
+      "title": "[Artist] Work Chapter 8",
+      "titleJpn": null
+    },
+    {
+      "gid": 9,
+      "originalPosition": 9,
+      "title": "[Artist] Work Chapter 9",
+      "titleJpn": null
+    },
+    {
+      "gid": 10,
+      "originalPosition": 10,
+      "title": "[Artist] Work Chapter 10",
+      "titleJpn": null
+    },
+    {
+      "gid": 11,
+      "originalPosition": 11,
+      "title": "[Artist] Work Chapter 11",
+      "titleJpn": null
+    },
+    {
+      "gid": 12,
+      "originalPosition": 12,
+      "title": "[Artist] Work Chapter 12",
+      "titleJpn": null
+    }
+  ],
+  "source": {
+    "kind": "json",
+    "writebackSupported": false
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "package": "com.ehviewer.manbo.debug",
+  "device": "5da3329",
+  "files": {
+    "eh.db": "5e2d53265896a48c4e47fab2745dfca486171f019c51c5968bee5db4a5046921",
+    "eh.db-journal": "076a27c79e5ace2a3d47f9dd2e83e4ff6ea8872b3c2218f66c92b89b55f36560"
+  },
+  "itemCount": 3192,
+  "sortedSha256": "eccd65c8fc74f5e080799f501b5a43cf6ee1ba0932ab21ff242c4ee455fd535d"
+}

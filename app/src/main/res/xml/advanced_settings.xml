@@ -146,6 +146,16 @@
         android:title="@string/settings_advanced_global_scan_page_limit" />
 
     <Preference
+        android:key="reset_bookmark_baselines"
+        android:title="@string/settings_advanced_reset_bookmark_baselines"
+        android:summary="@string/settings_advanced_reset_bookmark_baselines_summary" />
+
+    <Preference
+        android:key="reset_follow_baselines"
+        android:title="@string/settings_advanced_reset_follow_baselines"
+        android:summary="@string/settings_advanced_reset_follow_baselines_summary" />
+
+    <Preference
         android:key="wifi_server"
         android:summary="@string/settings_advanced_wifi_sander_summary"
         android:title="@string/settings_advanced_wifi_sender"

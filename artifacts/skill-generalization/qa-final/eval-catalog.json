@@ -1,0 +1,119 @@
+{
+  "formatVersion": 3,
+  "snapshotFingerprint": "7a307b853afc8b3914b20b47749c84fff9a17e286c26eaaf4573d3f643cbd8e8",
+  "metadataFingerprint": "12f910f3218e6acb7fb834def3136037c69337e34d8f48b38ea0038ec22f5eef",
+  "items": [
+    {
+      "gid": 101,
+      "originalPosition": 1,
+      "title": "(C104) [星野] 星の旅 第0話",
+      "titleJpn": null
+    },
+    {
+      "gid": 102,
+      "originalPosition": 2,
+      "title": "[Hoshino] Journey of Stars Chapter 1",
+      "titleJpn": null
+    },
+    {
+      "gid": 103,
+      "originalPosition": 3,
+      "title": "[星野] 星之旅 第2话",
+      "titleJpn": null
+    },
+    {
+      "gid": 104,
+      "originalPosition": 4,
+      "title": "[星野] 星の旅 第2話 [English]",
+      "titleJpn": null
+    },
+    {
+      "gid": 105,
+      "originalPosition": 5,
+      "title": "[星野] 星の旅 番外編",
+      "titleJpn": null
+    },
+    {
+      "gid": 106,
+      "originalPosition": 6,
+      "title": "[星野] 星の旅 総集編 0-2",
+      "titleJpn": null
+    },
+    {
+      "gid": 107,
+      "originalPosition": 7,
+      "title": "[星野] 星の旅 Remaster Chapter 1",
+      "titleJpn": null
+    },
+    {
+      "gid": 108,
+      "originalPosition": 8,
+      "title": "[星野] 海辺の庭",
+      "titleJpn": null
+    },
+    {
+      "gid": 109,
+      "originalPosition": 9,
+      "title": "[Hoshino] Seaside Garden Part 2",
+      "titleJpn": null
+    },
+    {
+      "gid": 110,
+      "originalPosition": 10,
+      "title": "[別作者] 星の旅",
+      "titleJpn": null
+    },
+    {
+      "gid": 111,
+      "originalPosition": 11,
+      "title": "[青月] 雨の手紙 前編",
+      "titleJpn": null
+    },
+    {
+      "gid": 112,
+      "originalPosition": 12,
+      "title": "[Aotsuki] Letters in Rain Middle Part",
+      "titleJpn": null
+    },
+    {
+      "gid": 113,
+      "originalPosition": 13,
+      "title": "[青月] 雨中来信 后篇",
+      "titleJpn": null
+    },
+    {
+      "gid": 114,
+      "originalPosition": 14,
+      "title": "[山川] 森の図書館 Vol. 1 Ch. 10",
+      "titleJpn": null
+    },
+    {
+      "gid": 115,
+      "originalPosition": 15,
+      "title": "[Yamakawa] Forest Library Vol. 2 Ch. 1",
+      "titleJpn": null
+    },
+    {
+      "gid": 116,
+      "originalPosition": 16,
+      "title": "[山川] 森の図書館 別世界編 第1話",
+      "titleJpn": null
+    },
+    {
+      "gid": 117,
+      "originalPosition": 17,
+      "title": "[新作者] 无编号短篇",
+      "titleJpn": null
+    },
+    {
+      "gid": 118,
+      "originalPosition": 18,
+      "title": "[New Author] Untitled story",
+      "titleJpn": null
+    }
+  ],
+  "source": {
+    "kind": "json",
+    "writebackSupported": false
+  }
+}

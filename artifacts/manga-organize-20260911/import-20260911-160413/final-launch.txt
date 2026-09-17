@@ -1,0 +1,9 @@
+Starting: Intent { cmp=com.ehviewer.manbo.debug/com.hippo.ehviewer.ui.splash.SplashActivity }
+Status: ok
+LaunchState: COLD
+Activity: com.ehviewer.manbo.debug/com.hippo.ehviewer.ui.splash.SplashActivity
+TotalTime: 342
+WaitTime: 344
+Complete
+
+PID 22237

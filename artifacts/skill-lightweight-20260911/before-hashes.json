@@ -1,0 +1,16 @@
+{
+  "SKILL.md": "ae284f2352e68478c678b692b43043e649cc749327218ea5821d3ada1056c265",
+  "references/workflow.md": "4acf74c00e527e52f59b1f3e99a116cf3155f0240935e7e67a6418eda1faa66c",
+  "references/prompts.md": "502b53d1984d0192965f26c9190b3f29d193b5a949f5f559a9dd44270ca17c2c",
+  "references/schema.md": "357d8c2b6e60242eb9d5272a92b4b1ef2d9deb24cf88a4ae345c9d31165512cf",
+  "references/testing.md": "5ec318cfcd9ee264255f5a139452514a8f2e3dda6ef4b12521c1843f9d0f6f98",
+  "scripts/common.py": "adf18bbf95904c461532e9436995a8a3bf39bc60061df396d390fa5d0c0270b4",
+  "scripts/audit_round.py": "d085888aae215287655beae15742f941b0e291d2b623c5a0f911ccc6384d9ffb",
+  "scripts/generate_candidates.py": "c947fc30d11f8293f22b957ac221e4d0b2bd75aba3f87c7a9b3f256ec9cc6739",
+  "scripts/seed_historical_decisions.py": "46f7bf8ba92186feae7b685ed8736092c4420129dc4b70a786c06aef193154df",
+  "scripts/migrate_v2.py": "8d08ba0af7d18ae54409d1d7cedbe207875ed9a7b9e26f0ef3453d7c5aae1c5f",
+  "assets/review.js": "e38407698f4a9e58354c5134db8b7117e694fef2a6e46ed5bec5156cb424424e",
+  "tests/test_audit_cli.py": "a693a49193b5f1a05aceb89c5cf2d749c5867f3b17b24b36a853ab2fbab14f68",
+  "tests/fixture_support.py": "e1b986cf2f1d9fef5ff002c7ec2e79b439ded8e78e64946c3efc12c29fd66936",
+  "tests/build_test_artifacts.py": "822e2d4708be6662ca063878ffdb1c01e0a3be3c4d3534d35e3198746906efb4"
+}

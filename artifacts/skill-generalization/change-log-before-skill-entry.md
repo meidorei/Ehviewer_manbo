@@ -1,0 +1,78 @@
+# 变更与验证记录
+
+[项目首页](README.md) · [文档索引](docs/README.md) · [完整历史归档](docs/archive/说明-2026-09-11.md)
+
+本文件记录维护变更和验证结果。功能用法见[使用指南](docs/usage.md)，实现规则见[扫描机制](docs/scanning.md)，构建步骤见[开发与构建](docs/build.md)。
+
+## 当前源码与最新 APK
+
+2026-09-11 核对 `app/build.gradle`：Debug 为 `appReleaseDebug / com.ehviewer.manbo.debug / 152 / 152`，Release versionCode 为 112，数据库 schema 为 13。
+
+源码配置与已构建产物分开记录：
+
+| 项目 | 本次 v152 组装记录 |
+| --- | --- |
+| variant | `appReleaseDebug` |
+| applicationId | `com.ehviewer.manbo.debug` |
+| versionName / versionCode | `152 / 152` |
+| APK 路径 | `app/build/outputs/apk/appRelease/debug/app-appRelease-debug.apk` |
+| 元数据 | 同目录 `output-metadata.json` |
+| 大小 | 33117682 字节 |
+| SHA-256 | `DD081C611B8407A535DABDA05FB6742CBB438F481D64FE6ECF902676FB622F47` |
+| 签名 | 本次核验 v1/v2 通过，证书 SHA-256 为 `af169dcf1d3e44c326b55a1c631c371d3adfe06b8bed34839f03a89cf1f1e9df` |
+
+以上为 2026-09-11 本次最终 APK 的实际核验结果；已在连接手机上完成 Debug 覆盖安装。v151 及更早产物记录见[历史归档](docs/archive/说明-2026-09-11.md)。
+
+## 2026-09-11：构建 v152 并更新手机
+
+- 修改内容：以当前工作区源码生成手机更新包，versionName / Debug versionCode 从 `151 / 151` 推进为 `152 / 152`；同步 README、构建与排错文档，未修改业务逻辑。
+- 影响范围：仅构建 `appReleaseDebug / com.ehviewer.manbo.debug`，使用固定主机 Debug 签名，通过覆盖安装保留数据。
+- 安装前：当次 ADB 检测到已授权设备 `24117RK2CC`，Debug 包为 `2.0.2.25 / 150`。
+- 预检：JDK 21、Android SDK 和固定 keystore 均存在，证书 SHA-256 与项目约定一致。
+- 验证结果：`:app:assembleAppReleaseDebug` 成功（含 Java/Kotlin 编译与四种 ABI 原生构建）；最终 APK 和元数据的 variant、包名、版本一致，v1/v2 签名与固定证书通过，大小和 SHA-256 见上表。
+- 真机结果：`adb install -r` 返回 `Success`；安装后包名为 `com.ehviewer.manbo.debug`、版本为 `152 / 152`，首次安装时间保持 `2026-07-30 13:02:24`，更新时间为 `2026-09-11 14:21:20`；未卸载或清理数据。显式启动返回 `Status: ok`，后续进程检查仍在运行，该进程崩溃缓冲区无输出。
+- 文档验证：4 份文档共 37 个本地链接、UTF-8 解码、空白与冲突标记检查通过，`git diff --check` 通过。原有未跟踪 `artifacts/skill-generalization/` 保持原样。
+- 已知限制：本次未运行单元测试，未进行界面视觉和各业务功能验收；构建保留现有 Gradle 弃用及清单警告，签名工具对 META-INF 条目有提示，APK 整体验证通过。
+
+## 2026-09-11：重写 Agent 工作规范
+
+- 修改内容：根 `AGENTS.md` 按通用规则、任务必读资料、实现与数据保护、验证、Windows 环境、APK 和真机操作、交付记录重新组织；合并重复导航，以 `docs/build.md` 承载具体命令和版本表。
+- 保留数据迁移、追更/书签差异、完整扫描提交、旧归档任务、固定 Debug 签名、禁止卸载绕过签名等约束；明确仅编译/测试与产出 APK 的版本递增区别。
+- 影响范围：仅 `AGENTS.md`、`docs/build.md` 和本记录；构建手册同步移除对 AGENTS 版本表的要求，已有文档改动与历史记录保留。
+- 版本：源码 versionName / Debug versionCode 保持 `151 / 151`，未修改应用或构建输入，不产出新 APK。
+- 验证结果：3 份文档共 27 个本地链接、UTF-8 解码、行尾空白与冲突标记检查通过；关键约束核对通过；与修改前副本比较确认原有说明完整保留、构建手册仅有预期段落调整；`git diff --check` 通过。AGENTS 从 201 行整理为 132 行。
+- 已知限制：未运行 Gradle、单元测试、APK 核验或真机验收；`AGENTS.md` 继续被 Git 忽略，仅在本机生效，不随普通提交共享。
+
+## 2026-09-11：项目文档重写与归档
+
+修改内容与影响范围：
+
+- README 重写为功能概览、版本和文档入口；新增使用、扫描、架构、构建、排错专题。
+- 修正书签未读上限、连续分页、首页分割线、schema 版本及不支持查询的过时说明。
+- 补充签名预检、测试 XML 汇总、APK 元数据与真机验收的区分，替换原裸跑 Windows 构建步骤。
+- 重写中英文商店介绍，明确 manbo 分支功能；移除未由当前构建配置支持的统一分析禁用承诺。
+- 整理上游问题索引；历年公告、鸣谢和支持资料保留原文并增加历史提示。旧说明完整保存于归档，早期原始补丁按字节保存，许可证和第三方组件文档保留原样。
+- 根目录本机 AGENTS 仅增加文档导航，原工作约束保留；该文件已被 Git 忽略，不随本次普通提交共享。
+
+版本：源码 versionName 和 Debug versionCode 继续为 `151 / 151`，schema 为 13；本次未修改应用代码、资源、构建配置和更新清单，不产出 APK。
+
+验证结果：73 个本地链接目标、7 个 PowerShell 示例语法、JSON 示例结构及中英文短描述长度检查通过；3 份归档经 Git 内容摘要核对一致，8 份上游历史文档均仅新增两行归档提示。新文档编码与行尾空白检查、git diff --check 通过。
+
+已知限制：本次是文档整理，不包含应用编译、单元测试、联网服务验证或真机验收；上游历史链接的在线可用性未复核。历史记录中的实现和版本应按当时语境阅读，当前行为以专题文档和源码为准。
+
+## 2026-09-11：统一使用数字版本名称
+
+- 源码 versionName 从 `2.0.2.26` 改为 `151`，Debug versionCode 保持 151；设置页只显示 versionCode。
+- 当次 Java/Kotlin 编译、更新 JSON 解析和 diff 检查通过，未组装、运行单元测试或真机验收。
+- 手机与历史 APK 尚未包含此次版本名称修改。
+
+## 2026-09-09：同步上游 2.0.2.4
+
+- 同步固定上游标签 `2.0.2.4`，本地合并提交 `e4fac386`。合入评论编辑、封面查看、归档下载和异常修复，保留本地功能、包身份及固定签名。
+- 当次 `:app:assembleAppReleaseDebug` 成功，完成四种 ABI 构建和 APK 签名核验，未安装手机。
+- 测试 XML：tests=211、failures=8、errors=0、skipped=2；201 通过、2 跳过。8 个失败为旧 Robolectric 初始化错误 `Package targetSdkVersion=30 > maxSdkVersion=28`，测试主体未执行，不能声称解析器样本回归通过。
+- 完整合并范围、测试类和产物记录见[历史归档](docs/archive/说明-2026-09-11.md)。
+
+## 更早记录
+
+[旧说明完整归档](docs/archive/说明-2026-09-11.md)保留 v120–v151 的原有说明、测试、APK、设备和 Skill 维护记录，包括当时的限制与待办。它不作为当前行为说明；原始数字、哈希和表述未被追溯改写。

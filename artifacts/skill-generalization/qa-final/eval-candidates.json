@@ -1,0 +1,638 @@
+{
+  "formatVersion": 2,
+  "snapshotFingerprint": "7a307b853afc8b3914b20b47749c84fff9a17e286c26eaaf4573d3f643cbd8e8",
+  "metadataFingerprint": "12f910f3218e6acb7fb834def3136037c69337e34d8f48b38ea0038ec22f5eef",
+  "edges": [
+    {
+      "gids": [
+        101,
+        102
+      ],
+      "reasons": [
+        "discovery-semantic-title-key"
+      ]
+    },
+    {
+      "gids": [
+        101,
+        103
+      ],
+      "reasons": [
+        "discovery-semantic-title-key"
+      ]
+    },
+    {
+      "gids": [
+        101,
+        104
+      ],
+      "reasons": [
+        "discovery-semantic-title-key"
+      ]
+    },
+    {
+      "gids": [
+        101,
+        105
+      ],
+      "reasons": [
+        "discovery-semantic-title-key"
+      ]
+    },
+    {
+      "gids": [
+        101,
+        106
+      ],
+      "reasons": [
+        "discovery-semantic-title-key"
+      ]
+    },
+    {
+      "gids": [
+        101,
+        107
+      ],
+      "reasons": [
+        "discovery-semantic-title-key"
+      ]
+    },
+    {
+      "gids": [
+        101,
+        110
+      ],
+      "reasons": [
+        "discovery-semantic-title-key"
+      ]
+    },
+    {
+      "gids": [
+        108,
+        109
+      ],
+      "reasons": [
+        "discovery-semantic-title-key"
+      ]
+    },
+    {
+      "gids": [
+        111,
+        112
+      ],
+      "reasons": [
+        "discovery-semantic-title-key"
+      ]
+    },
+    {
+      "gids": [
+        111,
+        113
+      ],
+      "reasons": [
+        "discovery-semantic-title-key"
+      ]
+    },
+    {
+      "gids": [
+        114,
+        115
+      ],
+      "reasons": [
+        "discovery-semantic-title-key"
+      ]
+    },
+    {
+      "gids": [
+        114,
+        116
+      ],
+      "reasons": [
+        "discovery-semantic-title-key",
+        "numeric-or-part-sequence",
+        "same-author-fuzzy-title"
+      ]
+    }
+  ],
+  "candidateCount": 4,
+  "collisionAuditCount": 0,
+  "candidates": [
+    {
+      "candidateId": "candidate:00001",
+      "componentId": "component:101",
+      "componentGids": [
+        101,
+        102,
+        103,
+        104,
+        105,
+        106,
+        107,
+        110
+      ],
+      "recallReasons": [
+        "discovery-semantic-title-key"
+      ],
+      "items": [
+        {
+          "gid": 101,
+          "originalPosition": 1,
+          "title": "(C104) [星野] 星の旅 第0話",
+          "titleJpn": null,
+          "derived": {
+            "authors": [
+              "星野"
+            ],
+            "skeletons": [],
+            "sequenceSignal": true,
+            "tokens": [
+              "星の旅"
+            ],
+            "languageSignature": "japanese+han+latin",
+            "discovery": {
+              "gid": 101,
+              "authorAliases": [],
+              "workAliases": [],
+              "semanticTitleKey": "journey of stars",
+              "partKind": "unknown",
+              "partNumber": null,
+              "confidence": 0.8,
+              "needsHumanReview": true
+            }
+          }
+        },
+        {
+          "gid": 102,
+          "originalPosition": 2,
+          "title": "[Hoshino] Journey of Stars Chapter 1",
+          "titleJpn": null,
+          "derived": {
+            "authors": [
+              "hoshino"
+            ],
+            "skeletons": [
+              "journeyofstars"
+            ],
+            "sequenceSignal": true,
+            "tokens": [
+              "journey",
+              "stars"
+            ],
+            "languageSignature": "latin",
+            "discovery": {
+              "gid": 102,
+              "authorAliases": [],
+              "workAliases": [],
+              "semanticTitleKey": "journey of stars",
+              "partKind": "unknown",
+              "partNumber": null,
+              "confidence": 0.8,
+              "needsHumanReview": true
+            }
+          }
+        },
+        {
+          "gid": 103,
+          "originalPosition": 3,
+          "title": "[星野] 星之旅 第2话",
+          "titleJpn": null,
+          "derived": {
+            "authors": [
+              "星野"
+            ],
+            "skeletons": [],
+            "sequenceSignal": true,
+            "tokens": [
+              "星之旅"
+            ],
+            "languageSignature": "han",
+            "discovery": {
+              "gid": 103,
+              "authorAliases": [],
+              "workAliases": [],
+              "semanticTitleKey": "journey of stars",
+              "partKind": "unknown",
+              "partNumber": null,
+              "confidence": 0.8,
+              "needsHumanReview": true
+            }
+          }
+        },
+        {
+          "gid": 104,
+          "originalPosition": 4,
+          "title": "[星野] 星の旅 第2話 [English]",
+          "titleJpn": null,
+          "derived": {
+            "authors": [
+              "星野"
+            ],
+            "skeletons": [],
+            "sequenceSignal": true,
+            "tokens": [
+              "星の旅"
+            ],
+            "languageSignature": "japanese+han+latin",
+            "discovery": {
+              "gid": 104,
+              "authorAliases": [],
+              "workAliases": [],
+              "semanticTitleKey": "journey of stars",
+              "partKind": "unknown",
+              "partNumber": null,
+              "confidence": 0.8,
+              "needsHumanReview": true
+            }
+          }
+        },
+        {
+          "gid": 105,
+          "originalPosition": 5,
+          "title": "[星野] 星の旅 番外編",
+          "titleJpn": null,
+          "derived": {
+            "authors": [
+              "星野"
+            ],
+            "skeletons": [
+              "星の旅編"
+            ],
+            "sequenceSignal": true,
+            "tokens": [
+              "星の旅"
+            ],
+            "languageSignature": "japanese+han",
+            "discovery": {
+              "gid": 105,
+              "authorAliases": [],
+              "workAliases": [],
+              "semanticTitleKey": "journey of stars",
+              "partKind": "unknown",
+              "partNumber": null,
+              "confidence": 0.8,
+              "needsHumanReview": true
+            }
+          }
+        },
+        {
+          "gid": 106,
+          "originalPosition": 6,
+          "title": "[星野] 星の旅 総集編 0-2",
+          "titleJpn": null,
+          "derived": {
+            "authors": [
+              "星野"
+            ],
+            "skeletons": [],
+            "sequenceSignal": true,
+            "tokens": [
+              "星の旅"
+            ],
+            "languageSignature": "japanese+han",
+            "discovery": {
+              "gid": 106,
+              "authorAliases": [],
+              "workAliases": [],
+              "semanticTitleKey": "journey of stars",
+              "partKind": "unknown",
+              "partNumber": null,
+              "confidence": 0.8,
+              "needsHumanReview": true
+            }
+          }
+        },
+        {
+          "gid": 107,
+          "originalPosition": 7,
+          "title": "[星野] 星の旅 Remaster Chapter 1",
+          "titleJpn": null,
+          "derived": {
+            "authors": [
+              "星野"
+            ],
+            "skeletons": [],
+            "sequenceSignal": true,
+            "tokens": [
+              "星の旅"
+            ],
+            "languageSignature": "japanese+han+latin",
+            "discovery": {
+              "gid": 107,
+              "authorAliases": [],
+              "workAliases": [],
+              "semanticTitleKey": "journey of stars",
+              "partKind": "unknown",
+              "partNumber": null,
+              "confidence": 0.8,
+              "needsHumanReview": true
+            }
+          }
+        },
+        {
+          "gid": 110,
+          "originalPosition": 10,
+          "title": "[別作者] 星の旅",
+          "titleJpn": null,
+          "derived": {
+            "authors": [
+              "別作者"
+            ],
+            "skeletons": [],
+            "sequenceSignal": false,
+            "tokens": [
+              "星の旅"
+            ],
+            "languageSignature": "japanese+han",
+            "discovery": {
+              "gid": 110,
+              "authorAliases": [],
+              "workAliases": [],
+              "semanticTitleKey": "journey of stars",
+              "partKind": "unknown",
+              "partNumber": null,
+              "confidence": 0.8,
+              "needsHumanReview": true
+            }
+          }
+        }
+      ]
+    },
+    {
+      "candidateId": "candidate:00002",
+      "componentId": "component:108",
+      "componentGids": [
+        108,
+        109
+      ],
+      "recallReasons": [
+        "discovery-semantic-title-key"
+      ],
+      "items": [
+        {
+          "gid": 108,
+          "originalPosition": 8,
+          "title": "[星野] 海辺の庭",
+          "titleJpn": null,
+          "derived": {
+            "authors": [
+              "星野"
+            ],
+            "skeletons": [
+              "海辺の庭"
+            ],
+            "sequenceSignal": false,
+            "tokens": [
+              "海辺の庭"
+            ],
+            "languageSignature": "japanese+han",
+            "discovery": {
+              "gid": 108,
+              "authorAliases": [],
+              "workAliases": [],
+              "semanticTitleKey": "seaside garden",
+              "partKind": "unknown",
+              "partNumber": null,
+              "confidence": 0.8,
+              "needsHumanReview": true
+            }
+          }
+        },
+        {
+          "gid": 109,
+          "originalPosition": 9,
+          "title": "[Hoshino] Seaside Garden Part 2",
+          "titleJpn": null,
+          "derived": {
+            "authors": [
+              "hoshino"
+            ],
+            "skeletons": [
+              "seasidegarden"
+            ],
+            "sequenceSignal": true,
+            "tokens": [
+              "garden",
+              "seaside"
+            ],
+            "languageSignature": "latin",
+            "discovery": {
+              "gid": 109,
+              "authorAliases": [],
+              "workAliases": [],
+              "semanticTitleKey": "seaside garden",
+              "partKind": "unknown",
+              "partNumber": null,
+              "confidence": 0.8,
+              "needsHumanReview": true
+            }
+          }
+        }
+      ]
+    },
+    {
+      "candidateId": "candidate:00003",
+      "componentId": "component:111",
+      "componentGids": [
+        111,
+        112,
+        113
+      ],
+      "recallReasons": [
+        "discovery-semantic-title-key"
+      ],
+      "items": [
+        {
+          "gid": 111,
+          "originalPosition": 11,
+          "title": "[青月] 雨の手紙 前編",
+          "titleJpn": null,
+          "derived": {
+            "authors": [
+              "青月"
+            ],
+            "skeletons": [
+              "雨の手紙"
+            ],
+            "sequenceSignal": true,
+            "tokens": [
+              "雨の手紙"
+            ],
+            "languageSignature": "japanese+han",
+            "discovery": {
+              "gid": 111,
+              "authorAliases": [],
+              "workAliases": [],
+              "semanticTitleKey": "letters in rain",
+              "partKind": "unknown",
+              "partNumber": null,
+              "confidence": 0.8,
+              "needsHumanReview": true
+            }
+          }
+        },
+        {
+          "gid": 112,
+          "originalPosition": 12,
+          "title": "[Aotsuki] Letters in Rain Middle Part",
+          "titleJpn": null,
+          "derived": {
+            "authors": [
+              "aotsuki"
+            ],
+            "skeletons": [
+              "lettersinrainpart"
+            ],
+            "sequenceSignal": true,
+            "tokens": [
+              "letters",
+              "part",
+              "rain"
+            ],
+            "languageSignature": "latin",
+            "discovery": {
+              "gid": 112,
+              "authorAliases": [],
+              "workAliases": [],
+              "semanticTitleKey": "letters in rain",
+              "partKind": "unknown",
+              "partNumber": null,
+              "confidence": 0.8,
+              "needsHumanReview": true
+            }
+          }
+        },
+        {
+          "gid": 113,
+          "originalPosition": 13,
+          "title": "[青月] 雨中来信 后篇",
+          "titleJpn": null,
+          "derived": {
+            "authors": [
+              "青月"
+            ],
+            "skeletons": [],
+            "sequenceSignal": true,
+            "tokens": [],
+            "languageSignature": "han",
+            "discovery": {
+              "gid": 113,
+              "authorAliases": [],
+              "workAliases": [],
+              "semanticTitleKey": "letters in rain",
+              "partKind": "unknown",
+              "partNumber": null,
+              "confidence": 0.8,
+              "needsHumanReview": true
+            }
+          }
+        }
+      ]
+    },
+    {
+      "candidateId": "candidate:00004",
+      "componentId": "component:114",
+      "componentGids": [
+        114,
+        115,
+        116
+      ],
+      "recallReasons": [
+        "discovery-semantic-title-key",
+        "numeric-or-part-sequence",
+        "same-author-fuzzy-title"
+      ],
+      "items": [
+        {
+          "gid": 114,
+          "originalPosition": 14,
+          "title": "[山川] 森の図書館 Vol. 1 Ch. 10",
+          "titleJpn": null,
+          "derived": {
+            "authors": [
+              "山川"
+            ],
+            "skeletons": [
+              "森の図書館"
+            ],
+            "sequenceSignal": true,
+            "tokens": [
+              "森の図書館"
+            ],
+            "languageSignature": "japanese+han+latin",
+            "discovery": {
+              "gid": 114,
+              "authorAliases": [],
+              "workAliases": [],
+              "semanticTitleKey": "forest library",
+              "partKind": "unknown",
+              "partNumber": null,
+              "confidence": 0.8,
+              "needsHumanReview": true
+            }
+          }
+        },
+        {
+          "gid": 115,
+          "originalPosition": 15,
+          "title": "[Yamakawa] Forest Library Vol. 2 Ch. 1",
+          "titleJpn": null,
+          "derived": {
+            "authors": [
+              "yamakawa"
+            ],
+            "skeletons": [
+              "forestlibrary"
+            ],
+            "sequenceSignal": true,
+            "tokens": [
+              "forest",
+              "library"
+            ],
+            "languageSignature": "latin",
+            "discovery": {
+              "gid": 115,
+              "authorAliases": [],
+              "workAliases": [],
+              "semanticTitleKey": "forest library",
+              "partKind": "unknown",
+              "partNumber": null,
+              "confidence": 0.8,
+              "needsHumanReview": true
+            }
+          }
+        },
+        {
+          "gid": 116,
+          "originalPosition": 16,
+          "title": "[山川] 森の図書館 別世界編 第1話",
+          "titleJpn": null,
+          "derived": {
+            "authors": [
+              "山川"
+            ],
+            "skeletons": [
+              "森の図書館別世界編"
+            ],
+            "sequenceSignal": true,
+            "tokens": [
+              "別世界編",
+              "森の図書館"
+            ],
+            "languageSignature": "japanese+han",
+            "discovery": {
+              "gid": 116,
+              "authorAliases": [],
+              "workAliases": [],
+              "semanticTitleKey": "forest library",
+              "partKind": "unknown",
+              "partNumber": null,
+              "confidence": 0.8,
+              "needsHumanReview": true
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "collisionAudits": []
+}

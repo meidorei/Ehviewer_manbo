@@ -1,0 +1,22 @@
+{
+  "passed": true,
+  "counts": [
+    12,
+    3000
+  ],
+  "largeLoadMs": 279,
+  "checks": [
+    "group",
+    "ungroup",
+    "undo",
+    "move",
+    "filtered-full-export",
+    "draft-restore",
+    "title-tampering-rejected",
+    "single-confirmation",
+    "python-validation",
+    "mobile-width"
+  ],
+  "errors": [],
+  "requests": []
+}
