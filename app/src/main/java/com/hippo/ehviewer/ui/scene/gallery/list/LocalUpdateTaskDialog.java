@@ -39,7 +39,8 @@ final class LocalUpdateTaskDialog {
         String method = displayMethod(snapshot);
         StringBuilder details = new StringBuilder()
                 .append("状态：").append(snapshot.status)
-                .append("\n类型：").append(snapshot.type)
+                .append("\n类型：").append(LocalRefreshJobStore.TYPE_ALL.equals(snapshot.type)
+                        ? context.getString(R.string.local_update_all_title) : snapshot.type)
                 .append("\n方式：").append(method)
                 .append("\n阶段：").append(displayPhase(snapshot))
                 .append("\n来源：").append(snapshot.host)
@@ -93,8 +94,9 @@ final class LocalUpdateTaskDialog {
     @Nullable
     static Runnable resumeAction(Context context, LocalRefreshJobStore.Snapshot snapshot) {
         if (snapshot == null) return null;
-        if ("FOLLOW".equals(snapshot.type)) {
-            return () -> LocalUpdateService.startFollow(context, snapshot.method);
+        if (LocalRefreshJobStore.TYPE_ALL.equals(snapshot.type)
+                || LocalRefreshJobStore.TYPE_FOLLOW.equals(snapshot.type)) {
+            return () -> LocalUpdateService.resumeJob(context, snapshot);
         }
         if ("BOOKMARK".equals(snapshot.type)) {
             if (snapshot.method != null && snapshot.method.startsWith("SINGLE:")) {
@@ -106,7 +108,7 @@ final class LocalUpdateTaskDialog {
                     // Fall through to checking all bookmarks.
                 }
             }
-            return () -> LocalUpdateService.startBookmarks(context, snapshot.method);
+            return () -> LocalUpdateService.resumeJob(context, snapshot);
         }
         if ("BASELINE".equals(snapshot.type)) {
             return () -> LocalUpdateService.resumePendingBaselines(context);
@@ -115,6 +117,7 @@ final class LocalUpdateTaskDialog {
     }
 
     private static String displayMethod(LocalRefreshJobStore.Snapshot snapshot) {
+        if (LocalRefreshJobStore.TYPE_ALL.equals(snapshot.type)) return "全局中文扫描";
         if ("FOLLOW".equals(snapshot.type)) {
             if (LocalUpdateService.METHOD_GLOBAL.equals(snapshot.method)) {
                 return "全局中文扫描";
@@ -158,7 +161,8 @@ final class LocalUpdateTaskDialog {
 
     private static void confirmStop(Context context, LocalRefreshJobStore.Snapshot snapshot) {
         boolean global = ("FOLLOW".equals(snapshot.type)
-                || "BOOKMARK".equals(snapshot.type))
+                || "BOOKMARK".equals(snapshot.type)
+                || LocalRefreshJobStore.TYPE_ALL.equals(snapshot.type))
                 && LocalUpdateService.METHOD_GLOBAL.equals(snapshot.method);
         new AlertDialog.Builder(context)
                 .setTitle(R.string.update_stop_confirm_title)

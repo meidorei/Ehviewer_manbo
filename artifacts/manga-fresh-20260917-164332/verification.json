@@ -1,0 +1,41 @@
+{
+  "checkedAt": "2026-09-17T16:51:31.030000",
+  "sqliteIntegrity": "ok",
+  "all3219GidsAndOriginalTitles": "passed",
+  "previewJsonRoundtrip": "passed",
+  "javascriptSyntax": "passed",
+  "localHttp": "passed",
+  "browserInteraction": "not run: sandbox helper setup refresh failed",
+  "debugAppLaunch": "am start succeeded",
+  "phoneWriteback": false,
+  "files": {
+    "device-snapshot.tar": {
+      "bytes": 3303936,
+      "sha256": "b8824943cccadfca15b0d7c34d4fec2ce374ccea6f447e7ae0cabdcf89cbab5b"
+    },
+    "raw/databases/eh.db": {
+      "bytes": 3301376,
+      "sha256": "c665825d1f5a2031d1e5912876f680683522f4b69d8a37264865f2022b55f1e4"
+    },
+    "raw/databases/eh.db-journal": {
+      "bytes": 512,
+      "sha256": "076a27c79e5ace2a3d47f9dd2e83e4ff6ea8872b3c2218f66c92b89b55f36560"
+    },
+    "catalog/source.db": {
+      "bytes": 3301376,
+      "sha256": "d113be390d111df406824794a89cae8cd9d916ff5fcb26936e7614b08e586a00"
+    },
+    "groups.json": {
+      "bytes": 165788,
+      "sha256": "b2a47fdb97ef0dc2f78bd76e7929c050c61e794bee6d372e752b44fd840ae454"
+    },
+    "preview/order.json": {
+      "bytes": 1797059,
+      "sha256": "e684ef7923b77704758712650b9d1bb8fe544b2a327ac1378a4e4c81fa69459f"
+    },
+    "preview/review.html": {
+      "bytes": 2387853,
+      "sha256": "343226b1d6bd8568a5b092394e095d8aa109c4cbab64bda7e502b177c5ee3928"
+    }
+  }
+}

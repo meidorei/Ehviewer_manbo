@@ -11,10 +11,13 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.hippo.ehviewer.client.data.GalleryInfo;
 
+import java.util.function.BooleanSupplier;
+
 public final class FeedBoundaryDecoration extends RecyclerView.ItemDecoration {
     public interface ItemProvider { GalleryInfo get(int adapterPosition); }
 
     private final ItemProvider provider;
+    private final BooleanSupplier homeMode;
     private final Paint linePaint = new Paint(Paint.ANTI_ALIAS_FLAG);
     private final Paint textPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
     private volatile String label;
@@ -22,8 +25,9 @@ public final class FeedBoundaryDecoration extends RecyclerView.ItemDecoration {
     private volatile FeedBoundary boundary = FeedBoundary.EMPTY;
 
     public FeedBoundaryDecoration(float density, float scaledDensity, int color,
-                                  String label, ItemProvider provider) {
+                                  String label, ItemProvider provider, BooleanSupplier homeMode) {
         this.provider = provider;
+        this.homeMode = homeMode;
         this.label = label;
         this.height = markerHeightPx(density);
         linePaint.setColor(color);
@@ -60,7 +64,15 @@ public final class FeedBoundaryDecoration extends RecyclerView.ItemDecoration {
 
     private boolean isMarker(int position) {
         GalleryInfo item = provider.get(position);
-        return item != null && boundary.isFirstOld(item.postedTimestamp, item.gid);
+        if (item == null) return false;
+        GalleryInfo previous = position > 0 ? provider.get(position - 1) : null;
+        if (homeMode.getAsBoolean()) {
+            return boundary.isHomeMarkerBefore(item.postedTimestamp, item.gid,
+                    previous == null ? 0 : previous.postedTimestamp,
+                    previous == null ? 0 : previous.gid);
+        }
+        return boundary.isFirstOld(item.postedTimestamp, item.gid)
+                && (previous == null || !boundary.isFirstOld(previous.postedTimestamp, previous.gid));
     }
 
     public boolean isInMarkerTouchArea(@NonNull RecyclerView parent, float touchX, float touchY) {
@@ -69,8 +81,7 @@ public final class FeedBoundaryDecoration extends RecyclerView.ItemDecoration {
         for (int i = 0; i < parent.getChildCount(); i++) {
             View child = parent.getChildAt(i);
             int position = parent.getChildAdapterPosition(child);
-            if (position < 0 || !isMarker(position)
-                    || position > 0 && isMarker(position - 1)) continue;
+            if (position < 0 || !isMarker(position)) continue;
             return isWithinMarkerTouchBounds(touchY, child.getTop(), height);
         }
         return false;
@@ -79,7 +90,7 @@ public final class FeedBoundaryDecoration extends RecyclerView.ItemDecoration {
     @Override public void getItemOffsets(@NonNull Rect outRect, @NonNull View view,
                                          @NonNull RecyclerView parent, @NonNull RecyclerView.State state) {
         int position = parent.getChildAdapterPosition(view);
-        if (position >= 0 && isMarker(position) && (position == 0 || !isMarker(position - 1))) {
+        if (position >= 0 && isMarker(position)) {
             outRect.top = height;
         }
     }
@@ -89,7 +100,7 @@ public final class FeedBoundaryDecoration extends RecyclerView.ItemDecoration {
         for (int i = 0; i < parent.getChildCount(); i++) {
             View child = parent.getChildAt(i);
             int position = parent.getChildAdapterPosition(child);
-            if (position < 0 || !isMarker(position) || (position > 0 && isMarker(position - 1))) continue;
+            if (position < 0 || !isMarker(position)) continue;
             float y = child.getTop() - height / 2f;
             float center = parent.getWidth() / 2f;
             float gap = textPaint.measureText(label) / 2f + 12 * parent.getResources().getDisplayMetrics().density;

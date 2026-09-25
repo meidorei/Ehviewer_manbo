@@ -279,7 +279,8 @@ public class SubscriptionDraw implements LocalUpdateService.Listener {
                     && !LocalRefreshJobStore.STATUS_RUNNING.equals(snapshot.status)
                     && !LocalRefreshJobStore.STATUS_PAUSED.equals(snapshot.status);
             if (terminal) {
-                if (LocalRefreshJobStore.TYPE_FOLLOW.equals(snapshot.type)) {
+                if (LocalRefreshJobStore.TYPE_FOLLOW.equals(snapshot.type)
+                        || LocalRefreshJobStore.TYPE_ALL.equals(snapshot.type)) {
                     loadLocalData(true);
                 } else if (LocalRefreshJobStore.TYPE_BASELINE.equals(snapshot.type)) {
                     loadLocalData(false);

@@ -75,6 +75,38 @@ public class LocalRefreshJobStoreTest {
         assertEquals(2, LocalRefreshJobStore.failureCount("one\n\n two "));
     }
 
+    @Test
+    public void combinedHistoryUpdatesBothSourcesButNotLegacyJobs() {
+        org.junit.Assert.assertArrayEquals(new String[]{"ALL", "FOLLOW", "BOOKMARK"},
+                LocalRefreshJobStore.attemptTypes(LocalRefreshJobStore.TYPE_ALL));
+        org.junit.Assert.assertArrayEquals(new String[]{"FOLLOW"},
+                LocalRefreshJobStore.attemptTypes(LocalRefreshJobStore.TYPE_FOLLOW));
+        LocalRefreshJobStore.Snapshot combined = snapshot("ALL", "GLOBAL", 4, 4, "");
+        assertTrue(LocalRefreshJobStore.shouldRecordAttempt(combined, "SUCCESS"));
+        assertFalse(LocalRefreshJobStore.shouldRecordAttempt(combined, "PAUSED"));
+        assertEquals("CANCELLED", LocalRefreshJobStore.deriveAttemptResult(combined, "CANCELLED", 0));
+        assertEquals("PARTIAL", LocalRefreshJobStore.deriveAttemptResult(
+                snapshot("ALL", "GLOBAL", 4, 4, "one"), "FAILED", 1));
+        assertFalse(LocalRefreshJobStore.shouldRecordAttempt(
+                snapshot("ALL", "GLOBAL", 0, 0, ""), "SUCCESS"));
+    }
+
+    @Test
+    public void combinedSuccessRequiresEveryItemAndNoFailures() {
+        assertTrue(LocalRefreshJobStore.isFullCombinedSuccess(
+                snapshot("ALL", "GLOBAL", 4, 4, ""), "SUCCESS"));
+        assertFalse(LocalRefreshJobStore.isFullCombinedSuccess(
+                snapshot("ALL", "GLOBAL", 3, 4, ""), "SUCCESS"));
+        assertFalse(LocalRefreshJobStore.isFullCombinedSuccess(
+                snapshot("ALL", "GLOBAL", 4, 4, "one"), "SUCCESS"));
+        assertFalse(LocalRefreshJobStore.isFullCombinedSuccess(
+                snapshot("ALL", "GLOBAL", 4, 4, ""), "PAUSED"));
+        assertFalse(LocalRefreshJobStore.isFullCombinedSuccess(
+                snapshot("ALL", "GLOBAL", 4, 4, ""), "CANCELLED"));
+        assertFalse(LocalRefreshJobStore.isFullCombinedSuccess(
+                snapshot("ALL", "GLOBAL", 0, 0, ""), "SUCCESS"));
+    }
+
     private static LocalRefreshJobStore.Snapshot snapshot(
             String type, String method, int index, int total, String failures) {
         return new LocalRefreshJobStore.Snapshot(type, method,

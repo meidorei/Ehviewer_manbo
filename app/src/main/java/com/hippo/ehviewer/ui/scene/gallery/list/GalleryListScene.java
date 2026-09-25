@@ -126,7 +126,6 @@ import com.hippo.ehviewer.subscription.SubscriptionRefreshStatus;
 import com.hippo.ehviewer.subscription.SubscriptionSnapshot;
 import com.hippo.ehviewer.subscription.SubscriptionUpdateCalculator;
 import com.hippo.ehviewer.subscription.LocalFollowRepository;
-import com.hippo.ehviewer.subscription.LocalGlobalCursorStore;
 import com.hippo.ehviewer.subscription.LocalRefreshJobStore;
 import com.hippo.ehviewer.subscription.LocalUnreadOpenPolicy;
 import com.hippo.ehviewer.subscription.LocalUpdateService;
@@ -905,7 +904,8 @@ public final class GalleryListScene extends BaseScene
                 getString(R.string.last_update_marker), position -> {
                     if (mHelper == null || position < 0 || position >= mHelper.getData().size()) return null;
                     return mHelper.getDataAtEx(position);
-                });
+                }, () -> mFeedSourceContext != null
+                        && mFeedSourceContext.type == FeedSourceContext.Type.HOME);
         mFeedBoundaryDecoration.setBoundary(mVisibleFeedBoundary);
         mRecyclerView.addItemDecoration(mFeedBoundaryDecoration);
         GestureDetector boundaryGestureDetector = new GestureDetector(context,
@@ -1418,9 +1418,7 @@ public final class GalleryListScene extends BaseScene
         long lastSuccess = LocalRefreshJobStore.lastFollowSuccess();
         boolean recommendGlobal = lastSuccess == 0
                 || System.currentTimeMillis() - lastSuccess <= 5L * 24L * 60L * 60L * 1000L;
-        long globalCursorTime = LocalGlobalCursorStore.readCurrent(
-                context, LocalGlobalCursorStore.TYPE_FOLLOW).timeMillis();
-        LocalUpdateStartDialog.showFollow(context, recommendGlobal, globalCursorTime, method -> {
+        LocalUpdateStartDialog.showFollow(context, recommendGlobal, method -> {
             if (Build.VERSION.SDK_INT >= 33
                     && activity.checkSelfPermission(Manifest.permission.POST_NOTIFICATIONS)
                     != PackageManager.PERMISSION_GRANTED) {
@@ -2372,6 +2370,8 @@ public final class GalleryListScene extends BaseScene
             handleSuccessfulFeed(result);
 //            mHelper.onGetPageData(taskId, result.pages, result.nextPage, result.galleryInfoList);
             mHelper.onGetPageData(taskId, result, result.galleryInfoList);
+            // Prepending changes the neighbour of existing items, including marker spacing.
+            if (mRecyclerView != null) mRecyclerView.invalidateItemDecorations();
         }
     }
 

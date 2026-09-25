@@ -1,0 +1,9 @@
+{
+  "device": "5da3329",
+  "package": "com.ehviewer.manbo.debug",
+  "files": [
+    "eh.db",
+    "eh.db-journal"
+  ],
+  "method": "force-stop and capture database with all existing sidecars"
+}

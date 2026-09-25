@@ -1,0 +1,18 @@
+{
+  "completedAt": "2026-09-17T16:54:21.524632",
+  "package": "com.ehviewer.manbo.debug",
+  "itemCount": 3219,
+  "phoneDatabaseWritten": true,
+  "onlyDownloadsTimeChanged": true,
+  "beforeLaunchVerify": "passed",
+  "afterLaunchVerify": "passed",
+  "applicationLaunch": "ok",
+  "runningPid": "19942",
+  "integrity": "ok",
+  "allGidsAndTitlesPreserved": true,
+  "downloadFilesModified": false,
+  "phoneBackup": "/data/user/0/com.ehviewer.manbo.debug/files/manga-backup-20260917-165230",
+  "computerBackup": "C:\\CWorkWork\\Ehviewer_manbo\\artifacts\\manga-fresh-20260917-164332\\writeback-20260917-165230\\checked\\backup.db",
+  "sortedSha256": "260be6ea2de54f8514b6657036d7cd618612d870a44a4fd50e4dc6069b8f85b2",
+  "temporaryAdbUploadRemoved": true
+}

@@ -47,6 +47,7 @@ import okhttp3.OkHttpClient;
 
 /** Manual, single-concurrency foreground update service for local follows and bookmarks. */
 public final class LocalUpdateService extends Service {
+    public static final String ACTION_START_ALL = "local.update.START_ALL";
     public static final String ACTION_START_FOLLOW = "local.update.START_FOLLOW";
     public static final String ACTION_START_BOOKMARKS = "local.update.START_BOOKMARKS";
     public static final String ACTION_START_BOOKMARK = "local.update.START_BOOKMARK";
@@ -108,6 +109,11 @@ public final class LocalUpdateService extends Service {
     }
 
     public static boolean startFollow(Context context, String method) {
+        if (METHOD_GLOBAL.equals(method) || method == null) return startGlobal(context);
+        return startLegacyFollow(context, method);
+    }
+
+    private static boolean startLegacyFollow(Context context, String method) {
         if (!GATE.tryStartUpdate()) return false;
         Intent intent = new Intent(context, LocalUpdateService.class)
                 .setAction(ACTION_START_FOLLOW)
@@ -120,12 +126,41 @@ public final class LocalUpdateService extends Service {
     }
 
     public static boolean startBookmarks(Context context, String method) {
+        if (METHOD_GLOBAL.equals(method)) return startGlobal(context);
+        return startLegacyBookmarks(context, method);
+    }
+
+    private static boolean startLegacyBookmarks(Context context, String method) {
         if (!GATE.tryStartUpdate()) return false;
         Intent intent = new Intent(context, LocalUpdateService.class)
                 .setAction(ACTION_START_BOOKMARKS)
                 .putExtra(EXTRA_METHOD, METHOD_GLOBAL.equals(method)
                         ? METHOD_GLOBAL : METHOD_FIRST_PAGE);
         return startServiceSafely(context, intent);
+    }
+
+    public static boolean startGlobal(Context context) {
+        if (LocalFollowRepository.getInstance().getAll().isEmpty()
+                && EhDB.getAllQuickSearch().isEmpty()) {
+            android.widget.Toast.makeText(context, R.string.local_update_empty,
+                    android.widget.Toast.LENGTH_SHORT).show();
+            return true;
+        }
+        if (!GATE.tryStartUpdate()) return false;
+        return startServiceSafely(context, new Intent(context, LocalUpdateService.class)
+                .setAction(ACTION_START_ALL).putExtra(EXTRA_METHOD, METHOD_GLOBAL));
+    }
+
+    /** Resume old snapshots without silently expanding their original scope. */
+    public static boolean resumeJob(Context context, LocalRefreshJobStore.Snapshot snapshot) {
+        if (LocalRefreshJobStore.TYPE_ALL.equals(snapshot.type)) return startGlobal(context);
+        if (LocalRefreshJobStore.TYPE_FOLLOW.equals(snapshot.type)) {
+            return startLegacyFollow(context, snapshot.method);
+        }
+        if (LocalRefreshJobStore.TYPE_BOOKMARK.equals(snapshot.type)) {
+            return startLegacyBookmarks(context, snapshot.method);
+        }
+        return false;
     }
 
     public static boolean startBookmark(Context context, long id) {
@@ -252,7 +287,9 @@ public final class LocalUpdateService extends Service {
         boolean follow = ACTION_START_FOLLOW.equals(action);
         boolean baseline = ACTION_START_BASELINES.equals(action);
         try {
-            if (follow) {
+            if (ACTION_START_ALL.equals(action)) {
+                runUnifiedGlobal();
+            } else if (follow) {
                 runFollows(intent.getStringExtra(EXTRA_METHOD));
             } else if (ACTION_START_BOOKMARKS.equals(action)) {
                 runBookmarks(null, intent.getStringExtra(EXTRA_METHOD));
@@ -279,7 +316,8 @@ public final class LocalUpdateService extends Service {
                 if (snapshot != null) {
                     LocalRefreshJobStore.progress(snapshot.index, snapshot.pages,
                             snapshot.galleries, snapshot.currentKey,
-                            appendFailure(snapshot.failures, safeMessage(error)));
+                            error instanceof UnifiedItemsFailedException ? snapshot.failures
+                                    : appendFailure(snapshot.failures, safeMessage(error)));
                 }
                 LocalRefreshJobStore.finish(LocalRefreshJobStore.STATUS_FAILED, false);
             }
@@ -490,6 +528,195 @@ public final class LocalUpdateService extends Service {
         }
     }
 
+    private void runUnifiedGlobal() throws Throwable {
+        List<String> tags = LocalFollowRepository.getInstance().getAll();
+        List<QuickSearch> jobs = EhDB.getAllQuickSearch();
+        effectiveHost = preferredHost();
+        searchIntervalMs = intervalForJob(LocalRefreshJobStore.read(),
+                LocalRefreshJobStore.TYPE_ALL, METHOD_GLOBAL);
+        LocalRefreshJobStore.start(LocalRefreshJobStore.TYPE_ALL, METHOD_GLOBAL,
+                tags.size() + jobs.size(), effectiveHost, searchIntervalMs);
+        notifyListeners();
+        if (tags.isEmpty() && jobs.isEmpty()) return;
+        // A host switch reloads both source cursors and discards both accumulators.
+        while (!shouldStop()) {
+            if (runUnifiedSource(tags, jobs)) return;
+        }
+    }
+
+    private boolean runUnifiedSource(List<String> tags, List<QuickSearch> jobs) throws Throwable {
+        String scanHost = effectiveHost;
+        String contextKey = sourceContext(scanHost);
+        LocalFollowRepository local = LocalFollowRepository.getInstance();
+        Map<String, FeedCheckpoint> oldFollows = new LinkedHashMap<>();
+        boolean hadFollows = false;
+        for (String tag : tags) {
+            CheckpointKey key = followCheckpoint(contextKey, tag);
+            hadFollows |= !SubscriptionRepository.getInstance().readCheckpoint(key).current.isEmpty();
+            ensureStateProvisional(LocalFollowRepository.SOURCE_FOLLOW, tag,
+                    LocalFollowRepository.FIXED_CHINESE_SIGNATURE, key);
+            oldFollows.put(tag, SubscriptionRepository.getInstance().readCheckpoint(key));
+        }
+        FeedBoundary followCursor = globalCursor(contextKey,
+                LocalGlobalCursorStore.TYPE_FOLLOW, hadFollows, oldFollows);
+        List<GlobalBookmark> exact = new ArrayList<>();
+        List<QuickSearch> complex = new ArrayList<>();
+        List<String> failures = new ArrayList<>();
+        int completed = 0;
+        boolean unsupportedBookmark = false;
+        for (QuickSearch search : jobs) {
+            BookmarkUpdatePolicy.Result policy = BookmarkUpdatePolicy.resolve(search);
+            String key = Long.toString(search.id);
+            local.prepareBookmarkSignature(key, policy.signature);
+            if (!policy.supported) {
+                local.markError(LocalFollowRepository.SOURCE_BOOKMARK, key,
+                        policy.signature, policy.error);
+                failures.add("书签 " + key + ": " + policy.error);
+                unsupportedBookmark = true;
+                completed++;
+                continue;
+            }
+            BookmarkGlobalMatcher.Result matcher = BookmarkGlobalMatcher.compile(search);
+            if (matcher.exact) exact.add(new GlobalBookmark(search, policy, matcher.matcher));
+            else complex.add(search);
+        }
+        Map<Long, FeedCheckpoint> oldBookmarks = new LinkedHashMap<>();
+        boolean hadBookmarks = hasExistingGlobalBookmarkCursor(exact, contextKey);
+        initializeGlobalBookmarks(exact, contextKey, oldBookmarks, new LinkedHashMap<>());
+        FeedBoundary bookmarkCursor = globalCursor(contextKey,
+                LocalGlobalCursorStore.TYPE_BOOKMARK, hadBookmarks, oldBookmarks);
+        List<QuickSearch> bridge = new ArrayList<>();
+        exact = selectGloballyCovered(exact, oldBookmarks, bookmarkCursor, bridge);
+        Map<Long, BookmarkGlobalMatcher> matchers = new LinkedHashMap<>();
+        for (GlobalBookmark work : exact) matchers.put(work.search.id, work.matcher);
+        UnifiedGlobalScan scan = new UnifiedGlobalScan(tags, matchers, followCursor, bookmarkCursor);
+        LocalRefreshJobStore.phase(LocalRefreshJobStore.PHASE_GLOBAL_SCAN);
+        ListUrlBuilder builder = new ListUrlBuilder();
+        builder.setMode(ListUrlBuilder.MODE_NORMAL);
+        builder.setKeyword(null);
+        String url = withHost(builder.build(true), scanHost);
+        int pageLimit = Settings.getGlobalScanPageLimit();
+        final int initiallyCompleted = completed;
+        boolean sameHost = scan.readPages(url, pageLimit, requestedUrl -> {
+            GalleryListParser.Result page = fetchPage(requestedUrl, ListUrlBuilder.MODE_NORMAL);
+            return new UnifiedGlobalScan.Page(page.galleryInfoList,
+                    resolveNext(requestedUrl, page.nextHref), !scanHost.equals(effectiveHost));
+        }, this::throwIfStopRequested, () -> {
+            LocalRefreshJobStore.progress(initiallyCompleted, scan.pages, scan.galleries,
+                    "", joinFailures(failures));
+            updateNotification("书签与追更全局扫描：" + scan.pages + " 页 · "
+                    + scan.galleries + " 本", scan.pages, pageLimit, true);
+            notifyListeners();
+        });
+        if (!sameHost) return false;
+        if ((!tags.isEmpty() || !exact.isEmpty()) && scan.top.isEmpty()) {
+            throw new IllegalStateException("中文结果为空，无法建立更新基线");
+        }
+        // Commit only after the shared scan has completed without errors.
+        WorkCounter totals = new WorkCounter();
+        totals.pages = scan.pages;
+        totals.galleries = scan.galleries;
+        int total = tags.size() + jobs.size();
+        int beforeFollowFailures = failures.size();
+        unifiedProgress(completed, total, totals, failures);
+        LocalRefreshJobStore.phase(LocalRefreshJobStore.PHASE_FOLLOW_QUEUE);
+        for (String tag : tags) {
+            runUnifiedItem("追更 " + tag, () -> {
+                if (!scan.followCovered) checkTag(tag, effectiveHost, totals);
+                else if (followCursor.isEmpty()) local.establishBaseline(
+                        LocalFollowRepository.SOURCE_FOLLOW, tag,
+                        LocalFollowRepository.FIXED_CHINESE_SIGNATURE,
+                        followCheckpoint(contextKey, tag), scan.top);
+                else local.commitGlobalScan(LocalFollowRepository.SOURCE_FOLLOW, tag,
+                        LocalFollowRepository.FIXED_CHINESE_SIGNATURE,
+                        followCheckpoint(contextKey, tag), scan.top, scan.follows.get(tag));
+            }, failures);
+            unifiedProgress(++completed, total, totals, failures);
+        }
+        if (!tags.isEmpty() && failures.size() == beforeFollowFailures
+                && scanHost.equals(effectiveHost)) {
+            writeUnifiedCursor(contextKey, LocalGlobalCursorStore.TYPE_FOLLOW, scan.top, followCursor);
+        }
+        int beforeBookmarkFailures = failures.size();
+        LocalRefreshJobStore.phase(LocalRefreshJobStore.PHASE_BOOKMARK_QUEUE);
+        for (GlobalBookmark work : exact) {
+            String key = Long.toString(work.search.id);
+            runUnifiedItem("书签 " + key, () -> {
+                if (!scan.bookmarkCovered) checkBookmark(work.search,
+                        scanHost.equals(effectiveHost) ? scan.top : null, totals);
+                else if (bookmarkCursor.isEmpty()) local.establishBaseline(
+                        LocalFollowRepository.SOURCE_BOOKMARK, key, work.policy.signature,
+                        bookmarkCheckpoint(contextKey, key, work.policy.signature), scan.top);
+                else local.commitGlobalScan(LocalFollowRepository.SOURCE_BOOKMARK, key,
+                        work.policy.signature, bookmarkCheckpoint(contextKey, key, work.policy.signature),
+                        scan.top, scan.bookmarks.get(work.search.id));
+            }, failures);
+            unifiedProgress(++completed, total, totals, failures);
+        }
+        for (QuickSearch search : bridge) {
+            runUnifiedItem("书签 " + search.id, () -> checkBookmark(search,
+                    scanHost.equals(effectiveHost) ? scan.top : null, totals), failures);
+            unifiedProgress(++completed, total, totals, failures);
+        }
+        for (QuickSearch search : complex) {
+            runUnifiedItem("书签 " + search.id, () -> checkBookmark(search, null, totals), failures);
+            unifiedProgress(++completed, total, totals, failures);
+        }
+        if (!exact.isEmpty() && !unsupportedBookmark
+                && failures.size() == beforeBookmarkFailures && scanHost.equals(effectiveHost)) {
+            writeUnifiedCursor(contextKey, LocalGlobalCursorStore.TYPE_BOOKMARK,
+                    scan.top, bookmarkCursor);
+        }
+        if (!failures.isEmpty()) throw new UnifiedItemsFailedException();
+        return true;
+    }
+
+    private static FeedBoundary globalCursor(String context, String type,
+                                             boolean hadExisting, Map<?, FeedCheckpoint> old) {
+        FeedBoundary cursor = LocalGlobalCursorStore.read(context, type,
+                LocalFollowRepository.FIXED_CHINESE_SIGNATURE);
+        return cursor.isEmpty() && hadExisting ? LocalGlobalCursorStore.oldest(old) : cursor;
+    }
+
+    private void writeUnifiedCursor(String context, String type,
+                                    FeedBoundary top, FeedBoundary old) throws InterruptedException {
+        throwIfStopRequested();
+        LocalGlobalCursorStore.write(context, type, LocalFollowRepository.FIXED_CHINESE_SIGNATURE,
+                LocalBaselineResetPolicy.newer(top, old));
+    }
+
+    private interface UnifiedItem { void run() throws Throwable; }
+
+    private void runUnifiedItem(String label, UnifiedItem item, List<String> failures) throws Throwable {
+        for (int attempt = 0; ; attempt++) {
+            throwIfStopRequested();
+            LocalRefreshJobStore.Snapshot progress = LocalRefreshJobStore.read();
+            LocalRefreshJobStore.progress(progress.index, progress.pages, progress.galleries,
+                    label, joinFailures(failures));
+            notifyListeners();
+            try {
+                item.run();
+                return;
+            } catch (Exception error) {
+                throwIfStopRequested();
+                if (isRetryable(error) && attempt < 2) {
+                    Thread.sleep((attempt + 1) * 1600L);
+                    continue;
+                }
+                failures.add(label + ": " + safeMessage(error).replace('\n', ' '));
+                return;
+            }
+        }
+    }
+
+    private void unifiedProgress(int completed, int total, WorkCounter work, List<String> failures) {
+        LocalRefreshJobStore.progress(completed, work.pages, work.galleries, "", joinFailures(failures));
+        updateNotification("书签与追更：" + completed + "/" + total, completed, total, false);
+        notifyListeners();
+    }
+
+    private static final class UnifiedItemsFailedException extends Exception {}
+
     private void runFollows(String requestedMethod) throws Throwable {
         List<String> tags = LocalFollowRepository.getInstance().getAll();
         String host = preferredHost();
@@ -697,10 +924,15 @@ public final class LocalUpdateService extends Service {
     }
 
     private void checkTag(String tag, String host) throws Throwable {
+        checkTag(tag, host, null);
+    }
+
+    private void checkTag(String tag, String host, @Nullable WorkCounter work) throws Throwable {
         ListUrlBuilder builder = new ListUrlBuilder();
         builder.set(tag);
         String url = withHost(builder.build(true), effectiveHost);
         GalleryListParser.Result result = fetchPage(url, ListUrlBuilder.MODE_TAG);
+        if (work != null) work.add(result);
         throwIfStopRequested();
         String contextKey = sourceContext(effectiveHost);
         CheckpointKey checkpoint = followCheckpoint(contextKey, tag);
@@ -1047,6 +1279,14 @@ public final class LocalUpdateService extends Service {
             work.add(page);
             recordBookmarkPageProgress(work, search);
             throwIfStopRequested();
+            if (!requestedUrl.startsWith(effectiveHost)) {
+                accumulator = null;
+                checkpoint = null;
+                synchronizedTop = null;
+                visited.clear();
+                url = withHost(policy.url, effectiveHost);
+                continue;
+            }
             if (accumulator == null) {
                 checkpoint = bookmarkCheckpoint(
                         sourceContext(effectiveHost), key, policy.signature);

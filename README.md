@@ -23,17 +23,17 @@
 
 ## 当前版本
 
-以下为 2026-09-11 核对的源码配置，不代表发布页或手机已经安装的版本。
+以下为 2026-09-25 核对的源码配置，不代表发布页或手机已经安装的版本。
 
 | 项目 | 当前值 |
 | --- | --- |
 | Android 最低版本 | Android 6.0（API 23） |
 | 本机维护变体 | `appReleaseDebug` |
 | Debug applicationId | `com.ehviewer.manbo.debug` |
-| versionName / Debug versionCode | `154 / 154` |
+| versionName / Debug versionCode | `155 / 155` |
 | 数据库 schema | `13` |
 
-已构建并覆盖安装数字版本 `154 / 154`，包含独立的追更与书签扫描基线重置；APK 输出为 `app/build/outputs/apk/appRelease/debug/app-appRelease-debug.apk`。实际组装、核验与安装结果见[变更记录](说明.md)。
+已构建并覆盖安装数字版本 `155 / 155`，包含联合全局更新及首页历史分页分割线修复；APK 输出为 `app/build/outputs/apk/appRelease/debug/app-appRelease-debug.apk`。实际组装、核验与安装结果见[变更记录](说明.md)。
 
 ## 开始使用与开发
 

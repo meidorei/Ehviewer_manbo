@@ -8,7 +8,7 @@
 
 以 [app/build.gradle](../app/build.gradle)、[build.gradle](../build.gradle) 和 [Gradle Wrapper 配置](../gradle/wrapper/gradle-wrapper.properties) 为准。
 
-| 项目 | 2026-09-11 源码值 |
+| 项目 | 2026-09-25 源码值 |
 | --- | --- |
 | Gradle / Android Gradle Plugin | 9.5.0 / 9.3.1 |
 | Kotlin Android / Parcelize | 2.2.10 / 2.1.0 |
@@ -18,7 +18,7 @@
 | ABI | armeabi-v7a、arm64-v8a、x86、x86_64 |
 | namespace | `com.hippo.ehviewer` |
 | Debug applicationId | `com.ehviewer.manbo.debug` |
-| versionName / Debug versionCode | 154 / 154 |
+| versionName / Debug versionCode | 155 / 155 |
 | Release applicationId / versionCode | `com.ehviewer.manbo` / 112（仅配置参考） |
 | GreenDAO schema | 13 |
 

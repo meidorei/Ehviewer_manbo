@@ -38,6 +38,8 @@
 
 UI 发起刷新，Service 串行请求与计算，Repository 提交数据库，抽屉与列表再读取状态。可测试策略优先放在现有纯 Java 类中。
 
+书签与追更的全局入口统一调用 `LocalUpdateService.startGlobal()`；`UnifiedGlobalScan` 负责无数据库副作用的共享分页、独立覆盖判断、双来源匹配、分页循环/时间戳验证及中断控制。`LOCAL_REFRESH_JOB.JOB_TYPE` 新增文本值 `ALL`，方法仍为 `GLOBAL`；沿用已有字段及单任务互斥，无表结构、schema 版本或备份范围变更。联合任务结束将同一结果与状态在事务内写入两类历史，全部成功才写两类成功时间。旧 `FOLLOW` / `BOOKMARK` 暂停快照通过兼容入口恢复原范围，新联合任务恢复时重扫。独立游标、重置记录、未读保留量及阅读边界保持原语义。
+
 ## 数据库与范围
 
 当前 `DaoMaster.SCHEMA_VERSION = 13`。追更扩展表由 `SubscriptionSchema` 管理，阅读队列表由 `ReadingQueueSchema` 管理；不能把历史 schema 11 的描述当作当前版本。

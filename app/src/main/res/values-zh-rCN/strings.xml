@@ -1141,15 +1141,15 @@
     <string name="local_update_no_global_cursor">尚无全局扫描边界</string>
     <string name="local_update_global_cursor">下次全局扫描截止：%1$s</string>
     <string name="local_update_last_full_attempt">上次完整检查：%1$s</string>
-    <string name="local_update_method_global">全局中文扫描\n最多扫描 %1$d 页，未覆盖的标签会自动改为逐标签检查。</string>
-    <string name="local_update_method_global_recommended">全局中文扫描（推荐）\n最多扫描 %1$d 页，未覆盖的标签会自动改为逐标签检查。</string>
+    <string name="local_update_method_global">全局中文扫描\n同时更新全部书签和追更，最多扫描 %1$d 页；未覆盖的追更逐标签补查，书签连续分页补查。</string>
+    <string name="local_update_method_global_recommended">全局中文扫描（推荐）\n同时更新全部书签和追更，最多扫描 %1$d 页；未覆盖的追更逐标签补查，书签连续分页补查。</string>
     <string name="local_update_method_tags">逐标签第一页\n适合间隔较久；第一页未找到旧边界时记为 20+。</string>
     <string name="local_update_method_tags_recommended">逐标签第一页（推荐）\n适合间隔较久；第一页未找到旧边界时记为 20+。</string>
     <string name="bookmark_update_history">待检查 %1$d 个书签\n%2$s</string>
-    <string name="bookmark_update_method_global">全局中文扫描\n最多扫描 %1$d 页；复杂关键词会自动改为逐书签第一页。</string>
-    <string name="bookmark_update_method_global_recommended">全局中文扫描（推荐）\n最多扫描 %1$d 页；复杂关键词会自动改为逐书签第一页。</string>
-    <string name="bookmark_update_method_each">逐书签第一页\n使用每个书签的完整查询，适合间隔较久。</string>
-    <string name="bookmark_update_method_each_recommended">逐书签第一页（推荐）\n使用每个书签的完整查询，适合间隔较久。</string>
+    <string name="bookmark_update_method_global">全局中文扫描\n同时更新全部书签和追更，最多扫描 %1$d 页；未覆盖的追更逐标签补查，书签连续分页补查。</string>
+    <string name="bookmark_update_method_global_recommended">全局中文扫描（推荐）\n同时更新全部书签和追更，最多扫描 %1$d 页；未覆盖的追更逐标签补查，书签连续分页补查。</string>
+    <string name="bookmark_update_method_each">逐书签检查\n使用每个书签的完整查询，适合间隔较久。</string>
+    <string name="bookmark_update_method_each_recommended">逐书签检查（推荐）\n使用每个书签的完整查询，适合间隔较久。</string>
     <string name="local_update_start">开始检查</string>
     <string name="bookmark_check_confirm_with_history">将按顺序检查 %1$d 个书签的第一页。\n\n%2$s\n\n检查期间可在任务详情中暂停或停止。</string>
     <string name="follow_namespace_artist">艺术家</string>
@@ -1197,4 +1197,7 @@
     <string name="follow_baseline_reset_empty">没有需要重置的追更。</string>
     <string name="follow_baseline_reset_success">已重置 %1$d 个追更标签的扫描基线，未读数字和分割线已保留。</string>
     <string name="follow_baseline_reset_failed">重置追更基线失败，未保存任何修改，请重试。</string>
+    <string name="local_update_all_title">书签与追更更新</string>
+    <string name="local_update_all_history">追更 %1$d 项 · 书签 %2$d 项\n追更扫描边界：%3$s\n书签扫描边界：%4$s</string>
+    <string name="local_update_empty">没有可更新的书签或追更</string>
 </resources>

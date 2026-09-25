@@ -1,0 +1,10 @@
+{
+  "device": "5da3329",
+  "package": "com.ehviewer.manbo.debug",
+  "files": [
+    "eh.db",
+    "eh.db-journal"
+  ],
+  "capturedAt": "2026-09-17T16:43:32.885966",
+  "freshRun": true
+}

@@ -1,0 +1,16 @@
+{
+  "source": "fresh USB snapshot",
+  "package": "com.ehviewer.manbo.debug",
+  "total": 3219,
+  "multiItemGroups": 380,
+  "groupedItems": 1019,
+  "independentItems": 2200,
+  "uncertainSets": 22,
+  "allGidsPreserved": true,
+  "allTitlesPreserved": true,
+  "confirmed": true,
+  "phoneDatabaseWritten": true,
+  "previousCacheUsed": false,
+  "catalogHash": "7fcb225c6a7844231b740cf2041edef445316d75a3cc64b16b3b92417f48bcbf",
+  "completionReport": "artifacts\\manga-fresh-20260917-164332\\writeback-20260917-165230\\completion.json"
+}

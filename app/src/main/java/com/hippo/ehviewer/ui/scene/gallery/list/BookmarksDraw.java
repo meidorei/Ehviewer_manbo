@@ -31,7 +31,6 @@ import com.hippo.ehviewer.subscription.QuerySignatureFactory;
 import com.hippo.ehviewer.subscription.SearchQueryPolicy;
 import com.hippo.ehviewer.subscription.SubscriptionRepository;
 import com.hippo.ehviewer.subscription.LocalFollowRepository;
-import com.hippo.ehviewer.subscription.LocalGlobalCursorStore;
 import com.hippo.ehviewer.subscription.LocalRefreshJobStore;
 import com.hippo.ehviewer.subscription.LocalUpdateService;
 import com.hippo.ehviewer.subscription.BookmarkUpdatePolicy;
@@ -333,10 +332,7 @@ public class BookmarksDraw {
         long lastSuccess = LocalRefreshJobStore.lastBookmarkSuccess();
         boolean recommendGlobal = lastSuccess == 0
                 || System.currentTimeMillis() - lastSuccess <= 5L * 24L * 60L * 60L * 1000L;
-        long globalCursorTime = LocalGlobalCursorStore.readCurrent(
-                context, LocalGlobalCursorStore.TYPE_BOOKMARK).timeMillis();
-        LocalUpdateStartDialog.showBookmarks(context,
-                bookmarks == null ? 0 : bookmarks.size(), recommendGlobal, globalCursorTime,
+        LocalUpdateStartDialog.showBookmarks(context, recommendGlobal,
                 method -> {
                     requestNotificationPermission();
                     if (!LocalUpdateService.startBookmarks(context, method)) showJobDetails();
@@ -351,7 +347,8 @@ public class BookmarksDraw {
                     && !LocalRefreshJobStore.STATUS_RUNNING.equals(snapshot.status)
                     && !LocalRefreshJobStore.STATUS_PAUSED.equals(snapshot.status);
             if (terminal) {
-                if (LocalRefreshJobStore.TYPE_BOOKMARK.equals(snapshot.type)) {
+                if (LocalRefreshJobStore.TYPE_BOOKMARK.equals(snapshot.type)
+                        || LocalRefreshJobStore.TYPE_ALL.equals(snapshot.type)) {
                     loadUpdateBadges(true);
                 } else if (LocalRefreshJobStore.TYPE_BASELINE.equals(snapshot.type)) {
                     loadUpdateBadges(false);
