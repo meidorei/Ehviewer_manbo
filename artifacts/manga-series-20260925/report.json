@@ -1,0 +1,19 @@
+{
+  "itemCount": 3231,
+  "seriesCount": 383,
+  "groupedItemCount": 1026,
+  "independentItemCount": 2205,
+  "newItemCount": 36,
+  "absentSincePriorSnapshot": 24,
+  "changedTitleCount": 0,
+  "addedSeriesCount": 7,
+  "extendedSeriesCount": 2,
+  "newItemsGrouped": 12,
+  "priorUnchangedItemsReused": 3195,
+  "uncertainCount": 24,
+  "allGidsAndTitlesPreserved": true,
+  "sqliteIntegrity": "ok",
+  "phoneWriteback": false,
+  "webGenerated": false,
+  "confirmed": false
+}
