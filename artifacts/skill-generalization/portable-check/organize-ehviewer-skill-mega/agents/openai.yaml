@@ -1,0 +1,4 @@
+interface:
+  display_name: "EhViewer 漫画系列整理"
+  short_description: "通用跨语言系列整理，离线修正分类与顺序，确认后校验数据库副本"
+  default_prompt: "Use $organize-ehviewer-manga to group my EhViewer title catalog into manga series, review uncertain relationships, and prepare an editable offline classification and reading-order page."

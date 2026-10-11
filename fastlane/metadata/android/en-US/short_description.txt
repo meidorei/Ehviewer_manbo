@@ -1,1 +1,1 @@
-An E-Hentai Application for Android, forked from Hippo Seven by SXJ LonelyDog
+EhViewer fork with local follows, bookmark updates and a reading queue

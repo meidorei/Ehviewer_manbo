@@ -1,0 +1,7 @@
+{
+  "status": "passed",
+  "itemCount": 3219,
+  "onlyDownloadsTimeChanged": true,
+  "backup": "artifacts\\manga-fresh-20260917-164332\\writeback-20260917-165230\\checked\\backup.db",
+  "output": "artifacts\\manga-fresh-20260917-164332\\writeback-20260917-165230\\checked\\sorted.db"
+}

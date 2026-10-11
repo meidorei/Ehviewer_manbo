@@ -144,6 +144,7 @@
     <!-- Update -->
     <string name="new_version">新版本</string>
     <string name="update">更新</string>
+    <string name="update_dialog_sponsor">賞飯給作者</string>
     <string name="update_fail">检查更新失败</string>
     <string name="update_plain">版本：%1$s\n大小：%2$s\n\n%3$s</string>
     <string name="update_fail_info">点击 是 跳转至Github主页</string>
@@ -394,7 +395,14 @@
     <string name="download_watched_progress">已觀看 %1$d/%2$d</string>
     <string name="download_reset_reading_progress">重置閱讀進度</string>
     <string name="reset_reading_progress_message">重置所有已下載圖庫的閱讀進度？</string>
+    <string name="reset_reading_progress_processing">正在重置閱讀進度...</string>
+    <string name="reset_reading_progress_done">閱讀進度重置完畢</string>
     <string name="download_service_label">EhViewer 下載服務</string>
+    <string name="archiver_download_service_label">EhViewer 檔案下載</string>
+    <string name="archiver_download_pause">暫停</string>
+    <string name="archiver_download_resume">繼續</string>
+    <string name="archiver_download_paused">已暫停</string>
+    <string name="archiver_download_restart_no_range">伺服器不支援斷點續傳，將重新下載</string>
     <string name="download_speed_text">%s</string>
     <string name="download_speed_text_2">%1$s，剩餘 %2$s</string>
     <string name="remember_download_label">記住下載標籤</string>
@@ -562,6 +570,12 @@
     <string name="settings_read_screen_rotation_portrait">直向</string>
     <string name="settings_read_screen_rotation_landscape">橫向</string>
     <string name="settings_read_screen_rotation_sensor">自動旋轉</string>
+    <string name="settings_read_refresh_rate">畫面更新率</string>
+    <string name="settings_read_refresh_rate_default">系統預設</string>
+    <string name="settings_read_refresh_rate_60">60 Hz</string>
+    <string name="settings_read_refresh_rate_90">90 Hz</string>
+    <string name="settings_read_refresh_rate_120">120 Hz</string>
+    <string name="settings_read_refresh_rate_max">螢幕最高</string>
     <string name="settings_read_reading_direction">閱讀方向</string>
     <string name="settings_read_reading_direction_left_to_right">由左到右</string>
     <string name="settings_read_reading_direction_right_to_Left">由右到左</string>
@@ -992,6 +1006,13 @@
     <string name="imported_archive_info_title">本機匯入資訊</string>
     <string name="imported_archive_info_message">這是從本機儲存空間匯入的項目</string>
     <string name="imported_archive_category">本機匯入</string>
+    <string name="import_local_album">匯入本機相簿</string>
+    <string name="import_album_title">選擇圖片資料夾</string>
+    <string name="import_album_processing">正在匯入相簿…</string>
+    <string name="import_album_failed">相簿匯入失敗</string>
+    <string name="import_album_no_images">所選資料夾中沒有支援的圖片</string>
+    <string name="import_album_already_imported">相簿已匯入</string>
+    <string name="import_album_success">成功匯入 %d 張圖片</string>
 
     <!-- S-Pen Actions(Samsung only) -->
     <string name="spen_previous_page">上一頁</string>
@@ -1019,4 +1040,5 @@
     <string name="settings_reading_queue_file_warning">開啟自動刪除後，會永久刪除舊漫畫的整個本機下載目錄，檔案無法復原。</string>
     <string name="settings_reading_queue_cleanup_title">刪除舊下載？</string>
     <string name="settings_reading_queue_cleanup_message">將永久刪除閱讀佇列中最早觀看的 %1$d 部漫畫的整個本機下載目錄，此操作無法復原。</string>
+    <string name="bookmark_tag_marker_description">書籤標籤：%1$s</string>
 </resources>

@@ -78,6 +78,7 @@ import com.hippo.drawerlayout.DrawerLayout;
 import com.hippo.easyrecyclerview.EasyRecyclerView;
 import com.hippo.easyrecyclerview.FastScroller;
 import com.hippo.ehviewer.EhApplication;
+import com.hippo.ehviewer.BuildConfig;
 import com.hippo.ehviewer.EhDB;
 import com.hippo.ehviewer.FavouriteStatusRouter;
 import com.hippo.ehviewer.R;
@@ -112,6 +113,7 @@ import com.hippo.ehviewer.ui.scene.ProgressScene;
 import com.hippo.ehviewer.ui.scene.gallery.detail.GalleryDetailScene;
 import com.hippo.ehviewer.subscription.CheckpointKey;
 import com.hippo.ehviewer.subscription.BookmarkUpdatePolicy;
+import com.hippo.ehviewer.subscription.BookmarkTagMarkerPolicy;
 import com.hippo.ehviewer.subscription.FeedCheckpoint;
 import com.hippo.ehviewer.subscription.FeedBoundary;
 import com.hippo.ehviewer.subscription.FeedBoundaryDecoration;
@@ -126,7 +128,6 @@ import com.hippo.ehviewer.subscription.SubscriptionRefreshStatus;
 import com.hippo.ehviewer.subscription.SubscriptionSnapshot;
 import com.hippo.ehviewer.subscription.SubscriptionUpdateCalculator;
 import com.hippo.ehviewer.subscription.LocalFollowRepository;
-import com.hippo.ehviewer.subscription.LocalGlobalCursorStore;
 import com.hippo.ehviewer.subscription.LocalRefreshJobStore;
 import com.hippo.ehviewer.subscription.LocalUnreadOpenPolicy;
 import com.hippo.ehviewer.subscription.LocalUpdateService;
@@ -189,6 +190,7 @@ public final class GalleryListScene extends BaseScene
     private RecyclerView.OnItemTouchListener mFeedBoundaryTouchListener;
     private boolean mUnreadClearedForContext;
     private long mUnreadSnapshotAt;
+    private BookmarkTagMarkerPolicy mBookmarkTagMarkers = BookmarkTagMarkerPolicy.EMPTY;
 
     public final static int REQUEST_CODE_SELECT_IMAGE = 0;
 
@@ -856,6 +858,24 @@ public final class GalleryListScene extends BaseScene
         }
         setNavCheckedItem(checkedItemId);
         mNavCheckedId = checkedItemId;
+        refreshBookmarkTagMarkers();
+    }
+
+    private boolean showsBookmarkTagMarkers() {
+        return mFeedSourceContext != null
+                && mFeedSourceContext.type == FeedSourceContext.Type.HOME
+                && mUrlBuilder != null
+                && mUrlBuilder.getMode() == ListUrlBuilder.MODE_NORMAL
+                && mUrlBuilder.getCategory() == EhUtils.NONE
+                && TextUtils.isEmpty(mUrlBuilder.getKeyword());
+    }
+
+    void refreshBookmarkTagMarkers() {
+        mBookmarkTagMarkers = showsBookmarkTagMarkers()
+                ? BookmarkTagMarkerPolicy.compile(EhDB.getAllQuickSearch(),
+                        Settings.getAutoAppendChinese())
+                : BookmarkTagMarkerPolicy.EMPTY;
+        if (mAdapter != null) mAdapter.notifyDataSetChanged();
     }
 
     @NonNull
@@ -905,7 +925,8 @@ public final class GalleryListScene extends BaseScene
                 getString(R.string.last_update_marker), position -> {
                     if (mHelper == null || position < 0 || position >= mHelper.getData().size()) return null;
                     return mHelper.getDataAtEx(position);
-                });
+                }, () -> mFeedSourceContext != null
+                        && mFeedSourceContext.type == FeedSourceContext.Type.HOME);
         mFeedBoundaryDecoration.setBoundary(mVisibleFeedBoundary);
         mRecyclerView.addItemDecoration(mFeedBoundaryDecoration);
         GestureDetector boundaryGestureDetector = new GestureDetector(context,
@@ -1215,6 +1236,7 @@ public final class GalleryListScene extends BaseScene
         }
 
         mAdapter = null;
+        mBookmarkTagMarkers = BookmarkTagMarkerPolicy.EMPTY;
         mSearchLayout = null;
         mSearchBar = null;
         mSearchFab = null;
@@ -1328,6 +1350,7 @@ public final class GalleryListScene extends BaseScene
             if (mBookmarksDraw != null) {
                 mBookmarksDraw.refreshUpdateBadges(false);
             }
+            refreshBookmarkTagMarkers();
 
             if (0 == list.size()) {
                 tip.setVisibility(View.VISIBLE);
@@ -1361,6 +1384,7 @@ public final class GalleryListScene extends BaseScene
         drawPager.setAdapter(pagerAdapter);
         drawPager.setCurrentItem(Math.max(0, Math.min(
                 Settings.getGalleryListDrawerPage(), views.size() - 1)), false);
+        refreshBookmarkTagMarkers();
         drawPager.addOnPageChangeListener(new ViewPager.SimpleOnPageChangeListener() {
             @Override
             public void onPageSelected(int position) {
@@ -1418,9 +1442,7 @@ public final class GalleryListScene extends BaseScene
         long lastSuccess = LocalRefreshJobStore.lastFollowSuccess();
         boolean recommendGlobal = lastSuccess == 0
                 || System.currentTimeMillis() - lastSuccess <= 5L * 24L * 60L * 60L * 1000L;
-        long globalCursorTime = LocalGlobalCursorStore.readCurrent(
-                context, LocalGlobalCursorStore.TYPE_FOLLOW).timeMillis();
-        LocalUpdateStartDialog.showFollow(context, recommendGlobal, globalCursorTime, method -> {
+        LocalUpdateStartDialog.showFollow(context, recommendGlobal, method -> {
             if (Build.VERSION.SDK_INT >= 33
                     && activity.checkSelfPermission(Manifest.permission.POST_NOTIFICATIONS)
                     != PackageManager.PERMISSION_GRANTED) {
@@ -1552,6 +1574,7 @@ public final class GalleryListScene extends BaseScene
         drawPager.setAdapter(pagerAdapter);
         drawPager.setCurrentItem(Math.max(0, Math.min(
                 Settings.getGalleryListDrawerPage(), views.size() - 1)), false);
+        refreshBookmarkTagMarkers();
     }
 
     public void onAutoAppendChineseChanged() {
@@ -1588,6 +1611,7 @@ public final class GalleryListScene extends BaseScene
     @Override
     public void onResume() {
         super.onResume();
+        refreshBookmarkTagMarkers();
         if (mBookmarksDraw == null) {
             return;
         }
@@ -2359,6 +2383,7 @@ public final class GalleryListScene extends BaseScene
     private void onGetGalleryListSuccess(GalleryListParser.Result result, int taskId) {
         if (mHelper != null && mSearchBarMover != null &&
                 mHelper.isCurrentTask(taskId)) {
+            logBookmarkMarkerCounts(result.galleryInfoList);
             String emptyString;
             if (result.customErrorString == null) {
                 emptyString = getResources2().getString(mUrlBuilder.getMode() == ListUrlBuilder.MODE_SUBSCRIPTION && result.noWatchedTags
@@ -2372,7 +2397,23 @@ public final class GalleryListScene extends BaseScene
             handleSuccessfulFeed(result);
 //            mHelper.onGetPageData(taskId, result.pages, result.nextPage, result.galleryInfoList);
             mHelper.onGetPageData(taskId, result, result.galleryInfoList);
+            // Prepending changes the neighbour of existing items, including marker spacing.
+            if (mRecyclerView != null) mRecyclerView.invalidateItemDecorations();
         }
+    }
+
+    private void logBookmarkMarkerCounts(List<GalleryInfo> galleries) {
+        if (!BuildConfig.DEBUG) return;
+        int api = 0, html = 0, matched = 0;
+        for (GalleryInfo gallery : galleries) {
+            if (gallery.simpleTags != null && gallery.simpleTags.length > 0) api++;
+            if (gallery.tgList != null && !gallery.tgList.isEmpty()) html++;
+            if (!mBookmarkTagMarkers.matchGallery(gallery).isEmpty()) matched++;
+        }
+        android.util.Log.i("BookmarkTagMarker", "home=" + showsBookmarkTagMarkers()
+                + " source=" + (mFeedSourceContext == null ? "none" : mFeedSourceContext.type)
+                + " rules=" + mBookmarkTagMarkers.getRuleCount() + " galleries=" + galleries.size()
+                + " apiTags=" + api + " htmlTags=" + html + " matched=" + matched);
     }
 
     private void handleSuccessfulFeed(GalleryListParser.Result result) {
@@ -2519,6 +2560,29 @@ public final class GalleryListScene extends BaseScene
         @Override
         public GalleryInfo getDataAt(int position) {
             return null != mHelper ? mHelper.getDataAtEx(position) : null;
+        }
+
+        @Override
+        protected List<String> getBookmarkTagMarkers(GalleryInfo gallery) {
+            if (!showsBookmarkTagMarkers()) return Collections.emptyList();
+            List<String> names = new ArrayList<>();
+            boolean showTranslations = Settings.getShowTagTranslations();
+            Context context = getEHContext();
+            EhTagDatabase markerTags = showTranslations && context != null
+                    ? EhTagDatabase.getInstance(context) : null;
+            BookmarkTagMarkerPolicy.TagTranslator translator = new BookmarkTagMarkerPolicy.TagTranslator() {
+                @Override public String translate(String tag) {
+                    return TagTranslationUtil.getTagCN(tag, markerTags);
+                }
+
+                @Override public String translateNamespace(String namespace) {
+                    return markerTags == null ? null : markerTags.getTranslation("n:" + namespace);
+                }
+            };
+            for (BookmarkTagMarkerPolicy.Match match : mBookmarkTagMarkers.matchGallery(gallery)) {
+                names.add(match.displayLabel(showTranslations, translator));
+            }
+            return names;
         }
 
     }

@@ -1,0 +1,307 @@
+{
+  "schema": 13,
+  "tables": {
+    "BOOKMARKS": {
+      "columns": [
+        "GID",
+        "TOKEN",
+        "TITLE",
+        "TITLE_JPN",
+        "THUMB",
+        "CATEGORY",
+        "POSTED",
+        "UPLOADER",
+        "RATING",
+        "SIMPLE_LANGUAGE",
+        "PAGE",
+        "TIME"
+      ],
+      "rows": 0,
+      "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "Black_List": {
+      "columns": [
+        "_id",
+        "BADGAYNAME",
+        "REASON",
+        "ANGRYWITH",
+        "ADD_TIME",
+        "MODE"
+      ],
+      "rows": 0,
+      "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "DOWNLOADS": {
+      "columns": [
+        "GID",
+        "TOKEN",
+        "TITLE",
+        "TITLE_JPN",
+        "THUMB",
+        "CATEGORY",
+        "POSTED",
+        "UPLOADER",
+        "RATING",
+        "SIMPLE_LANGUAGE",
+        "STATE",
+        "LEGACY",
+        "TIME",
+        "LABEL",
+        "ARCHIVE_URI"
+      ],
+      "rows": 3308,
+      "sha256": "86015b8328cc63440a9650ec27a0cc72abc8ed3f7c4783acbdecf37c09f465a7"
+    },
+    "DOWNLOAD_DIRNAME": {
+      "columns": [
+        "GID",
+        "DIRNAME"
+      ],
+      "rows": 4751,
+      "sha256": "7b451a745864bb612911bbb172f52b47429a57bdf9d1884f5ca8fb1e1eb32117"
+    },
+    "DOWNLOAD_LABELS": {
+      "columns": [
+        "_id",
+        "LABEL",
+        "TIME"
+      ],
+      "rows": 0,
+      "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "FEED_CHECKPOINT": {
+      "columns": [
+        "_id",
+        "ACCOUNT_KEY",
+        "SOURCE_TYPE",
+        "SOURCE_KEY",
+        "QUERY_SIGNATURE",
+        "PREVIOUS_TIME",
+        "CURRENT_TIME",
+        "PREVIOUS_GIDS",
+        "CURRENT_GIDS",
+        "UPDATED_AT"
+      ],
+      "rows": 2773,
+      "sha256": "a9710864012e7936837bae553bc6c7a9111050af88e32feaaac49e49e7903947"
+    },
+    "FILTER": {
+      "columns": [
+        "_id",
+        "MODE",
+        "TEXT",
+        "ENABLE"
+      ],
+      "rows": 0,
+      "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "Gallery_Tags": {
+      "columns": [
+        "GID",
+        "ROWS",
+        "ARTIST",
+        "COSPLAYER",
+        "CHARACTER",
+        "FEMALE",
+        "GROUP",
+        "LANGUAGE",
+        "MALE",
+        "MISC",
+        "MIXED",
+        "OTHER",
+        "PARODY",
+        "RECLASS",
+        "CREATE_TIME",
+        "UPDATE_TIME"
+      ],
+      "rows": 772,
+      "sha256": "b660f9735c3cae596513673dc9cb6883afae37f9c859d3ecab5e742d17ef07fb"
+    },
+    "HISTORY": {
+      "columns": [
+        "GID",
+        "TOKEN",
+        "TITLE",
+        "TITLE_JPN",
+        "THUMB",
+        "CATEGORY",
+        "POSTED",
+        "UPLOADER",
+        "RATING",
+        "SIMPLE_LANGUAGE",
+        "MODE",
+        "TIME"
+      ],
+      "rows": 100,
+      "sha256": "265c5cac5bdfe4a1c04b1070f393d278ac6acee21df57b436db751b90a33924a"
+    },
+    "LOCAL_BASELINE_QUEUE": {
+      "columns": [
+        "_id",
+        "BATCH_KEY",
+        "SOURCE_TYPE",
+        "SOURCE_KEY",
+        "QUERY_SIGNATURE",
+        "METHOD",
+        "ADDED_AT",
+        "STATUS",
+        "ERROR"
+      ],
+      "rows": 18,
+      "sha256": "150a384c447444c0b9e23ff16f70044e1e315d8c10a277eb9b134faa33c5949a"
+    },
+    "LOCAL_FAVORITES": {
+      "columns": [
+        "GID",
+        "TOKEN",
+        "TITLE",
+        "TITLE_JPN",
+        "THUMB",
+        "CATEGORY",
+        "POSTED",
+        "UPLOADER",
+        "RATING",
+        "SIMPLE_LANGUAGE",
+        "TIME"
+      ],
+      "rows": 0,
+      "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "LOCAL_FOLLOW_TAG": {
+      "columns": [
+        "TAG_NAME",
+        "ADDED_AT",
+        "LAST_CHECKED_AT"
+      ],
+      "rows": 565,
+      "sha256": "6319d45b66e2bc8062d9e96d12ae81b8be243d018815c8c14781ff0c8cf297ef"
+    },
+    "LOCAL_GLOBAL_CURSOR": {
+      "columns": [
+        "ACCOUNT_KEY",
+        "JOB_TYPE",
+        "QUERY_SIGNATURE",
+        "CURRENT_TIME",
+        "CURRENT_GIDS",
+        "UPDATED_AT"
+      ],
+      "rows": 3,
+      "sha256": "e3d4fecc9fc4747ab317b4553119bc2cb2abe69087ac8366bc5944222e02f730"
+    },
+    "LOCAL_REFRESH_JOB": {
+      "columns": [
+        "_id",
+        "JOB_TYPE",
+        "METHOD",
+        "STATUS",
+        "PHASE",
+        "REQUEST_INTERVAL_MS",
+        "CURRENT_INDEX",
+        "TOTAL",
+        "PAGES",
+        "GALLERIES",
+        "CURRENT_KEY",
+        "SOURCE_HOST",
+        "FAILURES",
+        "STARTED_AT",
+        "UPDATED_AT"
+      ],
+      "rows": 1,
+      "sha256": "b9c08cc176544e5f17bde2e21606a51db4d9429a93b87a2d8973c9e10f6d7990"
+    },
+    "LOCAL_REFRESH_META": {
+      "columns": [
+        "META_KEY",
+        "META_VALUE"
+      ],
+      "rows": 11,
+      "sha256": "d79756e97cbfa00cb20b7dcd26bb74d977ad08cbbf5f697cf1aea8de0d992e6b"
+    },
+    "LOCAL_UNREAD_GALLERY": {
+      "columns": [
+        "SOURCE_TYPE",
+        "SOURCE_KEY",
+        "GID",
+        "DETECTED_AT"
+      ],
+      "rows": 2144,
+      "sha256": "3fd18ebe6d3a651cc1a361b4bc29bb59020432f5a91cbb9371660b923eb3b453"
+    },
+    "LOCAL_UPDATE_STATE": {
+      "columns": [
+        "SOURCE_TYPE",
+        "SOURCE_KEY",
+        "QUERY_SIGNATURE",
+        "COUNT",
+        "COUNT_STATE",
+        "CHECKED_AT",
+        "ERROR"
+      ],
+      "rows": 657,
+      "sha256": "0b33dd334302f10a323a83a9156f6a562e839f4c7eb4a2887183c3a3de1c784d"
+    },
+    "QUICK_SEARCH": {
+      "columns": [
+        "_id",
+        "NAME",
+        "MODE",
+        "CATEGORY",
+        "KEYWORD",
+        "ADVANCE_SEARCH",
+        "MIN_RATING",
+        "PAGE_FROM",
+        "PAGE_TO",
+        "TIME"
+      ],
+      "rows": 91,
+      "sha256": "bb9340bf9955f10c2fa846d91a435910ddc02adae8cd9b3ec010f76ae8588629"
+    },
+    "READING_QUEUE": {
+      "columns": [
+        "GID",
+        "QUEUE_ORDER",
+        "CURRENT_PAGE",
+        "TOTAL_PAGES"
+      ],
+      "rows": 2,
+      "sha256": "2027f9c2b04072a8e7580146e93e02538c6c6d029ddbd9d26db2030460e0f6fd"
+    },
+    "SUBSCRIPTION_TAG_CACHE": {
+      "columns": [
+        "_id",
+        "ACCOUNT_KEY",
+        "TAG_NAME",
+        "SERVER_TAG_ID",
+        "WATCHED",
+        "HIDDEN",
+        "COLOR",
+        "WEIGHT",
+        "FIRST_SEEN_AT",
+        "SYNCED_AT"
+      ],
+      "rows": 0,
+      "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "SUBSCRIPTION_TAG_UPDATE_STATE": {
+      "columns": [
+        "_id",
+        "ACCOUNT_KEY",
+        "TAG_NAME",
+        "QUERY_SIGNATURE",
+        "COUNT",
+        "COUNT_STATE",
+        "CHECKED_AT"
+      ],
+      "rows": 0,
+      "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "android_metadata": {
+      "columns": [
+        "locale"
+      ],
+      "rows": 1,
+      "sha256": "81ac4b2bad563da332c84ab9c277adb9517a1f15324ecc39ccaa783248c689eb"
+    }
+  },
+  "backupSha256": "ff6861e7d894fb5099c099640cc1812cc498859b3ff22212d44c0677c3163f06"
+}

@@ -1,0 +1,15 @@
+{
+  "device": "5da3329",
+  "package": "com.ehviewer.manbo.debug",
+  "capture": "app force-stopped before each export",
+  "files": {
+    "eh.db": {
+      "bytes": 3641344,
+      "sha256": "a35e7b92bd8dac47869f95f3baa343a24d55bd14847f456b71cb9d9826918c70"
+    },
+    "eh.db-journal": {
+      "bytes": 512,
+      "sha256": "076a27c79e5ace2a3d47f9dd2e83e4ff6ea8872b3c2218f66c92b89b55f36560"
+    }
+  }
+}

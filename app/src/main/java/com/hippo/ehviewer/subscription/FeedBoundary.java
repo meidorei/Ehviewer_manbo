@@ -29,4 +29,12 @@ public final class FeedBoundary {
         return postedTimestamp > 0 && !isEmpty()
                 && (postedTimestamp < time || postedTimestamp == time && gids.contains(gid));
     }
+
+    /** A historical page start alone is not evidence that the manual marker is here. */
+    public boolean isHomeMarkerBefore(long postedTimestamp, long gid,
+                                      long previousTimestamp, long previousGid) {
+        if (!isFirstOld(postedTimestamp, gid)) return false;
+        if (previousTimestamp > 0) return isNew(previousTimestamp, previousGid);
+        return postedTimestamp == time && gids.contains(gid);
+    }
 }

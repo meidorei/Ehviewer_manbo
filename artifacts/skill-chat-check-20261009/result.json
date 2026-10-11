@@ -1,0 +1,25 @@
+{
+  "tests": 13,
+  "failures": 0,
+  "errors": 0,
+  "skipped": 0,
+  "items": 3314,
+  "pages": 94,
+  "maxCharsIncludingCRLF": 5997,
+  "elapsedSeconds": 0.362,
+  "deltaCount": 85,
+  "gidAndTitlesPreserved": true,
+  "frontmatterAndLinksChecked": true,
+  "officialValidator": "not run successfully: PyYAML unavailable",
+  "clientFreezeReproduced": false,
+  "threadEvidence": {
+    "threadId": "01a11f27-a391-7781-b0ec-adaf884f14c2",
+    "status": "completed",
+    "durationMs": 883991,
+    "largeOutputChars": [
+      717543,
+      131068
+    ],
+    "slowComparisonMs": 115618
+  }
+}

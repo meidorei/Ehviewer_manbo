@@ -1,0 +1,8 @@
+{
+  "fixtureProvenance": "主模型构造的合成多语言题名与预设关系；未经独立人工标注，不代表真实书库准确率。",
+  "itemCount": 18,
+  "trueSameSeriesPairs": 28,
+  "candidateRetrievedPairs": 28,
+  "candidateMissedPairs": 0,
+  "candidatePairRecall": 1.0
+}

@@ -1,0 +1,9 @@
+{
+  "package": "com.ehviewer.manbo.debug",
+  "device": "5da3329",
+  "method": "force-stop then archive main database and all existing SQLite sidecars",
+  "files": [
+    "eh.db",
+    "eh.db-journal"
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "device": "5da3329",
+  "package": "com.ehviewer.manbo.debug",
+  "capturedAtLocal": "2026-10-09",
+  "consistentSnapshot": "Debug app force-stopped; main database and all present SQLite sidecars copied before relaunch",
+  "files": {
+    "eh.db": {
+      "bytes": 3387392,
+      "sha256": "e99fdcd7d61ae794c256aa61e7358c2fc8d8a0a5cd7a1ed10e05c1f2f88a13a9"
+    },
+    "eh.db-journal": {
+      "bytes": 512,
+      "sha256": "076a27c79e5ace2a3d47f9dd2e83e4ff6ea8872b3c2218f66c92b89b55f36560"
+    }
+  }
+}

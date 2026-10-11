@@ -42,8 +42,12 @@ public final class LocalFollowRepository {
     }
 
     public List<String> getAll() {
+        return getAll(EhDB.getDatabase());
+    }
+
+    private List<String> getAll(Database db) {
         List<String> result = new ArrayList<>();
-        try (Cursor cursor = EhDB.getDatabase().rawQuery(
+        try (Cursor cursor = db.rawQuery(
                 "SELECT TAG_NAME FROM LOCAL_FOLLOW_TAG ORDER BY TAG_NAME", null)) {
             while (cursor.moveToNext()) result.add(cursor.getString(0));
         }
@@ -93,21 +97,26 @@ public final class LocalFollowRepository {
         Database db = EhDB.getDatabase();
         db.beginTransaction();
         try {
-            db.execSQL("DELETE FROM LOCAL_FOLLOW_TAG WHERE TAG_NAME=?", new Object[]{tag});
-            db.execSQL("DELETE FROM LOCAL_UPDATE_STATE WHERE SOURCE_TYPE=? AND SOURCE_KEY=?",
-                    new Object[]{SOURCE_FOLLOW, tag});
-            db.execSQL("DELETE FROM LOCAL_UNREAD_GALLERY WHERE SOURCE_TYPE=? AND SOURCE_KEY=?",
-                    new Object[]{SOURCE_FOLLOW, tag});
-            db.execSQL("DELETE FROM FEED_CHECKPOINT WHERE " +
-                            "(SOURCE_TYPE LIKE 'LOCAL_FOLLOW%' OR SOURCE_TYPE='SUBSCRIPTION_TAG_SEEN') " +
-                            "AND SOURCE_KEY=?",
-                    new Object[]{tag});
-            LocalBaselineQueue.delete(SOURCE_FOLLOW, tag);
+            deleteFollowData(db, tag);
             db.setTransactionSuccessful();
         } finally {
             db.endTransaction();
         }
         SubscriptionSnapshot.refreshFromDatabase();
+    }
+
+    static void deleteFollowData(Database db, String tag) {
+        db.execSQL("DELETE FROM LOCAL_FOLLOW_TAG WHERE TAG_NAME=?", new Object[]{tag});
+        db.execSQL("DELETE FROM LOCAL_UPDATE_STATE WHERE SOURCE_TYPE=? AND SOURCE_KEY=?",
+                new Object[]{SOURCE_FOLLOW, tag});
+        db.execSQL("DELETE FROM LOCAL_UNREAD_GALLERY WHERE SOURCE_TYPE=? AND SOURCE_KEY=?",
+                new Object[]{SOURCE_FOLLOW, tag});
+        db.execSQL("DELETE FROM FEED_CHECKPOINT WHERE " +
+                    "(SOURCE_TYPE LIKE 'LOCAL_FOLLOW%' OR SOURCE_TYPE='SUBSCRIPTION_TAG_SEEN') " +
+                    "AND SOURCE_KEY=?",
+                new Object[]{tag});
+        db.execSQL("DELETE FROM LOCAL_BASELINE_QUEUE WHERE SOURCE_TYPE=? AND SOURCE_KEY=?",
+                new Object[]{SOURCE_FOLLOW, tag});
     }
 
     public ImportResult importTags(Set<String> incoming, boolean replace) {
@@ -121,17 +130,7 @@ public final class LocalFollowRepository {
             if (replace) {
                 for (String old : existing) {
                     if (!incoming.contains(old)) {
-                        db.execSQL("DELETE FROM LOCAL_FOLLOW_TAG WHERE TAG_NAME=?",
-                                new Object[]{old});
-                        db.execSQL("DELETE FROM LOCAL_UPDATE_STATE WHERE SOURCE_TYPE=? AND SOURCE_KEY=?",
-                                new Object[]{SOURCE_FOLLOW, old});
-                        db.execSQL("DELETE FROM LOCAL_UNREAD_GALLERY WHERE SOURCE_TYPE=? AND SOURCE_KEY=?",
-                                new Object[]{SOURCE_FOLLOW, old});
-                        db.execSQL("DELETE FROM FEED_CHECKPOINT WHERE " +
-                                        "(SOURCE_TYPE LIKE 'LOCAL_FOLLOW%' OR " +
-                                        "SOURCE_TYPE='SUBSCRIPTION_TAG_SEEN') AND SOURCE_KEY=?",
-                                new Object[]{old});
-                        LocalBaselineQueue.delete(SOURCE_FOLLOW, old);
+                        deleteFollowData(db, old);
                     }
                 }
             }
@@ -166,6 +165,71 @@ public final class LocalFollowRepository {
                         LocalBaselineQueue.METHOD_FOLLOW_GLOBAL, batch);
             }
         }
+    }
+
+    /** Read the complete follow list and reset its floor in the same transaction. */
+    int resetFollowBaselines(long resetAt) {
+        return resetFollowBaselines(EhDB.getDatabase(), resetAt);
+    }
+
+    int resetFollowBaselines(Database db, long resetAt) {
+        db.beginTransaction();
+        try {
+            List<String> tags = getAll(db);
+            if (tags.isEmpty()) return 0;
+            FeedBoundary floor = BaselineBoundaryPolicy.provisional(resetAt);
+            SubscriptionRepository repository = SubscriptionRepository.getInstance();
+            for (String tag : tags) {
+                CheckpointKey key = FeedCheckpointKeys.followReset(tag, FIXED_CHINESE_SIGNATURE);
+                FeedBoundary previous = repository.readStoredCheckpoint(db, key).current;
+                repository.establishCheckpoint(db, key,
+                        LocalBaselineResetPolicy.newer(previous, floor));
+            }
+            db.execSQL("DELETE FROM LOCAL_BASELINE_QUEUE WHERE SOURCE_TYPE=?",
+                    new Object[]{SOURCE_FOLLOW});
+            db.execSQL("DELETE FROM LOCAL_GLOBAL_CURSOR WHERE JOB_TYPE=?",
+                    new Object[]{LocalGlobalCursorStore.TYPE_FOLLOW});
+            db.setTransactionSuccessful();
+            return tags.size();
+        } finally {
+            db.endTransaction();
+        }
+    }
+
+    /** Called only while LocalUpdateService holds the exclusive maintenance gate. */
+    int resetBookmarkBaselines(long resetAt) {
+        // Keep the existing EhDB -> transaction lock order used by bookmark edits/imports.
+        synchronized (EhDB.class) {
+            return resetBookmarkBaselines(EhDB.getDatabase(), EhDB.getAllQuickSearch(), resetAt);
+        }
+    }
+
+    int resetBookmarkBaselines(Database db, List<QuickSearch> bookmarks, long resetAt) {
+        if (bookmarks.isEmpty()) return 0;
+        FeedBoundary floor = BaselineBoundaryPolicy.provisional(resetAt);
+        SubscriptionRepository repository = SubscriptionRepository.getInstance();
+        db.beginTransaction();
+        try {
+            for (QuickSearch bookmark : bookmarks) {
+                BookmarkUpdatePolicy.Result policy = BookmarkUpdatePolicy.validate(bookmark);
+                CheckpointKey key = FeedCheckpointKeys.bookmarkReset(
+                        Long.toString(bookmark.id), policy.signature);
+                db.execSQL("DELETE FROM FEED_CHECKPOINT WHERE SOURCE_TYPE='BOOKMARK_RESET' " +
+                                "AND SOURCE_KEY=? AND QUERY_SIGNATURE<>?",
+                        new Object[]{key.sourceKey, key.querySignature});
+                FeedBoundary previous = repository.readCheckpoint(db, key).current;
+                repository.establishCheckpoint(db, key,
+                        LocalBaselineResetPolicy.newer(previous, floor));
+            }
+            db.execSQL("DELETE FROM LOCAL_BASELINE_QUEUE WHERE SOURCE_TYPE=?",
+                    new Object[]{SOURCE_BOOKMARK});
+            db.execSQL("DELETE FROM LOCAL_GLOBAL_CURSOR WHERE JOB_TYPE=?",
+                    new Object[]{LocalGlobalCursorStore.TYPE_BOOKMARK});
+            db.setTransactionSuccessful();
+        } finally {
+            db.endTransaction();
+        }
+        return bookmarks.size();
     }
 
     public void initializeBookmark(QuickSearch search, long addedAt) {
@@ -442,8 +506,11 @@ public final class LocalFollowRepository {
     }
 
     public void deleteBookmarkState(long id) {
+        deleteBookmarkState(EhDB.getDatabase(), id);
+    }
+
+    void deleteBookmarkState(Database db, long id) {
         String key = Long.toString(id);
-        Database db = EhDB.getDatabase();
         db.beginTransaction();
         try {
             db.execSQL("DELETE FROM LOCAL_UPDATE_STATE WHERE SOURCE_TYPE=? AND SOURCE_KEY=?",
@@ -451,9 +518,10 @@ public final class LocalFollowRepository {
             db.execSQL("DELETE FROM LOCAL_UNREAD_GALLERY WHERE SOURCE_TYPE=? AND SOURCE_KEY=?",
                     new Object[]{SOURCE_BOOKMARK, key});
             db.execSQL("DELETE FROM FEED_CHECKPOINT WHERE SOURCE_TYPE IN " +
-                            "('BOOKMARK_SYNC','BOOKMARK_OPEN','QUICK_SEARCH') AND SOURCE_KEY=?",
+                            "('BOOKMARK_SYNC','BOOKMARK_OPEN','BOOKMARK_RESET','QUICK_SEARCH') AND SOURCE_KEY=?",
                     new Object[]{key});
-            LocalBaselineQueue.delete(SOURCE_BOOKMARK, key);
+            db.execSQL("DELETE FROM LOCAL_BASELINE_QUEUE WHERE SOURCE_TYPE=? AND SOURCE_KEY=?",
+                    new Object[]{SOURCE_BOOKMARK, key});
             db.setTransactionSuccessful();
         } finally {
             db.endTransaction();
@@ -466,13 +534,24 @@ public final class LocalFollowRepository {
      */
     public void prepareBookmarkSignature(String sourceKey, String signature) {
         if (sourceKey == null || signature == null || signature.isEmpty()) return;
-        Database db = EhDB.getDatabase();
+        prepareBookmarkSignature(EhDB.getDatabase(), sourceKey, signature);
+    }
+
+    void prepareBookmarkSignature(Database db, String sourceKey, String signature) {
         boolean changed;
         try (Cursor cursor = db.rawQuery(
                 "SELECT 1 FROM LOCAL_UPDATE_STATE WHERE SOURCE_TYPE=? AND SOURCE_KEY=? " +
                         "AND QUERY_SIGNATURE<>? LIMIT 1",
                 new String[]{SOURCE_BOOKMARK, sourceKey, signature})) {
             changed = cursor.moveToFirst();
+        }
+        if (!changed) {
+            try (Cursor cursor = db.rawQuery(
+                    "SELECT 1 FROM FEED_CHECKPOINT WHERE SOURCE_TYPE='BOOKMARK_RESET' " +
+                            "AND SOURCE_KEY=? AND QUERY_SIGNATURE<>? LIMIT 1",
+                    new String[]{sourceKey, signature})) {
+                changed = cursor.moveToFirst();
+            }
         }
         if (!changed) return;
         db.beginTransaction();
@@ -487,6 +566,9 @@ public final class LocalFollowRepository {
             db.execSQL("DELETE FROM FEED_CHECKPOINT WHERE SOURCE_TYPE=? " +
                             "AND SOURCE_KEY=?",
                     new Object[]{CHECKPOINT_BOOKMARK_OPEN, sourceKey});
+            db.execSQL("DELETE FROM FEED_CHECKPOINT WHERE SOURCE_TYPE='BOOKMARK_RESET' " +
+                            "AND SOURCE_KEY=? AND QUERY_SIGNATURE<>?",
+                    new Object[]{sourceKey, signature});
             db.setTransactionSuccessful();
         } finally {
             db.endTransaction();

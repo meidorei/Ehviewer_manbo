@@ -1,0 +1,349 @@
+{
+  "formatVersion": 3,
+  "snapshotFingerprint": "00f379febcec01fde4af1c537d5da7ff027a3b4942e49b2d49399222b31deac9",
+  "metadataFingerprint": "51a5dcea4f2b9161b0c23cb621c2716f3b564c9aed1e15d1bbf75288b27b0f03",
+  "decisions": [
+    {
+      "gid": 1,
+      "canonicalSeriesId": "series:1",
+      "canonicalSeriesTitle": "series:1",
+      "category": "main",
+      "branch": "main",
+      "position": {
+        "volume": null,
+        "chapter": 0,
+        "part": null,
+        "rangeEnd": null
+      },
+      "orderReliable": true,
+      "orderConfidence": 1,
+      "confidence": 0.95,
+      "reason": "Synthetic fixture: explicitly assigned relationship.",
+      "needsHumanReview": true,
+      "candidateSeries": [],
+      "evidence": [
+        {
+          "kind": "title",
+          "claim": "待审核原始标题。"
+        }
+      ]
+    },
+    {
+      "gid": 2,
+      "canonicalSeriesId": "series:1",
+      "canonicalSeriesTitle": "series:1",
+      "category": "main",
+      "branch": "main",
+      "position": {
+        "volume": null,
+        "chapter": 1,
+        "part": null,
+        "rangeEnd": null
+      },
+      "orderReliable": true,
+      "orderConfidence": 1,
+      "confidence": 0.95,
+      "reason": "Synthetic fixture: explicitly assigned relationship.",
+      "needsHumanReview": true,
+      "candidateSeries": [],
+      "evidence": [
+        {
+          "kind": "title",
+          "claim": "待审核原始标题。"
+        }
+      ]
+    },
+    {
+      "gid": 4,
+      "canonicalSeriesId": "series:1",
+      "canonicalSeriesTitle": "series:1",
+      "category": "main",
+      "branch": "main",
+      "position": {
+        "volume": null,
+        "chapter": 3,
+        "part": null,
+        "rangeEnd": null
+      },
+      "orderReliable": true,
+      "orderConfidence": 1,
+      "confidence": 0.95,
+      "reason": "Synthetic fixture: explicitly assigned relationship.",
+      "needsHumanReview": true,
+      "candidateSeries": [],
+      "evidence": [
+        {
+          "kind": "title",
+          "claim": "待审核原始标题。"
+        }
+      ]
+    },
+    {
+      "gid": 3,
+      "canonicalSeriesId": "series:1",
+      "canonicalSeriesTitle": "series:1",
+      "category": "extra",
+      "branch": "main",
+      "position": null,
+      "orderReliable": false,
+      "orderConfidence": 0,
+      "confidence": 0.95,
+      "reason": "Synthetic fixture: explicitly assigned relationship.",
+      "needsHumanReview": true,
+      "candidateSeries": [],
+      "evidence": [
+        {
+          "kind": "title",
+          "claim": "待审核原始标题。"
+        }
+      ]
+    },
+    {
+      "gid": 5,
+      "canonicalSeriesId": "series:2",
+      "canonicalSeriesTitle": "series:2",
+      "category": "main",
+      "branch": "main",
+      "position": {
+        "volume": null,
+        "chapter": 0,
+        "part": null,
+        "rangeEnd": null
+      },
+      "orderReliable": true,
+      "orderConfidence": 1,
+      "confidence": 0.95,
+      "reason": "Synthetic fixture: explicitly assigned relationship.",
+      "needsHumanReview": true,
+      "candidateSeries": [],
+      "evidence": [
+        {
+          "kind": "title",
+          "claim": "待审核原始标题。"
+        }
+      ]
+    },
+    {
+      "gid": 6,
+      "canonicalSeriesId": "series:2",
+      "canonicalSeriesTitle": "series:2",
+      "category": "main",
+      "branch": "main",
+      "position": {
+        "volume": null,
+        "chapter": 1,
+        "part": null,
+        "rangeEnd": null
+      },
+      "orderReliable": true,
+      "orderConfidence": 1,
+      "confidence": 0.95,
+      "reason": "Synthetic fixture: explicitly assigned relationship.",
+      "needsHumanReview": true,
+      "candidateSeries": [],
+      "evidence": [
+        {
+          "kind": "title",
+          "claim": "待审核原始标题。"
+        }
+      ]
+    },
+    {
+      "gid": 7,
+      "canonicalSeriesId": "series:2",
+      "canonicalSeriesTitle": "series:2",
+      "category": "main",
+      "branch": "main",
+      "position": {
+        "volume": null,
+        "chapter": 2,
+        "part": null,
+        "rangeEnd": null
+      },
+      "orderReliable": true,
+      "orderConfidence": 1,
+      "confidence": 0.95,
+      "reason": "Synthetic fixture: explicitly assigned relationship.",
+      "needsHumanReview": true,
+      "candidateSeries": [],
+      "evidence": [
+        {
+          "kind": "title",
+          "claim": "待审核原始标题。"
+        }
+      ]
+    },
+    {
+      "gid": 8,
+      "canonicalSeriesId": "series:2",
+      "canonicalSeriesTitle": "series:2",
+      "category": "main",
+      "branch": "main",
+      "position": {
+        "volume": null,
+        "chapter": 3,
+        "part": null,
+        "rangeEnd": null
+      },
+      "orderReliable": true,
+      "orderConfidence": 1,
+      "confidence": 0.95,
+      "reason": "Synthetic fixture: explicitly assigned relationship.",
+      "needsHumanReview": true,
+      "candidateSeries": [],
+      "evidence": [
+        {
+          "kind": "title",
+          "claim": "待审核原始标题。"
+        }
+      ]
+    },
+    {
+      "gid": 9,
+      "canonicalSeriesId": "series:3",
+      "canonicalSeriesTitle": "series:3",
+      "category": "main",
+      "branch": "main",
+      "position": {
+        "volume": null,
+        "chapter": 0,
+        "part": null,
+        "rangeEnd": null
+      },
+      "orderReliable": true,
+      "orderConfidence": 1,
+      "confidence": 0.95,
+      "reason": "Synthetic fixture: explicitly assigned relationship.",
+      "needsHumanReview": true,
+      "candidateSeries": [],
+      "evidence": [
+        {
+          "kind": "title",
+          "claim": "待审核原始标题。"
+        }
+      ]
+    },
+    {
+      "gid": 10,
+      "canonicalSeriesId": "series:3",
+      "canonicalSeriesTitle": "series:3",
+      "category": "main",
+      "branch": "main",
+      "position": {
+        "volume": null,
+        "chapter": 1,
+        "part": null,
+        "rangeEnd": null
+      },
+      "orderReliable": true,
+      "orderConfidence": 1,
+      "confidence": 0.95,
+      "reason": "Synthetic fixture: explicitly assigned relationship.",
+      "needsHumanReview": true,
+      "candidateSeries": [],
+      "evidence": [
+        {
+          "kind": "title",
+          "claim": "待审核原始标题。"
+        }
+      ]
+    },
+    {
+      "gid": 11,
+      "canonicalSeriesId": "series:3",
+      "canonicalSeriesTitle": "series:3",
+      "category": "main",
+      "branch": "main",
+      "position": {
+        "volume": null,
+        "chapter": 2,
+        "part": null,
+        "rangeEnd": null
+      },
+      "orderReliable": true,
+      "orderConfidence": 1,
+      "confidence": 0.95,
+      "reason": "Synthetic fixture: explicitly assigned relationship.",
+      "needsHumanReview": true,
+      "candidateSeries": [],
+      "evidence": [
+        {
+          "kind": "title",
+          "claim": "待审核原始标题。"
+        }
+      ]
+    },
+    {
+      "gid": 12,
+      "canonicalSeriesId": "series:3",
+      "canonicalSeriesTitle": "series:3",
+      "category": "main",
+      "branch": "main",
+      "position": {
+        "volume": null,
+        "chapter": 3,
+        "part": null,
+        "rangeEnd": null
+      },
+      "orderReliable": true,
+      "orderConfidence": 1,
+      "confidence": 0.95,
+      "reason": "Synthetic fixture: explicitly assigned relationship.",
+      "needsHumanReview": true,
+      "candidateSeries": [],
+      "evidence": [
+        {
+          "kind": "title",
+          "claim": "待审核原始标题。"
+        }
+      ]
+    }
+  ],
+  "auditTrail": [
+    {
+      "round": "semantic",
+      "metadataFingerprint": "51a5dcea4f2b9161b0c23cb621c2716f3b564c9aed1e15d1bbf75288b27b0f03",
+      "inputArtifactDigest": "cd3cb831b8e30ab8d09a1c7907c2be7dc71c7fdd6d96ef312bf9ea89b2e758da",
+      "inputDecisionsDigest": "dc7ba9e8a005196c38393d49428b487c93032e516d3ee0b4e41e8c38bebafa07",
+      "outputDecisionsDigest": "dc7ba9e8a005196c38393d49428b487c93032e516d3ee0b4e41e8c38bebafa07",
+      "reviewedGids": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "conflicts": [],
+      "summary": "Synthetic test fixture, no real-library semantic claim."
+    }
+  ],
+  "auditMode": "lightweight",
+  "gidOrder": [
+    1,
+    2,
+    4,
+    3,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12
+  ],
+  "seriesOrder": [
+    "series:1",
+    "series:2",
+    "series:3"
+  ],
+  "direction": "ascending",
+  "reviewStatus": "model-reviewed"
+}

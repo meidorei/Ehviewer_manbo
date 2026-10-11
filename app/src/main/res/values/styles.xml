@@ -107,6 +107,19 @@
         <item name="android:maxLines">1</item>
     </style>
 
+    <style name="BookmarkTagMarker" parent="CardMessage">
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">?android:attr/textColorPrimary</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:background">@drawable/bg_bookmark_tag_marker</item>
+        <item name="android:paddingStart">6dp</item>
+        <item name="android:paddingEnd">6dp</item>
+        <item name="android:paddingTop">3dp</item>
+        <item name="android:paddingBottom">3dp</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:ellipsize">end</item>
+    </style>
+
     <style name="CardMessageMultipleLines">
         <item name="android:textAppearance">@style/TextAppearance.CardMessage</item>
         <item name="android:ellipsize">end</item>
@@ -258,6 +271,11 @@
     <style name="PopupWindow">
         <item name="android:windowEnterAnimation">@anim/pop_enter</item>
         <item name="android:windowExitAnimation">@anim/pop_exit</item>
+    </style>
+
+    <style name="CoverImageDialogAnimation">
+        <item name="android:windowEnterAnimation">@anim/cover_enter</item>
+        <item name="android:windowExitAnimation">@anim/cover_exit</item>
     </style>
 
     <style name="Widget.AppTheme.ButtonBar.Fullscreen" parent="">

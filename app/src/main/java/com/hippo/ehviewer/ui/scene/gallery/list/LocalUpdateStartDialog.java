@@ -17,8 +17,10 @@ import android.widget.TextView;
 import androidx.appcompat.app.AlertDialog;
 
 import com.hippo.ehviewer.R;
+import com.hippo.ehviewer.EhDB;
+import com.hippo.ehviewer.subscription.LocalFollowRepository;
+import com.hippo.ehviewer.subscription.LocalGlobalCursorStore;
 import com.hippo.ehviewer.Settings;
-import com.hippo.ehviewer.subscription.LocalRefreshJobStore;
 import com.hippo.ehviewer.subscription.LocalRefreshStatusFormatter;
 import com.hippo.ehviewer.subscription.LocalUpdateService;
 
@@ -30,7 +32,7 @@ final class LocalUpdateStartDialog {
 
     private LocalUpdateStartDialog() {}
 
-    static void showFollow(Context context, boolean recommendGlobal, long globalCursorTime,
+    static void showFollow(Context context, boolean recommendGlobal,
                            Starter starter) {
         View content = LayoutInflater.from(context).inflate(
                 R.layout.dialog_local_follow_update, null, false);
@@ -40,11 +42,7 @@ final class LocalUpdateStartDialog {
         RadioButton tags = content.findViewById(R.id.local_update_method_tags);
         int pageLimit = Settings.getGlobalScanPageLimit();
 
-        history.setText(globalCursorTime <= 0
-                ? context.getString(R.string.local_update_no_global_cursor)
-                : context.getString(R.string.local_update_global_cursor,
-                LocalRefreshStatusFormatter.formatTime(
-                        globalCursorTime, System.currentTimeMillis())));
+        history.setText(combinedHistory(context));
         setMethodText(context, global, recommendGlobal
                 ? R.string.local_update_method_global_recommended
                 : R.string.local_update_method_global, pageLimit);
@@ -55,7 +53,7 @@ final class LocalUpdateStartDialog {
                 ? R.id.local_update_method_global : R.id.local_update_method_tags);
 
         new AlertDialog.Builder(context)
-                .setTitle(R.string.local_follow_check_updates)
+                .setTitle(R.string.local_update_all_title)
                 .setView(content)
                 .setNegativeButton(android.R.string.cancel, null)
                 .setPositiveButton(R.string.local_update_start, (dialog, which) ->
@@ -64,6 +62,19 @@ final class LocalUpdateStartDialog {
                                 ? LocalUpdateService.METHOD_GLOBAL
                                 : LocalUpdateService.METHOD_TAGS))
                 .show();
+    }
+
+    private static String combinedHistory(Context context) {
+        return context.getString(R.string.local_update_all_history,
+                LocalFollowRepository.getInstance().getAll().size(), EhDB.getAllQuickSearch().size(),
+                cursorText(context, LocalGlobalCursorStore.TYPE_FOLLOW),
+                cursorText(context, LocalGlobalCursorStore.TYPE_BOOKMARK));
+    }
+
+    private static String cursorText(Context context, String type) {
+        long time = LocalGlobalCursorStore.readCurrent(context, type).timeMillis();
+        return time <= 0 ? context.getString(R.string.local_update_no_global_cursor)
+                : LocalRefreshStatusFormatter.formatTime(time, System.currentTimeMillis());
     }
 
     private static void setMethodText(Context context, RadioButton button, int stringId,
@@ -88,8 +99,7 @@ final class LocalUpdateStartDialog {
         button.setLineSpacing(4f * context.getResources().getDisplayMetrics().density, 1f);
     }
 
-    static void showBookmarks(Context context, int count, boolean recommendGlobal,
-                              long globalCursorTime, Starter starter) {
+    static void showBookmarks(Context context, boolean recommendGlobal, Starter starter) {
         View content = LayoutInflater.from(context).inflate(
                 R.layout.dialog_local_follow_update, null, false);
         TextView history = content.findViewById(R.id.local_update_history);
@@ -98,15 +108,10 @@ final class LocalUpdateStartDialog {
         RadioButton bookmarks = content.findViewById(R.id.local_update_method_tags);
         int pageLimit = Settings.getGlobalScanPageLimit();
 
-        String last = globalCursorTime <= 0
-                ? context.getString(R.string.local_update_no_global_cursor)
-                : context.getString(R.string.local_update_global_cursor,
-                LocalRefreshStatusFormatter.formatTime(
-                        globalCursorTime, System.currentTimeMillis()));
-        history.setText(context.getString(R.string.bookmark_update_history, count, last));
+        history.setText(combinedHistory(context));
         setMethodText(context, global, recommendGlobal
-                ? R.string.bookmark_update_method_global_recommended
-                : R.string.bookmark_update_method_global, pageLimit);
+                ? R.string.local_update_method_global_recommended
+                : R.string.local_update_method_global, pageLimit);
         setMethodText(context, bookmarks, recommendGlobal
                 ? R.string.bookmark_update_method_each
                 : R.string.bookmark_update_method_each_recommended);
@@ -114,7 +119,7 @@ final class LocalUpdateStartDialog {
                 ? R.id.local_update_method_global : R.id.local_update_method_tags);
 
         new AlertDialog.Builder(context)
-                .setTitle(R.string.bookmark_check_updates)
+                .setTitle(R.string.local_update_all_title)
                 .setView(content)
                 .setNegativeButton(android.R.string.cancel, null)
                 .setPositiveButton(R.string.local_update_start, (dialog, which) ->

@@ -74,6 +74,9 @@ public class AdvancedFragment extends BasePreferenceFragmentCompat
             Settings.KEY_LOCAL_UPDATE_SEARCH_INTERVAL;
     private static final String KEY_GLOBAL_SCAN_PAGE_LIMIT =
             Settings.KEY_GLOBAL_SCAN_PAGE_LIMIT;
+    private static final String KEY_RESET_BOOKMARK_BASELINES = "reset_bookmark_baselines";
+    private static final String KEY_RESET_FOLLOW_BASELINES = "reset_follow_baselines";
+    private boolean baselineResetPending;
     private static final String KEY_WIFI_SERVER = "wifi_server";
     private static final String KEY_WIFI_CLIENT = "wifi_client";
     private static final int REQUEST_EXPORT_LOCAL_FOLLOWS = 4101;
@@ -98,6 +101,9 @@ public class AdvancedFragment extends BasePreferenceFragmentCompat
                 findPreference(KEY_LOCAL_UPDATE_SEARCH_INTERVAL);
         EditTextPreference globalScanPageLimit =
                 findPreference(KEY_GLOBAL_SCAN_PAGE_LIMIT);
+        Preference resetBookmarkBaselines = findPreference(KEY_RESET_BOOKMARK_BASELINES);
+        resetBookmarkBaselines.setOnPreferenceClickListener(this);
+        findPreference(KEY_RESET_FOLLOW_BASELINES).setOnPreferenceClickListener(this);
         Preference socketData = findPreference(KEY_WIFI_SERVER);
         Preference clientData = findPreference(KEY_WIFI_CLIENT);
 
@@ -154,6 +160,12 @@ public class AdvancedFragment extends BasePreferenceFragmentCompat
             case KEY_IMPORT_LOCAL_FOLLOWS:
                 chooseLocalFollowImportSource();
                 return true;
+            case KEY_RESET_BOOKMARK_BASELINES:
+                showBaselineReset(false);
+                return true;
+            case KEY_RESET_FOLLOW_BASELINES:
+                showBaselineReset(true);
+                return true;
             case KEY_WIFI_SERVER:
                 return gotoWiFiServerActivity();
             case KEY_WIFI_CLIENT:
@@ -161,6 +173,69 @@ public class AdvancedFragment extends BasePreferenceFragmentCompat
             default:
                 return false;
         }
+    }
+
+    private void showBaselineReset(boolean follows) {
+        Context current = getContext();
+        if (current == null || baselineResetPending) return;
+        if (LocalUpdateService.isActive()) {
+            Toast.makeText(current, R.string.bookmark_baseline_reset_busy, Toast.LENGTH_LONG).show();
+            return;
+        }
+        baselineResetPending = true;
+        new AlertDialog.Builder(current)
+                .setTitle(follows ? R.string.settings_advanced_reset_follow_baselines
+                        : R.string.settings_advanced_reset_bookmark_baselines)
+                .setMessage(follows ? R.string.follow_baseline_reset_confirm
+                        : R.string.bookmark_baseline_reset_confirm)
+                .setNegativeButton(android.R.string.cancel, null)
+                .setPositiveButton(R.string.bookmark_baseline_reset_action,
+                        (dialog, which) -> resetBaselines(current, follows))
+                .setOnDismissListener(dialog -> {
+                    Preference preference = findPreference(KEY_RESET_BOOKMARK_BASELINES);
+                    if (preference == null || preference.isEnabled()) baselineResetPending = false;
+                })
+                .show();
+    }
+
+    private void resetBaselines(Context current, boolean follows) {
+        Preference bookmarks = findPreference(KEY_RESET_BOOKMARK_BASELINES);
+        Preference tags = findPreference(KEY_RESET_FOLLOW_BASELINES);
+        Preference target = follows ? tags : bookmarks;
+        if (bookmarks != null) bookmarks.setEnabled(false);
+        if (tags != null) tags.setEnabled(false);
+        if (target != null) target.setSummary(follows ? R.string.follow_baseline_reset_running
+                : R.string.bookmark_baseline_reset_running);
+        new Thread(() -> {
+            String message;
+            try {
+                int count = follows ? LocalUpdateService.resetFollowBaselines()
+                        : LocalUpdateService.resetBookmarkBaselines();
+                if (count < 0) {
+                    message = current.getString(R.string.bookmark_baseline_reset_busy);
+                } else if (count == 0) {
+                    message = current.getString(follows ? R.string.follow_baseline_reset_empty
+                            : R.string.bookmark_baseline_reset_empty);
+                } else {
+                    message = current.getString(follows ? R.string.follow_baseline_reset_success
+                            : R.string.bookmark_baseline_reset_success, count);
+                }
+            } catch (RuntimeException error) {
+                android.util.Log.e("AdvancedFragment", "Local baseline reset failed", error);
+                message = current.getString(follows ? R.string.follow_baseline_reset_failed
+                        : R.string.bookmark_baseline_reset_failed);
+            }
+            String result = message;
+            dbSyncHandle.post(() -> {
+                baselineResetPending = false;
+                if (bookmarks != null) bookmarks.setEnabled(true);
+                if (tags != null) tags.setEnabled(true);
+                if (target != null) target.setSummary(follows
+                        ? R.string.settings_advanced_reset_follow_baselines_summary
+                        : R.string.settings_advanced_reset_bookmark_baselines_summary);
+                Toast.makeText(current, result, Toast.LENGTH_LONG).show();
+            });
+        }, "local-baseline-reset").start();
     }
 
     private void chooseLocalFollowExportTarget() {

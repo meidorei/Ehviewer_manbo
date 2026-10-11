@@ -45,6 +45,7 @@ import com.hippo.ehviewer.client.data.GalleryInfo;
 import com.hippo.ehviewer.download.DownloadManager;
 import com.hippo.ehviewer.ui.scene.TransitionNameFactory;
 import com.hippo.ehviewer.widget.SimpleRatingView;
+import com.hippo.ehviewer.widget.BookmarkTagGroup;
 import com.hippo.ehviewer.widget.TileThumbNew;
 import com.hippo.widget.LoadImageViewNew;
 import com.hippo.widget.recyclerview.AutoStaggeredGridLayoutManager;
@@ -52,6 +53,8 @@ import com.hippo.lib.yorozuya.ViewUtils;
 
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
+import java.util.Collections;
+import java.util.List;
 import java.util.concurrent.ExecutorService;
 
 import com.hippo.ehviewer.spider.SpiderQueen;
@@ -191,6 +194,7 @@ abstract class GalleryAdapterNew extends RecyclerView.Adapter<GalleryAdapterNew.
             lp.width = mListThumbWidth;
             lp.height = mListThumbHeight;
             holder.thumb.setLayoutParams(lp);
+            holder.itemView.findViewById(R.id.gallery_text_info).setMinimumHeight(mListThumbHeight);
         }
 
         return holder;
@@ -206,9 +210,25 @@ abstract class GalleryAdapterNew extends RecyclerView.Adapter<GalleryAdapterNew.
         return null;
     }
 
+    @NonNull
+    protected List<String> getBookmarkTagMarkers(GalleryInfo gallery) {
+        return Collections.emptyList();
+    }
+
+    private void bindBookmarkTagMarkers(GalleryHolder holder, @Nullable GalleryInfo gallery) {
+        List<String> labels = gallery == null ? Collections.emptyList() : getBookmarkTagMarkers(gallery);
+        boolean visible = !labels.isEmpty();
+        holder.bookmarkTags.setLabels(labels);
+        holder.bookmarkTags.setContentDescription(visible
+                ? mResources.getString(R.string.bookmark_tag_marker_description,
+                        TextUtils.join(" · ", labels)) : null);
+        holder.bookmarkTags.setVisibility(visible ? View.VISIBLE : View.GONE);
+    }
+
     @Override
     public void onBindViewHolder(GalleryAdapterNew.GalleryHolder holder, int position) {
         GalleryInfo gi = getDataAt(position);
+        bindBookmarkTagMarkers(holder, gi);
         if (null == gi) {
             return;
         }
@@ -284,6 +304,12 @@ abstract class GalleryAdapterNew extends RecyclerView.Adapter<GalleryAdapterNew.
         ViewCompat.setTransitionName(holder.thumb, TransitionNameFactory.getThumbTransitionName(gi.gid));
     }
 
+    @Override
+    public void onViewRecycled(@NonNull GalleryHolder holder) {
+        bindBookmarkTagMarkers(holder, null);
+        super.onViewRecycled(holder);
+    }
+
     public void setThumbItemClickListener(OnThumbItemClickListener listener) {
         myOnThumbItemClickListener = listener;
     }
@@ -304,6 +330,7 @@ abstract class GalleryAdapterNew extends RecyclerView.Adapter<GalleryAdapterNew.
         public final TextView simpleLanguage;
         public final ImageView favourite;
         public final ImageView downloaded;
+        public final BookmarkTagGroup bookmarkTags;
 
         public GalleryHolder(View itemView, final OnThumbItemClickListener onThumbItemClickListener, int mType) {
             super(itemView);
@@ -317,6 +344,7 @@ abstract class GalleryAdapterNew extends RecyclerView.Adapter<GalleryAdapterNew.
             simpleLanguage = itemView.findViewById(R.id.simple_language);
             favourite = itemView.findViewById(R.id.favourited);
             downloaded = itemView.findViewById(R.id.downloaded);
+            bookmarkTags = itemView.findViewById(R.id.bookmark_tags);
             if (mType == 0) {
                 thumb.setOnClickListener(v -> {
                     if (onThumbItemClickListener != null) {

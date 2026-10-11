@@ -61,6 +61,8 @@ public class ReadingQueuePolicyTest {
 
     @Test
     public void onlyCompleteAppManagedDownloadsAreEligible() {
+        assertFalse(ReadingQueueEligibility.isEligible(
+                DownloadInfo.STATE_FINISH, "local-album:content://album", true));
         assertTrue(ReadingQueueEligibility.isEligible(
                 DownloadInfo.STATE_FINISH, null, true));
         assertFalse(ReadingQueueEligibility.isEligible(

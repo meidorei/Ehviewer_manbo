@@ -1,0 +1,46 @@
+{
+  "status": "passed",
+  "scope": "skill update only",
+  "defaultAuditMode": "lightweight",
+  "defaultSemanticPasses": 1,
+  "discoveryRequired": false,
+  "focusedReview": "selected GIDs only",
+  "legacyMode": "deep",
+  "changedFiles": [
+    "assets/review.js",
+    "references/prompts.md",
+    "references/schema.md",
+    "references/testing.md",
+    "references/workflow.md",
+    "scripts/audit_round.py",
+    "scripts/common.py",
+    "scripts/generate_candidates.py",
+    "scripts/migrate_v2.py",
+    "scripts/run_manifest.py",
+    "scripts/seed_historical_decisions.py",
+    "SKILL.md",
+    "tests/build_test_artifacts.py",
+    "tests/fixture_support.py",
+    "tests/test_audit_cli.py",
+    "tests/test_review_browser.cjs",
+    "tests/test_lightweight.py"
+  ],
+  "tests": {
+    "tests": 58,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "passed": true,
+    "elapsedSeconds": 4.962
+  },
+  "package": {
+    "path": "organize-ehviewer-lightweight.zip",
+    "files": 38,
+    "sha256": "a549a1530876443bc4e75269b7c66cc76f459d32af48cf3a615cad78e6bb9970"
+  },
+  "phoneWritebackPerformed": false,
+  "knownLimitations": [
+    "Official quick_validate blocked by missing optional PyYAML; basic frontmatter checked.",
+    "Screenshot viewing tool unavailable; automated browser interaction and width checks passed."
+  ]
+}

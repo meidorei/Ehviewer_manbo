@@ -1,0 +1,17 @@
+{
+  "device": "5da3329",
+  "package": "com.ehviewer.manbo.debug",
+  "capturedAtLocal": "2026-10-03",
+  "consistentSnapshot": "app force-stopped; database and journal exported before app relaunch",
+  "files": {
+    "eh.db": {
+      "bytes": 3641344,
+      "sha256": "86f637259352c36c4026d23f848771939c94972113c63c1ac7df4e4228461a80"
+    },
+    "eh.db-journal": {
+      "bytes": 512,
+      "sha256": "076a27c79e5ace2a3d47f9dd2e83e4ff6ea8872b3c2218f66c92b89b55f36560"
+    }
+  },
+  "itemCount": 3233
+}

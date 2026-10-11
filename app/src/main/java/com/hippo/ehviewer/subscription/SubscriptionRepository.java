@@ -88,6 +88,22 @@ public final class SubscriptionRepository {
     }
 
     FeedCheckpoint readCheckpoint(Database db, CheckpointKey key) {
+        FeedCheckpoint saved = readStoredCheckpoint(db, key);
+        CheckpointKey resetKey;
+        if (LocalFollowRepository.CHECKPOINT_BOOKMARK.equals(key.sourceType)) {
+            resetKey = FeedCheckpointKeys.bookmarkReset(key.sourceKey, key.querySignature);
+        } else if (LocalFollowRepository.CHECKPOINT_FOLLOW.equals(key.sourceType)) {
+            resetKey = FeedCheckpointKeys.followReset(key.sourceKey, key.querySignature);
+        } else {
+            return saved;
+        }
+        FeedBoundary floor = readStoredCheckpoint(db, resetKey).current;
+        return new FeedCheckpoint(saved.previous,
+                LocalBaselineResetPolicy.newer(saved.current, floor), saved.updatedAt);
+    }
+
+    /** Stored content boundaries, without the manual scan floor used by update readers. */
+    FeedCheckpoint readStoredCheckpoint(Database db, CheckpointKey key) {
         try (Cursor cursor = db.rawQuery(
                 "SELECT PREVIOUS_TIME,\"CURRENT_TIME\",PREVIOUS_GIDS,CURRENT_GIDS,UPDATED_AT " +
                         "FROM FEED_CHECKPOINT WHERE ACCOUNT_KEY=? AND SOURCE_TYPE=? AND SOURCE_KEY=? AND QUERY_SIGNATURE=?",
@@ -127,7 +143,14 @@ public final class SubscriptionRepository {
 
     void advanceCheckpoint(Database db, CheckpointKey key, FeedBoundary boundary) {
         if (boundary == null || boundary.time == 0) return;
-        FeedCheckpoint old = readCheckpoint(db, key);
+        FeedCheckpoint old = readStoredCheckpoint(db, key);
+        // Keep same-second knowledge, but allow a provisional timestamp to be refined.
+        // The manual reset floor remains separate and is applied only when scanning.
+        if ((LocalFollowRepository.CHECKPOINT_BOOKMARK.equals(key.sourceType)
+                || LocalFollowRepository.CHECKPOINT_FOLLOW.equals(key.sourceType))
+                && boundary.time == old.current.time) {
+            boundary = LocalBaselineResetPolicy.newer(boundary, old.current);
+        }
         upsertCheckpoint(db, key, old.current, boundary);
     }
 
@@ -139,7 +162,14 @@ public final class SubscriptionRepository {
 
     void establishCheckpoint(Database db, CheckpointKey key, FeedBoundary boundary) {
         if (boundary == null || boundary.time == 0) return;
-        FeedCheckpoint old = readCheckpoint(db, key);
+        FeedCheckpoint old = readStoredCheckpoint(db, key);
+        // Keep same-second knowledge, but allow a provisional timestamp to be refined.
+        // The manual reset floor remains separate and is applied only when scanning.
+        if ((LocalFollowRepository.CHECKPOINT_BOOKMARK.equals(key.sourceType)
+                || LocalFollowRepository.CHECKPOINT_FOLLOW.equals(key.sourceType))
+                && boundary.time == old.current.time) {
+            boundary = LocalBaselineResetPolicy.newer(boundary, old.current);
+        }
         upsertCheckpoint(db, key, old.previous, boundary);
     }
 

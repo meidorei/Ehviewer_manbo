@@ -1,0 +1,69 @@
+{
+  "formatVersion": 1,
+  "snapshotFingerprint": "7a307b853afc8b3914b20b47749c84fff9a17e286c26eaaf4573d3f643cbd8e8",
+  "metadataFingerprint": "12f910f3218e6acb7fb834def3136037c69337e34d8f48b38ea0038ec22f5eef",
+  "itemCount": 2,
+  "items": [
+    {
+      "gid": 117,
+      "originalPosition": 17,
+      "title": "[新作者] 无编号短篇",
+      "titleJpn": null,
+      "discovery": {
+        "gid": 117,
+        "authorAliases": [],
+        "workAliases": [],
+        "semanticTitleKey": null,
+        "partKind": "unknown",
+        "partNumber": null,
+        "confidence": 0.8,
+        "needsHumanReview": true
+      },
+      "languageSignature": "han"
+    },
+    {
+      "gid": 118,
+      "originalPosition": 18,
+      "title": "[New Author] Untitled story",
+      "titleJpn": null,
+      "discovery": {
+        "gid": 118,
+        "authorAliases": [],
+        "workAliases": [],
+        "semanticTitleKey": null,
+        "partKind": "unknown",
+        "partNumber": null,
+        "confidence": 0.8,
+        "needsHumanReview": true
+      },
+      "languageSignature": "latin"
+    }
+  ],
+  "indexes": {
+    "authorAliases": [],
+    "semanticTitleKeys": [],
+    "languageSignatures": [
+      {
+        "key": "han",
+        "gids": [
+          117
+        ]
+      },
+      {
+        "key": "latin",
+        "gids": [
+          118
+        ]
+      }
+    ],
+    "parts": [
+      {
+        "key": "unknown:",
+        "gids": [
+          117,
+          118
+        ]
+      }
+    ]
+  }
+}

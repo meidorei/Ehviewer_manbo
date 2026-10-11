@@ -1,0 +1,651 @@
+Activity Resolver Table:
+  Full MIME Types:
+      application/x-zip-compressed:
+        60f881 com.ehviewer.manbo.debug/com.hippo.ehviewer.ui.GalleryActivity filter 9c74d26
+          Action: "android.intent.action.VIEW"
+          Category: "android.intent.category.DEFAULT"
+          Category: "android.intent.category.BROWSABLE"
+          Scheme: "file"
+          Scheme: "content"
+          Authority: "": -1 WILD
+          StaticType: "application/octet-stream"
+          StaticType: "application/7z"
+          StaticType: "application/rar"
+          StaticType: "application/zip"
+          StaticType: "application/x-7z-compressed"
+          StaticType: "application/x-rar-compressed"
+          StaticType: "application/x-zip-compressed"
+      application/7z:
+        60f881 com.ehviewer.manbo.debug/com.hippo.ehviewer.ui.GalleryActivity filter 9c74d26
+          Action: "android.intent.action.VIEW"
+          Category: "android.intent.category.DEFAULT"
+          Category: "android.intent.category.BROWSABLE"
+          Scheme: "file"
+          Scheme: "content"
+          Authority: "": -1 WILD
+          StaticType: "application/octet-stream"
+          StaticType: "application/7z"
+          StaticType: "application/rar"
+          StaticType: "application/zip"
+          StaticType: "application/x-7z-compressed"
+          StaticType: "application/x-rar-compressed"
+          StaticType: "application/x-zip-compressed"
+      application/rar:
+        60f881 com.ehviewer.manbo.debug/com.hippo.ehviewer.ui.GalleryActivity filter 9c74d26
+          Action: "android.intent.action.VIEW"
+          Category: "android.intent.category.DEFAULT"
+          Category: "android.intent.category.BROWSABLE"
+          Scheme: "file"
+          Scheme: "content"
+          Authority: "": -1 WILD
+          StaticType: "application/octet-stream"
+          StaticType: "application/7z"
+          StaticType: "application/rar"
+          StaticType: "application/zip"
+          StaticType: "application/x-7z-compressed"
+          StaticType: "application/x-rar-compressed"
+          StaticType: "application/x-zip-compressed"
+      application/zip:
+        60f881 com.ehviewer.manbo.debug/com.hippo.ehviewer.ui.GalleryActivity filter 9c74d26
+          Action: "android.intent.action.VIEW"
+          Category: "android.intent.category.DEFAULT"
+          Category: "android.intent.category.BROWSABLE"
+          Scheme: "file"
+          Scheme: "content"
+          Authority: "": -1 WILD
+          StaticType: "application/octet-stream"
+          StaticType: "application/7z"
+          StaticType: "application/rar"
+          StaticType: "application/zip"
+          StaticType: "application/x-7z-compressed"
+          StaticType: "application/x-rar-compressed"
+          StaticType: "application/x-zip-compressed"
+      */*:
+        60f881 com.ehviewer.manbo.debug/com.hippo.ehviewer.ui.GalleryActivity filter 90f9714
+          Action: "android.intent.action.VIEW"
+          Category: "android.intent.category.DEFAULT"
+          Category: "android.intent.category.BROWSABLE"
+          Scheme: "file"
+          Scheme: "content"
+          Authority: "": -1 WILD
+          Path: "PatternMatcher{GLOB: .*\.7z}"
+          Path: "PatternMatcher{GLOB: .*\.rar}"
+          Path: "PatternMatcher{GLOB: .*\.zip}"
+          StaticType: "*"
+          mPriority=0, mOrder=0, mHasStaticPartialTypes=true, mHasDynamicPartialTypes=false
+      application/x-rar-compressed:
+        60f881 com.ehviewer.manbo.debug/com.hippo.ehviewer.ui.GalleryActivity filter 9c74d26
+          Action: "android.intent.action.VIEW"
+          Category: "android.intent.category.DEFAULT"
+          Category: "android.intent.category.BROWSABLE"
+          Scheme: "file"
+          Scheme: "content"
+          Authority: "": -1 WILD
+          StaticType: "application/octet-stream"
+          StaticType: "application/7z"
+          StaticType: "application/rar"
+          StaticType: "application/zip"
+          StaticType: "application/x-7z-compressed"
+          StaticType: "application/x-rar-compressed"
+          StaticType: "application/x-zip-compressed"
+      text/plain:
+        947347c com.ehviewer.manbo.debug/com.hippo.ehviewer.ui.MainActivity filter 173538b
+          Action: "android.intent.action.SEND"
+          Category: "android.intent.category.DEFAULT"
+          StaticType: "text/plain"
+      application/octet-stream:
+        60f881 com.ehviewer.manbo.debug/com.hippo.ehviewer.ui.GalleryActivity filter 9c74d26
+          Action: "android.intent.action.VIEW"
+          Category: "android.intent.category.DEFAULT"
+          Category: "android.intent.category.BROWSABLE"
+          Scheme: "file"
+          Scheme: "content"
+          Authority: "": -1 WILD
+          StaticType: "application/octet-stream"
+          StaticType: "application/7z"
+          StaticType: "application/rar"
+          StaticType: "application/zip"
+          StaticType: "application/x-7z-compressed"
+          StaticType: "application/x-rar-compressed"
+          StaticType: "application/x-zip-compressed"
+      application/x-7z-compressed:
+        60f881 com.ehviewer.manbo.debug/com.hippo.ehviewer.ui.GalleryActivity filter 9c74d26
+          Action: "android.intent.action.VIEW"
+          Category: "android.intent.category.DEFAULT"
+          Category: "android.intent.category.BROWSABLE"
+          Scheme: "file"
+          Scheme: "content"
+          Authority: "": -1 WILD
+          StaticType: "application/octet-stream"
+          StaticType: "application/7z"
+          StaticType: "application/rar"
+          StaticType: "application/zip"
+          StaticType: "application/x-7z-compressed"
+          StaticType: "application/x-rar-compressed"
+          StaticType: "application/x-zip-compressed"
+      image/*:
+        947347c com.ehviewer.manbo.debug/com.hippo.ehviewer.ui.MainActivity filter a111c68
+          Action: "android.intent.action.SEND"
+          Category: "android.intent.category.DEFAULT"
+          StaticType: "image"
+          mPriority=0, mOrder=0, mHasStaticPartialTypes=true, mHasDynamicPartialTypes=false
+
+  Base MIME Types:
+      text:
+        947347c com.ehviewer.manbo.debug/com.hippo.ehviewer.ui.MainActivity filter 173538b
+          Action: "android.intent.action.SEND"
+          Category: "android.intent.category.DEFAULT"
+          StaticType: "text/plain"
+      application:
+        60f881 com.ehviewer.manbo.debug/com.hippo.ehviewer.ui.GalleryActivity filter 9c74d26
+          Action: "android.intent.action.VIEW"
+          Category: "android.intent.category.DEFAULT"
+          Category: "android.intent.category.BROWSABLE"
+          Scheme: "file"
+          Scheme: "content"
+          Authority: "": -1 WILD
+          StaticType: "application/octet-stream"
+          StaticType: "application/7z"
+          StaticType: "application/rar"
+          StaticType: "application/zip"
+          StaticType: "application/x-7z-compressed"
+          StaticType: "application/x-rar-compressed"
+          StaticType: "application/x-zip-compressed"
+        60f881 com.ehviewer.manbo.debug/com.hippo.ehviewer.ui.GalleryActivity filter 9c74d26
+          Action: "android.intent.action.VIEW"
+          Category: "android.intent.category.DEFAULT"
+          Category: "android.intent.category.BROWSABLE"
+          Scheme: "file"
+          Scheme: "content"
+          Authority: "": -1 WILD
+          StaticType: "application/octet-stream"
+          StaticType: "application/7z"
+          StaticType: "application/rar"
+          StaticType: "application/zip"
+          StaticType: "application/x-7z-compressed"
+          StaticType: "application/x-rar-compressed"
+          StaticType: "application/x-zip-compressed"
+        60f881 com.ehviewer.manbo.debug/com.hippo.ehviewer.ui.GalleryActivity filter 9c74d26
+          Action: "android.intent.action.VIEW"
+          Category: "android.intent.category.DEFAULT"
+          Category: "android.intent.category.BROWSABLE"
+          Scheme: "file"
+          Scheme: "content"
+          Authority: "": -1 WILD
+          StaticType: "application/octet-stream"
+          StaticType: "application/7z"
+          StaticType: "application/rar"
+          StaticType: "application/zip"
+          StaticType: "application/x-7z-compressed"
+          StaticType: "application/x-rar-compressed"
+          StaticType: "application/x-zip-compressed"
+        60f881 com.ehviewer.manbo.debug/com.hippo.ehviewer.ui.GalleryActivity filter 9c74d26
+          Action: "android.intent.action.VIEW"
+          Category: "android.intent.category.DEFAULT"
+          Category: "android.intent.category.BROWSABLE"
+          Scheme: "file"
+          Scheme: "content"
+          Authority: "": -1 WILD
+          StaticType: "application/octet-stream"
+          StaticType: "application/7z"
+          StaticType: "application/rar"
+          StaticType: "application/zip"
+          StaticType: "application/x-7z-compressed"
+          StaticType: "application/x-rar-compressed"
+          StaticType: "application/x-zip-compressed"
+        60f881 com.ehviewer.manbo.debug/com.hippo.ehviewer.ui.GalleryActivity filter 9c74d26
+          Action: "android.intent.action.VIEW"
+          Category: "android.intent.category.DEFAULT"
+          Category: "android.intent.category.BROWSABLE"
+          Scheme: "file"
+          Scheme: "content"
+          Authority: "": -1 WILD
+          StaticType: "application/octet-stream"
+          StaticType: "application/7z"
+          StaticType: "application/rar"
+          StaticType: "application/zip"
+          StaticType: "application/x-7z-compressed"
+          StaticType: "application/x-rar-compressed"
+          StaticType: "application/x-zip-compressed"
+        60f881 com.ehviewer.manbo.debug/com.hippo.ehviewer.ui.GalleryActivity filter 9c74d26
+          Action: "android.intent.action.VIEW"
+          Category: "android.intent.category.DEFAULT"
+          Category: "android.intent.category.BROWSABLE"
+          Scheme: "file"
+          Scheme: "content"
+          Authority: "": -1 WILD
+          StaticType: "application/octet-stream"
+          StaticType: "application/7z"
+          StaticType: "application/rar"
+          StaticType: "application/zip"
+          StaticType: "application/x-7z-compressed"
+          StaticType: "application/x-rar-compressed"
+          StaticType: "application/x-zip-compressed"
+        60f881 com.ehviewer.manbo.debug/com.hippo.ehviewer.ui.GalleryActivity filter 9c74d26
+          Action: "android.intent.action.VIEW"
+          Category: "android.intent.category.DEFAULT"
+          Category: "android.intent.category.BROWSABLE"
+          Scheme: "file"
+          Scheme: "content"
+          Authority: "": -1 WILD
+          StaticType: "application/octet-stream"
+          StaticType: "application/7z"
+          StaticType: "application/rar"
+          StaticType: "application/zip"
+          StaticType: "application/x-7z-compressed"
+          StaticType: "application/x-rar-compressed"
+          StaticType: "application/x-zip-compressed"
+
+  Wild MIME Types:
+      *:
+        60f881 com.ehviewer.manbo.debug/com.hippo.ehviewer.ui.GalleryActivity filter 90f9714
+          Action: "android.intent.action.VIEW"
+          Category: "android.intent.category.DEFAULT"
+          Category: "android.intent.category.BROWSABLE"
+          Scheme: "file"
+          Scheme: "content"
+          Authority: "": -1 WILD
+          Path: "PatternMatcher{GLOB: .*\.7z}"
+          Path: "PatternMatcher{GLOB: .*\.rar}"
+          Path: "PatternMatcher{GLOB: .*\.zip}"
+          StaticType: "*"
+          mPriority=0, mOrder=0, mHasStaticPartialTypes=true, mHasDynamicPartialTypes=false
+      image:
+        947347c com.ehviewer.manbo.debug/com.hippo.ehviewer.ui.MainActivity filter a111c68
+          Action: "android.intent.action.SEND"
+          Category: "android.intent.category.DEFAULT"
+          StaticType: "image"
+          mPriority=0, mOrder=0, mHasStaticPartialTypes=true, mHasDynamicPartialTypes=false
+
+  Schemes:
+      file:
+        60f881 com.ehviewer.manbo.debug/com.hippo.ehviewer.ui.GalleryActivity filter 9c74d26
+          Action: "android.intent.action.VIEW"
+          Category: "android.intent.category.DEFAULT"
+          Category: "android.intent.category.BROWSABLE"
+          Scheme: "file"
+          Scheme: "content"
+          Authority: "": -1 WILD
+          StaticType: "application/octet-stream"
+          StaticType: "application/7z"
+          StaticType: "application/rar"
+          StaticType: "application/zip"
+          StaticType: "application/x-7z-compressed"
+          StaticType: "application/x-rar-compressed"
+          StaticType: "application/x-zip-compressed"
+        60f881 com.ehviewer.manbo.debug/com.hippo.ehviewer.ui.GalleryActivity filter 4c19d67
+          Action: "android.intent.action.VIEW"
+          Category: "android.intent.category.DEFAULT"
+          Category: "android.intent.category.BROWSABLE"
+          Scheme: "file"
+          Scheme: "content"
+          Authority: "": -1 WILD
+          Path: "PatternMatcher{GLOB: .*\.7z}"
+          Path: "PatternMatcher{GLOB: .*\.rar}"
+          Path: "PatternMatcher{GLOB: .*\.zip}"
+        60f881 com.ehviewer.manbo.debug/com.hippo.ehviewer.ui.GalleryActivity filter 90f9714
+          Action: "android.intent.action.VIEW"
+          Category: "android.intent.category.DEFAULT"
+          Category: "android.intent.category.BROWSABLE"
+          Scheme: "file"
+          Scheme: "content"
+          Authority: "": -1 WILD
+          Path: "PatternMatcher{GLOB: .*\.7z}"
+          Path: "PatternMatcher{GLOB: .*\.rar}"
+          Path: "PatternMatcher{GLOB: .*\.zip}"
+          StaticType: "*"
+          mPriority=0, mOrder=0, mHasStaticPartialTypes=true, mHasDynamicPartialTypes=false
+      http:
+        947347c com.ehviewer.manbo.debug/com.hippo.ehviewer.ui.MainActivity filter 61b355a
+          Action: "android.intent.action.VIEW"
+          Category: "android.intent.category.DEFAULT"
+          Category: "android.intent.category.BROWSABLE"
+          Scheme: "http"
+          Scheme: "https"
+          Authority: "exhentai.org": -1
+          Authority: "e-hentai.org": -1
+          Authority: "g.e-hentai.org": -1
+          Authority: "lofi.e-hentai.org": -1
+          AutoVerify=true
+      https:
+        947347c com.ehviewer.manbo.debug/com.hippo.ehviewer.ui.MainActivity filter 61b355a
+          Action: "android.intent.action.VIEW"
+          Category: "android.intent.category.DEFAULT"
+          Category: "android.intent.category.BROWSABLE"
+          Scheme: "http"
+          Scheme: "https"
+          Authority: "exhentai.org": -1
+          Authority: "e-hentai.org": -1
+          Authority: "g.e-hentai.org": -1
+          Authority: "lofi.e-hentai.org": -1
+          AutoVerify=true
+      content:
+        60f881 com.ehviewer.manbo.debug/com.hippo.ehviewer.ui.GalleryActivity filter 9c74d26
+          Action: "android.intent.action.VIEW"
+          Category: "android.intent.category.DEFAULT"
+          Category: "android.intent.category.BROWSABLE"
+          Scheme: "file"
+          Scheme: "content"
+          Authority: "": -1 WILD
+          StaticType: "application/octet-stream"
+          StaticType: "application/7z"
+          StaticType: "application/rar"
+          StaticType: "application/zip"
+          StaticType: "application/x-7z-compressed"
+          StaticType: "application/x-rar-compressed"
+          StaticType: "application/x-zip-compressed"
+        60f881 com.ehviewer.manbo.debug/com.hippo.ehviewer.ui.GalleryActivity filter 4c19d67
+          Action: "android.intent.action.VIEW"
+          Category: "android.intent.category.DEFAULT"
+          Category: "android.intent.category.BROWSABLE"
+          Scheme: "file"
+          Scheme: "content"
+          Authority: "": -1 WILD
+          Path: "PatternMatcher{GLOB: .*\.7z}"
+          Path: "PatternMatcher{GLOB: .*\.rar}"
+          Path: "PatternMatcher{GLOB: .*\.zip}"
+        60f881 com.ehviewer.manbo.debug/com.hippo.ehviewer.ui.GalleryActivity filter 90f9714
+          Action: "android.intent.action.VIEW"
+          Category: "android.intent.category.DEFAULT"
+          Category: "android.intent.category.BROWSABLE"
+          Scheme: "file"
+          Scheme: "content"
+          Authority: "": -1 WILD
+          Path: "PatternMatcher{GLOB: .*\.7z}"
+          Path: "PatternMatcher{GLOB: .*\.rar}"
+          Path: "PatternMatcher{GLOB: .*\.zip}"
+          StaticType: "*"
+          mPriority=0, mOrder=0, mHasStaticPartialTypes=true, mHasDynamicPartialTypes=false
+
+  Non-Data Actions:
+      com.samsung.android.support.REMOTE_ACTION:
+        60f881 com.ehviewer.manbo.debug/com.hippo.ehviewer.ui.GalleryActivity filter 9239bbd
+          Action: "com.samsung.android.support.REMOTE_ACTION"
+      android.intent.action.MAIN:
+        f69424e com.ehviewer.manbo.debug/com.hippo.ehviewer.ui.splash.SplashActivity filter 8592f6f
+          Action: "android.intent.action.MAIN"
+          Category: "android.intent.category.LAUNCHER"
+          Category: "android.intent.category.DEFAULT"
+        947347c com.ehviewer.manbo.debug/com.hippo.ehviewer.ui.MainActivity filter 9375105
+          Action: "android.intent.action.MAIN"
+
+  MIME Typed Actions:
+      android.intent.action.SEND:
+        947347c com.ehviewer.manbo.debug/com.hippo.ehviewer.ui.MainActivity filter 173538b
+          Action: "android.intent.action.SEND"
+          Category: "android.intent.category.DEFAULT"
+          StaticType: "text/plain"
+        947347c com.ehviewer.manbo.debug/com.hippo.ehviewer.ui.MainActivity filter a111c68
+          Action: "android.intent.action.SEND"
+          Category: "android.intent.category.DEFAULT"
+          StaticType: "image"
+          mPriority=0, mOrder=0, mHasStaticPartialTypes=true, mHasDynamicPartialTypes=false
+      android.intent.action.VIEW:
+        60f881 com.ehviewer.manbo.debug/com.hippo.ehviewer.ui.GalleryActivity filter 9c74d26
+          Action: "android.intent.action.VIEW"
+          Category: "android.intent.category.DEFAULT"
+          Category: "android.intent.category.BROWSABLE"
+          Scheme: "file"
+          Scheme: "content"
+          Authority: "": -1 WILD
+          StaticType: "application/octet-stream"
+          StaticType: "application/7z"
+          StaticType: "application/rar"
+          StaticType: "application/zip"
+          StaticType: "application/x-7z-compressed"
+          StaticType: "application/x-rar-compressed"
+          StaticType: "application/x-zip-compressed"
+        60f881 com.ehviewer.manbo.debug/com.hippo.ehviewer.ui.GalleryActivity filter 90f9714
+          Action: "android.intent.action.VIEW"
+          Category: "android.intent.category.DEFAULT"
+          Category: "android.intent.category.BROWSABLE"
+          Scheme: "file"
+          Scheme: "content"
+          Authority: "": -1 WILD
+          Path: "PatternMatcher{GLOB: .*\.7z}"
+          Path: "PatternMatcher{GLOB: .*\.rar}"
+          Path: "PatternMatcher{GLOB: .*\.zip}"
+          StaticType: "*"
+          mPriority=0, mOrder=0, mHasStaticPartialTypes=true, mHasDynamicPartialTypes=false
+
+Receiver Resolver Table:
+  Non-Data Actions:
+      androidx.profileinstaller.action.SAVE_PROFILE:
+        ecb15b2 com.ehviewer.manbo.debug/androidx.profileinstaller.ProfileInstallReceiver filter 87336b9
+          Action: "androidx.profileinstaller.action.SAVE_PROFILE"
+      androidx.profileinstaller.action.INSTALL_PROFILE:
+        ecb15b2 com.ehviewer.manbo.debug/androidx.profileinstaller.ProfileInstallReceiver filter 6c0a903
+          Action: "androidx.profileinstaller.action.INSTALL_PROFILE"
+      androidx.profileinstaller.action.SKIP_FILE:
+        ecb15b2 com.ehviewer.manbo.debug/androidx.profileinstaller.ProfileInstallReceiver filter ed91080
+          Action: "androidx.profileinstaller.action.SKIP_FILE"
+      androidx.profileinstaller.action.BENCHMARK_OPERATION:
+        ecb15b2 com.ehviewer.manbo.debug/androidx.profileinstaller.ProfileInstallReceiver filter fd0dafe
+          Action: "androidx.profileinstaller.action.BENCHMARK_OPERATION"
+
+Domain verification status:
+  com.ehviewer.manbo.debug:
+    ID: df020b35-4873-406c-a494-d08b9c8b2280
+    Signatures: [AF:16:9D:CF:1D:3E:44:C3:26:B5:5A:1C:63:1C:37:1D:3A:DF:E0:6B:8B:ED:34:83:9F:03:A8:9C:F1:F1:E9:DF]
+    Domain verification state:
+      exhentai.org: 1024
+      g.e-hentai.org: 1024
+      e-hentai.org: 1024
+      lofi.e-hentai.org: 1024
+    User all:
+      Verification link handling allowed: true
+      Selection state:
+        Disabled:
+          exhentai.org
+          g.e-hentai.org
+          e-hentai.org
+          lofi.e-hentai.org
+
+Permissions:
+  Permission [com.ehviewer.manbo.debug.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION] (8a624d5):
+    sourcePackage=com.ehviewer.manbo.debug
+    uid=10288 gids=[] type=0 prot=signature
+    perm=PermissionInfo{6c99d4b com.ehviewer.manbo.debug.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION}
+    flags=0x0
+
+Registered ContentProviders:
+  com.ehviewer.manbo.debug/androidx.startup.InitializationProvider:
+    Provider{4c70328 com.ehviewer.manbo.debug/androidx.startup.InitializationProvider}
+  com.ehviewer.manbo.debug/com.hippo.content.FileProvider:
+    Provider{4a2b841 com.ehviewer.manbo.debug/com.hippo.content.FileProvider}
+  com.ehviewer.manbo.debug/com.google.firebase.provider.FirebaseInitProvider:
+    Provider{b271e6 com.ehviewer.manbo.debug/com.google.firebase.provider.FirebaseInitProvider}
+
+ContentProvider Authorities:
+  [com.ehviewer.manbo.debug.firebaseinitprovider]:
+    Provider{b271e6 com.ehviewer.manbo.debug/com.google.firebase.provider.FirebaseInitProvider}
+      applicationInfo=ApplicationInfo{fb4c4ea com.ehviewer.manbo.debug}
+  [com.ehviewer.manbo.debug.fileprovider]:
+    Provider{4a2b841 com.ehviewer.manbo.debug/com.hippo.content.FileProvider}
+      applicationInfo=ApplicationInfo{af353db com.ehviewer.manbo.debug}
+  [com.ehviewer.manbo.debug.androidx-startup]:
+    Provider{4c70328 com.ehviewer.manbo.debug/androidx.startup.InitializationProvider}
+      applicationInfo=ApplicationInfo{3899e78 com.ehviewer.manbo.debug}
+
+Key Set Manager:
+  [com.ehviewer.manbo.debug]
+      Signing KeySets: 119
+
+Packages:
+  Package [com.ehviewer.manbo.debug] (aba5c9b):
+    appId=10288
+    pkg=Package{bde6ac3 com.ehviewer.manbo.debug}
+    codePath=/data/app/~~mVomyhMe4Q5YSUyiTTCkEw==/com.ehviewer.manbo.debug-OmMEVaQqfTxrKYG5DnA9HQ==
+    resourcePath=/data/app/~~mVomyhMe4Q5YSUyiTTCkEw==/com.ehviewer.manbo.debug-OmMEVaQqfTxrKYG5DnA9HQ==
+    legacyNativeLibraryDir=/data/app/~~mVomyhMe4Q5YSUyiTTCkEw==/com.ehviewer.manbo.debug-OmMEVaQqfTxrKYG5DnA9HQ==/lib
+    extractNativeLibs=false
+    primaryCpuAbi=arm64-v8a
+    secondaryCpuAbi=null
+    cpuAbiOverride=null
+    versionCode=162 minSdk=23 targetSdk=30
+    minExtensionVersions=[]
+    versionName=162
+    hiddenApiEnforcementPolicy=2
+    usesNonSdkApi=false
+    isMiuiPreinstall=false
+    splits=[base]
+    apkSigningVersion=2
+    flags=[ DEBUGGABLE HAS_CODE ALLOW_CLEAR_USER_DATA ALLOW_BACKUP LARGE_HEAP ]
+    privateFlags=[ PRIVATE_FLAG_ACTIVITIES_RESIZE_MODE_RESIZEABLE_VIA_SDK_VERSION ALLOW_AUDIO_PLAYBACK_CAPTURE PRIVATE_FLAG_REQUEST_LEGACY_EXTERNAL_STORAGE HAS_DOMAIN_URLS PARTIALLY_DIRECT_BOOT_AWARE PRIVATE_FLAG_ALLOW_NATIVE_HEAP_POINTER_TAGGING ]
+    forceQueryable=false
+    pageSizeCompat=0
+    scannedAsStoppedSystemApp=false
+    supportsScreens=[small, medium, large, xlarge, resizeable, anyDensity]
+    usesOptionalLibraries:
+      org.apache.http.legacy
+      androidx.window.extensions
+      androidx.window.sidecar
+    usesLibraryFiles:
+      /system/framework/org.apache.http.legacy.jar
+      /system_ext/framework/androidx.window.extensions.jar
+      /system_ext/framework/androidx.window.sidecar.jar
+    timeStamp=2026-10-05 16:14:13
+    lastUpdateTime=2026-10-05 16:14:13
+    installerPackageName=null
+    installerPackageUid=-1
+    initiatingPackageName=com.android.shell
+    originatingPackageName=null
+    packageSource=1
+    appMetadataFilePath=null
+    appMetadataSource=0
+    signatures=PackageSignatures{80d0f40 version:2, signatures:[ac3c8849], past signatures:[]}
+    installPermissionsFixed=false
+    pkgFlags=[ DEBUGGABLE HAS_CODE ALLOW_CLEAR_USER_DATA ALLOW_BACKUP LARGE_HEAP ]
+    privatePkgFlags=[ PRIVATE_FLAG_ACTIVITIES_RESIZE_MODE_RESIZEABLE_VIA_SDK_VERSION ALLOW_AUDIO_PLAYBACK_CAPTURE PRIVATE_FLAG_REQUEST_LEGACY_EXTERNAL_STORAGE HAS_DOMAIN_URLS PARTIALLY_DIRECT_BOOT_AWARE PRIVATE_FLAG_ALLOW_NATIVE_HEAP_POINTER_TAGGING ]
+    apexModuleName=null
+    declared permissions:
+      com.ehviewer.manbo.debug.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION: prot=signature
+    requested permissions:
+      com.google.android.finsky.permission.BIND_GET_INSTALL_REFERRER_SERVICE
+      android.permission.POST_NOTIFICATIONS
+      android.permission.MANAGE_EXTERNAL_STORAGE
+      android.permission.FOREGROUND_SERVICE
+      android.permission.READ_MEDIA_VISUAL_USER_SELECTED
+      android.permission.ACCESS_ADSERVICES_AD_ID
+      android.permission.INTERNET
+      android.permission.READ_EXTERNAL_STORAGE
+      android.permission.ACCESS_DOWNLOAD_MANAGER
+      android.permission.READ_MEDIA_IMAGES
+      android.permission.FOREGROUND_SERVICE_DATA_SYNC
+      android.permission.ACCESS_NETWORK_STATE
+      android.permission.CAMERA
+      android.permission.ACCESS_ADSERVICES_ATTRIBUTION
+      android.permission.READ_MEDIA_AUDIO
+      android.permission.READ_MEDIA_VIDEO
+      android.permission.USE_FINGERPRINT
+      android.permission.WRITE_EXTERNAL_STORAGE
+      android.permission.ACCESS_WIFI_STATE
+      android.permission.USE_BIOMETRIC
+      android.permission.REQUEST_INSTALL_PACKAGES
+      com.google.android.gms.permission.AD_ID
+      com.ehviewer.manbo.debug.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION
+      android.permission.WAKE_LOCK
+    install permissions:
+      com.google.android.finsky.permission.BIND_GET_INSTALL_REFERRER_SERVICE: granted=true
+      android.permission.FOREGROUND_SERVICE: granted=true
+      android.permission.ACCESS_ADSERVICES_AD_ID: granted=true
+      android.permission.INTERNET: granted=true
+      android.permission.FOREGROUND_SERVICE_DATA_SYNC: granted=true
+      android.permission.ACCESS_NETWORK_STATE: granted=true
+      android.permission.ACCESS_ADSERVICES_ATTRIBUTION: granted=true
+      android.permission.USE_FINGERPRINT: granted=true
+      android.permission.ACCESS_WIFI_STATE: granted=true
+      android.permission.USE_BIOMETRIC: granted=true
+      com.google.android.gms.permission.AD_ID: granted=true
+      com.ehviewer.manbo.debug.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION: granted=true
+      android.permission.WAKE_LOCK: granted=true
+    User 0: ceDataInode=848958 deDataInode=848966 installed=true hidden=false suspended=false distractionFlags=0 stopped=true notLaunched=false enabled=0 instant=false virtual=false quarantined=false
+      installReason=4
+      dataDir=/data/user/0/com.ehviewer.manbo.debug
+      firstInstallTime=2026-07-30 13:02:24
+      uninstallReason=0
+      overlay paths:
+        /product/overlay/GestureLineOverlay.apk
+        /data/resource-cache/com.android.systemui-neutral-iq3T.frro
+        /data/resource-cache/com.android.systemui-accent-Kimj.frro
+        /data/resource-cache/com.android.systemui-dynamic-2dz7.frro
+      legacy overlay paths:
+        /product/overlay/GestureLineOverlay.apk
+      gids=[3003]
+      runtime permissions:
+        android.permission.POST_NOTIFICATIONS: granted=true, flags=[ USER_SET|USER_SENSITIVE_WHEN_GRANTED|USER_SENSITIVE_WHEN_DENIED]
+        android.permission.READ_MEDIA_VISUAL_USER_SELECTED: granted=true, flags=[ USER_SET|USER_SENSITIVE_WHEN_GRANTED|USER_SENSITIVE_WHEN_DENIED]
+        android.permission.READ_EXTERNAL_STORAGE: granted=true, flags=[ USER_SET|USER_SENSITIVE_WHEN_GRANTED|USER_SENSITIVE_WHEN_DENIED|RESTRICTION_INSTALLER_EXEMPT]
+        android.permission.READ_MEDIA_IMAGES: granted=true, flags=[ USER_SET|USER_SENSITIVE_WHEN_GRANTED|USER_SENSITIVE_WHEN_DENIED|RESTRICTION_UPGRADE_EXEMPT]
+        android.permission.CAMERA: granted=false, flags=[ USER_SENSITIVE_WHEN_GRANTED|USER_SENSITIVE_WHEN_DENIED]
+        android.permission.READ_MEDIA_AUDIO: granted=true, flags=[ USER_SET|USER_SENSITIVE_WHEN_GRANTED|USER_SENSITIVE_WHEN_DENIED|RESTRICTION_UPGRADE_EXEMPT]
+        android.permission.READ_MEDIA_VIDEO: granted=true, flags=[ USER_SET|USER_SENSITIVE_WHEN_GRANTED|USER_SENSITIVE_WHEN_DENIED|RESTRICTION_UPGRADE_EXEMPT]
+        android.permission.WRITE_EXTERNAL_STORAGE: granted=true, flags=[ USER_SET|USER_SENSITIVE_WHEN_GRANTED|USER_SENSITIVE_WHEN_DENIED|RESTRICTION_INSTALLER_EXEMPT]
+
+Queries:
+  system apps queryable: false
+  queries via forceQueryable:
+  queries via package name:
+  queries via component:
+    [com.xiaomi.trustservice,com.miui.bugreport,com.miui.audiomonitor,android,com.android.providers.settings,com.miui.securitycore,com.xiaomi.location.fused,com.android.inputdevices,com.miui.daemon,com.bsp.catchlog,com.xiaomi.touchservice,com.xiaomi.aiasst.vision,com.miui.qr,com.xiaomi.barrage,miui.systemui.plugin,com.xiaomi.aon,com.miui.aod,com.xiaomi.digitalkey,com.miui.cit,com.miui.securitycenter,com.miui.wmsvc,com.miui.notification,com.android.dynsystem,com.android.settings,com.android.systemui,com.miui.uireporter,com.xiaomi.otrpbroker,com.miui.touchassistant,com.xiaomi.aiasst.service,com.xiaomi.joyose,com.xiaomi.mtb,com.qualcomm.qti.services.systemhelper,com.android.localtransport,com.miui.powerkeeper,com.miui.thirdappassistant,com.android.provision,com.xiaomi.gnss.polaris,com.miui.contentcatcher,com.xiaomi.mirror,com.android.keychain,com.xiaomi.misettings,vendor.qti.frameworks.utils,com.miui.misightservice,com.wapi.wapicertmanage,com.android.location.fused,com.android.DeviceAsWebcam,com.android.server.telecom,com.xiaomi.mi_connect_service,com.qualcomm.qti.xrvd.service]:
+      com.ehviewer.manbo.debug
+    [com.st.android.nfc_extensions_16,com.android.nfc,com.miui.tsmclient]:
+      com.ehviewer.manbo.debug
+    [com.miui.backup,com.miui.huanji]:
+      com.ehviewer.manbo.debug
+    com.google.android.configupdater:
+      com.ehviewer.manbo.debug
+    com.xiaomi.gamecenter.sdk.service:
+      com.ehviewer.manbo.debug
+    com.android.settings.intelligence:
+      com.ehviewer.manbo.debug
+    com.android.camera:
+      com.ehviewer.manbo.debug
+    com.miui.nextpay:
+      com.ehviewer.manbo.debug
+    com.miui.systemAdSolution:
+      com.ehviewer.manbo.debug
+    com.google.android.gsf:
+      com.ehviewer.manbo.debug
+    com.android.rkpdapp:
+      com.ehviewer.manbo.debug
+    com.miui.newmidrive:
+      com.ehviewer.manbo.debug
+    com.miui.notes:
+      com.ehviewer.manbo.debug
+    com.android.soundrecorder:
+      com.ehviewer.manbo.debug
+    com.duokan.phone.remotecontroller:
+      com.ehviewer.manbo.debug
+    com.iflytek.inputmethod.miui:
+      com.ehviewer.manbo.debug
+    com.baidu.input_mi:
+      com.ehviewer.manbo.debug
+    xxx.pornhub.fuck:
+      com.ehviewer.manbo.debug
+    org.thunderdog.challegram:
+      com.ehviewer.manbo.debug
+    app.mtool.mtoolmobile:
+      com.ehviewer.manbo.debug
+    app.mtool.mtoolmobile.renpy:
+      com.ehviewer.manbo.debug
+    app.mtool.mtoolmobile.mkxpz:
+      com.ehviewer.manbo.debug
+    com.twitter.android:
+      com.ehviewer.manbo.debug
+  queryable via interaction:
+    User 0:
+      com.ehviewer.manbo.debug:
+        com.android.externalstorage
+  queryable via uses-library:
+
+Dexopt state:
+  [com.ehviewer.manbo.debug]
+    path: /data/app/~~mVomyhMe4Q5YSUyiTTCkEw==/com.ehviewer.manbo.debug-OmMEVaQqfTxrKYG5DnA9HQ==/base.apk
+      arm64: [status=speed-profile] [reason=boot-after-ota] [primary-abi]
+        [location is /data/app/~~mVomyhMe4Q5YSUyiTTCkEw==/com.ehviewer.manbo.debug-OmMEVaQqfTxrKYG5DnA9HQ==/oat/arm64/base.odex]
+    base APK odex file size: base.art: 1316Kb base.odex: 2794Kb base.vdex: 27891Kb 
+
+Compiler stats:
+  [com.ehviewer.manbo.debug]
+     base.apk - 1815

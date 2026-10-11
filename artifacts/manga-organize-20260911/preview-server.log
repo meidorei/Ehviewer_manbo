@@ -1,0 +1,6 @@
+127.0.0.1 - - [11/Sep/2026 15:59:32] "GET /review.html HTTP/1.1" 200 -
+127.0.0.1 - - [11/Sep/2026 15:59:33] code 404, message File not found
+127.0.0.1 - - [11/Sep/2026 15:59:33] "GET /favicon.ico HTTP/1.1" 404 -
+127.0.0.1 - - [11/Sep/2026 16:02:04] "GET /review.html HTTP/1.1" 200 -
+127.0.0.1 - - [11/Sep/2026 16:02:08] code 404, message File not found
+127.0.0.1 - - [11/Sep/2026 16:02:08] "GET /favicon.ico HTTP/1.1" 404 -

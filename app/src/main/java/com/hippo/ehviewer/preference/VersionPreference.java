@@ -47,7 +47,7 @@ public class VersionPreference extends Preference {
         String version;
         try {
             PackageInfo pInfo = context.getPackageManager().getPackageInfo(context.getPackageName(), 0);
-            version = pInfo.versionName + " (" + pInfo.versionCode + ")";
+            version = String.valueOf(pInfo.versionCode);
         } catch (PackageManager.NameNotFoundException e) {
             e.printStackTrace();
             version = context.getString(R.string.error_unknown);

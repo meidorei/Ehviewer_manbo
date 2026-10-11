@@ -1,0 +1,6117 @@
+{
+  "series": [
+    {
+      "name": "那對有年齡差的黑髮姉妹跟我交歡的故事（&norino (norino)）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 3618000
+        },
+        {
+          "gid": 3930572
+        },
+        {
+          "gid": 3910054,
+          "category": "collection"
+        }
+      ]
+    },
+    {
+      "name": "Shidou Joou _Mesuiki no Yorokobi o Surikomarete Otosareru Boku.~（2vs (Siina Tai)）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 2347929
+        },
+        {
+          "gid": 2579176,
+          "order": 2.0
+        },
+        {
+          "gid": 2782929,
+          "order": 3.0
+        }
+      ]
+    },
+    {
+      "name": "H主播的日常性活 ~被偶然相遇的推逆推倒然后榨精的故事~（2vs (Siina Tai)）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 3565674
+        },
+        {
+          "gid": 3221796
+        }
+      ]
+    },
+    {
+      "name": "Madame Ejiki Obasan Mamamanko-hen（Acesulfame Kei）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 3517581,
+          "branch": "姨篇"
+        },
+        {
+          "gid": 3517582,
+          "branch": "祖母篇"
+        }
+      ]
+    },
+    {
+      "name": "想成為你心中最愛的馬麻（Agata）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 2542189
+        },
+        {
+          "gid": 2821961
+        }
+      ]
+    },
+    {
+      "name": "催眠的奇迹（aheazif (Sanatuki)）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 2532418,
+          "order": 2.0
+        },
+        {
+          "gid": 2208485,
+          "branch": "新VII篇"
+        }
+      ]
+    },
+    {
+      "name": "Goshujin-sama no Otoshigoto（aheazif (Sanatuki)）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 2928360
+        },
+        {
+          "gid": 3710183,
+          "order": 2.0
+        }
+      ]
+    },
+    {
+      "name": "Otsu Metsu Kigan Kouhuku Kyoudan Nyuushin Hen（aheazif (Sanatuki, Hidaka Hisashi)）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 2291915
+        },
+        {
+          "gid": 3074279
+        },
+        {
+          "gid": 2636641,
+          "order": 2.0
+        },
+        {
+          "gid": 3074285,
+          "order": 2.0
+        }
+      ]
+    },
+    {
+      "name": "Furo Kyan Inkya Onna, Hatsu Kareshi Chinpo de Mesu ni Naru（Airandou）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 3804533
+        },
+        {
+          "gid": 3462848
+        }
+      ]
+    },
+    {
+      "name": "Bakunyuu InCha wa Gyaku Netoru!!（Akabane Aomori）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 3878622
+        },
+        {
+          "gid": 3899826,
+          "category": "extra"
+        }
+      ]
+    },
+    {
+      "name": "Boshi Seikyouiku Gimu-ka Houan Shimosato-ka（Akikan）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 3681137,
+          "branch": "下里家"
+        },
+        {
+          "gid": 3791129,
+          "branch": "濑户内家"
+        }
+      ]
+    },
+    {
+      "name": "Chiyoko no Himitsu（Akikusa Peperon）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 3778744
+        },
+        {
+          "gid": 3321360
+        }
+      ]
+    },
+    {
+      "name": "Akazukin-san Zenpen（Akikusa Peperon）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 3485883,
+          "order": 1.0
+        },
+        {
+          "gid": 3640135,
+          "order": 2.0
+        }
+      ]
+    },
+    {
+      "name": "快谈都市传说 与突然性格改变的青梅竹马恋爱后瞒着父母让她怀孕的故事（Akuten Soushin (Kokutou Nikke)）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 3734757
+        },
+        {
+          "gid": 3434972
+        }
+      ]
+    },
+    {
+      "name": "Musuko no Doukyuusei ni Makura Eigyou Monogatari（Almarosso）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 1306740,
+          "order": 2.0
+        },
+        {
+          "gid": 1420902,
+          "order": 3.0
+        },
+        {
+          "gid": 2727482,
+          "order": 7.0
+        }
+      ]
+    },
+    {
+      "name": "Sukumizu Bitch!! Joshi Kouishitsu de Doutei Gui（Amagyappa (Amane-san)）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 3699629
+        },
+        {
+          "gid": 3699660
+        }
+      ]
+    },
+    {
+      "name": "IF: Gokinjo-sama ni Tanemaki Dekiru Sekaisen no Hanashi ~Mukashinajimi Doukyuusei no Baai~（Amatani Haruka）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 3976837,
+          "branch": "旧识篇"
+        },
+        {
+          "gid": 4138217,
+          "branch": "母亲篇"
+        }
+      ]
+    },
+    {
+      "name": "Ore no Sao de Kyonyuu ga Tsureta Ken - Black Sea Bream（Anabuki Bouhatei）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 3924740
+        },
+        {
+          "gid": 3255042
+        }
+      ]
+    },
+    {
+      "name": "不管被怎樣對待都只能乖乖順從的矮個子巨乳男性存在的世界（Ani ga Saru (Takashi)）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 4118973
+        },
+        {
+          "gid": 4116746
+        }
+      ]
+    },
+    {
+      "name": "Majo to Kohitsuji（Anmokan (Darkmaya)）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 3806046,
+          "order": 3.0
+        },
+        {
+          "gid": 3806048,
+          "order": 4.0
+        },
+        {
+          "gid": 3804601,
+          "order": 4.0
+        },
+        {
+          "gid": 3806025
+        },
+        {
+          "gid": 3806028,
+          "order": 2.0
+        }
+      ]
+    },
+    {
+      "name": "Bessatsu Comic Unreal Ningen Bokujou Hen（Anthology）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 3919482,
+          "category": "collection",
+          "order": 1.0
+        },
+        {
+          "gid": 3919512,
+          "category": "collection",
+          "order": 4.0
+        }
+      ]
+    },
+    {
+      "name": "2D Comic Magazine Sanran Acme Heroines（Anthology）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 3830131,
+          "order": 1.0
+        },
+        {
+          "gid": 3865319,
+          "order": 2.0
+        }
+      ]
+    },
+    {
+      "name": "Kukkoro Heroines（Anthology）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 3401427,
+          "order": 3.0
+        },
+        {
+          "gid": 3439694,
+          "order": 7.0
+        },
+        {
+          "gid": 3580629,
+          "order": 8.0
+        }
+      ]
+    },
+    {
+      "name": "你的妈妈高潮时的脸超级丑的w（Aodouhu (Neromashin)）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 3074264
+        },
+        {
+          "gid": 3074241,
+          "order": 2.0
+        },
+        {
+          "gid": 3131641,
+          "order": 2.0
+        },
+        {
+          "gid": 3532989,
+          "order": 3.0
+        },
+        {
+          "gid": 3196052,
+          "category": "extra"
+        },
+        {
+          "gid": 3394297,
+          "category": "collection"
+        },
+        {
+          "gid": 3618401,
+          "category": "collection",
+          "order": 1.0
+        }
+      ]
+    },
+    {
+      "name": "Nande Atashi wa Konna Yatsu ni Katenai nda...!（Aodouhu (Neromashin)）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 3499951
+        },
+        {
+          "gid": 3508033
+        },
+        {
+          "gid": 3716150,
+          "order": 2.0
+        }
+      ]
+    },
+    {
+      "name": "和人妻在溫泉里打情罵俏的性愛停不下來！！（Area7 (Kinata)）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 3372180
+        },
+        {
+          "gid": 3368892
+        }
+      ]
+    },
+    {
+      "name": "我最喜歡的媽媽無法拒絕性愛 ~今天和媽媽盡情內射~（Aroha Natumi）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 2924977,
+          "branch": "本篇"
+        },
+        {
+          "gid": 3685668,
+          "branch": "麻由美篇"
+        }
+      ]
+    },
+    {
+      "name": "Boku no Daisuki na Kaa-san ga Namaiki na Tomodachi no Tsugou no Ii SeFri ni Natta Wake（Asuha）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 3815559
+        },
+        {
+          "gid": 3896503,
+          "order": 2.0
+        }
+      ]
+    },
+    {
+      "name": "Yasashikute Kyonyuu no Okaa-san ga Musuko Chinpo de Baka ni Nacchau Hanashi（Atelier TODO (Macaroni and Cheese)）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 2975193,
+          "order": 2.0
+        },
+        {
+          "gid": 3125781,
+          "order": 3.0
+        },
+        {
+          "gid": 3351344,
+          "order": 4.0
+        },
+        {
+          "gid": 3611281,
+          "order": 5.0
+        }
+      ]
+    },
+    {
+      "name": "Enjo Kouhai（Athome Shuka (Takunomi)）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 3568707,
+          "order": 14.0
+        },
+        {
+          "gid": 3145485,
+          "category": "collection",
+          "order": 1.0
+        },
+        {
+          "gid": 2486173,
+          "category": "collection",
+          "order": 2.0
+        },
+        {
+          "gid": 3145258,
+          "category": "collection",
+          "order": 3.0
+        }
+      ]
+    },
+    {
+      "name": "時間停止 入手了這樣力量的我 開始進行復仇行動（Atsukan Rock (Akosuke)）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 4059380
+        },
+        {
+          "gid": 3602435
+        }
+      ]
+    },
+    {
+      "name": "Family tradition The second night（B-Kyuu Site (bkyu)）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 3867778,
+          "order": 2.0
+        },
+        {
+          "gid": 3460422,
+          "order": 1.0
+        }
+      ]
+    },
+    {
+      "name": "B-Kyuu Manga（B-Kyuu Site (bkyu)）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 1919420,
+          "order": 7.0
+        },
+        {
+          "gid": 3864942,
+          "order": 9.1
+        },
+        {
+          "gid": 1919424,
+          "order": 9.1
+        },
+        {
+          "gid": 1919430,
+          "order": 9.2
+        }
+      ]
+    },
+    {
+      "name": "Gesu Mama Futei Nikki（B-Kyuu Site (bkyu)）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 2541344,
+          "order": 2.0
+        },
+        {
+          "gid": 3296328,
+          "order": 3.0
+        },
+        {
+          "gid": 3293332,
+          "order": 4.0
+        }
+      ]
+    },
+    {
+      "name": "Don't Worry! I'll take care of your wife!（BAHALAKAYOJAN）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 3456308,
+          "order": 1.0
+        },
+        {
+          "gid": 3456315,
+          "order": 2.0
+        },
+        {
+          "gid": 3456316,
+          "order": 3.0
+        }
+      ]
+    },
+    {
+      "name": "我的妈妈变成那家伙的肉便器的那一天...（Baku-π-dou (Kuchi VE)）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 2727275
+        },
+        {
+          "gid": 2733993,
+          "order": 2.0
+        },
+        {
+          "gid": 2726160,
+          "order": 2.0
+        },
+        {
+          "gid": 2923796,
+          "order": 3.0
+        },
+        {
+          "gid": 2959327,
+          "order": 4.0
+        }
+      ]
+    },
+    {
+      "name": "Oyako Netorase Oba to Kanojo o Daite Kudasai（Bekkou Kansoku）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 3648767
+        },
+        {
+          "gid": 3388939
+        }
+      ]
+    },
+    {
+      "name": "Secret! Orgasm Hero 시크릿! 절정♥히어로 秘密！高潮♥英雄（Boiled Chicken & Mushypeas）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 3834628
+        },
+        {
+          "gid": 3842796
+        }
+      ]
+    },
+    {
+      "name": "Holo Men no Gehin Hon 1 & 2 Matome（Byururun ★ Youkeijou (Beruru)）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 3222272,
+          "category": "collection"
+        },
+        {
+          "gid": 3277415,
+          "category": "collection"
+        }
+      ]
+    },
+    {
+      "name": "獎勵用身體來支付 過於情色的員工福利是性處理部門的工作♥（C-kyuu）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 3364361,
+          "order": 2.0
+        },
+        {
+          "gid": 3364504,
+          "order": 3.0
+        },
+        {
+          "gid": 3539559,
+          "order": 4.0
+        }
+      ]
+    },
+    {
+      "name": "Mirai-kun no Onegai o Kotowarenai Himiko-sama（Chabanchabancha (Inari Bancha)）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 2425924
+        },
+        {
+          "gid": 2816243,
+          "order": 2.0
+        }
+      ]
+    },
+    {
+      "name": "Jimoto no Oneesan-tachi ni, Dekachin Baka no Tomodachi ga Tanetsuke Koubi shimakutteta.（Chae）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 3437681
+        },
+        {
+          "gid": 3385638
+        }
+      ]
+    },
+    {
+      "name": "Tonari no obasan ga bakamitai ni shiko reru.（Chae）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 3815983
+        },
+        {
+          "gid": 3814770
+        }
+      ]
+    },
+    {
+      "name": "Niizuma Joushi wa Buka no Chinpo de Do-M Ochi（Chinpan-bu (Chinpan)）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 2190794
+        },
+        {
+          "gid": 2983328
+        }
+      ]
+    },
+    {
+      "name": "和一直憧憬的同學的媽媽發生了關係（Chinpan-bu (Chinpan)）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 3428270
+        },
+        {
+          "gid": 3404877
+        }
+      ]
+    },
+    {
+      "name": "Shujinko-Kei Tenkousei no Maid-san ni Hitomebore!（Chotto B-sen）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 3630103
+        },
+        {
+          "gid": 3603554
+        }
+      ]
+    },
+    {
+      "name": "对嚣张的炮灰学生角色的老师一见钟情!（Chotto B-sen）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 3867156
+        },
+        {
+          "gid": 3856106
+        }
+      ]
+    },
+    {
+      "name": "对学校的七大不可思议长乳一见钟情（Chotto B-sen）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 3902013,
+          "order": 1.0
+        },
+        {
+          "gid": 3903288,
+          "order": 2.0
+        }
+      ]
+    },
+    {
+      "name": "Jochiku Kakou Plant Justice Diamond Kakou Kiroku Zenpen（Choukenkouya (Kenkou Shindan-chan)）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 3376277,
+          "order": 1.0
+        },
+        {
+          "gid": 3566246,
+          "order": 2.0
+        }
+      ]
+    },
+    {
+      "name": "女上司为了发泄工作的压力，只好变成婴儿向我撒娇…（Circle Tokomaya (Tokomaya Keita)）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 3312680,
+          "branch": "婴儿篇"
+        },
+        {
+          "gid": 3312631,
+          "category": "collection"
+        }
+      ]
+    },
+    {
+      "name": "2年级E班全班皆淫魔 学号5号穗仁原 芽依篇（Clesta (Cle Masahiro)）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 3703372
+        },
+        {
+          "gid": 3700044
+        }
+      ]
+    },
+    {
+      "name": "Nakadashi Oji-san ni Nerawareta Mesu wa Nigeru Koto ga Dekinai ~Senaga Saki Hen（ClimbCrown）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 2064162,
+          "order": 1.0,
+          "branch": "纱纪篇"
+        },
+        {
+          "gid": 2080268,
+          "order": 2.0,
+          "branch": "纱纪篇"
+        },
+        {
+          "gid": 2066062,
+          "order": 3.0,
+          "branch": "纱纪篇"
+        },
+        {
+          "gid": 2432461,
+          "order": 4.0,
+          "branch": "纱纪篇"
+        },
+        {
+          "gid": 2781826,
+          "order": 1.0,
+          "branch": "惠篇"
+        },
+        {
+          "gid": 3206951,
+          "order": 2.0,
+          "branch": "惠篇"
+        },
+        {
+          "gid": 3704802,
+          "order": 3.0,
+          "branch": "惠篇"
+        },
+        {
+          "gid": 3862003,
+          "order": 4.0,
+          "branch": "惠篇"
+        },
+        {
+          "gid": 3580054,
+          "order": 3.0,
+          "branch": "惠篇"
+        }
+      ]
+    },
+    {
+      "name": "關於我的繼母是前魔法少女·月（COMEX (zhen lu)）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 3628437
+        },
+        {
+          "gid": 3618656
+        }
+      ]
+    },
+    {
+      "name": "COMIC BAVEL",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 3900109
+        },
+        {
+          "gid": 3900113
+        },
+        {
+          "gid": 3851383
+        },
+        {
+          "gid": 3749395
+        },
+        {
+          "gid": 3696972
+        },
+        {
+          "gid": 3648770
+        },
+        {
+          "gid": 3596777
+        },
+        {
+          "gid": 3547397
+        },
+        {
+          "gid": 3496810
+        },
+        {
+          "gid": 3364892
+        },
+        {
+          "gid": 3364894
+        },
+        {
+          "gid": 3288012
+        },
+        {
+          "gid": 3288013
+        },
+        {
+          "gid": 3250450
+        },
+        {
+          "gid": 3206647
+        },
+        {
+          "gid": 3068747
+        },
+        {
+          "gid": 3451144
+        },
+        {
+          "gid": 3596780
+        },
+        {
+          "gid": 3851385
+        },
+        {
+          "gid": 3900115
+        }
+      ]
+    },
+    {
+      "name": "COMIC ExE",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 4119356,
+          "order": 72.0
+        },
+        {
+          "gid": 4193856,
+          "order": 73.0
+        }
+      ]
+    },
+    {
+      "name": "COMIC Kairakuten",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 2576380
+        },
+        {
+          "gid": 2814334
+        }
+      ]
+    },
+    {
+      "name": "Otome Game no Akuyaku Reijou ni Tensei Shitara Ura Settei de Futanari deshita（COSCOteikoku (Sella)）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 3508038,
+          "order": 3.0
+        },
+        {
+          "gid": 3757766,
+          "order": 4.0
+        }
+      ]
+    },
+    {
+      "name": "Otori Sousakan Kyouka - Cosplay Party Sennyuu Sousa Hen（Crimson）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 3601597,
+          "branch": "潜入篇"
+        },
+        {
+          "gid": 3602625,
+          "branch": "直播篇"
+        }
+      ]
+    },
+    {
+      "name": "魔女的心愛之物（Croriin）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 3937857
+        },
+        {
+          "gid": 3704894
+        }
+      ]
+    },
+    {
+      "name": "Dascomi",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 3877721
+        },
+        {
+          "gid": 3623453
+        },
+        {
+          "gid": 3730036
+        },
+        {
+          "gid": 3923612
+        }
+      ]
+    },
+    {
+      "name": "Kakedashi Boukensha no Matsuro 1 Onna Kishi Minarai（DASHIMAKITAMAGO）",
+      "note": "第4部所附副标题内的数字另属子篇编号，不混用为全系列章号。",
+      "members": [
+        {
+          "gid": 1763943,
+          "order": 1.0
+        },
+        {
+          "gid": 1780210,
+          "order": 2.0
+        },
+        {
+          "gid": 3123035,
+          "order": 4.0
+        }
+      ]
+    },
+    {
+      "name": "Saoyaku Gil-kun ga Onna Eirei to Ecchi Shimakuru Hon（Digianko (Ankoman)）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 3559140
+        },
+        {
+          "gid": 2654557
+        }
+      ]
+    },
+    {
+      "name": "Saoyaku Shinji ga Saber-tachi to Yarimakuru Hon（Digianko (Ankoman)）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 3651871
+        },
+        {
+          "gid": 3206779
+        }
+      ]
+    },
+    {
+      "name": "M-o Muke Zasshifuu Doujinshi Dokutoku no Magazine（Dokutoku no M (Various)）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 3337349,
+          "order": 12.0
+        },
+        {
+          "gid": 3890616,
+          "order": 15.0
+        },
+        {
+          "gid": 3773433,
+          "order": 15.0
+        }
+      ]
+    },
+    {
+      "name": "PowerHara Onna Joushi to Shachiku-kun（Decensored）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 3913931,
+          "order": 3.0
+        },
+        {
+          "gid": 3565672,
+          "order": 3.0
+        },
+        {
+          "gid": 3900014,
+          "order": 4.0
+        }
+      ]
+    },
+    {
+      "name": "Fanbox（Doraias Kazuyo）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 3576672
+        },
+        {
+          "gid": 3423314
+        },
+        {
+          "gid": 3096379
+        }
+      ]
+    },
+    {
+      "name": "盡情射精♡性交至上主義（Drachef）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 4080836
+        },
+        {
+          "gid": 3736163
+        },
+        {
+          "gid": 3583873
+        }
+      ]
+    },
+    {
+      "name": "反向寝取ー被女朋友的母亲扭曲了性癖的我ー（Ebi no Implant (Shrimp Cake)）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 4084827
+        },
+        {
+          "gid": 4078052
+        }
+      ]
+    },
+    {
+      "name": "Boku no Sex Friend wa Okaasan ~ Muchimuchi Amakute Amai Sex Zanmai ~（Ebisuya (23)）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 3970342
+        },
+        {
+          "gid": 3946246
+        }
+      ]
+    },
+    {
+      "name": "Konoha Shinobi's Affair（Ecoas Doodlexxx）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 2400318,
+          "order": 2.0
+        },
+        {
+          "gid": 3296104,
+          "order": 3.0
+        },
+        {
+          "gid": 3931448,
+          "order": 4.0
+        },
+        {
+          "gid": 3724918,
+          "category": "extra",
+          "branch": "Kage"
+        },
+        {
+          "gid": 2485124,
+          "category": "extra",
+          "branch": "Hokage"
+        }
+      ]
+    },
+    {
+      "name": "Maougun kara Kaihou Sareta Mahoutsukai no Yousu ga Doko ka Okashii <Zenpen>（Emuo Koubou (Yonesuke)）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 3364477,
+          "order": 1.0
+        },
+        {
+          "gid": 3279715,
+          "order": 2.0
+        }
+      ]
+    },
+    {
+      "name": "GAMEOVERS-FILE1.1+（EROQUIS! (Butcha-U)）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 2319156,
+          "category": "collection"
+        },
+        {
+          "gid": 2539176,
+          "category": "collection"
+        }
+      ]
+    },
+    {
+      "name": "DELIGHTFULLY F*CKABLE AND UNREFINED ALL YOU CAN SEX!（Eroquis! (Butcha-U)）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 2433110
+        },
+        {
+          "gid": 3744382
+        }
+      ]
+    },
+    {
+      "name": "Puramo Tokashite...（Etuzan Jakusui）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 2669503
+        },
+        {
+          "gid": 3355446
+        }
+      ]
+    },
+    {
+      "name": "隔壁鄰居是曾經被邪惡組織肉體改造的前正義戰隊成員（F.W.ZHolic (FAN)）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 3236078
+        },
+        {
+          "gid": 3236079,
+          "order": 2.0
+        },
+        {
+          "gid": 3236080,
+          "order": 3.0
+        },
+        {
+          "gid": 3236081,
+          "order": 4.0
+        }
+      ]
+    },
+    {
+      "name": "退魔部（煌野一人）",
+      "note": "Season 分开保留；第6季该条罗马音写4，中文与日文写5，存在冲突，章号留空。",
+      "members": [
+        {
+          "gid": 3335348,
+          "branch": "Season4"
+        },
+        {
+          "gid": 4089945,
+          "branch": "Season6"
+        }
+      ]
+    },
+    {
+      "name": "VictimGirls 飼養人類的貓娘。（Fatalpulse (Asanagi)）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 4136470
+        },
+        {
+          "gid": 3717828
+        }
+      ]
+    },
+    {
+      "name": "VictimGirls 騎乘院老師的後宮計畫（Fatalpulse (Asanagi)）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 3853040
+        },
+        {
+          "gid": 3495208
+        }
+      ]
+    },
+    {
+      "name": "同题版本（Fellatrix）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 2992931,
+          "category": "collection"
+        },
+        {
+          "gid": 3042433,
+          "category": "collection"
+        },
+        {
+          "gid": 3044940,
+          "category": "collection"
+        }
+      ]
+    },
+    {
+      "name": "和姐姐与妈妈全力交配。（Fly Dish (Jakko)）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 2779039
+        },
+        {
+          "gid": 3056236,
+          "order": 2.0
+        },
+        {
+          "gid": 3246282,
+          "order": 2.0
+        }
+      ]
+    },
+    {
+      "name": "Ojou-sama ni Kawareta Boku（Fry Dish (Jakko)）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 3090331
+        },
+        {
+          "gid": 3090340,
+          "order": 2.0
+        }
+      ]
+    },
+    {
+      "name": "Beit Saki no Hitozuma, Akiyama-san. 2 Oyakodon（Fujinoe Honpo (Fujinoe13B)）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 4087987,
+          "order": 2.0
+        },
+        {
+          "gid": 3951227,
+          "order": 3.0
+        }
+      ]
+    },
+    {
+      "name": "Jukujo no Oba-san ni Kawaii o Renko Shichau Yabai Oikko no Hanashi（Fujisaki Chiro）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 3179282
+        },
+        {
+          "gid": 3297781,
+          "order": 2.0
+        },
+        {
+          "gid": 3800268,
+          "order": 3.0
+        }
+      ]
+    },
+    {
+      "name": "Boku to Jimuin no Fujita-san（Fujisaki Chiro）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 2813361
+        },
+        {
+          "gid": 2813623,
+          "order": 2.0
+        },
+        {
+          "gid": 2845287,
+          "order": 3.0
+        }
+      ]
+    },
+    {
+      "name": "Boshi Soukan ~ Kaa-san wa Saikou no Onapet ~ Kyonyuu Mama wa Zurineta Pet Hen（Fuuga）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 2981262,
+          "branch": "巨乳篇"
+        },
+        {
+          "gid": 3905507,
+          "branch": "乳晕篇"
+        }
+      ]
+    },
+    {
+      "name": "Onna Gyaru Joushi to Furin Suru Hanashi（Genkai Hatsudensho）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 3444735,
+          "order": 1.0
+        },
+        {
+          "gid": 3651605,
+          "order": 4.0
+        }
+      ]
+    },
+    {
+      "name": "Hajimete no Otomari Sex（Gerupin (Minazuki Juuzou)）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 2499807,
+          "order": 1.0
+        },
+        {
+          "gid": 2730919,
+          "order": 2.0
+        },
+        {
+          "gid": 3480087,
+          "order": 3.0
+        }
+      ]
+    },
+    {
+      "name": "Poolside（Ginchaya (Gincha)）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 4091289
+        },
+        {
+          "gid": 4091290,
+          "order": 2.0
+        },
+        {
+          "gid": 4091291,
+          "order": 3.0
+        },
+        {
+          "gid": 4091293,
+          "order": 4.0
+        },
+        {
+          "gid": 4091292,
+          "category": "extra",
+          "branch": "IF"
+        }
+      ]
+    },
+    {
+      "name": "Dosukebe Nikuningyou-chan no Tsukaikata（Ginjou Maggots (Kurotama)）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 2953605
+        },
+        {
+          "gid": 3086451,
+          "order": 2.0
+        }
+      ]
+    },
+    {
+      "name": "新．朋友的馬麻（gonza）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 3384090,
+          "category": "collection"
+        },
+        {
+          "gid": 3507828,
+          "category": "extra"
+        }
+      ]
+    },
+    {
+      "name": "Soshite Kyou mo Moteasobareru（Graphic L (Erun)）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 3897577
+        },
+        {
+          "gid": 3897578,
+          "order": 2.0
+        },
+        {
+          "gid": 3897579,
+          "order": 3.0
+        },
+        {
+          "gid": 3897580,
+          "order": 4.0
+        }
+      ]
+    },
+    {
+      "name": "淫妖奇术竞 一（GY Tei (gyt)）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 3845665,
+          "order": 1.0
+        },
+        {
+          "gid": 3852357,
+          "order": 2.0
+        },
+        {
+          "gid": 3865321,
+          "order": 4.0
+        }
+      ]
+    },
+    {
+      "name": "亲子的秘密—前篇『儿子的秘密』（Hagurumarokuro (Silver Radish)）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 3536680,
+          "order": 1.0
+        },
+        {
+          "gid": 3536682,
+          "order": 2.0
+        }
+      ]
+    },
+    {
+      "name": "俺の上京性生活（白玉湯）",
+      "note": "Hakutamayu／白玉湯为同一署名；总序与主题篇编号体系不同，主题篇不混排成正篇序号。",
+      "members": [
+        {
+          "gid": 3181419,
+          "order": 19.0
+        },
+        {
+          "gid": 3601018,
+          "branch": "母亲篇"
+        },
+        {
+          "gid": 3404469,
+          "branch": "检验篇"
+        }
+      ]
+    },
+    {
+      "name": "Hahaoya shikkaku watashi to musuko no mesu buta netorare seikyoiku {Cxming26个人汉化}（Hana Hook）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 493831
+        },
+        {
+          "gid": 656224
+        }
+      ]
+    },
+    {
+      "name": "Jouzu ni Pyuppyu Dekiru kana?（HANABi）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 1903242
+        },
+        {
+          "gid": 1354587
+        }
+      ]
+    },
+    {
+      "name": "Aitsu ga Saki ni Saoyaku ni Narimashita（Haneinu）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 3646647,
+          "order": 1.0
+        },
+        {
+          "gid": 3673520,
+          "order": 2.0
+        }
+      ]
+    },
+    {
+      "name": "Home stay sakino bakunyuu blonde bijyouni mesuushi cosde yuwakusarete ittchalove tanetsuke seikatsu（Harenohi）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 4021371,
+          "order": 1.0
+        },
+        {
+          "gid": 4021538,
+          "order": 2.0
+        }
+      ]
+    },
+    {
+      "name": "Touma Butai Rokka no Sentou Kiroku Moudoku no Sasori（Haru Tanuki-ya）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 3104814,
+          "order": 1.0
+        },
+        {
+          "gid": 3104815,
+          "order": 2.0
+        },
+        {
+          "gid": 3105099,
+          "order": 3.0
+        },
+        {
+          "gid": 3105100,
+          "order": 4.0
+        },
+        {
+          "gid": 3156983,
+          "order": 5.0
+        }
+      ]
+    },
+    {
+      "name": "Tsuma ni Damatte Sokubaikai ni Ikun ja Nakatta（Hatake no Oniku (Minamoto)）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 1799645,
+          "order": 1.0
+        },
+        {
+          "gid": 1801703,
+          "order": 1.5
+        },
+        {
+          "gid": 2338824,
+          "order": 2.0
+        },
+        {
+          "gid": 3350533,
+          "category": "extra"
+        },
+        {
+          "gid": 2619956,
+          "category": "collection"
+        }
+      ]
+    },
+    {
+      "name": "勇者祈的冒险（肉肉派对篇）（Hathor）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 3745796,
+          "branch": "派对篇"
+        },
+        {
+          "gid": 3745797,
+          "branch": "沙漠篇"
+        }
+      ]
+    },
+    {
+      "name": "Maken no Elena ~Season II~（Hatoba Akane）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 3369817,
+          "order": 1.0
+        },
+        {
+          "gid": 3581898,
+          "order": 1.0
+        },
+        {
+          "gid": 3629963,
+          "order": 1.0
+        }
+      ]
+    },
+    {
+      "name": "Rental Tanetsuke Ojisan 7 ~Yokkyuu Fuman no Hitozuma wa Jitaku de mo Tanetsuke Ojisan to no Uwaki Sex ni Hamerare Nukedasenai~（Himeya (Abe Inori)）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 2934090,
+          "order": 7.0
+        },
+        {
+          "gid": 2896713,
+          "category": "collection"
+        }
+      ]
+    },
+    {
+      "name": "Chinpo no Dekai Ore ga MatchApp de Aishou Saikou na Dosukebe Onna to Deattara（Himeya (Abe Inori)）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 3130766
+        },
+        {
+          "gid": 3431083,
+          "order": 2.0
+        }
+      ]
+    },
+    {
+      "name": "Osucollab（Hitsuji Kikaku (Muneshiro)）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 2839533,
+          "order": 2.0
+        },
+        {
+          "gid": 3572806,
+          "order": 5.0
+        },
+        {
+          "gid": 3719936
+        }
+      ]
+    },
+    {
+      "name": "Z.Z.Z Gravure #3: Yuzuha & Alice（Horori）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 3646389,
+          "order": 3.0
+        },
+        {
+          "gid": 4092682,
+          "order": 7.0
+        }
+      ]
+    },
+    {
+      "name": "点了个应召女郎来的居然是前女友的妈妈（Hotate Chanpon (Hotate-chan)）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 4123673
+        },
+        {
+          "gid": 4117350
+        }
+      ]
+    },
+    {
+      "name": "白薔薇姨媽的秘密、、、 性感內衣篇（Hy-dou (Hyji)）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 3690274
+        },
+        {
+          "gid": 3819056,
+          "order": 2.0
+        }
+      ]
+    },
+    {
+      "name": "Hyoui Catalog ~Onna no Karada ga Nottorare Makuru Godou Hon~（Hyoui Lover (Various)）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 3085187,
+          "category": "collection"
+        },
+        {
+          "gid": 3797015,
+          "category": "collection",
+          "order": 2.0
+        }
+      ]
+    },
+    {
+      "name": "不檢點的姐姐們~ 3話（Iapoc）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 2365013,
+          "order": 3.0
+        },
+        {
+          "gid": 3335775,
+          "category": "collection"
+        }
+      ]
+    },
+    {
+      "name": "Kaigai shusshin no shinkon tsuma ga hoka no otoko to Yaritai to dogeza shite kimashita -zenpen-（Ijiise）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 3361881,
+          "order": 1.0
+        },
+        {
+          "gid": 3395464,
+          "order": 2.0
+        },
+        {
+          "gid": 4114882,
+          "order": 2.0
+        }
+      ]
+    },
+    {
+      "name": "被催眠俘获的雌兔妈妈 1-（ikuu）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 3862291,
+          "category": "collection",
+          "order": 1.0
+        },
+        {
+          "gid": 4086672,
+          "category": "collection",
+          "order": 1.0
+        }
+      ]
+    },
+    {
+      "name": "彼岸之花于地狱中绽放（Imitation Moon (Narumi Yuu)）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 3864812
+        },
+        {
+          "gid": 3923324
+        },
+        {
+          "gid": 3939087,
+          "category": "collection"
+        }
+      ]
+    },
+    {
+      "name": "Mahou Shoujo Obasan to Kappa Kaijin（Ishimura）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 3475603
+        },
+        {
+          "gid": 3803189,
+          "category": "collection",
+          "order": 1.0
+        }
+      ]
+    },
+    {
+      "name": "Donna Onegai demo Kiite Kureru Doukyusei to Tsukiattara Noumiso Hakai Sareta Ohanashi（Jakky）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 2646610
+        },
+        {
+          "gid": 3710521,
+          "order": 2.0
+        }
+      ]
+    },
+    {
+      "name": "Bakunyuu Oyako Dakkudaku Teishoku（Jeanne DA'ck）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 3497928
+        },
+        {
+          "gid": 2774384,
+          "order": 2.0
+        }
+      ]
+    },
+    {
+      "name": "十物语（Jikahatsudensho (flanvia)）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 4105527
+        },
+        {
+          "gid": 4116993
+        }
+      ]
+    },
+    {
+      "name": "Zange Ana（Jikahatsudensho (flanvia)）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 3199125,
+          "order": 4.0
+        },
+        {
+          "gid": 3198601,
+          "order": 5.0
+        }
+      ]
+    },
+    {
+      "name": "Mukatsuku Imouto wa Chanto Shikaranakucha!! 3!!!（Juicebox Koujou (Juna Juna Juice)）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 2905127,
+          "order": 3.0
+        },
+        {
+          "gid": 3346349,
+          "category": "collection",
+          "order": 1.0
+        }
+      ]
+    },
+    {
+      "name": "Okaa-san Mitsuko Soapland（Junk Center Kameyoko Bldg）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 2013261
+        },
+        {
+          "gid": 2367847
+        },
+        {
+          "gid": 2369759
+        },
+        {
+          "gid": 1603790
+        },
+        {
+          "gid": 1867932
+        }
+      ]
+    },
+    {
+      "name": "Kakikae Kanou! Status Open!（Kaientai (Shuten Douji)）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 3924172
+        },
+        {
+          "gid": 3924173,
+          "order": 2.0
+        }
+      ]
+    },
+    {
+      "name": "科学存在的人外娘观察日记（KAKERU）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 3713822,
+          "order": 8.0
+        },
+        {
+          "gid": 3707032,
+          "order": 8.0
+        }
+      ]
+    },
+    {
+      "name": "Nyuukyou Tokuiten Zuridea ~FGO Paizuri Goudou~（Kakuzatou (Various)）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 1817896
+        },
+        {
+          "gid": 2102191,
+          "order": 2.0
+        }
+      ]
+    },
+    {
+      "name": "Seikatsu Shidouiin no Sakusei Kiroku（Kamaboko Koubou (Kamaboko)）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 3581494
+        },
+        {
+          "gid": 3711688,
+          "order": 2.0
+        }
+      ]
+    },
+    {
+      "name": "理想的榨精女友 ~每天被年上女友榨干精子的我好幸福~（Kame no Misoshiru (Yoko Momo)）",
+      "note": "英文译名与罗马音题名含义对应，作者与社团一致，第2篇独立编号。",
+      "members": [
+        {
+          "gid": 3799438
+        },
+        {
+          "gid": 3936757,
+          "order": 2.0
+        }
+      ]
+    },
+    {
+      "name": "Taihai Tsuma: Taihaikei Hitotsuma o Yachin Kawari ni Koki Tsukaeru Hanashi（Kamejirouya-san (Kametaro)）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 3978954
+        },
+        {
+          "gid": 3780833
+        }
+      ]
+    },
+    {
+      "name": "最喜歡心儀的人妻放屁的我試著拜託她更臭的那個（Kaori no Chikara (Kaze no Koe)）",
+      "note": "Kaze no Koe 为社团内作者；英文题名与原日文含义对应，作为同作版本相邻保留。",
+      "members": [
+        {
+          "gid": 3907353
+        },
+        {
+          "gid": 3902896
+        }
+      ]
+    },
+    {
+      "name": "Amatsuka Gakuen no Ryoukan Seikatsu -Shiramine Kuou Zenpen-（Katsurai Yoshiaki）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 1233057,
+          "order": 1.0
+        },
+        {
+          "gid": 3987325,
+          "order": 2.0
+        },
+        {
+          "gid": 4100785,
+          "order": 3.0
+        }
+      ]
+    },
+    {
+      "name": "與辣妹偶像的口交對決（Keimusho Furo 3-byou (Bakachikubi)）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 3388689,
+          "order": 3.0
+        },
+        {
+          "gid": 3815086,
+          "order": 4.0
+        }
+      ]
+    },
+    {
+      "name": "Kyou no Misako-san 2025-A（Kill the King）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 3707807,
+          "branch": "暑假篇"
+        },
+        {
+          "gid": 3707844,
+          "branch": "暑假篇"
+        },
+        {
+          "gid": 3569468,
+          "order": 2.0,
+          "branch": "Request"
+        },
+        {
+          "gid": 3569609,
+          "order": 3.0,
+          "branch": "Request"
+        },
+        {
+          "gid": 3569629,
+          "order": 4.0,
+          "branch": "Request"
+        },
+        {
+          "gid": 2232644,
+          "category": "extra",
+          "branch": "OutStory"
+        }
+      ]
+    },
+    {
+      "name": "Oideyo! Yatsusatogijima（Kirishima Ayu）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 2319947,
+          "order": 1.0
+        },
+        {
+          "gid": 3508728,
+          "category": "collection"
+        }
+      ]
+    },
+    {
+      "name": "BariCare Kaa-san ga DQN ni Netorareta VOI.（Kiyama Haru）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 2780142,
+          "order": 1.0
+        },
+        {
+          "gid": 2780931,
+          "order": 2.0
+        },
+        {
+          "gid": 2825207,
+          "order": 3.0
+        },
+        {
+          "gid": 3712166,
+          "category": "extra"
+        }
+      ]
+    },
+    {
+      "name": "Aces Hypnosis ~episode.01~（Kocho Kocho Koukou (Bonten)）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 3704380,
+          "order": 1.0
+        },
+        {
+          "gid": 4110356,
+          "order": 2.0
+        }
+      ]
+    },
+    {
+      "name": "Beauti \"Gal\" Life（Kocho Kocho Koukou (Bonten)）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 3580060,
+          "order": 3.0
+        },
+        {
+          "gid": 3714883,
+          "order": 3.0
+        }
+      ]
+    },
+    {
+      "name": "Nyuujoku no Ori ~Hitozuma Sousakan Atsuko~（Kocho Kocho Koukou (Bonten)）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 2606157
+        },
+        {
+          "gid": 2666337,
+          "order": 2.0
+        },
+        {
+          "gid": 3557960,
+          "order": 3.0
+        },
+        {
+          "gid": 3557961,
+          "category": "extra"
+        }
+      ]
+    },
+    {
+      "name": "Kon'na Sukebena Karada de Hahaoya wa Muridaro! Muboubi sugiru Haha de Nuki makuru Hibi Remake",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 3890393,
+          "category": "remaster"
+        },
+        {
+          "gid": 3880179,
+          "category": "remaster"
+        }
+      ]
+    },
+    {
+      "name": "Chotto Kowai Onee-san ni Katte morau Koto ni Narimashita.（Koniro Drops (Morishima Kon)）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 2645707
+        },
+        {
+          "gid": 3520932,
+          "order": 2.0
+        }
+      ]
+    },
+    {
+      "name": "不思議不檢點（Kousuke）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 1959237
+        },
+        {
+          "gid": 2255096
+        }
+      ]
+    },
+    {
+      "name": "Shiriana Benjo KaiNi（Kurogoma Seizou Koujou (Goma Gorilla)）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 3593609,
+          "order": 2.0
+        },
+        {
+          "gid": 4077984,
+          "order": 3.0
+        },
+        {
+          "gid": 3830766,
+          "branch": "李B线"
+        }
+      ]
+    },
+    {
+      "name": "男士美容店黑辣妹的極上按摩服務（Kurohamya (Kurosu)）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 3446857
+        },
+        {
+          "gid": 3576749,
+          "order": 2.0
+        }
+      ]
+    },
+    {
+      "name": "Ningen Copy Ki Kubrick（Kurukuru）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 3240425
+        },
+        {
+          "gid": 2973681,
+          "order": 2.0
+        }
+      ]
+    },
+    {
+      "name": "Cool-kei Dansou Onna ni Kanojo Netorareta kara, Wakarasete Yatta（Kurukuru）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 3852193
+        },
+        {
+          "gid": 3731277
+        },
+        {
+          "gid": 3901030,
+          "order": 2.0
+        }
+      ]
+    },
+    {
+      "name": "绝不将你拱手相让。 -如肉便器般的无口青梅堕入纯爱为止-（Kurumaya Koudou）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 2997932
+        },
+        {
+          "gid": 2997933,
+          "order": 2.0
+        }
+      ]
+    },
+    {
+      "name": "Paradise（laliberte）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 3815928
+        },
+        {
+          "gid": 3659708
+        }
+      ]
+    },
+    {
+      "name": "NEVERTHELESS（laliberte）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 2803041
+        },
+        {
+          "gid": 2826822,
+          "category": "extra"
+        }
+      ]
+    },
+    {
+      "name": "Obedience Part（Laliberte）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 2865651,
+          "order": 1.0
+        },
+        {
+          "gid": 2900759
+        }
+      ]
+    },
+    {
+      "name": "DUAL LOVE PART（laliberte）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 2010574,
+          "order": 1.0
+        },
+        {
+          "gid": 2403107,
+          "order": 2.0
+        }
+      ]
+    },
+    {
+      "name": "淫母日记（LAPUTA）",
+      "note": "LAPUTA／Laputa 与中文题名对应；夺母和纯爱分支分开，缺卷不补造。",
+      "members": [
+        {
+          "gid": 2891367,
+          "order": 1.0
+        },
+        {
+          "gid": 2891368,
+          "order": 2.0
+        },
+        {
+          "gid": 2984598,
+          "order": 3.0
+        },
+        {
+          "gid": 3007576,
+          "order": 4.0
+        },
+        {
+          "gid": 3314212,
+          "order": 5.0,
+          "branch": "夺母线"
+        },
+        {
+          "gid": 3367539,
+          "order": 6.0,
+          "branch": "夺母线"
+        },
+        {
+          "gid": 3498915,
+          "order": 7.0,
+          "branch": "夺母线"
+        },
+        {
+          "gid": 3649706,
+          "order": 7.0,
+          "branch": "纯爱线"
+        }
+      ]
+    },
+    {
+      "name": "罪恶都市·兵玉（LGMarlboro）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 3628514,
+          "branch": "兵玉"
+        },
+        {
+          "gid": 3628776,
+          "branch": "兵玉"
+        },
+        {
+          "gid": 3628779,
+          "branch": "兵玉"
+        }
+      ]
+    },
+    {
+      "name": "Sex ni Menkyo ga Hitsuyou ni Natta Sekai（Little Hopper (Hashibiro Kou)）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 3845013
+        },
+        {
+          "gid": 3838338
+        }
+      ]
+    },
+    {
+      "name": "Beastiality Park（liuliuliu）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 3511116,
+          "order": 1.0
+        },
+        {
+          "gid": 3562278,
+          "order": 2.0
+        }
+      ]
+    },
+    {
+      "name": "Rimworld-边缘世界异种风俗指南（LRB4）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 4079752
+        },
+        {
+          "gid": 4114680
+        }
+      ]
+    },
+    {
+      "name": "Lycoris no Ecchi na Hon（MAD CAPSULE (Tsumiki)）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 3623732,
+          "order": 6.0
+        },
+        {
+          "gid": 3613140,
+          "order": 7.0
+        },
+        {
+          "gid": 3942477,
+          "order": 11.0
+        }
+      ]
+    },
+    {
+      "name": "Manyuu Seizou Mezuchiku Dachi（MAFIC (Choukutetsushitsugan)）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 3971637
+        },
+        {
+          "gid": 3765108
+        }
+      ]
+    },
+    {
+      "name": "Hitozuma Kappou（MAFIC (Choukutetsushitsugan)）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 3304724
+        },
+        {
+          "gid": 3322785,
+          "order": 2.0
+        }
+      ]
+    },
+    {
+      "name": "Ochinpo Baka ni Natta Uchi no Okaa-san（Mama no Nioi）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 2036997,
+          "order": 2.0
+        },
+        {
+          "gid": 2051392,
+          "order": 3.0
+        }
+      ]
+    },
+    {
+      "name": "Nicchoku wa Micro Bikini de 2 ~Sukebe na Kakko de Seishori Katsudou~（Mandara Ryuuseigun (Signo Mandara)）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 2899061,
+          "order": 2.0
+        },
+        {
+          "gid": 3446606,
+          "order": 3.0
+        }
+      ]
+    },
+    {
+      "name": "性体师～请侵犯我的妻子～（Manmaya (Same Manma)）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 3172148
+        },
+        {
+          "gid": 3663212
+        }
+      ]
+    },
+    {
+      "name": "Net de Shiriatta Jimi Megane Bakunyuu to Otomodachi Koubi Shichau Hanashi（Marimo Extension (Marimofu)）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 3872812
+        },
+        {
+          "gid": 3872826,
+          "order": 2.0
+        }
+      ]
+    },
+    {
+      "name": "教師、後媽、戀人的三重面孔（MEAN MACHINE (Mifune Seijirou)）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 3495486
+        },
+        {
+          "gid": 3809330,
+          "order": 2.0
+        }
+      ]
+    },
+    {
+      "name": "媽媽交換狂歡會1 ~送出我的媽媽跟年輕媽媽亂交的故事~（Melon no Hoshiboshi (Hoshiduki Melon)）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 3173418,
+          "order": 1.0
+        },
+        {
+          "gid": 3915354,
+          "order": 2.0
+        },
+        {
+          "gid": 3916938,
+          "order": 3.0
+        }
+      ]
+    },
+    {
+      "name": "那麼，從今天起阿宅同學就是我們的男朋友啦！（Metro Notes (Tsumetoro)）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 4099125
+        },
+        {
+          "gid": 3955607
+        }
+      ]
+    },
+    {
+      "name": "Group Home Maso e Youkoso ~Kousei Shisetsu de 24-jikan Tettei Shasei Kanri~（Miginohito Mitsuru）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 3008695,
+          "order": 1.0
+        },
+        {
+          "gid": 3851827
+        }
+      ]
+    },
+    {
+      "name": "Akuma de JK!（Mikemono Yuu）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 1535763
+        },
+        {
+          "gid": 2209605
+        },
+        {
+          "gid": 2785429
+        }
+      ]
+    },
+    {
+      "name": "Akogare no Oba o Netoru 2 Kazoku o Miokutta Genkan de Mesuochi Shuuchi Play（Milf Shobou）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 3804475,
+          "order": 2.0
+        },
+        {
+          "gid": 4082937,
+          "order": 3.0
+        }
+      ]
+    },
+    {
+      "name": "Houmon Kanyuu（Minamoto）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 3927741
+        },
+        {
+          "gid": 2351128
+        },
+        {
+          "gid": 3114449,
+          "branch": "救赎"
+        },
+        {
+          "gid": 3259176,
+          "branch": "洗脑"
+        },
+        {
+          "gid": 3329886,
+          "branch": "入信"
+        }
+      ]
+    },
+    {
+      "name": "我家女友身上最為誘人的所在（Minamoto）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 1870433
+        },
+        {
+          "gid": 1970351
+        }
+      ]
+    },
+    {
+      "name": "ko tumami 1「 up syu・ kuzu mura」（Minazuki Mikka）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 3887712,
+          "order": 1.0
+        },
+        {
+          "gid": 3862478,
+          "order": 2.0
+        }
+      ]
+    },
+    {
+      "name": "Sa.Ki.Ko.Sa.Re 1 ~MenHeal Seito Hen~（Minazuki Mikka）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 1737027,
+          "order": 1.0
+        },
+        {
+          "gid": 1736364,
+          "order": 3.0
+        }
+      ]
+    },
+    {
+      "name": "最喜欢的继母被坏孩子抢走的故事（mitomitokonkon）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 4151054
+        },
+        {
+          "gid": 4151057,
+          "branch": "母亲视角"
+        }
+      ]
+    },
+    {
+      "name": "貝諾瓦爾家的淫美日常 第1夜（Mitsuba Minoru）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 2361689,
+          "order": 1.0
+        },
+        {
+          "gid": 2371716,
+          "order": 2.0
+        },
+        {
+          "gid": 2419182,
+          "order": 3.0
+        },
+        {
+          "gid": 2537072,
+          "order": 4.0
+        }
+      ]
+    },
+    {
+      "name": "LeveChi na Swapping 1 ~Seiheki ni Mezameru Otto Hen~（Mitsumitsu Niku (Hikitogu)）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 3845570,
+          "order": 1.0
+        },
+        {
+          "gid": 3220581,
+          "order": 2.0
+        },
+        {
+          "gid": 3855866,
+          "order": 3.0
+        }
+      ]
+    },
+    {
+      "name": "拥有媚根肉体的面试官们的超色情诱惑面试~ 直到蛋蛋被榨得一干二净为止~（Mitsutoge Koubou (KeinV)）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 3645489
+        },
+        {
+          "gid": 3644565
+        }
+      ]
+    },
+    {
+      "name": "Ganbatte Hataraitetara Kusodeka Gal ga Kitan daga?（Miura Koudai）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 3467062
+        },
+        {
+          "gid": 3467743,
+          "order": 2.0
+        }
+      ]
+    },
+    {
+      "name": "乡村妹妹与纯真的诱惑（Mizu no Uro）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 3162536
+        },
+        {
+          "gid": 3922575,
+          "order": 2.0
+        }
+      ]
+    },
+    {
+      "name": "Kachou Souma Souko Step（Mizuryu Kei）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 4087606,
+          "order": 4.0
+        },
+        {
+          "gid": 4063769,
+          "order": 4.0
+        }
+      ]
+    },
+    {
+      "name": "真的非常抱歉主人（Mochi-ya (Karoti)）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 2472253
+        },
+        {
+          "gid": 2472264,
+          "order": 2.0
+        },
+        {
+          "gid": 2472272,
+          "order": 3.0
+        }
+      ]
+    },
+    {
+      "name": "总是很温柔的姐姐趁我不在时居然（Mofurentei (Xe)）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 3470835
+        },
+        {
+          "gid": 3975315,
+          "order": 2.0
+        }
+      ]
+    },
+    {
+      "name": "让人睡走睦月的档案（Momokan (Momonosuke)）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 3188988
+        },
+        {
+          "gid": 3522862,
+          "order": 2.0
+        },
+        {
+          "gid": 3826611,
+          "order": 3.0
+        },
+        {
+          "gid": 4091157,
+          "order": 4.0
+        }
+      ]
+    },
+    {
+      "name": "變態黑髮醬與永遠當路人的我②（Morimiyakan (Morimiya Masayuki)）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 3547046,
+          "order": 2.0
+        },
+        {
+          "gid": 3705125,
+          "order": 3.0
+        }
+      ]
+    },
+    {
+      "name": "Daikensha-sama to Uma no Himitsu Recipe（Mousou Hunter (Exabyte)）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 3788501
+        },
+        {
+          "gid": 3795012,
+          "order": 2.0
+        }
+      ]
+    },
+    {
+      "name": "Michelle to Icha Love（Mucc）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 3896997
+        },
+        {
+          "gid": 3895341
+        }
+      ]
+    },
+    {
+      "name": "媽媽能為你做的也就只有近親亂倫就這點程度這種事情了…。（Muchipanya (Muchipan)）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 3694226
+        },
+        {
+          "gid": 3862156,
+          "order": 2.0
+        },
+        {
+          "gid": 3660810
+        }
+      ]
+    },
+    {
+      "name": "直到讓精靈母親懷孕為止（Muru no Honbako）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 3655026
+        },
+        {
+          "gid": 3532226
+        }
+      ]
+    },
+    {
+      "name": "触手什麼的我怎麼會輸!（Naminori Navy (ebinavy)）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 3246532,
+          "order": 2.0
+        },
+        {
+          "gid": 3246531,
+          "category": "extra",
+          "branch": "SideS"
+        }
+      ]
+    },
+    {
+      "name": "Shinchou 211 cm no jirai-kei joshi ni nerawa rete mou nige rarenai（Nanakorobi Yaoki (kinntarou)）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 2985577
+        },
+        {
+          "gid": 3256700,
+          "order": 2.0
+        },
+        {
+          "gid": 3873737,
+          "order": 3.0
+        }
+      ]
+    },
+    {
+      "name": "Mom Hunter ~Toshishita ni Karareru Onna-tachi~（Nanao Yukiji）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 3322653
+        },
+        {
+          "gid": 1746440
+        }
+      ]
+    },
+    {
+      "name": "抗拒不了的雌性本能（Nanao Yukiji）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 3456889
+        },
+        {
+          "gid": 3381902
+        }
+      ]
+    },
+    {
+      "name": "Nyuuyoku kara Hajimaru Haha to no Nikuyoku Seikatsu（Natsu no Oyatsu）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 3649864
+        },
+        {
+          "gid": 3529772
+        }
+      ]
+    },
+    {
+      "name": "催眠无双1-（NCP (Meria)）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 2273886,
+          "category": "collection",
+          "order": 1.0
+        },
+        {
+          "gid": 2274787,
+          "category": "collection",
+          "order": 3.0
+        }
+      ]
+    },
+    {
+      "name": "Bokura no Megami-sama wa …（Nekohachi Eigyoubu (Neko Samurai)）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 3295466
+        },
+        {
+          "gid": 3911740,
+          "order": 2.0
+        }
+      ]
+    },
+    {
+      "name": "Mama Torare ~Inkan Sareru Boukensha Haha~ - be deprived of mother（Nekohachi Eigyoubu (Neko Samurai)）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 1714651
+        },
+        {
+          "gid": 2156531,
+          "order": 2.0
+        }
+      ]
+    },
+    {
+      "name": "Joshiryou Kanrinin no Boku wa Gal Ryousei ni Furimawasarete masu（Nekomimi to Kuro Mask (cielo)）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 2760640
+        },
+        {
+          "gid": 3091537
+        },
+        {
+          "gid": 2938269,
+          "order": 2.0
+        },
+        {
+          "gid": 3050982,
+          "order": 3.0
+        },
+        {
+          "gid": 3169378,
+          "order": 4.0
+        },
+        {
+          "gid": 3600947,
+          "order": 5.0
+        },
+        {
+          "gid": 3889990,
+          "order": 6.0
+        },
+        {
+          "gid": 3871797,
+          "category": "collection"
+        }
+      ]
+    },
+    {
+      "name": "Wampaku Orgy Days（Neriume）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 3560441
+        },
+        {
+          "gid": 3446207
+        }
+      ]
+    },
+    {
+      "name": "Chouhatsu Matenshi!! Tenma-chan（Nexus Koubou (Arumamai Ayuka+)）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 1633390
+        },
+        {
+          "gid": 1885712,
+          "order": 2.0
+        }
+      ]
+    },
+    {
+      "name": "Hoken no Sensei Shinobu, 37 Sai, K-Cup ~Sei ni Mezameta Toshima no Mesu~（NF-Freak (Si-man)）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 4081951
+        },
+        {
+          "gid": 4081264
+        }
+      ]
+    },
+    {
+      "name": "Good Teachers（Nodo (Puzenketsu)）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 2915469
+        },
+        {
+          "gid": 2928676,
+          "order": 2.0
+        },
+        {
+          "gid": 2950095,
+          "order": 3.0
+        },
+        {
+          "gid": 3900327,
+          "order": 4.0
+        },
+        {
+          "gid": 3417799,
+          "category": "extra"
+        }
+      ]
+    },
+    {
+      "name": "Kuro Gal Maid Inma, Goshu O Kuu.（NOSEBLEED (Miyamoto Issa)）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 4090218,
+          "order": 3.0
+        },
+        {
+          "gid": 3633393,
+          "category": "collection",
+          "order": 1.0
+        }
+      ]
+    },
+    {
+      "name": "Aisai, Doui no Ue, Netorare 4 ~Iwashita-ke no Haha~（NT Labo (NT Robo)）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 1593765,
+          "order": 4.0
+        },
+        {
+          "gid": 1888908,
+          "order": 4.0
+        },
+        {
+          "gid": 2283002,
+          "order": 6.0
+        }
+      ]
+    },
+    {
+      "name": "Bokkin Mura ~Bokki shitara Nuitemorawanai to Ikenai Mura~（nul_Neverland (Navier Haruka 2T)）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 3581790
+        },
+        {
+          "gid": 3851215,
+          "order": 2.0
+        }
+      ]
+    },
+    {
+      "name": "Oni no Sumu Ie（Obumanjuu (obmas)）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 1148377
+        },
+        {
+          "gid": 1168863,
+          "order": 2.0
+        },
+        {
+          "gid": 3933027,
+          "order": 2.0
+        },
+        {
+          "gid": 1843654,
+          "order": 3.0
+        }
+      ]
+    },
+    {
+      "name": "学生时代欺负我的不良♂成为了我的部下（Oden Ohgan (TuriSasu)）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 3900590
+        },
+        {
+          "gid": 3897405
+        },
+        {
+          "gid": 3728577
+        }
+      ]
+    },
+    {
+      "name": "Ore no Jimi Kanojo wa Natsuyasumi dake Aitsu Senyou no OnaPet（Omusubi Kororin (Omusubi Korori)）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 3655296
+        },
+        {
+          "gid": 3656267
+        }
+      ]
+    },
+    {
+      "name": "Shiawase Razoku Keikaku Zenpen（Oobayashi Mori）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 2780000,
+          "order": 1.0
+        },
+        {
+          "gid": 2861546,
+          "order": 2.0
+        }
+      ]
+    },
+    {
+      "name": "[OVing Family_Picture Family 1 ~",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 3604449,
+          "category": "collection",
+          "order": 1.0
+        },
+        {
+          "gid": 3228470,
+          "order": 4.0
+        },
+        {
+          "gid": 3501269,
+          "category": "extra",
+          "order": 1.0,
+          "branch": "连锁外传"
+        },
+        {
+          "gid": 3963785,
+          "category": "extra",
+          "order": 1.0,
+          "branch": "连锁外传"
+        },
+        {
+          "gid": 3508342,
+          "category": "extra",
+          "order": 1.0,
+          "branch": "连锁外传"
+        }
+      ]
+    },
+    {
+      "name": "全员支配，怀孕适龄大奶美人被大叔宝宝托卵中（Panic america）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 3427711,
+          "order": 3.0
+        },
+        {
+          "gid": 3655441,
+          "order": 4.0
+        },
+        {
+          "gid": 3659002,
+          "order": 5.0
+        },
+        {
+          "gid": 3715585,
+          "order": 7.0
+        },
+        {
+          "gid": 3657737,
+          "order": 6.0
+        }
+      ]
+    },
+    {
+      "name": "为了男友我会脱的。（Panna Cotta (Mitsuki)）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 3704750
+        },
+        {
+          "gid": 3707151
+        }
+      ]
+    },
+    {
+      "name": "催眠冷艳美母（Peter）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 3706270,
+          "order": 1.0
+        },
+        {
+          "gid": 3706286,
+          "order": 2.0
+        },
+        {
+          "gid": 3706300,
+          "order": 3.0
+        },
+        {
+          "gid": 3706323,
+          "order": 4.0
+        },
+        {
+          "gid": 3706330,
+          "order": 5.0
+        },
+        {
+          "gid": 3706343,
+          "order": 6.0
+        }
+      ]
+    },
+    {
+      "name": "基沃托斯恶堕计划 I：丹花伊吹与空崎日奈的调教（Lambton）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 4084903
+        },
+        {
+          "gid": 4080874
+        }
+      ]
+    },
+    {
+      "name": "いけめる 2024.（Pixiv）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 3148424,
+          "category": "collection"
+        },
+        {
+          "gid": 3131742,
+          "category": "collection"
+        },
+        {
+          "gid": 3406098,
+          "category": "collection"
+        }
+      ]
+    },
+    {
+      "name": "開走死小鬼的大車（ProudBanana）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 3500036
+        },
+        {
+          "gid": 3500042,
+          "order": 2.0
+        }
+      ]
+    },
+    {
+      "name": "Oku-san Hitoban Damatte Washi ni Dakareena（Pulpo Azone）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 3705448
+        },
+        {
+          "gid": 3663072
+        }
+      ]
+    },
+    {
+      "name": "Kore, Haha desu.（Puppukupu (Kawaisaw)）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 2783105,
+          "order": 3.0
+        },
+        {
+          "gid": 3551663,
+          "order": 3.0
+        }
+      ]
+    },
+    {
+      "name": "Taima no Haha（Puppukupu (Kawaisaw)）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 3143565
+        },
+        {
+          "gid": 3493831,
+          "order": 5.0
+        }
+      ]
+    },
+    {
+      "name": "Mahou Shoujo Saimin PakopaCause 2.5 Nekketsu Shidou Hen（Ranshi to Kimi to. (santa)）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 1271500,
+          "order": 2.5
+        },
+        {
+          "gid": 1270172,
+          "order": 2.9
+        },
+        {
+          "gid": 1347955,
+          "order": 3.0
+        }
+      ]
+    },
+    {
+      "name": "Kanojo Saimin（Ranshi to Kimi to. (santa)）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 2989948
+        },
+        {
+          "gid": 2989747,
+          "order": 2.0
+        },
+        {
+          "gid": 2985557,
+          "order": 3.0
+        },
+        {
+          "gid": 3304127,
+          "branch": "Revenge"
+        }
+      ]
+    },
+    {
+      "name": "Yonnen Buri ni Jikka ni Kisei shitara Haha to Ane ga Kinjo no Kusogaki Domo no Mesu Pet ni Natteimashita.（Rat）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 3289828,
+          "order": 1.0
+        },
+        {
+          "gid": 3398858,
+          "order": 2.0
+        },
+        {
+          "gid": 3644090,
+          "category": "collection"
+        }
+      ]
+    },
+    {
+      "name": "Cumming Home EP（Redoxa）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 2527024,
+          "order": 1.0
+        },
+        {
+          "gid": 2528132,
+          "order": 2.0
+        },
+        {
+          "gid": 2529144,
+          "order": 3.0
+        }
+      ]
+    },
+    {
+      "name": "恶堕档案 —— 母狗行政官 Ako Corruption（Renbocloud）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 3773913
+        },
+        {
+          "gid": 3568819
+        },
+        {
+          "gid": 3564992,
+          "branch": "命运篇"
+        },
+        {
+          "gid": 3568958,
+          "category": "extra",
+          "branch": "IF"
+        },
+        {
+          "gid": 4064910,
+          "branch": "治疗篇"
+        }
+      ]
+    },
+    {
+      "name": "Oushun Jogakuen no Danyuu（Riku no Kotoutei (Shayo)）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 3185369,
+          "order": 3.0
+        },
+        {
+          "gid": 3799830,
+          "order": 4.0
+        }
+      ]
+    },
+    {
+      "name": "妈妈的玩具（RK-2）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 3822566
+        },
+        {
+          "gid": 4082458,
+          "order": 2.0
+        }
+      ]
+    },
+    {
+      "name": "Tomodachi no Mama ga Boku no Dekachin de Ikimakutta omoide（RK-2）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 3939297
+        },
+        {
+          "gid": 2773240,
+          "branch": "毕业篇"
+        }
+      ]
+    },
+    {
+      "name": "人妻的履历书（Rocket Monkey）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 3735835
+        },
+        {
+          "gid": 3098351
+        }
+      ]
+    },
+    {
+      "name": "EP47 麦晓雯人工智能病院-上集（ronna）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 4114661,
+          "order": 1.0
+        },
+        {
+          "gid": 4114673,
+          "order": 2.0
+        }
+      ]
+    },
+    {
+      "name": "Futanari Kyokon Channel wa Dekachin Boshuuchuu（Rosetta Stone (Teterun)）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 3593181,
+          "order": 3.0
+        },
+        {
+          "gid": 3955539,
+          "order": 4.0
+        }
+      ]
+    },
+    {
+      "name": "性徒会长 宝生淫 摩姬（Rosetta Stone (Teterun)）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 3858093,
+          "order": 2.0
+        },
+        {
+          "gid": 3858113,
+          "order": 3.0
+        },
+        {
+          "gid": 3855698,
+          "category": "collection",
+          "order": 1.0
+        }
+      ]
+    },
+    {
+      "name": "我说......大哥哥不做吗?（Rouka）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 3480025
+        },
+        {
+          "gid": 3581455
+        }
+      ]
+    },
+    {
+      "name": "全灭强奸派对（sad.co (Sadokko)）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 1428653,
+          "order": 2.0
+        },
+        {
+          "gid": 1466708,
+          "order": 3.0
+        },
+        {
+          "gid": 1588383,
+          "order": 4.0
+        }
+      ]
+    },
+    {
+      "name": "和带有晒痕的少女成为夫妇的那一晚，由于一念之差让岳母怀孕的夏天（sagejoh (sage joh)）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 2996015
+        },
+        {
+          "gid": 4057293,
+          "category": "extra"
+        }
+      ]
+    },
+    {
+      "name": "Hanshoku Haha Musuko no Doukyuusei ni Mainichi Tanetsuke Sareteimasu（Saimonke）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 3594933
+        },
+        {
+          "gid": 3596281
+        },
+        {
+          "gid": 3846670,
+          "order": 3.0
+        },
+        {
+          "gid": 3846669,
+          "order": 4.0
+        }
+      ]
+    },
+    {
+      "name": "想和媽媽做的事~被兒子搞懷孕的巨乳母親~（Saimonke）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 3013732
+        },
+        {
+          "gid": 3162134,
+          "category": "extra",
+          "branch": "回想"
+        }
+      ]
+    },
+    {
+      "name": "催眠留宿 第1話（Sakamata Nerimono）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 3198729,
+          "order": 1.0
+        },
+        {
+          "gid": 3198985,
+          "order": 2.0
+        },
+        {
+          "gid": 3338931,
+          "order": 3.0
+        },
+        {
+          "gid": 3357551,
+          "order": 4.0
+        },
+        {
+          "gid": 3519304,
+          "order": 5.0
+        },
+        {
+          "gid": 3568746,
+          "order": 6.0
+        },
+        {
+          "gid": 3731382,
+          "order": 7.0
+        },
+        {
+          "gid": 3743542,
+          "order": 8.0
+        },
+        {
+          "gid": 3945888,
+          "order": 10.0
+        }
+      ]
+    },
+    {
+      "name": "Ichinen Kanojo（Sakamata Nerimono）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 3214381,
+          "order": 1.0
+        },
+        {
+          "gid": 3215701,
+          "order": 2.0
+        }
+      ]
+    },
+    {
+      "name": "关于和辣妹狠狠地无套做爱中出这件事（Sakamoto Shouten (Nishizawa Mizuki)）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 3066422,
+          "order": 1.0
+        },
+        {
+          "gid": 3228116,
+          "order": 2.0
+        }
+      ]
+    },
+    {
+      "name": "辣妹媽媽杏奈阿姨（Sakura no Tomoru Hi e）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 3976697,
+          "order": 1.0
+        },
+        {
+          "gid": 4098758,
+          "order": 2.0
+        }
+      ]
+    },
+    {
+      "name": "Okaa-san Sedai no Toshiue Mama-san to Nama H Shite Haramasechau Hon（Sasanoha Toro）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 2949272
+        },
+        {
+          "gid": 3587331,
+          "order": 2.0
+        },
+        {
+          "gid": 3941031,
+          "order": 3.0
+        }
+      ]
+    },
+    {
+      "name": "Mama ga Muchuu na Musume no Kareshi 1 - Kono Chinpo wa Kyouikujou Yoroshikunai node Mama ga Shori Shimasu.（Sazareito (Ohnaka Ito)）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 2986896,
+          "order": 1.0
+        },
+        {
+          "gid": 3599810,
+          "order": 2.0
+        }
+      ]
+    },
+    {
+      "name": "osana nazimi ha-remu kara hazi maru koibito seikatu～ seitou ha osananazimi to no一 syuukan no koibito kikan～（Sebire）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 3156198,
+          "branch": "正统篇"
+        },
+        {
+          "gid": 3292027,
+          "branch": "短发篇"
+        },
+        {
+          "gid": 3385919,
+          "branch": "辣妹篇"
+        },
+        {
+          "gid": 3688550,
+          "branch": "三人篇"
+        },
+        {
+          "gid": 3869147,
+          "branch": "怀孕后篇"
+        }
+      ]
+    },
+    {
+      "name": "只要做爱 就能提升等级（Seika Kairaku Shoten (Kumakko)）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 4080318,
+          "order": 2.0
+        },
+        {
+          "gid": 4080309,
+          "order": 3.0
+        }
+      ]
+    },
+    {
+      "name": "Mahou Shoujo Saint Lily Valkyrie ~Teki Soshiki ni Sennou Choukyou Sareta Mahou Shoujo ga Seishori Sentouin ni Ochiru made~（Seika Kairaku Shoten (Yoshimoto)）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 3843449
+        },
+        {
+          "gid": 3856001
+        }
+      ]
+    },
+    {
+      "name": "Musuko no Okagede, SEX ga Daisuki ni Naremashita（Senaka）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 3865049,
+          "order": 1.0
+        },
+        {
+          "gid": 4114909,
+          "order": 2.0
+        }
+      ]
+    },
+    {
+      "name": "Uso Oyako（Senaka）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 2915806,
+          "order": 1.0
+        },
+        {
+          "gid": 3350619,
+          "order": 2.0
+        },
+        {
+          "gid": 3229716,
+          "order": 3.0
+        },
+        {
+          "gid": 3372534,
+          "order": 4.0
+        }
+      ]
+    },
+    {
+      "name": "有罪（Seto Yuuki）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 3341016,
+          "order": 1.0
+        },
+        {
+          "gid": 3341020,
+          "order": 2.0
+        }
+      ]
+    },
+    {
+      "name": "如果能忍耐10分鐘的口交就算你贏（Setouchi Mao no Yamiichi (Setouchi Mao)）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 3632037
+        },
+        {
+          "gid": 4093564
+        }
+      ]
+    },
+    {
+      "name": "Kyouka Keisatsu 2 #1 Teki Kanbu Kara Chikubi Ni Gohobi O Morau Moto Tokushu Butai Fukeisan（Sevengar）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 3885141,
+          "order": 1.0,
+          "branch": "第二部"
+        },
+        {
+          "gid": 3939700,
+          "order": 2.0,
+          "branch": "第二部"
+        },
+        {
+          "gid": 3986552,
+          "order": 3.0,
+          "branch": "第二部"
+        },
+        {
+          "gid": 4063477,
+          "order": 4.0,
+          "branch": "第二部"
+        },
+        {
+          "gid": 4128470,
+          "order": 5.0,
+          "branch": "第二部"
+        }
+      ]
+    },
+    {
+      "name": "Kateinai NTR ~Boku Igai, Zenin Shiteta ~ \"Daiichi Wa Haruko \"（Sharin-ya）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 3347799,
+          "order": 1.0
+        },
+        {
+          "gid": 3336044,
+          "order": 2.0
+        }
+      ]
+    },
+    {
+      "name": "我認真把朋友的母親睡走的故事（Shikibuton Cover）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 4074795
+        },
+        {
+          "gid": 2751857
+        }
+      ]
+    },
+    {
+      "name": "歡迎來到泡兒島（Shimetta Neko）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 3580763
+        },
+        {
+          "gid": 3625173
+        }
+      ]
+    },
+    {
+      "name": "H na Fuushuu ga Aru Inaka no Shinseki ga, Zenin Sukebe Sugiru Hanashi.（Shin Hijiridou Honpo (Hijiri Tsukasa)）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 3643234,
+          "order": 2.0
+        },
+        {
+          "gid": 3695879,
+          "order": 2.0
+        }
+      ]
+    },
+    {
+      "name": "TSF Monogatari APPEND（DA HOOTCH (ShindoL)）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 2749115,
+          "category": "extra",
+          "order": 6.0
+        },
+        {
+          "gid": 2630365,
+          "category": "collection"
+        }
+      ]
+    },
+    {
+      "name": "异世界男娘彻底堕落淫婚后宫生活-屈服于巨根的男娘们、全员成为了主人（我）的新娘（Shinsei Lolishota (Shinsei Frontier) (shuffle, kozi)）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 3218420
+        },
+        {
+          "gid": 3312916
+        }
+      ]
+    },
+    {
+      "name": "Isekai Otokonoko Biyaku Henai Cool na Ansatsusha ♂ ni Biyaku o Mottemitara...（Shinsei Lolishota (shuffle, kozi)）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 2291268
+        },
+        {
+          "gid": 3112442
+        }
+      ]
+    },
+    {
+      "name": "Anotoki Futta Moto Inkya no Onna Tomodati ga Ura Aka Haisinsya ni Natteita.丨那时被我甩掉的阴郁女性朋友如今竟成了匿名主播（Shirasudon）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 3667266
+        },
+        {
+          "gid": 3259132
+        }
+      ]
+    },
+    {
+      "name": "Saimin Charao to Netorare Seitokai NTR（Shironekoya）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 2935389
+        },
+        {
+          "gid": 3284461,
+          "order": 2.0
+        },
+        {
+          "gid": 3959384,
+          "order": 4.0
+        }
+      ]
+    },
+    {
+      "name": "Netorare Onna Bas-bu Saimin × Choukyou Case: 1 Bijin Shushou（Shironekoya）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 2212761,
+          "order": 1.0
+        },
+        {
+          "gid": 2762210,
+          "order": 2.0
+        },
+        {
+          "gid": 2762238,
+          "order": 3.0
+        },
+        {
+          "gid": 2762312,
+          "order": 4.0
+        },
+        {
+          "gid": 2762313,
+          "order": 5.0
+        }
+      ]
+    },
+    {
+      "name": "奔三的—单身女教师可是比思春期的男生还要憋得慌啊！（Shittori Bouzu）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 3806358
+        },
+        {
+          "gid": 3833357,
+          "order": 2.0
+        }
+      ]
+    },
+    {
+      "name": "睡走鄉下人妻的性生活（Shizuki Shinra）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 3014908
+        },
+        {
+          "gid": 3014909,
+          "order": 2.0
+        }
+      ]
+    },
+    {
+      "name": "Asettarashi（Shoot The Moon (Fuetakishi)）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 3565625
+        },
+        {
+          "gid": 3708949,
+          "order": 2.0
+        }
+      ]
+    },
+    {
+      "name": "留學生宿舍的工作（Shoot The Moon (Fuetakishi)）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 3073520
+        },
+        {
+          "gid": 3269898,
+          "order": 2.0
+        }
+      ]
+    },
+    {
+      "name": "孤獨的路人5 優等生穿著體操服攻過來了（Shoot The Moon (Fuetakishi)）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 3276350,
+          "order": 5.0
+        },
+        {
+          "gid": 3658168,
+          "category": "extra"
+        }
+      ]
+    },
+    {
+      "name": "Saimin Fuufu Seikatsu - Hypnotism married life（Shouchuu MAC (Hozumi Kenji)）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 3043536
+        },
+        {
+          "gid": 3130463
+        }
+      ]
+    },
+    {
+      "name": "D-mode（Shouchuu MAC (Hozumi Kenji)）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 3105325
+        },
+        {
+          "gid": 3105758,
+          "branch": "Harem"
+        }
+      ]
+    },
+    {
+      "name": "Lotion Succubus no Nurunuru Sakusei Inmu（Sister Mytory (Miginohito Mitsuru)）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 1764106
+        },
+        {
+          "gid": 2170612,
+          "branch": "W"
+        }
+      ]
+    },
+    {
+      "name": "賭局 1-（smallflyingrat(小飛鼠)）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 3701158,
+          "category": "collection",
+          "order": 1.0
+        },
+        {
+          "gid": 3701278,
+          "category": "extra",
+          "order": 1.0
+        }
+      ]
+    },
+    {
+      "name": "Inran Uwaki Onna o Netotte Nikubenki ni Shita Hanashi ~Seiso de Ki no Yowasou na Hahaoya Ichinose Momoko~（Smells Like）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 3611074,
+          "branch": "一之濑篇"
+        },
+        {
+          "gid": 3935848,
+          "category": "collection",
+          "branch": "真锅篇"
+        }
+      ]
+    },
+    {
+      "name": "我的女友王雯 1-2 无码（Snow3D）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 3360378,
+          "category": "collection",
+          "order": 1.0
+        },
+        {
+          "gid": 3360413,
+          "category": "collection",
+          "order": 5.0
+        }
+      ]
+    },
+    {
+      "name": "Snow3d - Secret Agent vs homeless man",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 3430970,
+          "order": 10.0
+        },
+        {
+          "gid": 3430974,
+          "order": 11.0
+        },
+        {
+          "gid": 3421534,
+          "order": 12.0
+        }
+      ]
+    },
+    {
+      "name": "Kyodai Musume no Ie ni Koyou Sareta Kekka（Soryuu）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 3748887
+        },
+        {
+          "gid": 3749286,
+          "order": 2.0
+        }
+      ]
+    },
+    {
+      "name": "Sister no Fuku no Naka ~Fuku no Naka ni Shimawarete Nandomo Shasei suru Boku~（Sound MILK (Otochichi)）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 3731225
+        },
+        {
+          "gid": 3715690
+        }
+      ]
+    },
+    {
+      "name": "Fella Mask Fujin（Sound MILK (Otochichi)）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 3862592
+        },
+        {
+          "gid": 3472095
+        }
+      ]
+    },
+    {
+      "name": "Hontou ni Ita! Jikan Teishi Oji-san（Spicy Loves Heaven (Kamita)）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 2528500,
+          "order": 1.5
+        },
+        {
+          "gid": 2891965,
+          "order": 2.0
+        },
+        {
+          "gid": 3281185,
+          "order": 3.0
+        },
+        {
+          "gid": 3591955,
+          "order": 4.0
+        },
+        {
+          "gid": 4080289,
+          "order": 5.0
+        }
+      ]
+    },
+    {
+      "name": "Musume no Tomodachi no Mesugaki ni Okasaremashita（Spiral (Arumamai Ayuka+)）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 3516052,
+          "order": 0.0
+        },
+        {
+          "gid": 2273508
+        },
+        {
+          "gid": 2450251,
+          "order": 2.0
+        },
+        {
+          "gid": 2616178,
+          "order": 3.0
+        },
+        {
+          "gid": 2881415,
+          "order": 4.0
+        },
+        {
+          "gid": 3138773,
+          "order": 5.0
+        }
+      ]
+    },
+    {
+      "name": "Shiro OnePi Onee-san to Babubabu Inaka Ecchi（Starmine18 (HANABi)）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 1693839
+        },
+        {
+          "gid": 2304137
+        }
+      ]
+    },
+    {
+      "name": "由美的留学生活（青梅竹马的女友留学之后变得...）（Straw）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 3979764
+        },
+        {
+          "gid": 3706509
+        }
+      ]
+    },
+    {
+      "name": "La faux -Haikou Seibou-（STUDIO TIAMAT (TANABE)）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 3184604
+        },
+        {
+          "gid": 3731446
+        }
+      ]
+    },
+    {
+      "name": "Rui-kun to Kinjo no Joshi Kousei no Onee-san（Sukage）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 3418748,
+          "order": 1.0
+        },
+        {
+          "gid": 3418749,
+          "order": 2.0
+        },
+        {
+          "gid": 3448629,
+          "order": 3.0
+        },
+        {
+          "gid": 3478190,
+          "order": 4.0
+        },
+        {
+          "gid": 3628861,
+          "order": 5.0
+        },
+        {
+          "gid": 3814808,
+          "order": 6.0
+        }
+      ]
+    },
+    {
+      "name": "Toshiue no Kuro Gal Doukyuusei（Sunahama Nosame）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 2671500
+        },
+        {
+          "gid": 3975182
+        },
+        {
+          "gid": 2984637,
+          "order": 2.0
+        },
+        {
+          "gid": 2982385,
+          "order": 3.0
+        },
+        {
+          "gid": 3352641,
+          "order": 4.0
+        },
+        {
+          "gid": 3273703,
+          "order": 5.0
+        }
+      ]
+    },
+    {
+      "name": "Caramel-iro no Mondaiji（Sunahama Nosame）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 3973074,
+          "order": 1.0
+        },
+        {
+          "gid": 3971761,
+          "order": 1.0
+        }
+      ]
+    },
+    {
+      "name": "Makiba no Bonyuu Nikki（Super Ichigo-chan (Misaoka)）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 1304551
+        },
+        {
+          "gid": 1305335,
+          "order": 2.0
+        },
+        {
+          "gid": 1350126,
+          "order": 3.0
+        },
+        {
+          "gid": 1471147,
+          "order": 4.0
+        },
+        {
+          "gid": 1721357,
+          "branch": "魅魔篇"
+        },
+        {
+          "gid": 3925908,
+          "category": "collection"
+        }
+      ]
+    },
+    {
+      "name": "Inaka no Kuro Gal JK to Kekkon Shita Nichijou（Sweet Avenue (Kaduchi)）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 2361378
+        },
+        {
+          "gid": 3529189,
+          "order": 2.0
+        },
+        {
+          "gid": 2596118,
+          "order": 3.0
+        }
+      ]
+    },
+    {
+      "name": "Insuru Juku Ashi（Taba）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 3807771
+        },
+        {
+          "gid": 3581295
+        }
+      ]
+    },
+    {
+      "name": "Kakushi no Onee-san no Hon（Tairakuten (shiva)）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 2701296
+        },
+        {
+          "gid": 2804793,
+          "order": 2.0
+        },
+        {
+          "gid": 3938493,
+          "order": 3.0
+        }
+      ]
+    },
+    {
+      "name": "N Ken T Shi R Mura no Fuushu ni tsuite（Takatsu）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 3899688
+        },
+        {
+          "gid": 3880287
+        },
+        {
+          "gid": 3461958,
+          "order": 2.0
+        },
+        {
+          "gid": 3615002,
+          "order": 4.0
+        },
+        {
+          "gid": 3910390,
+          "category": "extra"
+        }
+      ]
+    },
+    {
+      "name": "Zetsurin Oji-san to Osananajimi no Musume no, Sukebe na Suujitsukan.（Tamaya Gekijou (Tamaya Cinema)）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 3841313
+        },
+        {
+          "gid": 3841317,
+          "order": 2.0
+        }
+      ]
+    },
+    {
+      "name": "Ouken Sandatsu - Royal Power Usurpation ~Ochinpo Ippon de Oukoku Houkai Oukyuu wa Chinpo no Yuenchi~（Tanic Ya (Okutani Tanishi)）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 3240545
+        },
+        {
+          "gid": 4133898,
+          "order": 2.0
+        }
+      ]
+    },
+    {
+      "name": "Ou-sama to Issho（Tanic Ya (Okutani Tanishi)）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 1297641
+        },
+        {
+          "gid": 1297288
+        }
+      ]
+    },
+    {
+      "name": "Tanishi-ya Soushuuhen Sono Ichi（Tanic Ya (Okutani Tanishi)）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 2947410,
+          "category": "collection",
+          "order": 1.0
+        },
+        {
+          "gid": 2947411,
+          "category": "collection",
+          "order": 2.0
+        }
+      ]
+    },
+    {
+      "name": "Kimottama Kaa-chan ~Genki Mama ga Boku no Dekachin ni Ochiru made~（Tarobaumu）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 2703110
+        },
+        {
+          "gid": 2803229,
+          "order": 2.0
+        },
+        {
+          "gid": 2905913,
+          "order": 3.0
+        }
+      ]
+    },
+    {
+      "name": "Gakkou no Waidan Jou（Tartarosauce of the Hell (Hituka)）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 3937602,
+          "order": 1.0
+        },
+        {
+          "gid": 3938131,
+          "order": 2.0
+        }
+      ]
+    },
+    {
+      "name": "Super Lewd Demi-Human Transported to Another World For Breeding With Demi-Humans♥ -Copulation in Another World-（Tawara Hiryuu）",
+      "note": "英文题名与罗马音／日文第二话对应，作者一致。",
+      "members": [
+        {
+          "gid": 3712406
+        },
+        {
+          "gid": 3901032,
+          "order": 2.0
+        }
+      ]
+    },
+    {
+      "name": "白嫖系爸爸活東橫女生 用金錢，令其瘋狂后沉淪。~通過大方的大叔們讓令和女孩沉迷興〇劑的作戰~ 上卷（Team Sazandora (Goto Masaki no Yabou)）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 3244358,
+          "order": 1.0
+        },
+        {
+          "gid": 3973500,
+          "order": 2.0
+        }
+      ]
+    },
+    {
+      "name": "Chinhoko Matsuri Ni Jimoto no Hen na Matsuri de Toshiotokoteki Nano ni Erabareta（Tearontaron）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 4183670,
+          "order": 2.0
+        },
+        {
+          "gid": 4191677,
+          "order": 3.0
+        },
+        {
+          "gid": 4191701,
+          "order": 4.0
+        }
+      ]
+    },
+    {
+      "name": "Zubora Ane ga Gobaku Ero Buzz Shitakara Hirakinaotte Kyoudai de Ero Haishin suru Waku（Tiramisu Tart (Kazuhiro)）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 3659631
+        },
+        {
+          "gid": 3815080,
+          "order": 2.0
+        },
+        {
+          "gid": 3854274,
+          "order": 2.0
+        }
+      ]
+    },
+    {
+      "name": "Kazoku Ryokou wa Yarimoku Beach de Sex Zanmai 3 ~Okaa-san Hen~（Tiramisu Tart (Kazuhiro)）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 2769840,
+          "order": 3.0
+        },
+        {
+          "gid": 3535139,
+          "branch": "全家篇"
+        }
+      ]
+    },
+    {
+      "name": "与无表情冷酷系乳牛淫魔小姐和辣妹妹妹的甜蜜交尾故事（Todaya (Todakenji)）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 3907343
+        },
+        {
+          "gid": 3448765,
+          "branch": "母亲篇"
+        }
+      ]
+    },
+    {
+      "name": "Onabon.（Tomahawk (Akkusu)）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 1588501
+        },
+        {
+          "gid": 3512965,
+          "order": 2.0
+        },
+        {
+          "gid": 3900773
+        }
+      ]
+    },
+    {
+      "name": "我专属的水性杨花女 无论何时何地都会为我乳交打手冲恩恩爱爱缠缠绵绵的麻里奈（Toneri Dan）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 3291964
+        },
+        {
+          "gid": 3522246
+        }
+      ]
+    },
+    {
+      "name": "雨宫佳子不可能会怀上老师的孩子（Toneri Dan (Yoshio Ereki)）",
+      "note": "同一主体题名的角色篇章；第二篇依题名标2，不把角色变化判为异作者作品。",
+      "members": [
+        {
+          "gid": 3549687
+        },
+        {
+          "gid": 3551147,
+          "order": 2.0
+        }
+      ]
+    },
+    {
+      "name": "Yuusha-sama wa Houshuu ni Hitozuma o Gokibou desu - The hero wants a married woman as a reward（Tooyama Burin）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 3009301,
+          "order": 3.0
+        },
+        {
+          "gid": 3220461,
+          "order": 5.0
+        },
+        {
+          "gid": 3281769,
+          "order": 6.0
+        }
+      ]
+    },
+    {
+      "name": "MOE/MOE/MOMO（TOPGUN (Puripuri JET)）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 3197511
+        },
+        {
+          "gid": 3544955,
+          "order": 2.0
+        }
+      ]
+    },
+    {
+      "name": "女装cosplayer 渚沙♂（TOPGUN (Puripuri JET)）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 3220413
+        },
+        {
+          "gid": 3495843,
+          "order": 2.0
+        }
+      ]
+    },
+    {
+      "name": "Jujutsu Shoujo（TOPGUN (Puripuri JET)）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 2943126,
+          "order": 1.0
+        },
+        {
+          "gid": 2945240,
+          "order": 2.0
+        },
+        {
+          "gid": 3034310,
+          "order": 3.0
+        }
+      ]
+    },
+    {
+      "name": "Boku no Oba-san Kansatsu Kiroku（Toshiue Onee-san Tengoku (Azuma Makoto)）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 2763686,
+          "order": 2.0
+        },
+        {
+          "gid": 3584713,
+          "order": 3.0
+        }
+      ]
+    },
+    {
+      "name": "Inmon Akuochi no Hime Kishidan（Triple Head）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 1736317
+        },
+        {
+          "gid": 3261560,
+          "order": 2.0
+        }
+      ]
+    },
+    {
+      "name": "學生會的女生們胸部很大那件事（TRY&Hougen Futari Shakai (Try)）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 3624394
+        },
+        {
+          "gid": 3623955
+        }
+      ]
+    },
+    {
+      "name": "你的妈妈真是太棒了（Tsubonuma）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 2997403
+        },
+        {
+          "gid": 2999748,
+          "order": 2.0
+        },
+        {
+          "gid": 4189134,
+          "order": 3.0
+        }
+      ]
+    },
+    {
+      "name": "Houkago Dorei Club（Tuna Empire）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 73741
+        },
+        {
+          "gid": 780959,
+          "order": 2.0
+        },
+        {
+          "gid": 4111058,
+          "category": "extra",
+          "branch": "招募篇"
+        }
+      ]
+    },
+    {
+      "name": "大小姐完全敗北。～直到精心栽培的貴族小姐主動向平民認輸為止～（Unahouse (Unacchi)）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 3422715
+        },
+        {
+          "gid": 3896730,
+          "order": 2.0
+        }
+      ]
+    },
+    {
+      "name": "祖父与公公与继子以及、巨乳媳妇。（Urakan）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 651647
+        },
+        {
+          "gid": 654944,
+          "order": 2.0
+        },
+        {
+          "gid": 663803,
+          "order": 3.0
+        },
+        {
+          "gid": 693018,
+          "order": 4.0
+        },
+        {
+          "gid": 1314671,
+          "order": 5.0
+        }
+      ]
+    },
+    {
+      "name": "Karamare Tsuma no Kyouko-san Dosukebe Oikko Kyoudai Hen（Urakan）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 2287088,
+          "branch": "侄子篇"
+        },
+        {
+          "gid": 2354849,
+          "branch": "海滨及兄长篇"
+        },
+        {
+          "gid": 3790410,
+          "category": "collection",
+          "order": 1.0
+        },
+        {
+          "gid": 4114523,
+          "category": "collection",
+          "order": 1.0
+        }
+      ]
+    },
+    {
+      "name": "Daily Life at the Monster Girl Manor {Full Moon图源}（Urase Shioji）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 3921661
+        },
+        {
+          "gid": 3911614
+        }
+      ]
+    },
+    {
+      "name": "Ore ga Otokonoko Fuuzoku de Mesu Ochi Suru Hazu ga Nai（Uru Uru Ultimate (Uruaki)）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 3366204
+        },
+        {
+          "gid": 3101091,
+          "order": 2.0
+        }
+      ]
+    },
+    {
+      "name": "櫻桃半熟時（utu）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 2232881
+        },
+        {
+          "gid": 3040287
+        }
+      ]
+    },
+    {
+      "name": "NTR女友1 ～涼森瑞希～（Vpan's EXTASY (Satou Kuuki)）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 3451133
+        },
+        {
+          "gid": 3451134,
+          "category": "extra"
+        }
+      ]
+    },
+    {
+      "name": "NTR女友3 ～春野香澄～（Vpan's EXTASY (Satou Kuuki)）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 3451135
+        },
+        {
+          "gid": 3451137,
+          "category": "extra"
+        }
+      ]
+    },
+    {
+      "name": "污穢之星・紫―序―（Vpan's EXTASY (Satou Kuuki)）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 3949082,
+          "branch": "紫篇"
+        },
+        {
+          "gid": 3799828,
+          "branch": "赤篇"
+        }
+      ]
+    },
+    {
+      "name": "Vanishing Reality 2 ~Mashou Zessei~（Vpan's EXTASY (Satou Kuuki)）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 3545461,
+          "order": 2.0
+        },
+        {
+          "gid": 3178369,
+          "order": 2.0
+        },
+        {
+          "gid": 4126863,
+          "order": 5.0
+        }
+      ]
+    },
+    {
+      "name": "Netorimura（wakamaker (wakamesan)）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 3975765
+        },
+        {
+          "gid": 2258984
+        },
+        {
+          "gid": 2235520,
+          "order": 2.0
+        },
+        {
+          "gid": 2337187,
+          "order": 3.0
+        },
+        {
+          "gid": 2552222,
+          "order": 4.0
+        }
+      ]
+    },
+    {
+      "name": "Oho Megami-sama（wakamaker (wakamesan)）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 3197520
+        },
+        {
+          "gid": 3517490,
+          "order": 2.0
+        }
+      ]
+    },
+    {
+      "name": "種子回收派遣員（wakamaker (wakamesan)）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 3478576
+        },
+        {
+          "gid": 3753491,
+          "order": 2.0
+        },
+        {
+          "gid": 3949093,
+          "order": 3.0
+        },
+        {
+          "gid": 3731441,
+          "order": 4.0
+        }
+      ]
+    },
+    {
+      "name": "Megami（Waremono）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 3980576
+        },
+        {
+          "gid": 3831677
+        }
+      ]
+    },
+    {
+      "name": "美母の堕 1-（WGNTZ）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 3845304,
+          "category": "collection",
+          "order": 1.0
+        },
+        {
+          "gid": 3882755,
+          "category": "collection",
+          "order": 9.0
+        }
+      ]
+    },
+    {
+      "name": "罪恶都市（wushiwushi）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 1784110
+        },
+        {
+          "gid": 2290957,
+          "category": "collection"
+        }
+      ]
+    },
+    {
+      "name": "去朋友家做客（Yama Danchi）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 4078271
+        },
+        {
+          "gid": 4080367
+        }
+      ]
+    },
+    {
+      "name": "豐收的奴隸精靈～墮入淫獄的母女～（Neromashin）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 2892912,
+          "branch": "母女篇"
+        },
+        {
+          "gid": 3533825,
+          "branch": "斗技场篇"
+        }
+      ]
+    },
+    {
+      "name": "飛機杯合宿情色採訪椎名前輩（Yami ni Ugomeku (Dokurosan)）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 3191413,
+          "branch": "椎名篇"
+        },
+        {
+          "gid": 3563809,
+          "category": "collection"
+        }
+      ]
+    },
+    {
+      "name": "Nuugyuu Musume（yogurt (bifidus)）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 3901715
+        },
+        {
+          "gid": 3851495
+        },
+        {
+          "gid": 3580113
+        }
+      ]
+    },
+    {
+      "name": "Ikenie no Haha（Yojouhan Shobou）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 845633
+        },
+        {
+          "gid": 1648098,
+          "order": 2.0
+        },
+        {
+          "gid": 3282836,
+          "order": 3.0
+        },
+        {
+          "gid": 3223404,
+          "order": 3.0
+        }
+      ]
+    },
+    {
+      "name": "小太妹被強睡奪走成為巨根俘虜的故事（Yoshimoto Arena (Yoshimoto)）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 3887262
+        },
+        {
+          "gid": 3871959
+        }
+      ]
+    },
+    {
+      "name": "Gal no Yari Life Nikki（Yasomono／Yosomono）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 3242266
+        },
+        {
+          "gid": 3384081
+        }
+      ]
+    },
+    {
+      "name": "Siawase！ o nii san tati",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 3428787,
+          "order": 1.0
+        },
+        {
+          "gid": 3438630,
+          "order": 2.0
+        }
+      ]
+    },
+    {
+      "name": "空的NTR后宫-枫丹篇（YUE C）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 3252475
+        },
+        {
+          "gid": 3417507,
+          "order": 2.0
+        }
+      ]
+    },
+    {
+      "name": "被BBC催眠恶堕的寂寞人妻雏田（YUE C）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 2732313
+        },
+        {
+          "gid": 3403477,
+          "order": 3.0
+        },
+        {
+          "gid": 3534517,
+          "order": 4.0
+        },
+        {
+          "gid": 2941136
+        }
+      ]
+    },
+    {
+      "name": "Kyokutou Kenran Tobakutou Dream Island - Miyamoto Musashi Hen（Yumenekoya (Muunyan)）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 3052754
+        },
+        {
+          "gid": 3495390,
+          "order": 2.0
+        },
+        {
+          "gid": 4178996,
+          "order": 3.0
+        }
+      ]
+    },
+    {
+      "name": "Zentou Mask Seiyoku Slave Hitozuma ○○-san（Yuugengaisha Mach Spin (Drill Jill)）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 2242610,
+          "order": 2.0
+        },
+        {
+          "gid": 2258717,
+          "order": 3.0
+        },
+        {
+          "gid": 2401369,
+          "order": 4.0
+        },
+        {
+          "gid": 3122815,
+          "order": 5.0
+        }
+      ]
+    },
+    {
+      "name": "Sinful Lust - Lizana And The Homeless（Zetto）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 3779091,
+          "order": 4.0,
+          "branch": "Lizana篇"
+        },
+        {
+          "gid": 3694973,
+          "order": 5.0
+        },
+        {
+          "gid": 3569894,
+          "category": "extra",
+          "order": 3.0
+        }
+      ]
+    },
+    {
+      "name": "夏日與鄉村和誘惑我的她（Σ-Arts (Mikemono Yuu)）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 2865226
+        },
+        {
+          "gid": 2668310
+        },
+        {
+          "gid": 3054959,
+          "order": 2.0
+        },
+        {
+          "gid": 3052569,
+          "order": 2.0
+        },
+        {
+          "gid": 3527936,
+          "order": 3.0
+        }
+      ]
+    },
+    {
+      "name": "Omake Manga（Σ-Arts (Mikemono Yuu)）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 2666100,
+          "category": "extra"
+        },
+        {
+          "gid": 3163542,
+          "category": "collection",
+          "order": 1.0
+        }
+      ]
+    },
+    {
+      "name": "Hirogaru Sky 系列（EMPRESS CLUB）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 3331224,
+          "category": "collection",
+          "order": 1.0
+        },
+        {
+          "gid": 3331479,
+          "order": 3.0
+        },
+        {
+          "gid": 3331480,
+          "order": 4.0
+        },
+        {
+          "gid": 3333133,
+          "order": 5.0
+        },
+        {
+          "gid": 3336394,
+          "order": 6.0
+        },
+        {
+          "gid": 3344515,
+          "order": 7.0
+        },
+        {
+          "gid": 3350295
+        }
+      ]
+    },
+    {
+      "name": "セフレのすすめ〜強気な人妻がメスになるまで〜（しーまん）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 3710034
+        },
+        {
+          "gid": 3706282
+        }
+      ]
+    },
+    {
+      "name": "冒險者公會的櫃檯小姐是個婊子 第1-6話（ゆっ栗栖）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 3925926,
+          "category": "collection",
+          "order": 1.0
+        },
+        {
+          "gid": 3878754,
+          "category": "collection",
+          "order": 1.0
+        }
+      ]
+    },
+    {
+      "name": "Toshiue Lovers（Ozy）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 3792455
+        },
+        {
+          "gid": 3719226
+        }
+      ]
+    },
+    {
+      "name": "退魔士ゆら（Crimson）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 3636441,
+          "order": 1.0
+        },
+        {
+          "gid": 3636445,
+          "order": 2.0
+        },
+        {
+          "gid": 3633913,
+          "order": 3.0
+        },
+        {
+          "gid": 3635632,
+          "order": 4.0
+        }
+      ]
+    },
+    {
+      "name": "退魔士カグヤ（Crimson）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 3603605,
+          "order": 8.0,
+          "branch": "极A线"
+        },
+        {
+          "gid": 3913801,
+          "category": "extra",
+          "branch": "辱IF"
+        }
+      ]
+    },
+    {
+      "name": "ギャルに絶対、恋しなさい☆（Chinese）（ナスムスビム）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 3850361
+        },
+        {
+          "gid": 3827474
+        }
+      ]
+    },
+    {
+      "name": "入室盗窃，使用失踪应用程序，用我那不负责任的精子生下无限的寄生婴儿（パニックアメリカ）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 3761126,
+          "order": 1.0
+        },
+        {
+          "gid": 3762340,
+          "order": 2.0
+        }
+      ]
+    },
+    {
+      "name": "Hahaue mo Mesu Orc（Hitsuji Kikaku (Muneshiro)）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 3215386,
+          "order": 3.0
+        },
+        {
+          "gid": 3577783,
+          "order": 4.0
+        }
+      ]
+    },
+    {
+      "name": "我是妻子、是母亲，却也是一头母狗（Kakyuu Bushi）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 3943376,
+          "order": 3.0
+        },
+        {
+          "gid": 3943697,
+          "category": "collection",
+          "order": 1.0
+        }
+      ]
+    },
+    {
+      "name": "我的清纯女友怎么会是婊子（上）（不爱我就拉倒）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 3319164,
+          "order": 1.0
+        },
+        {
+          "gid": 3319167,
+          "order": 2.0
+        }
+      ]
+    },
+    {
+      "name": "催眠乱伦系统 1-",
+      "note": "中文系列题名一致、部分条目未署名；保留全部版本，作者身份未额外核实。",
+      "members": [
+        {
+          "gid": 3734607,
+          "category": "collection",
+          "order": 1.0
+        },
+        {
+          "gid": 3753609,
+          "order": 4.0
+        },
+        {
+          "gid": 3845628,
+          "order": 5.0
+        },
+        {
+          "gid": 3415957,
+          "order": 1.0
+        }
+      ]
+    },
+    {
+      "name": "Hito no Hahaoya to SEX Suru Yatsura（Doujin Mukashibanashi）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 3724437
+        },
+        {
+          "gid": 3446618
+        }
+      ]
+    },
+    {
+      "name": "肉鸽方舟第一季:遭遇完整版（哈呀哈基草）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 3816896,
+          "branch": "第一季"
+        },
+        {
+          "gid": 3817199,
+          "branch": "第二季"
+        }
+      ]
+    },
+    {
+      "name": "浮扉交合避雨處（Nacchuushou (Amazon)）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 3854292
+        },
+        {
+          "gid": 3852402
+        }
+      ]
+    },
+    {
+      "name": "失身于它番外-夫死狗继",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 3913647,
+          "category": "extra"
+        },
+        {
+          "gid": 3595013,
+          "order": 1.0,
+          "branch": "第二部"
+        }
+      ]
+    },
+    {
+      "name": "妈妈变成了表弟的奴隶 1-（チーファン）",
+      "note": "唯一主体题名对应，部分记录没有作者；合集范围重叠也全部保留，不删除下载。",
+      "members": [
+        {
+          "gid": 3745519,
+          "category": "collection",
+          "order": 1.0
+        },
+        {
+          "gid": 3944705,
+          "category": "collection",
+          "order": 1.0
+        },
+        {
+          "gid": 3698265,
+          "category": "collection",
+          "order": 3.0
+        },
+        {
+          "gid": 3963500,
+          "category": "collection",
+          "order": 10.0
+        }
+      ]
+    },
+    {
+      "name": "代孕风波 上（小林绿子）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 3317034,
+          "order": 1.0
+        },
+        {
+          "gid": 3317042,
+          "order": 2.0
+        },
+        {
+          "gid": 3317048,
+          "category": "extra"
+        }
+      ]
+    },
+    {
+      "name": "Inousha Shoujo Kesson Goudou II―Reunion of the Heroes―（Fatalpulse）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 2097364,
+          "category": "collection",
+          "order": 2.0
+        },
+        {
+          "gid": 3866801,
+          "category": "collection"
+        },
+        {
+          "gid": 3816028,
+          "category": "collection"
+        }
+      ]
+    },
+    {
+      "name": "正太与丝袜修女姐姐 1-",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 3730885,
+          "category": "collection",
+          "order": 1.0
+        },
+        {
+          "gid": 3442117,
+          "category": "collection",
+          "order": 1.0
+        }
+      ]
+    },
+    {
+      "name": "母與友母",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 3897916
+        },
+        {
+          "gid": 3865107,
+          "category": "collection",
+          "order": 0.0
+        }
+      ]
+    },
+    {
+      "name": "罪恶都市（泰隆是信仰）",
+      "note": "同作者中文系列；监狱、白兰、丧尸外传及重制版分开，其他作者同名作品不并入。",
+      "members": [
+        {
+          "gid": 3628548,
+          "order": 1.0,
+          "branch": "监狱篇"
+        },
+        {
+          "gid": 3628651,
+          "order": 2.0,
+          "branch": "监狱篇"
+        },
+        {
+          "gid": 3628657,
+          "order": 1.0,
+          "branch": "白兰篇"
+        },
+        {
+          "gid": 3628715,
+          "order": 2.0,
+          "branch": "白兰篇"
+        },
+        {
+          "gid": 2291166,
+          "category": "extra"
+        },
+        {
+          "gid": 3485215,
+          "category": "extra",
+          "order": 1.0,
+          "branch": "丧尸外传"
+        },
+        {
+          "gid": 3485222,
+          "category": "extra",
+          "order": 4.0,
+          "branch": "丧尸外传"
+        },
+        {
+          "gid": 3551609,
+          "category": "remaster",
+          "order": 5.0
+        }
+      ]
+    },
+    {
+      "name": "と.し.う.え（Chinese）（深田拓士）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 3814638
+        },
+        {
+          "gid": 3802456
+        }
+      ]
+    },
+    {
+      "name": "Jukujo Fuuzoku ni Ittara Shinyuu no Hahaoya ga Detekita Kudan（Taki Re-ki）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 3445418
+        },
+        {
+          "gid": 4186582,
+          "order": 2.0
+        }
+      ]
+    },
+    {
+      "name": "ハーレム王の異世界プレス漫遊記 ～最強無双のおじさんはあらゆる種族を嫁にする～ 5-（灰刃ねむみ）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 3365294,
+          "category": "collection",
+          "order": 5.0
+        },
+        {
+          "gid": 3424269,
+          "category": "collection",
+          "order": 5.0
+        }
+      ]
+    },
+    {
+      "name": "千穗理／Chiho Rei（点点滴滴）",
+      "note": "同作者的千穗理系列，中英别名一致；第5篇两个GID都保留，合集不拆分。",
+      "members": [
+        {
+          "gid": 3743972,
+          "category": "collection",
+          "order": 1.0
+        },
+        {
+          "gid": 3289938,
+          "category": "collection",
+          "order": 3.0
+        },
+        {
+          "gid": 3344694,
+          "order": 5.0
+        },
+        {
+          "gid": 3572122,
+          "order": 5.0
+        }
+      ]
+    },
+    {
+      "name": "入り浸りギャル（甘噛本舗）",
+      "note": "甘噛本舗／Amagami Honpo 与まんの／Manno 对应；第4、4.5与1–4合集均保留。",
+      "members": [
+        {
+          "gid": 3896996,
+          "order": 4.5
+        },
+        {
+          "gid": 3394770,
+          "order": 4.0
+        },
+        {
+          "gid": 3394869,
+          "category": "collection",
+          "order": 1.0
+        }
+      ]
+    },
+    {
+      "name": "Hitozuma Goroshi no Magan（Kaientai (Shuten Douji)）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 3647110
+        },
+        {
+          "gid": 3936332,
+          "order": 2.0
+        }
+      ]
+    },
+    {
+      "name": "美熟母 1-（19）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 3937677,
+          "category": "collection",
+          "order": 1.0
+        },
+        {
+          "gid": 3819030,
+          "category": "collection",
+          "order": 1.0
+        }
+      ]
+    },
+    {
+      "name": "臣服于巨根的舞蹈老师母亲 01-（dihuomingyi）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 4065970,
+          "category": "collection",
+          "order": 1.0
+        },
+        {
+          "gid": 3969343,
+          "category": "collection",
+          "order": 1.0
+        }
+      ]
+    },
+    {
+      "name": "魔导师系列（白猫屋）",
+      "note": "同作者、同一主体题名的魔导师分支；各角色分支分开，不强行编卷号。",
+      "members": [
+        {
+          "gid": 3108828,
+          "branch": "光"
+        },
+        {
+          "gid": 3939038,
+          "branch": "剑斗"
+        },
+        {
+          "gid": 3964435,
+          "branch": "冰"
+        },
+        {
+          "gid": 3964442,
+          "branch": "影"
+        }
+      ]
+    },
+    {
+      "name": "神秘盒子 -（芮）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 4080585,
+          "order": 1.0
+        },
+        {
+          "gid": 4080619,
+          "order": 2.0
+        }
+      ]
+    },
+    {
+      "name": "掌握催眠之力后的淫乱生活（見人就打）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 4080467,
+          "order": 1.0
+        },
+        {
+          "gid": 4080472,
+          "order": 2.0
+        },
+        {
+          "gid": 4093743,
+          "category": "collection",
+          "order": 1.0
+        }
+      ]
+    },
+    {
+      "name": "屌啦A梦之触摸任意门（见人就打）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 3201082,
+          "order": 2.0
+        },
+        {
+          "gid": 3661089,
+          "order": 3.0
+        }
+      ]
+    },
+    {
+      "name": "妈妈成了家里保姆儿媳妇（见人就打）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 3293250,
+          "order": 10.0
+        },
+        {
+          "gid": 3416651,
+          "order": 12.0
+        }
+      ]
+    },
+    {
+      "name": "我和大嫂一家的故事（见人就打）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 3315069
+        },
+        {
+          "gid": 3400716,
+          "order": 2.0
+        }
+      ]
+    },
+    {
+      "name": "風俗的評鑑指南 中文版（超級米漿 (米漿)）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 3645404
+        },
+        {
+          "gid": 3645401,
+          "order": 2.0
+        }
+      ]
+    },
+    {
+      "name": "邪恶变形系统1-",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 3571621,
+          "category": "collection",
+          "order": 1.0
+        },
+        {
+          "gid": 3781673,
+          "category": "remaster",
+          "order": 9.0
+        },
+        {
+          "gid": 3787777,
+          "order": 10.0
+        }
+      ]
+    },
+    {
+      "name": "霸占母亲 1-",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 3707191,
+          "category": "collection",
+          "order": 1.0
+        },
+        {
+          "gid": 3707192,
+          "category": "collection",
+          "order": 3.0
+        }
+      ]
+    },
+    {
+      "name": "（母子）家有美母 1-2 连载中",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 3806543,
+          "category": "collection",
+          "order": 1.0
+        },
+        {
+          "gid": 3889433,
+          "order": 3.0
+        }
+      ]
+    },
+    {
+      "name": "搾精病棟～在只有惡劣性格的護士存在的醫院裡度過的射精管理生活～新手護士篇（Kameyama Shiruko）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 3840706,
+          "branch": "新手篇"
+        },
+        {
+          "gid": 3357437,
+          "branch": "连载篇"
+        }
+      ]
+    },
+    {
+      "name": "Harem House（Nietzsche／ニーチェ）",
+      "note": "依本次标题核对作者、主体题名与续篇／版本标记归组；未编号不等于第1章。",
+      "members": [
+        {
+          "gid": 3703323,
+          "branch": "第二季"
+        },
+        {
+          "gid": 4188825,
+          "category": "extra",
+          "branch": "IF"
+        }
+      ]
+    }
+  ]
+}

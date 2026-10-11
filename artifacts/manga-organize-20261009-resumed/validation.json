@@ -1,0 +1,19 @@
+{
+  "checks": {
+    "planValid": true,
+    "allGidsExactlyOnce": true,
+    "originalTitlesPreserved": true,
+    "rawAndSnapshotContentsMatch": true,
+    "sqliteIntegrityOk": true,
+    "chapter8Retained": true,
+    "priorGroupsRetained": true,
+    "unconfirmed": true,
+    "templateTokensReplaced": true,
+    "offlineNoExternalScripts": true
+  },
+  "passed": 10,
+  "failed": 0,
+  "currentVerification": true,
+  "phoneWritten": false,
+  "visualAcceptance": false
+}

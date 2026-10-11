@@ -53,7 +53,7 @@ import com.hippo.ehviewer.client.IgneousUtils;
 import com.hippo.ehviewer.client.data.EhNewsDetail;
 import com.hippo.ehviewer.client.data.GalleryDetail;
 import com.hippo.ehviewer.client.data.userTag.UserTagList;
-import com.hippo.ehviewer.download.ArchiverDownloadCompleter;
+import com.hippo.ehviewer.download.ArchiverDownloader;
 import com.hippo.ehviewer.download.DownloadManager;
 import com.hippo.ehviewer.spider.SpiderDen;
 import com.hippo.ehviewer.subscription.SubscriptionSnapshot;
@@ -180,7 +180,7 @@ public class EhApplication extends RecordingApplication {
         GetText.initialize(this);
         StatusCodeException.initialize(this);
         Settings.initialize(this);
-        ArchiverDownloadCompleter.resumePendingDownloads(this);
+        ArchiverDownloader.resumePending(this);
         ReadableTime.initialize(this);
         Html.initialize(this);
         AppConfig.initialize(this);

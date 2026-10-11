@@ -1,0 +1,13 @@
+{
+  "gidsTitlesAndPlan": "passed",
+  "sqliteIntegrity": "ok",
+  "snapshotMatchesCatalog": "passed",
+  "explicitUnnumberedPrequelBeforePart2": "passed",
+  "markdownReferencedFilesExist": "passed",
+  "sha256": {
+    "catalog/catalog.json": "53cea42497af32980ab94f87dcb2d38fdd8a4b2529d29795a568d4887b4de315",
+    "groups.json": "57c8671a6778a0329ee547fcccff5a4866a30e9a25b4f2a183a6efd659670e1b",
+    "order.json": "07938bbc4f2f48fb7f663dadc027cb660405b4b312cc032aec5be6f5ae4a1682",
+    "uncertain.json": "40ead6367a8679ac2cd7c8649fe1f414bc789e8a812cd313e4af37e0a3ea2052"
+  }
+}

@@ -48,6 +48,7 @@ import com.hippo.ehviewer.dao.DownloadsDao;
 import com.hippo.ehviewer.dao.Filter;
 import com.hippo.ehviewer.dao.GalleryTags;
 import com.hippo.ehviewer.dao.GalleryTagsDao;
+import com.hippo.ehviewer.dao.GalleryTagsSchema;
 import com.hippo.ehviewer.dao.HistoryDao;
 import com.hippo.ehviewer.dao.HistoryInfo;
 import com.hippo.ehviewer.dao.LocalFavoriteInfo;
@@ -191,6 +192,8 @@ public class EhDB {
                 ReadingQueueSchema.upgradeToV12(db);
             case 12: // 12 to 13, reading progress stored with queue membership
                 ReadingQueueSchema.upgradeToV13(db);
+            case 13: // 13 to 14, upstream LOCATION tags
+                GalleryTagsSchema.upgradeToV14(db);
         }
     }
 

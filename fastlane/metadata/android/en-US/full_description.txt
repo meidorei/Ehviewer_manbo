@@ -1,3 +1,14 @@
-An E-Hentai Application for Android, forked from Hippo Seven by SXJ LonelyDog.
+EhViewer manbo is an Android client fork based on EhViewer_CN_SXJ, with gallery browsing, search, favorites and downloads, plus local update tracking and reading management.
 
-In F-Droid build, analytics is disabled no matter what you choose.
+Features:
+• Follow tags locally and import or export follow tags as JSON.
+• Check saved searches across pages and mark shared unread gallery IDs as read across bookmarks.
+• Run global Chinese scans or individual checks, with pause, resume and stop controls.
+• Keep reading boundaries for follows and bookmarks, and a manual marker on the home list.
+• Add Chinese search conditions automatically and look up JM metadata.
+• Track recent reading and page progress for completed in-app downloads.
+• Pause, resume and import new archive downloads.
+
+Bookmark badges display 20+ above twenty unread entries while retaining all unread gallery IDs. Local follows retain up to 21 unread entries. Automatic deletion in the reading queue is off by default; enabling it permanently deletes local downloads evicted from the queue.
+
+Local follows do not require server subscriptions. Site access still depends on network conditions and account permissions. See the repository README for project origins and documentation.

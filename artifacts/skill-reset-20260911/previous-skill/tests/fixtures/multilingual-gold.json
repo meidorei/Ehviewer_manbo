@@ -1,0 +1,26 @@
+{
+  "formatVersion": 1,
+  "provenance": "主模型构造的合成多语言题名与预设关系；未经独立人工标注，不代表真实书库准确率。",
+  "items": [
+    {"gid": 101, "title": "(C104) [星野] 星の旅 第0話", "expectedSeriesId": "stars", "aliasKey": "journey of stars"},
+    {"gid": 102, "title": "[Hoshino] Journey of Stars Chapter 1", "expectedSeriesId": "stars", "aliasKey": "journey of stars"},
+    {"gid": 103, "title": "[星野] 星之旅 第2话", "expectedSeriesId": "stars", "aliasKey": "journey of stars"},
+    {"gid": 104, "title": "[星野] 星の旅 第2話 [English]", "expectedSeriesId": "stars", "aliasKey": "journey of stars"},
+    {"gid": 105, "title": "[星野] 星の旅 番外編", "expectedSeriesId": "stars", "aliasKey": "journey of stars"},
+    {"gid": 106, "title": "[星野] 星の旅 総集編 0-2", "expectedSeriesId": "stars", "aliasKey": "journey of stars"},
+    {"gid": 107, "title": "[星野] 星の旅 Remaster Chapter 1", "expectedSeriesId": "stars", "aliasKey": "journey of stars"},
+    {"gid": 108, "title": "[星野] 海辺の庭", "expectedSeriesId": "seaside", "aliasKey": "seaside garden"},
+    {"gid": 109, "title": "[Hoshino] Seaside Garden Part 2", "expectedSeriesId": "seaside", "aliasKey": "seaside garden"},
+    {"gid": 110, "title": "[別作者] 星の旅", "expectedSeriesId": "other-author-stars", "aliasKey": "journey of stars"},
+    {"gid": 111, "title": "[青月] 雨の手紙 前編", "expectedSeriesId": "rain", "aliasKey": "letters in rain"},
+    {"gid": 112, "title": "[Aotsuki] Letters in Rain Middle Part", "expectedSeriesId": "rain", "aliasKey": "letters in rain"},
+    {"gid": 113, "title": "[青月] 雨中来信 后篇", "expectedSeriesId": "rain", "aliasKey": "letters in rain"},
+    {"gid": 114, "title": "[山川] 森の図書館 Vol. 1 Ch. 10", "expectedSeriesId": "library", "aliasKey": "forest library"},
+    {"gid": 115, "title": "[Yamakawa] Forest Library Vol. 2 Ch. 1", "expectedSeriesId": "library", "aliasKey": "forest library"},
+    {"gid": 116, "title": "[山川] 森の図書館 別世界編 第1話", "expectedSeriesId": "library", "aliasKey": "forest library"},
+    {"gid": 117, "title": "[新作者] 无编号短篇", "expectedSeriesId": "single:117", "aliasKey": null},
+    {"gid": 118, "title": "[New Author] Untitled story", "expectedSeriesId": "single:118", "aliasKey": null}
+  ],
+  "orderedPairs": [[101,102],[102,103],[103,104],[104,105],[105,106],[106,107],[108,109],[111,112],[112,113],[114,115],[115,116]],
+  "notes": ["110 与 101 同题不同作者，候选允许召回但不能据此合并。", "117/118 的证据不足，必须各自独立。", "103/104 为同章翻译，保持源顺序。", "类别顺序为正篇、番外、合集、重制版；故事分支分别展示。"]
+}

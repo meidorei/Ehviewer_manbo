@@ -1,0 +1,46 @@
+{
+  "status": "passed",
+  "activeFiles": [
+    "SKILL.md",
+    "agents/openai.yaml",
+    "references/tools.md",
+    "scripts/organize.py",
+    "tests/test_organize.py"
+  ],
+  "pythonTests": {
+    "tests": 9,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "browser": {
+    "passed": true,
+    "counts": [
+      12,
+      3000
+    ],
+    "largeLoadMs": 279,
+    "checks": [
+      "group",
+      "ungroup",
+      "undo",
+      "move",
+      "filtered-full-export",
+      "draft-restore",
+      "title-tampering-rejected",
+      "single-confirmation",
+      "python-validation",
+      "mobile-width"
+    ],
+    "errors": [],
+    "requests": []
+  },
+  "localLinks": 1,
+  "cliHelpCommands": 5,
+  "pythonSyntax": "passed",
+  "encodingWhitespace": "passed",
+  "frontmatter": "basic check passed; official validator unavailable without optional PyYAML",
+  "oldSkillBackup": "previous-skill",
+  "zipSha256": "aace5e9c3bebbe358eeded5b1d1582d4fef6c2aba882f75d623760f1f123589a",
+  "phoneWriteback": false
+}

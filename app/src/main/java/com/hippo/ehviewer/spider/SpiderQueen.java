@@ -77,6 +77,7 @@ import java.lang.annotation.RetentionPolicy;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.NoSuchElementException;
 import java.util.Queue;
 import java.util.Timer;
 import java.util.TimerTask;
@@ -207,6 +208,22 @@ public final class SpiderQueen implements Runnable {
             queen.setMode(mode);
         }
         return queen;
+    }
+
+    /**
+     * Reset the in-memory reading progress for an existing gallery reader.
+     * The caller runs on the main thread, alongside the queen map lifecycle.
+     */
+    @UiThread
+    public static void resetReadingProgress(long gid) {
+        SpiderQueen queen = sQueenMap.get(gid);
+        if (queen == null) {
+            return;
+        }
+        SpiderInfo spiderInfo = queen.mSpiderInfo.get();
+        if (spiderInfo != null) {
+            spiderInfo.startPage = 0;
+        }
     }
 
 //    @UiThread
@@ -1367,7 +1384,7 @@ public final class SpiderQueen implements Runnable {
                     try {
                         response = call.execute();
                         targetImageUrl = response.header("location");
-                    } catch (IOException e) {
+                    } catch (IOException | NoSuchElementException e) {
                         error = "GP不足/Insufficient GP";
                         IOException ioException = new IOException("原图链接获取失败", e);
                         Analytics.recordException(ioException);
@@ -1570,7 +1587,7 @@ public final class SpiderQueen implements Runnable {
                         e.printStackTrace();
                     }
                     return true;
-                } catch (IOException e) {
+                } catch (IOException | NoSuchElementException e) {
                     e.printStackTrace();
                     error = GetText.getString(R.string.error_socket);
                     forceHtml = true;

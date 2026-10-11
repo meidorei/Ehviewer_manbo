@@ -6,6 +6,7 @@ import com.hippo.ehviewer.EhDB;
 
 /** Durable single-job cursor. Running rows are converted to PAUSED after process restart. */
 public final class LocalRefreshJobStore {
+    public static final String TYPE_ALL = "ALL";
     public static final String TYPE_FOLLOW = "FOLLOW";
     public static final String TYPE_BOOKMARK = "BOOKMARK";
     public static final String TYPE_BASELINE = "BASELINE";
@@ -81,21 +82,29 @@ public final class LocalRefreshJobStore {
     }
 
     public static void finish(String status, boolean fullFollowSuccess) {
-        long now = System.currentTimeMillis();
-        Snapshot snapshot = read();
-        EhDB.getDatabase().execSQL(
-                "UPDATE LOCAL_REFRESH_JOB SET STATUS=?,UPDATED_AT=? WHERE _id=1",
-                new Object[]{status, now});
-        if (fullFollowSuccess) {
-            putMeta(META_LAST_FOLLOW_SUCCESS, Long.toString(now));
-        }
-        if (STATUS_SUCCESS.equals(status) && snapshot != null
-                && TYPE_BOOKMARK.equals(snapshot.type)
-                && (snapshot.method == null || !snapshot.method.startsWith("SINGLE:"))) {
-            putMeta(META_LAST_BOOKMARK_SUCCESS, Long.toString(now));
-        }
-        if (shouldRecordAttempt(snapshot, status)) {
-            writeAttempt(snapshot, status, now);
+        org.greenrobot.greendao.database.Database db = EhDB.getDatabase();
+        db.beginTransaction();
+        try {
+            long now = System.currentTimeMillis();
+            Snapshot snapshot = read();
+            EhDB.getDatabase().execSQL(
+                    "UPDATE LOCAL_REFRESH_JOB SET STATUS=?,UPDATED_AT=? WHERE _id=1",
+                    new Object[]{status, now});
+            boolean allSuccess = isFullCombinedSuccess(snapshot, status);
+            if (fullFollowSuccess || allSuccess) {
+                putMeta(META_LAST_FOLLOW_SUCCESS, Long.toString(now));
+            }
+            if (STATUS_SUCCESS.equals(status) && snapshot != null
+                    && (TYPE_BOOKMARK.equals(snapshot.type) || allSuccess)
+                    && (snapshot.method == null || !snapshot.method.startsWith("SINGLE:"))) {
+                putMeta(META_LAST_BOOKMARK_SUCCESS, Long.toString(now));
+            }
+            if (shouldRecordAttempt(snapshot, status)) {
+                writeAttempt(snapshot, status, now);
+            }
+            db.setTransactionSuccessful();
+        } finally {
+            db.endTransaction();
         }
     }
 
@@ -137,6 +146,7 @@ public final class LocalRefreshJobStore {
                 || STATUS_RUNNING.equals(terminalStatus)) {
             return false;
         }
+        if (TYPE_ALL.equals(snapshot.type)) return snapshot.total > 0;
         if (TYPE_FOLLOW.equals(snapshot.type)) return true;
         return TYPE_BOOKMARK.equals(snapshot.type)
                 && (snapshot.method == null || !snapshot.method.startsWith("SINGLE:"));
@@ -169,10 +179,22 @@ public final class LocalRefreshJobStore {
     private static void writeAttempt(Snapshot snapshot, String terminalStatus, long time) {
         int failures = failureCount(snapshot.failures);
         String result = deriveAttemptResult(snapshot, terminalStatus, failures);
-        putMeta(attemptKey(snapshot.type, META_ATTEMPT_TIME_SUFFIX), Long.toString(time));
-        putMeta(attemptKey(snapshot.type, META_ATTEMPT_RESULT_SUFFIX), result);
-        putMeta(attemptKey(snapshot.type, META_ATTEMPT_FAILURES_SUFFIX),
-                Integer.toString(failures));
+        for (String type : attemptTypes(snapshot.type)) {
+            putMeta(attemptKey(type, META_ATTEMPT_TIME_SUFFIX), Long.toString(time));
+            putMeta(attemptKey(type, META_ATTEMPT_RESULT_SUFFIX), result);
+            putMeta(attemptKey(type, META_ATTEMPT_FAILURES_SUFFIX), Integer.toString(failures));
+        }
+    }
+
+    static boolean isFullCombinedSuccess(Snapshot snapshot, String status) {
+        return snapshot != null && TYPE_ALL.equals(snapshot.type)
+                && STATUS_SUCCESS.equals(status) && failureCount(snapshot.failures) == 0
+                && snapshot.total > 0 && snapshot.index >= snapshot.total;
+    }
+
+    static String[] attemptTypes(String type) {
+        return TYPE_ALL.equals(type) ? new String[]{TYPE_ALL, TYPE_FOLLOW, TYPE_BOOKMARK}
+                : new String[]{type};
     }
 
     public static Snapshot read() {
