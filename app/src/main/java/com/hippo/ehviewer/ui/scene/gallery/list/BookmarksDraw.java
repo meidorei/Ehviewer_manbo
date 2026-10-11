@@ -67,6 +67,7 @@ public class BookmarksDraw {
     private final Map<Long, String> updates = new HashMap<>();
     private final Map<Long, Integer> originalOrder = new HashMap<>();
     private ArrayAdapter<QuickSearch> adapter;
+    private Runnable onBookmarksChanged;
     private final LocalUpdateService.Listener updateListener = this::onLocalUpdateProgress;
 
     public BookmarksDraw(@NonNull Context context, LayoutInflater inflater, EhTagDatabase ehTags) {
@@ -81,6 +82,7 @@ public class BookmarksDraw {
 
     @SuppressLint("NonConstantResourceId")
     public View onCreate(GalleryListScene scene) {
+        onBookmarksChanged = scene::refreshBookmarkTagMarkers;
         View bookmarksView = inflater.inflate(R.layout.bookmarks_draw, null, false);
 
         toolbar = (Toolbar) ViewUtils.$$(bookmarksView, R.id.toolbar);
@@ -313,6 +315,7 @@ public class BookmarksDraw {
         }
         adapter.notifyDataSetChanged();
         updateEmptyState();
+        if (onBookmarksChanged != null) onBookmarksChanged.run();
     }
 
     private void updateEmptyState() {

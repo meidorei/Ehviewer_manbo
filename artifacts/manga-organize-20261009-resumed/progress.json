@@ -1,0 +1,18 @@
+{
+  "catalog": "catalog/catalog.json",
+  "previousCatalog": "../manga-organize-20261009/catalog/catalog.json",
+  "nextOffset": null,
+  "deltaReadGids": [
+    4241330
+  ],
+  "relatedQueries": [
+    "Potions",
+    "All the way",
+    "OC Story"
+  ],
+  "status": "phone_writeback_complete",
+  "inheritedJudgments": "Unchanged titles reuse the completed 2026-10-09 run; not reread this run",
+  "phoneWritten": true,
+  "confirmed": true,
+  "writebackReport": "writeback/phone-writeback.json"
+}

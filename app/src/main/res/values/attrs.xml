@@ -62,6 +62,7 @@
         <attr name="tagGroupBackgroundColor" format="color" />
         <attr name="tagBackgroundColor" format="color" />
         <attr name="subscribedTagBackgroundColor" format="color" />
+        <attr name="bookmarkTagBackgroundColor" format="color" />
 
         <attr name="galleryDetailHeaderTitleColor" format="color" />
         <attr name="galleryDetailHeaderBackgroundColor" format="color" />

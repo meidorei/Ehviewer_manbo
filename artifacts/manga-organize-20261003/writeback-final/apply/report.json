@@ -1,0 +1,7 @@
+{
+  "status": "passed",
+  "itemCount": 3233,
+  "onlyDownloadsTimeChanged": true,
+  "backup": "artifacts\\manga-organize-20261003\\writeback-final\\apply\\backup.db",
+  "output": "artifacts\\manga-organize-20261003\\writeback-final\\apply\\sorted.db"
+}

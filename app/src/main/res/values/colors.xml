@@ -18,6 +18,9 @@
     <color name="subscribed_tag_light">#FFE65100</color>
     <color name="subscribed_tag_dark">#665B4700</color>
     <color name="subscribed_tag_black">#80543D00</color>
+    <color name="bookmark_tag_light">#FFF1DE</color>
+    <color name="bookmark_tag_dark">#3E382F</color>
+    <color name="bookmark_tag_black">#302A22</color>
 
     <!-- primary_drawable_light     54% -->
     <!-- secondary_drawable_light   26% -->

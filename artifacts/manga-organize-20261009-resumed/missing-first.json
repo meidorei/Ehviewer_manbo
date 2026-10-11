@@ -1,0 +1,4238 @@
+{
+  "scope": "当前Debug书库的题名线索；不表示外部作品不存在",
+  "flags": [
+    {
+      "status": "suspected",
+      "label": "疑缺首篇",
+      "series": "催眠的奇迹（aheazif (Sanatuki)）",
+      "reason": "疑缺首篇：主线仅见 II；「新VII篇」是分支名，不能当作主线第1篇或第7篇。",
+      "members": [
+        {
+          "gid": 2532418,
+          "title": "[aheazif (Sanatuki)] Saimin no Kiseki II | 催眠的奇迹2 (The Legend of Heroes: Trails of Cold Steel) [Chinese]",
+          "titleJpn": null,
+          "order": 2.0,
+          "category": "main",
+          "branch": "main"
+        },
+        {
+          "gid": 2208485,
+          "title": "[aheazif (Sanatuki)] Saimin no Kiseki Shin VII Hen (The Legend of Heroes: Trails of Cold Steel) [中国翻訳]",
+          "titleJpn": null,
+          "order": null,
+          "category": "main",
+          "branch": "新VII篇"
+        }
+      ]
+    },
+    {
+      "status": "suspected",
+      "label": "疑缺首篇",
+      "series": "Musuko no Doukyuusei ni Makura Eigyou Monogatari（Almarosso）",
+      "reason": "疑缺首篇：见2、3、7及4–6混收合集；合集中的另一作品第1篇不属于这个系列。",
+      "members": [
+        {
+          "gid": 1306740,
+          "title": "[Almarosso] Musuko no Doukyuusei ni Makura Eigyou Monogatari 2 [Chinese] [魔劍个人汉化]",
+          "titleJpn": "[アルマロッソ] 息子の同級生に枕営業物語 2 [中国翻訳]",
+          "order": 2.0,
+          "category": "main",
+          "branch": "main"
+        },
+        {
+          "gid": 1420902,
+          "title": "[Almarosso] Musuko no Doukyuusei ni Makura Eigyou Monogatari 3 [Chinese] [魔劍个人汉化]",
+          "titleJpn": "[アルマロッソ] 息子の同級生に枕営業物語 3 [中国翻訳]",
+          "order": 3.0,
+          "category": "main",
+          "branch": "main"
+        },
+        {
+          "gid": 2727482,
+          "title": "[almarosso] Musuko no Doukyuusei ni Makura Eigyou Monogatari 7 ~Cosplay Bunny Girl~ [Chinese] [cqxl自己汉化]",
+          "titleJpn": "[アルマロッソ] 息子の同級生に枕営業物語 7 ~コスプレバニーガール~ [中国翻訳]",
+          "order": 7.0,
+          "category": "main",
+          "branch": "main"
+        },
+        {
+          "gid": 2991582,
+          "title": "[アルマロッソ] 息子の同級生に枕営業物語 4-6+少子化を解決する法律ができた結果… 1",
+          "titleJpn": null,
+          "order": 4,
+          "category": "collection",
+          "branch": "main"
+        }
+      ]
+    },
+    {
+      "status": "suspected",
+      "label": "疑缺首篇",
+      "series": "Yasashikute Kyonyuu no Okaa-san ga Musuko Chinpo de Baka ni Nacchau Hanashi（Atelier TODO (Macaroni and Cheese)）",
+      "reason": "疑缺首篇：当前库有明确后续编号，未见可可靠对应的第1篇／前篇；按题名判断，可能存在尚未识别的译名。",
+      "members": [
+        {
+          "gid": 2975193,
+          "title": "[Atelier TODO (Macaroni and Cheese)] Yasashikute Kyonyuu no Okaa-san ga Musuko Chinpo de Baka ni Nacchau Hanashi 2 [Chinese]",
+          "titleJpn": null,
+          "order": 2.0,
+          "category": "main",
+          "branch": "main"
+        },
+        {
+          "gid": 3125781,
+          "title": "[Atelier TODO (Macaroni and Cheese)] Yasashikute Kyonyuu no Okaa-san ga Musuko Chinpo de Baka ni Nacchau Hanashi 3 [Chinese]",
+          "titleJpn": "[アトリエTODO (マカロニandチーズ)] 優しくて巨乳のお母さんが息子チンポでバカになっちゃう話 3 [中国翻訳]",
+          "order": 3.0,
+          "category": "main",
+          "branch": "main"
+        },
+        {
+          "gid": 3351344,
+          "title": "[Atelier TODO (Macaroni and Cheese)] Yasashikute Kyonyuu no Okaa-san ga Musuko Chinpo de Baka ni Nacchau Hanashi 4 [Chinese]",
+          "titleJpn": null,
+          "order": 4.0,
+          "category": "main",
+          "branch": "main"
+        },
+        {
+          "gid": 3611281,
+          "title": "[Atelier TODO (Macaroni and Cheese, TODO Kantoku)] Yasashikute Kyonyuu no Okaasan ga Musuko Chinpo de Baka ni Nacchau Hanashi 5 [Chinese]",
+          "titleJpn": null,
+          "order": 5.0,
+          "category": "main",
+          "branch": "main"
+        }
+      ]
+    },
+    {
+      "status": "suspected",
+      "label": "疑缺首篇",
+      "series": "B-Kyuu Manga（B-Kyuu Site (bkyu)）",
+      "reason": "疑缺首篇：当前库有明确后续编号，未见可可靠对应的第1篇／前篇；按题名判断，可能存在尚未识别的译名。",
+      "members": [
+        {
+          "gid": 1919420,
+          "title": "[B-Kyuu Site (bkyu)] B-Kyuu Manga 7 (Final Fantasy VII) [Chinese] [不可视汉化]",
+          "titleJpn": null,
+          "order": 7.0,
+          "category": "main",
+          "branch": "main"
+        },
+        {
+          "gid": 3864942,
+          "title": "[B-Kyuu Site (bkyu)] B-Kyuu Manga 9.1 (Final Fantasy VII)[chinese]",
+          "titleJpn": null,
+          "order": 9.1,
+          "category": "main",
+          "branch": "main"
+        },
+        {
+          "gid": 1919424,
+          "title": "[B-Kyuu Site (bkyu)] B-Kyuu Manga 9.1 (Final Fantasy VII) [Chinese] [不可视汉化]",
+          "titleJpn": null,
+          "order": 9.1,
+          "category": "main",
+          "branch": "main"
+        },
+        {
+          "gid": 1919430,
+          "title": "[B-Kyuu Site (bkyu)] B-Kyuu Manga 9.2 (Final Fantasy VII) [Chinese] [不可视汉化]",
+          "titleJpn": null,
+          "order": 9.2,
+          "category": "main",
+          "branch": "main"
+        }
+      ]
+    },
+    {
+      "status": "suspected",
+      "label": "疑缺首篇",
+      "series": "獎勵用身體來支付 過於情色的員工福利是性處理部門的工作♥（C-kyuu）",
+      "reason": "疑缺首篇：当前库有明确后续编号，未见可可靠对应的第1篇／前篇；按题名判断，可能存在尚未识别的译名。",
+      "members": [
+        {
+          "gid": 3364504,
+          "title": "[C-kyuu] Gohoubi wa Karada de. ~Ero-sugi Fukuri Kousei wa Seishori-ka no Oshigoto~ (3) [Chinese]",
+          "titleJpn": "[C級] ご褒美はカラダで。～エロすぎ福利厚生は性処理課のオシゴト～(3) [Amerins漢化]",
+          "order": 3.0,
+          "category": "main",
+          "branch": "main"
+        },
+        {
+          "gid": 3539559,
+          "title": "[C-kyuu] Gohoubi wa Karada de. ~Ero-sugi Fukuri Kousei wa Seishori-ka no Oshigoto~ (4) | 獎勵用身體來支付 過於情色的員工福利是性處理部門的工作♥ [Chinese] [Amerins漢化]",
+          "titleJpn": null,
+          "order": 4.0,
+          "category": "main",
+          "branch": "main"
+        }
+      ]
+    },
+    {
+      "status": "suspected",
+      "label": "疑缺首篇",
+      "series": "Otome Game no Akuyaku Reijou ni Tensei Shitara Ura Settei de Futanari deshita（COSCOteikoku (Sella)）",
+      "reason": "疑缺首篇：当前库有明确后续编号，未见可可靠对应的第1篇／前篇；按题名判断，可能存在尚未识别的译名。",
+      "members": [
+        {
+          "gid": 3508038,
+          "title": "[COSCOteikoku (Sella)] Otome Game no Akuyaku Reijou ni Tensei Shitara Ura Settei de Futanari deshita 3 [Chinese] [夜戦玖百回] [Digital]",
+          "titleJpn": null,
+          "order": 3.0,
+          "category": "main",
+          "branch": "main"
+        },
+        {
+          "gid": 3757766,
+          "title": "[COSCOteikoku (Sella)] Otome Game no Akuyaku Reijou ni Tensei Shitara Ura Settei de Futanari deshita 4 [Chinese] [夜戦玖百回] [Digital]",
+          "titleJpn": null,
+          "order": 4.0,
+          "category": "main",
+          "branch": "main"
+        }
+      ]
+    },
+    {
+      "status": "suspected",
+      "label": "疑缺首篇",
+      "series": "PowerHara／Pawahara Onna Joushi to Shachiku-kun（DOLL PLAY / Kurosu Gatari）",
+      "reason": "疑缺首篇：当前库有明确后续编号，未见可可靠对应的第1篇／前篇；按题名判断，可能存在尚未识别的译名。",
+      "members": [
+        {
+          "gid": 3913931,
+          "title": "[Decensored][DOLL PLAY (Kurosu Gatari)] PowerHara Onna Joushi to Shachiku-kun 3 [Chinese] [LKM渣嵌][Digital]",
+          "titleJpn": null,
+          "order": 3.0,
+          "category": "main",
+          "branch": "main"
+        },
+        {
+          "gid": 3565672,
+          "title": "[DOLL PLAY (Kurosu Gatari)] Pawahara Onna Joushi to Shachiku-kun 3 [Digital] [Glasses Version][中国翻訳]",
+          "titleJpn": null,
+          "order": 3.0,
+          "category": "main",
+          "branch": "main"
+        },
+        {
+          "gid": 3900014,
+          "title": "[DOLL PLAY (Kurosu Gatari)] PowerHara Onna Joushi to Shachiku-kun 4 [Chinese] [COW个人汉化]",
+          "titleJpn": null,
+          "order": 4.0,
+          "category": "main",
+          "branch": "main"
+        }
+      ]
+    },
+    {
+      "status": "suspected",
+      "label": "疑缺首篇",
+      "series": "Konoha Shinobi's Affair（Ecoas Doodlexxx）",
+      "reason": "疑缺首篇：当前库有明确后续编号，未见可可靠对应的第1篇／前篇；按题名判断，可能存在尚未识别的译名。",
+      "members": [
+        {
+          "gid": 2400318,
+          "title": "[Ecoas Doodlexxx] Konoha Shinobi's Affair 2",
+          "titleJpn": null,
+          "order": 2.0,
+          "category": "main",
+          "branch": "main"
+        },
+        {
+          "gid": 3296104,
+          "title": "[Ecoas Doodlexxx] Konoha Shinobi's Affair 3 [msrylzy个人翻译]",
+          "titleJpn": null,
+          "order": 3.0,
+          "category": "main",
+          "branch": "main"
+        },
+        {
+          "gid": 3931448,
+          "title": "[Ecoas Doodlexxx] Konoha Shinobi's Affair 4 [连载中1-18] [msrylzy个人翻译]",
+          "titleJpn": null,
+          "order": 4.0,
+          "category": "main",
+          "branch": "main"
+        },
+        {
+          "gid": 3724918,
+          "title": "[Ecoas Doodlexxx] Konoha Shinobi's Affair Kage Secret [msrylzy个人翻译]",
+          "titleJpn": null,
+          "order": null,
+          "category": "extra",
+          "branch": "Kage"
+        },
+        {
+          "gid": 2485124,
+          "title": "[ecoas | doodlexxx] konoha shinobi affair_ hokage training (naruto)[老w个人汉化]",
+          "titleJpn": null,
+          "order": null,
+          "category": "extra",
+          "branch": "Hokage"
+        }
+      ]
+    },
+    {
+      "status": "suspected",
+      "label": "疑缺首篇",
+      "series": "打工处的人妻、秋山太太（Fujinoe Honpo / Fujinoe13B）",
+      "reason": "疑缺首篇：当前库有明确后续编号，未见可可靠对应的第1篇／前篇；按题名判断，可能存在尚未识别的译名。",
+      "members": [
+        {
+          "gid": 4087987,
+          "title": "[Fujinoe Honpo (Fujinoe13B)] Beit Saki no Hitozuma, Akiyama-san. 2 Oyakodon [Chinese] [LKM重嵌] [Decensored] [Digital]",
+          "titleJpn": null,
+          "order": 2.0,
+          "category": "main",
+          "branch": "main"
+        },
+        {
+          "gid": 3951227,
+          "title": "[Fujinoe Honpo (Fujinoe13B)] Beit Saki no Hitozuma, Akiyama-san. 3 | 打工處的人妻、秋山太太。3 [Chinese] [Digital]",
+          "titleJpn": null,
+          "order": 3.0,
+          "category": "main",
+          "branch": "main"
+        }
+      ]
+    },
+    {
+      "status": "suspected",
+      "label": "疑缺首篇",
+      "series": "俺の上京性生活（白玉湯）",
+      "reason": "疑缺首篇：主线见第19篇；「精液検査編2」另有分支首篇疑缺，母亲篇未编号，不把不同分支互当首篇。",
+      "members": [
+        {
+          "gid": 3181419,
+          "title": "[Hakutamayu] Ore no Joukyou Seiseikatsu 19 \"Shizuru Ninshin Kouhen\" [Chinese]",
+          "titleJpn": null,
+          "order": 19.0,
+          "category": "main",
+          "branch": "main"
+        },
+        {
+          "gid": 3601018,
+          "title": "[Hakutamayu] Ore no Joukyou Seiseikatsu Mama wa AV Joyuu Hen [Chinese]",
+          "titleJpn": null,
+          "order": null,
+          "category": "main",
+          "branch": "母亲篇"
+        },
+        {
+          "gid": 3404469,
+          "title": "[白玉湯] 俺の上京性生活 精液検査編2 [中国翻訳]",
+          "titleJpn": "[白玉湯] 俺の上京性生活 精液検査編2 [中国翻訳]",
+          "order": null,
+          "category": "main",
+          "branch": "检验篇"
+        }
+      ]
+    },
+    {
+      "status": "suspected",
+      "label": "疑缺首篇",
+      "series": "Osucollab（Hitsuji Kikaku (Muneshiro)）",
+      "reason": "疑缺首篇：见第2、5篇；X 不强行换算成第10篇，也不能据此认定有第1篇。",
+      "members": [
+        {
+          "gid": 2839533,
+          "title": "[Hitsuji Kikaku (Muneshiro)] Osucollab 2 (Hakui Koyori, Sakamata Chloe) [Chinese] [Digital]",
+          "titleJpn": null,
+          "order": 2.0,
+          "category": "main",
+          "branch": "main"
+        },
+        {
+          "gid": 3572806,
+          "title": "[Hitsuji Kikaku (Muneshiro)] Osucollab 5 (Hakui Koyori, Sakamata Chloe) [Chinese] [Digital]",
+          "titleJpn": null,
+          "order": 5.0,
+          "category": "main",
+          "branch": "main"
+        },
+        {
+          "gid": 3719936,
+          "title": "[Hitsuji Kikaku (Muneshiro)] Osucollab X (Hololive) [Chinese] [Digital]",
+          "titleJpn": null,
+          "order": null,
+          "category": "main",
+          "branch": "main"
+        }
+      ]
+    },
+    {
+      "status": "suspected",
+      "label": "疑缺首篇",
+      "series": "Zange Ana（Jikahatsudensho (flanvia)）",
+      "reason": "疑缺首篇：当前库有明确后续编号，未见可可靠对应的第1篇／前篇；按题名判断，可能存在尚未识别的译名。",
+      "members": [
+        {
+          "gid": 3199125,
+          "title": "[Jikahatsudensho (flanvia)] Zange Ana 4 [Chinese] [是小狐狸哦] [Loody去码][Digital]",
+          "titleJpn": "[自家発電処 (flanvia)] 懺悔穴4 [中国翻訳] [無修正] [DL版]",
+          "order": 4.0,
+          "category": "main",
+          "branch": "main"
+        },
+        {
+          "gid": 3198601,
+          "title": "[Jikahatsudensho (flanvia)] Zange Ana 5 [Chinese] [是小狐狸哦] [Decensored] [Digital]",
+          "titleJpn": "[自家発電処 (flanvia)] 懺悔穴5 [中国翻訳] [無修正] [DL版]",
+          "order": 5.0,
+          "category": "main",
+          "branch": "main"
+        }
+      ]
+    },
+    {
+      "status": "suspected",
+      "label": "疑缺首篇",
+      "series": "科学存在的人外娘观察日记（KAKERU）",
+      "reason": "疑缺首篇：当前库有明确后续编号，未见可可靠对应的第1篇／前篇；按题名判断，可能存在尚未识别的译名。",
+      "members": [
+        {
+          "gid": 3713822,
+          "title": "[KAKERU] Kagakuteki ni Sonzai Shiuru Creature Musume no Kansatsu Nisshi 8｜科学存在的人外娘观察日记 8 [琥珀汉化组]",
+          "titleJpn": null,
+          "order": 8.0,
+          "category": "main",
+          "branch": "main"
+        },
+        {
+          "gid": 3707032,
+          "title": "[KAKERU] Kagakuteki ni Sonzai Shiuru Creature Musume no Kansatsu Nisshi 8｜科学存在的人外娘观察日记 8 [琥珀汉化组] [ongoing]",
+          "titleJpn": null,
+          "order": 8.0,
+          "category": "main",
+          "branch": "main"
+        }
+      ]
+    },
+    {
+      "status": "suspected",
+      "label": "疑缺首篇",
+      "series": "與辣妹偶像的口交對決（Keimusho Furo 3-byou (Bakachikubi)）",
+      "reason": "疑缺首篇：当前库有明确后续编号，未见可可靠对应的第1篇／前篇；按题名判断，可能存在尚未识别的译名。",
+      "members": [
+        {
+          "gid": 3388689,
+          "title": "[Keimusho Furo 3-byou (Bakachikubi)] Gal Idol to Taiman Kouin Battle 3 | 與辣妹偶像的口交對決3 (THE IDOLM@STER MILLION LIVE!) [Chinese] [天帝哥個人漢化]",
+          "titleJpn": null,
+          "order": 3.0,
+          "category": "main",
+          "branch": "main"
+        },
+        {
+          "gid": 3815086,
+          "title": "[Keimusho Furo 3-byou (Bakachikubi)] Gal Idol to Taiman Kouin Battle 4 | 与辣妹偶像的 单独口交对决 4 (THE IDOLM@STER MILLION LIVE!) [Chinese]",
+          "titleJpn": null,
+          "order": 4.0,
+          "category": "main",
+          "branch": "main"
+        }
+      ]
+    },
+    {
+      "status": "suspected",
+      "label": "疑缺首篇",
+      "series": "Beauti \"Gal\" Life（Kocho Kocho Koukou (Bonten)）",
+      "reason": "疑缺首篇：当前库有明确后续编号，未见可可靠对应的第1篇／前篇；按题名判断，可能存在尚未识别的译名。",
+      "members": [
+        {
+          "gid": 3580060,
+          "title": "(C106) [Kocho Kocho Koukou (Bonten)] Beauti \"Gal\" Life 3 [Chinese] [40P個人漢化]",
+          "titleJpn": null,
+          "order": 3.0,
+          "category": "main",
+          "branch": "main"
+        },
+        {
+          "gid": 3714883,
+          "title": "(C106) [Kocho Kocho Koukou (Bonten)] Beauti \"Gal\" Life 3 | 辣妹生活3 [Chinese] [考古学家个人汉化]",
+          "titleJpn": null,
+          "order": 3.0,
+          "category": "main",
+          "branch": "main"
+        }
+      ]
+    },
+    {
+      "status": "suspected",
+      "label": "疑缺首篇",
+      "series": "Lycoris no Ecchi na Hon（MAD CAPSULE (Tsumiki)）",
+      "reason": "疑缺首篇：当前库有明确后续编号，未见可可靠对应的第1篇／前篇；按题名判断，可能存在尚未识别的译名。",
+      "members": [
+        {
+          "gid": 3623732,
+          "title": "[MAD CAPSULE (Tsumiki)] Lycoris no Ecchi na Hon 6 (Lycoris Recoil) [Chinese] [Digital]",
+          "titleJpn": null,
+          "order": 6.0,
+          "category": "main",
+          "branch": "main"
+        },
+        {
+          "gid": 3613140,
+          "title": "(SC2025 Summer) [MAD CAPSULE (Tsumiki)] Lycoris no Ecchi na Hon 7 (Lycoris Recoil) [Chinese] [RATKING機翻]",
+          "titleJpn": null,
+          "order": 7.0,
+          "category": "main",
+          "branch": "main"
+        },
+        {
+          "gid": 3942477,
+          "title": "(COMIC1☆28) [MAD CAPSULE (Tsumiki)] Lycoris no Ecchi na Hon 11 (Lycoris Recoil) [RATKING機翻] [Chinese] [RATKING機翻]",
+          "titleJpn": null,
+          "order": 11.0,
+          "category": "main",
+          "branch": "main"
+        }
+      ]
+    },
+    {
+      "status": "suspected",
+      "label": "疑缺首篇",
+      "series": "Ochinpo Baka ni Natta Uchi no Okaa-san（Mama no Nioi）",
+      "reason": "疑缺首篇：当前库有明确后续编号，未见可可靠对应的第1篇／前篇；按题名判断，可能存在尚未识别的译名。",
+      "members": [
+        {
+          "gid": 2036997,
+          "title": "[Mama no Nioi] Ochinpo Baka ni Natta Uchi no Okaa-san 2 [Chinese] [爱弹幕汉化组]",
+          "titleJpn": null,
+          "order": 2.0,
+          "category": "main",
+          "branch": "main"
+        },
+        {
+          "gid": 2051392,
+          "title": "[Mama no Nioi] Ochinpo Baka ni Natta Uchi no Okaa-san 3 [Chinese] [爱弹幕汉化组]",
+          "titleJpn": null,
+          "order": 3.0,
+          "category": "main",
+          "branch": "main"
+        }
+      ]
+    },
+    {
+      "status": "suspected",
+      "label": "疑缺首篇",
+      "series": "Nicchoku wa Micro Bikini de 2 ~Sukebe na Kakko de Seishori Katsudou~（Mandara Ryuuseigun (Signo Mandara)）",
+      "reason": "疑缺首篇：当前库有明确后续编号，未见可可靠对应的第1篇／前篇；按题名判断，可能存在尚未识别的译名。",
+      "members": [
+        {
+          "gid": 2899061,
+          "title": "[Mandara Ryuuseigun (Signo Mandara)] Nicchoku wa Micro Bikini de 2 ~Sukebe na Kakko de Seishori Katsudou~ (Chinese) [葱鱼个人汉化] [Digital]",
+          "titleJpn": null,
+          "order": 2.0,
+          "category": "main",
+          "branch": "main"
+        },
+        {
+          "gid": 3446606,
+          "title": "[Mandara Ryuuseigun (Signo Mandara)] Nitchoku wa Micro Bikini de 3 ~Sukebe na Kakko de Seishori Katsudou~ [Chinese] [非秋鱼个人机翻汉化]",
+          "titleJpn": null,
+          "order": 3.0,
+          "category": "main",
+          "branch": "main"
+        }
+      ]
+    },
+    {
+      "status": "suspected",
+      "label": "疑缺首篇",
+      "series": "Akogare no Oba o Netoru 2 Kazoku o Miokutta Genkan de Mesuochi Shuuchi Play（Milf Shobou）",
+      "reason": "疑缺首篇：当前库有明确后续编号，未见可可靠对应的第1篇／前篇；按题名判断，可能存在尚未识别的译名。",
+      "members": [
+        {
+          "gid": 3804475,
+          "title": "[Milf Shobou] Akogare no Oba o Netoru 2 Kazoku o Miokutta Genkan de Mesuochi Shuuchi Play [Chinese]",
+          "titleJpn": null,
+          "order": 2.0,
+          "category": "main",
+          "branch": "main"
+        },
+        {
+          "gid": 4082937,
+          "title": "[Milf Shobou] oba manami huuhu no sinsitu de douzinnAV satuei sa reru akogare no oba wo netoru3 [Chinese]",
+          "titleJpn": null,
+          "order": 3.0,
+          "category": "main",
+          "branch": "main"
+        }
+      ]
+    },
+    {
+      "status": "suspected",
+      "label": "疑缺首篇",
+      "series": "Kachou Souma Souko Step（Mizuryu Kei）",
+      "reason": "疑缺首篇：当前库有明确后续编号，未见可可靠对应的第1篇／前篇；按题名判断，可能存在尚未识别的译名。",
+      "members": [
+        {
+          "gid": 4087606,
+          "title": "[Mizuryu Kei] Kachou Souma Souko Step 4 (COMIC HOTMILK 2026-08) [Chinese] [Digital]",
+          "titleJpn": "[水龍敬] 課長槍間繰子 STEP4 (コミックホットミルク 2026年8月号) [中国翻訳] [DL版]",
+          "order": 4.0,
+          "category": "main",
+          "branch": "main"
+        },
+        {
+          "gid": 4063769,
+          "title": "[Mizuryu Kei] Kachou Souma Souko Step 4 (COMIC HOTMILK 2026-08) [Chinese] [古月个人汉化] [Digital]",
+          "titleJpn": "[水龍敬] 課長 槍間繰子 STEP4 (コミックホットミルク 2026年8月号) [中国翻訳] [DL版]",
+          "order": 4.0,
+          "category": "main",
+          "branch": "main"
+        }
+      ]
+    },
+    {
+      "status": "suspected",
+      "label": "疑缺首篇",
+      "series": "變態黑髮醬與永遠當路人的我②（Morimiyakan (Morimiya Masayuki)）",
+      "reason": "疑缺首篇：当前库有明确后续编号，未见可可靠对应的第1篇／前篇；按题名判断，可能存在尚未识别的译名。",
+      "members": [
+        {
+          "gid": 3547046,
+          "title": "[Morimiyakan (Morimiya Masayuki)] Hentai Kurokami-chan to Shougai Mob no Boku 2 | 變態黑髮醬與永遠當路人的我② [Chinese] [Digital]",
+          "titleJpn": null,
+          "order": 2.0,
+          "category": "main",
+          "branch": "main"
+        },
+        {
+          "gid": 3705125,
+          "title": "[Morimiyakan (Morimiya Masayuki)] Hentai Kurokami-chan to Shougai Mob no Boku 3 [Chinese] [XY个人翻译] [Digital]",
+          "titleJpn": null,
+          "order": 3.0,
+          "category": "main",
+          "branch": "main"
+        }
+      ]
+    },
+    {
+      "status": "suspected",
+      "label": "疑缺首篇",
+      "series": "触手什麼的我怎麼會輸!（Naminori Navy (ebinavy)）",
+      "reason": "疑缺首篇：当前库有明确后续编号，未见可可靠对应的第1篇／前篇；按题名判断，可能存在尚未识别的译名。",
+      "members": [
+        {
+          "gid": 3246532,
+          "title": "[Naminori Navy (ebinavy)] Shokushu Nanka ni Makenai! 2 | 触手什麼的我怎麼會輸! 2 [Chinese] [Digital]",
+          "titleJpn": null,
+          "order": 2.0,
+          "category": "main",
+          "branch": "main"
+        },
+        {
+          "gid": 3246531,
+          "title": "[Naminori Navy (ebinavy)] Shokushu Nanka ni Makenai! Side:S | 触手什麼的我怎麼會輸! Side:S [Chinese] [Digital]",
+          "titleJpn": null,
+          "order": null,
+          "category": "extra",
+          "branch": "SideS"
+        }
+      ]
+    },
+    {
+      "status": "suspected",
+      "label": "疑缺首篇",
+      "series": "Aisai, Doui no Ue, Netorare 4 ~Iwashita-ke no Haha~（NT Labo (NT Robo)）",
+      "reason": "疑缺首篇：当前库有明确后续编号，未见可可靠对应的第1篇／前篇；按题名判断，可能存在尚未识别的译名。",
+      "members": [
+        {
+          "gid": 1593765,
+          "title": "[NT Labo (NT Robo)] Aisai, Doui no Ue, Netorare 4 ~Iwashita-ke no Haha~ [Chinese]",
+          "titleJpn": "[NTラボ (NTロボ)] 愛妻、同意の上、寢取られ4～岩下家の母～ [中国翻訳]",
+          "order": 4.0,
+          "category": "main",
+          "branch": "main"
+        },
+        {
+          "gid": 1888908,
+          "title": "[NT Labo (NT Robo)] Aisai, Doui no Ue, Netorare 4 ~Iwashita-ke no Haha~ [Chinese] [新桥月白日语社汉化]",
+          "titleJpn": null,
+          "order": 4.0,
+          "category": "main",
+          "branch": "main"
+        },
+        {
+          "gid": 2283002,
+          "title": "[NT Robo] Aisai, Doui no Ue, Netorare 6 ~Tsuma Kurumi Keiken Ninzuu 90-nin~ [Chinese] [一只麻利的鸽子汉化]",
+          "titleJpn": null,
+          "order": 6.0,
+          "category": "main",
+          "branch": "main"
+        }
+      ]
+    },
+    {
+      "status": "suspected",
+      "label": "疑缺首篇",
+      "series": "全员支配，怀孕适龄大奶美人被大叔宝宝托卵中（Panic america）",
+      "reason": "疑缺首篇：当前库有明确后续编号，未见可可靠对应的第1篇／前篇；按题名判断，可能存在尚未识别的译名。",
+      "members": [
+        {
+          "gid": 3427711,
+          "title": "[Panic america] 【催●app】全员支配，怀孕适龄大奶美人被大叔宝宝托卵中3[Chinese] [个人机翻润色] [AI Generated]",
+          "titleJpn": "催●アプリで全員支配、妊娠適齢デカ乳美人おじさん赤ちゃん托卵中3",
+          "order": 3.0,
+          "category": "main",
+          "branch": "main"
+        },
+        {
+          "gid": 3655441,
+          "title": "[Panic america] 【催●app】催●アプリで全員支配、妊娠適齢デカ乳美人おじさん赤ちゃん托卵中4 [AI Generated] [Chinese] [MacTL個人翻譯]",
+          "titleJpn": null,
+          "order": 4.0,
+          "category": "main",
+          "branch": "main"
+        },
+        {
+          "gid": 3659002,
+          "title": "[Panic america] 【催●app】Saimin appde jein shihai ninshin tekirei dekachichi bijin ojisan akachang takuranchuu 5 [AI Generated][Chinese] [MacTL個人翻譯]",
+          "titleJpn": null,
+          "order": 5.0,
+          "category": "main",
+          "branch": "main"
+        },
+        {
+          "gid": 3715585,
+          "title": "[Panic america] 催●APP全員支配、懷孕適齡巨乳美女中年大叔嬰兒托卵中7[AI Generated][Chinese][機翻]",
+          "titleJpn": null,
+          "order": 7.0,
+          "category": "main",
+          "branch": "main"
+        },
+        {
+          "gid": 3657737,
+          "title": "[パニックアメリカ]催●アプリで全員支配、妊娠適齢デカ乳美人おじさん赤ちゃん托卵中6(A.I 生成)个人AI汉化 [AI Generated]",
+          "titleJpn": null,
+          "order": 6.0,
+          "category": "main",
+          "branch": "main"
+        }
+      ]
+    },
+    {
+      "status": "suspected",
+      "label": "疑缺首篇",
+      "series": "Kore, Haha desu.（Puppukupu (Kawaisaw)）",
+      "reason": "疑缺首篇：当前库有明确后续编号，未见可可靠对应的第1篇／前篇；按题名判断，可能存在尚未识别的译名。",
+      "members": [
+        {
+          "gid": 2783105,
+          "title": "[Puppukupu (Kawaisaw)] Kore, Haha desu. 3 [Chinese] [空気系☆漢化] [Digital]",
+          "titleJpn": null,
+          "order": 3.0,
+          "category": "main",
+          "branch": "main"
+        },
+        {
+          "gid": 3551663,
+          "title": "[Puppukupu (Kawaisaw)] Kore, Haha desu. 3 [Chinese] [space6ar]",
+          "titleJpn": null,
+          "order": 3.0,
+          "category": "main",
+          "branch": "main"
+        }
+      ]
+    },
+    {
+      "status": "suspected",
+      "label": "疑缺首篇",
+      "series": "Mahou Shoujo Saimin PakopaCause 2.5 Nekketsu Shidou Hen（Ranshi to Kimi to. (santa)）",
+      "reason": "疑缺首篇：当前库有明确后续编号，未见可可靠对应的第1篇／前篇；按题名判断，可能存在尚未识别的译名。",
+      "members": [
+        {
+          "gid": 1271500,
+          "title": "(C94) [Ranshi to Kimi to. (santa)] Mahou Shoujo Saimin PakopaCause 2.5 Nekketsu Shidou Hen (Fate/Grand Order) [Chinese] [無毒漢化組]",
+          "titleJpn": null,
+          "order": 2.5,
+          "category": "main",
+          "branch": "main"
+        },
+        {
+          "gid": 1270172,
+          "title": "(C94) [Ranshi to Kimi to. (santa)] Mahou Shoujo Saimin PakopaCause 2.9 Seisei Doudou Sanban Shoubu Hen (Fate/kaleid liner Prisma Illya, Fate/Grand Order) [Chinese] [无毒汉化组]",
+          "titleJpn": null,
+          "order": 2.9,
+          "category": "main",
+          "branch": "main"
+        },
+        {
+          "gid": 1347955,
+          "title": "(C95) [Ranshi to Kimi to. (santa)] Mahou Shoujo Saimin PakopaCause 3 (Fate/Grand Order, Fate/kaleid liner Prisma Illya) [Chinese] [无毒汉化组]",
+          "titleJpn": null,
+          "order": 3.0,
+          "category": "main",
+          "branch": "main"
+        }
+      ]
+    },
+    {
+      "status": "suspected",
+      "label": "疑缺首篇",
+      "series": "Oushun Jogakuen no Danyuu（Riku no Kotoutei (Shayo)）",
+      "reason": "疑缺首篇：当前库有明确后续编号，未见可可靠对应的第1篇／前篇；按题名判断，可能存在尚未识别的译名。",
+      "members": [
+        {
+          "gid": 3185369,
+          "title": "(C105) [Riku no Kotoutei (Shayo)] Oushun Jogakuen no Danyuu 3 [Digital] [黑锅汉化组]",
+          "titleJpn": null,
+          "order": 3.0,
+          "category": "main",
+          "branch": "main"
+        },
+        {
+          "gid": 3799830,
+          "title": "[Riku no Kotoutei (Shayo)] Oushun Jogakuen no Danyuu 4 | 我在櫻春女學院的祕密身分4 [Chinese] [Decensored] [Digital]",
+          "titleJpn": "[陸の孤島亭 (しゃよー)] 桜春女学院の男優4 [中国翻訳] [無修正] [DL版]",
+          "order": 4.0,
+          "category": "main",
+          "branch": "main"
+        }
+      ]
+    },
+    {
+      "status": "suspected",
+      "label": "疑缺首篇",
+      "series": "Futanari Kyokon Channel wa Dekachin Boshuuchuu（Rosetta Stone (Teterun)）",
+      "reason": "疑缺首篇：当前库有明确后续编号，未见可可靠对应的第1篇／前篇；按题名判断，可能存在尚未识别的译名。",
+      "members": [
+        {
+          "gid": 3593181,
+          "title": "[Rosetta Stone (Teterun)] Futanari Kyokon Channel wa Dekachin Boshuuchuu 3 [Chinese] [苍蓝星汉化组] [Digital]",
+          "titleJpn": null,
+          "order": 3.0,
+          "category": "main",
+          "branch": "main"
+        },
+        {
+          "gid": 3955539,
+          "title": "[Rosetta Stone (Teterun)] Futanari Kyokon Channel wa Dekachin Boshuuchuu 4 | 扶她巨根频道的巨根大征集【4】 [Chinese] [退役苍蓝星汉化组] [Digital]",
+          "titleJpn": "",
+          "order": 4.0,
+          "category": "main",
+          "branch": "main"
+        }
+      ]
+    },
+    {
+      "status": "suspected",
+      "label": "疑缺首篇",
+      "series": "全灭强奸派对（sad.co (Sadokko)）",
+      "reason": "疑缺首篇：当前库有明确后续编号，未见可可靠对应的第1篇／前篇；按题名判断，可能存在尚未识别的译名。",
+      "members": [
+        {
+          "gid": 1428653,
+          "title": "[sad.co (Sadokko)] Zenmetsu Party Rape 2 | 全灭强奸派对2 (Goblin Slayer) [Chinese] [不咕鸟×这很恶堕汉化组]",
+          "titleJpn": "[sad.co (さどっこ)] 全滅パーティーレイプ2 (ゴブリンスレイヤー) [中国翻訳]",
+          "order": 2.0,
+          "category": "main",
+          "branch": "main"
+        },
+        {
+          "gid": 1466708,
+          "title": "[sad.co (Sadokko)] Zenmetsu Party Rape 3 | 全灭强奸派对3 (Goblin Slayer) [Chinese] [不咕鸟×这很恶堕汉化组]",
+          "titleJpn": null,
+          "order": 3.0,
+          "category": "main",
+          "branch": "main"
+        },
+        {
+          "gid": 1588383,
+          "title": "[sad.co (Sadokko)] Zenmetsu Party Rape 4 -FINAL- (Goblin Slayer) [Chinese] [不咕鸟x这很恶堕汉化组]",
+          "titleJpn": null,
+          "order": 4.0,
+          "category": "main",
+          "branch": "main"
+        }
+      ]
+    },
+    {
+      "status": "suspected",
+      "label": "疑缺首篇",
+      "series": "只要做爱 就能提升等级（Seika Kairaku Shoten (Kumakko)）",
+      "reason": "疑缺首篇：当前库有明确后续编号，未见可可靠对应的第1篇／前篇；按题名判断，可能存在尚未识别的译名。",
+      "members": [
+        {
+          "gid": 4080318,
+          "title": "[Seika Kairaku Shoten (Kumakko)] Sex Leveling 2 ～Miryo Skill de NTR o Shikakete Kita Gravure Idol ni Gachibore Sarete Dekiai JK to Issho ni Harem 3P Suru Hanashi～ | 只要做爱 就能提升等级 2 [Chinese] [欶澜汉化组] [Digital]",
+          "titleJpn": null,
+          "order": 2.0,
+          "category": "main",
+          "branch": "main"
+        },
+        {
+          "gid": 4080309,
+          "title": "[Seika Kairaku Shoten (Kumakko)] Sex Leveling 3 ~Bijin Shachou to Dungeon Tansaku ni Ittara Zenmetsu shisou ni Natta node Sex de Norikoeru Hanashi~ | 我做爱升级~和美女社长一同探索地牢却濒临团灭，遂以做爱破局~ [Chinese] [白杨汉化组] [Digital]",
+          "titleJpn": null,
+          "order": 3.0,
+          "category": "main",
+          "branch": "main"
+        }
+      ]
+    },
+    {
+      "status": "suspected",
+      "label": "疑缺首篇",
+      "series": "H na Fuushuu ga Aru Inaka no Shinseki ga, Zenin Sukebe Sugiru Hanashi.（Shin Hijiridou Honpo (Hijiri Tsukasa)）",
+      "reason": "疑缺首篇：当前库有明确后续编号，未见可可靠对应的第1篇／前篇；按题名判断，可能存在尚未识别的译名。",
+      "members": [
+        {
+          "gid": 3643234,
+          "title": "[Shin Hijiridou Honpo (Hijiri Tsukasa)] H na Fuushuu ga Aru Inaka no Shinseki ga, Zenin Sukebe Sugiru Hanashi. 2 [Chinese] [XY个人翻译] [Digital]",
+          "titleJpn": null,
+          "order": 2.0,
+          "category": "main",
+          "branch": "main"
+        },
+        {
+          "gid": 3695879,
+          "title": "[Shin Hijiridou Honpo (Hijiri Tsukasa)] H na Fuushuu ga Aru Inaka no Shinseki ga, Zenin Sukebe Sugiru Hanashi. 2 | 擁有H風俗的老家的親戚全都太過色情的故事。 [Chinese] [Digital]",
+          "titleJpn": null,
+          "order": 2.0,
+          "category": "main",
+          "branch": "main"
+        }
+      ]
+    },
+    {
+      "status": "suspected",
+      "label": "疑缺首篇",
+      "series": "孤獨的路人5 優等生穿著體操服攻過來了（Shoot The Moon (Fuetakishi)）",
+      "reason": "疑缺首篇：当前库有明确后续编号，未见可可靠对应的第1篇／前篇；按题名判断，可能存在尚未识别的译名。",
+      "members": [
+        {
+          "gid": 3276350,
+          "title": "[Shoot The Moon (Fuetakishi)] Bocchi no Mob 5 Yuutousei ga Bloomer de Semete Kita | 孤獨的路人5 優等生穿著體操服攻過來了 [Chinese]",
+          "titleJpn": null,
+          "order": 5.0,
+          "category": "main",
+          "branch": "main"
+        },
+        {
+          "gid": 3658168,
+          "title": "[Shoot The Moon (Fuetakishi)] Bocchi no Mob Bonyuusai [Chinese] [Digital]",
+          "titleJpn": null,
+          "order": null,
+          "category": "extra",
+          "branch": "main"
+        }
+      ]
+    },
+    {
+      "status": "suspected",
+      "label": "疑缺首篇",
+      "series": "Snow3d - Secret Agent vs homeless man",
+      "reason": "疑缺首篇：当前库有明确后续编号，未见可可靠对应的第1篇／前篇；按题名判断，可能存在尚未识别的译名。",
+      "members": [
+        {
+          "gid": 3430970,
+          "title": "Snow3d - Secret Agent vs homeless man 10",
+          "titleJpn": null,
+          "order": 10.0,
+          "category": "main",
+          "branch": "main"
+        },
+        {
+          "gid": 3430974,
+          "title": "Snow3d - Secret Agent vs homeless man 11",
+          "titleJpn": "",
+          "order": 11.0,
+          "category": "main",
+          "branch": "main"
+        },
+        {
+          "gid": 3421534,
+          "title": "[Snow3d]艾达王与乞丐12",
+          "titleJpn": "",
+          "order": 12.0,
+          "category": "main",
+          "branch": "main"
+        }
+      ]
+    },
+    {
+      "status": "suspected",
+      "label": "疑缺首篇",
+      "series": "Hontou ni Ita! Jikan Teishi Oji-san（Spicy Loves Heaven (Kamita)）",
+      "reason": "疑缺首篇：最早明确编号为1.5，未见1；1.5可能是补篇，不能将它改号成第1篇。",
+      "members": [
+        {
+          "gid": 2528500,
+          "title": "(C101) [Spicy Loves Heaven (Kamita)] Hontou ni Ita! Jikan Teishi Oji-san 1.5 [Chinese] [士战工打个人汉化]",
+          "titleJpn": null,
+          "order": 1.5,
+          "category": "main",
+          "branch": "main"
+        },
+        {
+          "gid": 2891965,
+          "title": "(C103) [Spicy Loves Heaven (Kamita)] Hontou ni Ita!! Jikan Teishi Oji-san 2 [Chinese] [团子翻译器&gpt3.5]",
+          "titleJpn": null,
+          "order": 2.0,
+          "category": "main",
+          "branch": "main"
+        },
+        {
+          "gid": 3281185,
+          "title": "(C105) [Spicy Loves Heaven (Kamita)] Hontou ni Ita!! Jikan Teishi Oji-san 3 [Chinese]",
+          "titleJpn": null,
+          "order": 3.0,
+          "category": "main",
+          "branch": "main"
+        },
+        {
+          "gid": 3591955,
+          "title": "[Spicy Loves Heaven (Kamita)] Hontou ni Ita!! Jikan Teishi Oji-san 4 | 居然真的存在!!能让时间停止的大叔4 [Chinese] [欶澜汉化组] [Digital]",
+          "titleJpn": "[スパイシーラブスヘブン (かみ田)] 本当にいた!!時間停止おじさん4 [中国翻訳] [DL版]",
+          "order": 4.0,
+          "category": "main",
+          "branch": "main"
+        },
+        {
+          "gid": 4080289,
+          "title": "[Spicy Loves Heaven (Kamita)] Hontou ni Ita!! Jikan Teishi Oji-san 5 | 居然真的存在！时间停止大叔5 [Chinese] [蓝枫个人翻译] [Digital]",
+          "titleJpn": "[スパイシーラブスヘブン (かみ田)] 本当にいた！！時間停止おじさん 5 [中国翻訳] [DL版]",
+          "order": 5.0,
+          "category": "main",
+          "branch": "main"
+        }
+      ]
+    },
+    {
+      "status": "suspected",
+      "label": "疑缺首篇",
+      "series": "Chinhoko Matsuri Ni Jimoto no Hen na Matsuri de Toshiotokoteki Nano ni Erabareta（Tearontaron）",
+      "reason": "疑缺首篇：当前库有明确后续编号，未见可可靠对应的第1篇／前篇；按题名判断，可能存在尚未识别的译名。",
+      "members": [
+        {
+          "gid": 4191677,
+          "title": "[Tearontaron] Chinbou Matsuri 3 Jimoto no Henna Matsuri de Toshiotoko Teki na no ni Erabareta [Chinese] [Digital]",
+          "titleJpn": null,
+          "order": 3.0,
+          "category": "main",
+          "branch": "main"
+        },
+        {
+          "gid": 4191701,
+          "title": "[Tearontaron] Chinbou Matsuri 4 Jimoto no Hen na Matsuri de Toshiotoko Teki na no ni Erabareta [Chinese] [Digital]",
+          "titleJpn": "[てぃーろんたろん] 鎮矛祭り 四 地元の変な祭りで年男的なのに選ばれた [中国翻訳] [DL版]",
+          "order": 4.0,
+          "category": "main",
+          "branch": "main"
+        }
+      ]
+    },
+    {
+      "status": "suspected",
+      "label": "疑缺首篇",
+      "series": "Kazoku Ryokou wa Yarimoku Beach de Sex Zanmai 3 ~Okaa-san Hen~（Tiramisu Tart (Kazuhiro)）",
+      "reason": "疑缺首篇：当前库有明确后续编号，未见可可靠对应的第1篇／前篇；按题名判断，可能存在尚未识别的译名。",
+      "members": [
+        {
+          "gid": 2769840,
+          "title": "[Tiramisu Tart (Kazuhiro)] Kazoku Ryokou wa Yarimoku Beach de Sex Zanmai 3 ~Okaa-san Hen~ [Chinese] [cqxl自己汉化] [Digital]",
+          "titleJpn": null,
+          "order": 3.0,
+          "category": "main",
+          "branch": "main"
+        },
+        {
+          "gid": 3535139,
+          "title": "[Tiramisu Tart (Kazuhiro)] Kazoku Ryokou wa Yarimoku Beach de Sex Zanmai ~Kazoku-minna Hen~ [Chinese] [古月个人汉化]",
+          "titleJpn": null,
+          "order": null,
+          "category": "main",
+          "branch": "全家篇"
+        }
+      ]
+    },
+    {
+      "status": "suspected",
+      "label": "疑缺首篇",
+      "series": "Yuusha-sama wa Houshuu ni Hitozuma o Gokibou desu - The hero wants a married woman as a reward（Tooyama Burin）",
+      "reason": "疑缺首篇：当前库有明确后续编号，未见可可靠对应的第1篇／前篇；按题名判断，可能存在尚未识别的译名。",
+      "members": [
+        {
+          "gid": 3009301,
+          "title": "[Tooyama Burin] Yuusha-sama wa Houshuu ni Hitozuma o Gokibou desu - The hero wants a married woman as a reward 3 [Chinese] [風度翩翩醜漢化] [Digital]",
+          "titleJpn": null,
+          "order": 3.0,
+          "category": "main",
+          "branch": "main"
+        },
+        {
+          "gid": 3220461,
+          "title": "[Tooyama Burin] Yuusha-sama wa Houshuu ni Hitozuma wo go Kibou desu volume 5 [大哥大姐新年好漢化]",
+          "titleJpn": "[遠山ブリン] 勇者さまは報酬に人妻をご希望です 5卷 [Chinese]",
+          "order": 5.0,
+          "category": "main",
+          "branch": "main"
+        },
+        {
+          "gid": 3281769,
+          "title": "[Tooyama Burin] Yuusha-sama wa Houshuu ni Hitozuma o Gokibou desu - The hero wants a married woman as a reward 6 [Chinese] [我不當太刀俠了漢化] [Digital]",
+          "titleJpn": null,
+          "order": 6.0,
+          "category": "main",
+          "branch": "main"
+        }
+      ]
+    },
+    {
+      "status": "suspected",
+      "label": "疑缺首篇",
+      "series": "Boku no Oba-san Kansatsu Kiroku（Toshiue Onee-san Tengoku (Azuma Makoto)）",
+      "reason": "疑缺首篇：当前库有明确后续编号，未见可可靠对应的第1篇／前篇；按题名判断，可能存在尚未识别的译名。",
+      "members": [
+        {
+          "gid": 2763686,
+          "title": "[Toshiue Onee-san Tengoku (Azuma Makoto)] Boku no Oba-san Kansatsu Kiroku 2 [Chinese]",
+          "titleJpn": null,
+          "order": 2.0,
+          "category": "main",
+          "branch": "main"
+        },
+        {
+          "gid": 3584713,
+          "title": "[Toshiue Onee-san Tengoku (Azuma Makoto)] Boku no Oba-san Kansatsu Kiroku 3 [Chinese]",
+          "titleJpn": null,
+          "order": 3.0,
+          "category": "main",
+          "branch": "main"
+        }
+      ]
+    },
+    {
+      "status": "suspected",
+      "label": "疑缺首篇",
+      "series": "Vanishing Reality 2 ~Mashou Zessei~（Vpan's EXTASY (Satou Kuuki)）",
+      "reason": "疑缺首篇：当前库有明确后续编号，未见可可靠对应的第1篇／前篇；按题名判断，可能存在尚未识别的译名。",
+      "members": [
+        {
+          "gid": 3545461,
+          "title": "[Vpan's EXTASY (Satou Kuuki)] Vanishing Reality 2 ~Mashou Zessei~ [Chinese] [Decensored] [Digital]",
+          "titleJpn": null,
+          "order": 2.0,
+          "category": "main",
+          "branch": "main"
+        },
+        {
+          "gid": 4126863,
+          "title": "[Vpan's EXTASY (Satou Kuuki)] Vanishing Reality 5 ~Succubus Application~ [Chinese] [DiamondDogs] [Digital]",
+          "titleJpn": null,
+          "order": 5.0,
+          "category": "main",
+          "branch": "main"
+        }
+      ]
+    },
+    {
+      "status": "suspected",
+      "label": "疑缺首篇",
+      "series": "Zentou Mask Seiyoku Slave Hitozuma ○○-san（Yuugengaisha Mach Spin (Drill Jill)）",
+      "reason": "疑缺首篇：当前库有明确后续编号，未见可可靠对应的第1篇／前篇；按题名判断，可能存在尚未识别的译名。",
+      "members": [
+        {
+          "gid": 2242610,
+          "title": "[Yuugengaisha Mach Spin (Drill Jill)] Zentou Mask Seiyoku Slave Hitozuma ○○-san 02 [Chinese] [转尾巴猫汉化]",
+          "titleJpn": null,
+          "order": 2.0,
+          "category": "main",
+          "branch": "main"
+        },
+        {
+          "gid": 2258717,
+          "title": "[Yuugengaisha Mach Spin (Drill Jill)] Zentou Mask Seiyoku Slave Hitozuma ○○-san 03 [Chinese] [转尾巴猫汉化]",
+          "titleJpn": null,
+          "order": 3.0,
+          "category": "main",
+          "branch": "main"
+        },
+        {
+          "gid": 2401369,
+          "title": "[Yuugengaisha Mach Spin (Drill Jill)] Zentou Mask Seiyoku Slave Hitozuma ○○-san 04 [Chinese] [不咕鸟汉化组]",
+          "titleJpn": "[有限会社マッハスピン (ドリル汁)] 全頭マスク性欲スレイブ人妻○○さん04 [中国翻訳]",
+          "order": 4.0,
+          "category": "main",
+          "branch": "main"
+        },
+        {
+          "gid": 3122815,
+          "title": "[Yuugengaisha Mach Spin (Drill Jill)] Zentou Mask Seiyoku Slave Hitozuma ○○-san 05 [Chinese] [爱撕鸡膜汉化]",
+          "titleJpn": "[有限会社マッハスピン (ドリル汁)] 全頭マスク性欲スレイブ人妻○○さん05 [中国翻訳]",
+          "order": 5.0,
+          "category": "main",
+          "branch": "main"
+        }
+      ]
+    },
+    {
+      "status": "suspected",
+      "label": "疑缺首篇",
+      "series": "Sinful Lust - Lizana And The Homeless（Zetto）",
+      "reason": "疑缺首篇：当前库有明确后续编号，未见可可靠对应的第1篇／前篇；按题名判断，可能存在尚未识别的译名。",
+      "members": [
+        {
+          "gid": 3779091,
+          "title": "[Zetto] Sinful Lust - Lizana And The Homeless Chapter 4 [Chinese] (個人中文機翻)",
+          "titleJpn": null,
+          "order": 4.0,
+          "category": "main",
+          "branch": "main"
+        },
+        {
+          "gid": 3694973,
+          "title": "[Zetto] Sinful Lust 5 [Chinese] (個人中文機翻)",
+          "titleJpn": "",
+          "order": 5.0,
+          "category": "main",
+          "branch": "main"
+        },
+        {
+          "gid": 3569894,
+          "title": "[Zetto] Sinful Lust Special 3 [NO Stockings][Jill个人翻译]",
+          "titleJpn": null,
+          "order": 3.0,
+          "category": "extra",
+          "branch": "main"
+        },
+        {
+          "gid": 4017044,
+          "title": "[Zetto] Sinful Lust - Lizana And The Homeless 6 [Chinese] (個人中文機翻) ( # 粪便警告 # )",
+          "titleJpn": null,
+          "order": 6,
+          "category": "main",
+          "branch": "main"
+        }
+      ]
+    },
+    {
+      "status": "suspected",
+      "label": "疑缺首篇",
+      "series": "退魔士カグヤ（Crimson）",
+      "reason": "疑缺首篇：当前库有明确后续编号，未见可可靠对应的第1篇／前篇；按题名判断，可能存在尚未识别的译名。",
+      "members": [
+        {
+          "gid": 3603605,
+          "title": "[クリムゾン] 退魔士カグヤ極8 ルートA 完全調教編[廉价汉化组]",
+          "titleJpn": null,
+          "order": 8.0,
+          "category": "main",
+          "branch": "极A线"
+        },
+        {
+          "gid": 3913801,
+          "title": "クリムゾン Crimson comic【退魔士辉夜-辱if】【退魔士カグヤ-辱if】【随风个人汉化】",
+          "titleJpn": null,
+          "order": null,
+          "category": "extra",
+          "branch": "辱IF"
+        }
+      ]
+    },
+    {
+      "status": "suspected",
+      "label": "疑缺首篇",
+      "series": "Hahaue mo Mesu Orc（Hitsuji Kikaku (Muneshiro)）",
+      "reason": "疑缺首篇：当前库有明确后续编号，未见可可靠对应的第1篇／前篇；按题名判断，可能存在尚未识别的译名。",
+      "members": [
+        {
+          "gid": 3215386,
+          "title": "(C105) [Hitsuji Kikaku (Muneshiro)] Hahaue mo Mesu Orc 3 [Chinese] [不咕鸟汉化组]",
+          "titleJpn": null,
+          "order": 3.0,
+          "category": "main",
+          "branch": "main"
+        },
+        {
+          "gid": 3577783,
+          "title": "[ヒツジ企画 (むねしろ)] ハハウエモメスオーク4 [DL版]",
+          "titleJpn": null,
+          "order": 4.0,
+          "category": "main",
+          "branch": "main"
+        }
+      ]
+    },
+    {
+      "status": "suspected",
+      "label": "疑缺首篇",
+      "series": "屌啦A梦之触摸任意门（见人就打）",
+      "reason": "疑缺首篇：当前库有明确后续编号，未见可可靠对应的第1篇／前篇；按题名判断，可能存在尚未识别的译名。",
+      "members": [
+        {
+          "gid": 3201082,
+          "title": "[见人就打] 屌啦A梦之触摸任意门 2",
+          "titleJpn": "",
+          "order": 2.0,
+          "category": "main",
+          "branch": "main"
+        },
+        {
+          "gid": 3661089,
+          "title": "[夏/见人就打] 屌啦A梦之触摸任意门 3",
+          "titleJpn": null,
+          "order": 3.0,
+          "category": "main",
+          "branch": "main"
+        }
+      ]
+    },
+    {
+      "status": "suspected",
+      "label": "疑缺首篇",
+      "series": "妈妈成了家里保姆儿媳妇（见人就打）",
+      "reason": "疑缺首篇：当前库有明确后续编号，未见可可靠对应的第1篇／前篇；按题名判断，可能存在尚未识别的译名。",
+      "members": [
+        {
+          "gid": 3293250,
+          "title": "[见人就打] 妈妈成了家里保姆儿媳妇 10(无反杀)",
+          "titleJpn": "",
+          "order": 10.0,
+          "category": "main",
+          "branch": "main"
+        },
+        {
+          "gid": 3416651,
+          "title": "[见人就打]妈妈成了家里保姆儿媳妇 12 无反杀",
+          "titleJpn": "",
+          "order": 12.0,
+          "category": "main",
+          "branch": "main"
+        }
+      ]
+    },
+    {
+      "status": "suspected",
+      "label": "疑缺首篇",
+      "series": "搾精病棟～在只有惡劣性格的護士存在的醫院裡度過的射精管理生活～新手護士篇（Kameyama Shiruko）",
+      "reason": "疑缺首篇（连载分支）：当前连载下载为第六章后篇至第九章前篇；新手护士篇为另一分支，不能补作连载第1章。",
+      "members": [
+        {
+          "gid": 3840706,
+          "title": "[Kameyama Shiruko] Sakusei Byoutou ~Seikaku Saiaku no Nurse shika Inai Byouin de Shasei Kanri Seikatsu~ Wakate Nurse Hen | 搾精病棟～在只有惡劣性格的護士存在的醫院裡度過的射精管理生活～新手護士篇 [Chinese] [忘川個人漢化]",
+          "titleJpn": null,
+          "order": null,
+          "category": "main",
+          "branch": "新手篇"
+        },
+        {
+          "gid": 3357437,
+          "title": "[Sakusei Kenkyuujo/Kameyama Shiruko] Sakusei Byoutou ~Seikaku Saiaku no Nurse shika Inai Byouin de Shasei Kanri Seikatsu~ | 搾精病棟～在只有惡劣性格的護士存在的醫院裡度過的射精管理生活～第六章 後篇~第九章 前篇 [Chinese] [禁漫漢化組]",
+          "titleJpn": null,
+          "order": null,
+          "category": "main",
+          "branch": "连载篇"
+        }
+      ]
+    },
+    {
+      "status": "suspected",
+      "label": "疑缺首篇",
+      "series": "不受欢迎的我怎么可能拒绝得了这种诱惑啊（Yurutto Pocket / Untue）",
+      "reason": "疑缺首篇：当前库有明确后续编号，未见可可靠对应的第1篇／前篇；按题名判断，可能存在尚未识别的译名。",
+      "members": [
+        {
+          "gid": 3988614,
+          "title": "[Yurutto Pocket (Untue)] Himote no Boku ni Konna Sasoi Kotowareru Hazu ga Nai 2 | 不受欢迎的我怎么可能拒绝得了这种诱惑啊 2 [Chinese] [白杨汉化组] [Digital]",
+          "titleJpn": "[ゆるっとポケット (ウンツエ)] 非モテの僕にこんな誘い断れるはずがない 2 [中国翻訳] [DL版]",
+          "order": 2,
+          "category": "main",
+          "branch": "main"
+        },
+        {
+          "gid": 4205681,
+          "title": "[Yurutto Pocket (Untue)] Himote no Boku ni Konna Sasoi Kotowareru Hazu ga Nai 3 | 不受欢迎的我怎么可能拒绝得了这种诱惑啊 3 [Chinese] [白杨汉化组] [Digital]",
+          "titleJpn": null,
+          "order": 3,
+          "category": "main",
+          "branch": "main"
+        }
+      ]
+    },
+    {
+      "status": "suspected",
+      "label": "疑缺首篇",
+      "series": "我是只會誕生陽痿的島上唯一的性豪（Anabuki Bouhatei）",
+      "reason": "疑缺首篇：当前库有明确后续编号，未见可可靠对应的第1篇／前篇；按题名判断，可能存在尚未识别的译名。",
+      "members": [
+        {
+          "gid": 3924876,
+          "title": "[Anabuki Bouhatei] ED Shika Umarenai Shima de Yuiitsu no Zetsurin 2 | 我是只會誕生陽痿的島上唯一的性豪2 [Chinese] [Amerins漢化]",
+          "titleJpn": null,
+          "order": 2,
+          "category": "main",
+          "branch": "main"
+        },
+        {
+          "gid": 4198835,
+          "title": "[Anabuki Bouhatei] ED Shika Umarenai Shima de Yuiitsu no Zetsurin 3 | 我是只會誕生陽痿的島上唯一的性豪3 [Chinese] [Amerins漢化]",
+          "titleJpn": null,
+          "order": 3,
+          "category": "main",
+          "branch": "main"
+        }
+      ]
+    },
+    {
+      "status": "collection",
+      "label": "合集待核",
+      "series": "Enjo Kouhai（Athome Shuka (Takunomi)）",
+      "reason": "合集待核：正篇见14，并有总集篇1、2、3；总集篇编号不是正篇章号，未核目录，不能断言首篇缺失。",
+      "members": [
+        {
+          "gid": 3568707,
+          "title": "[Athome Shuka (Takunomi)] Enjo Kouhai 14 [Chinese] [Digital]",
+          "titleJpn": "[アットホーム酒家 (たくのみ)] 援助交配14 [中国翻訳] [DL版]",
+          "order": 14.0,
+          "category": "main",
+          "branch": "main"
+        },
+        {
+          "gid": 3145485,
+          "title": "[Athome Shuka (Takunomi)] Enjo Kouhai Soushuuhen 1 [Chinese] [Decensored] [Digital]",
+          "titleJpn": "[アットホーム酒家 (たくのみ)] 援助交配 総集編 1 [中国翻訳] [無修正] [DL版]",
+          "order": 1.0,
+          "category": "collection",
+          "branch": "main"
+        },
+        {
+          "gid": 2486173,
+          "title": "[Athome Shuka (Takunomi)] Enjo Kouhai Soushuuhen 2 [Chinese] [Decensored] [Digital]",
+          "titleJpn": "[アットホーム酒家 (たくのみ)] 援助交配総集編 2 [中国翻訳] [無修正] [DL版]",
+          "order": 2.0,
+          "category": "collection",
+          "branch": "main"
+        },
+        {
+          "gid": 3145258,
+          "title": "[Athome Shuka (Takunomi)] Enjo Kouhai Soushuuhen 3 [Chinese] [Decensored] [Digital]",
+          "titleJpn": null,
+          "order": 3.0,
+          "category": "collection",
+          "branch": "main"
+        }
+      ]
+    },
+    {
+      "status": "collection",
+      "label": "合集待核",
+      "series": "Rental Tanetsuke Ojisan 7 ~Yokkyuu Fuman no Hitozuma wa Jitaku de mo Tanetsuke Ojisan to no Uwaki Sex ni Hamerare Nukedasenai~（Himeya (Abe Inori)）",
+      "reason": "合集待核：正篇见7，并有未注明收录范围的 Collection；可能已有早期章节。",
+      "members": [
+        {
+          "gid": 2934090,
+          "title": "[Himeya (Abe Inori)] Rental Tanetsuke Ojisan 7 ~Yokkyuu Fuman no Hitozuma wa Jitaku de mo Tanetsuke Ojisan to no Uwaki Sex ni Hamerare Nukedasenai~ [Chinese] [不咕鸟汉化组]",
+          "titleJpn": "[姫屋 (阿部いのり)] レンタル種付けおじさん7〜欲求不満の人妻は自宅でも種付けおじさんとの浮気セックスにハメられ抜け出せない〜 [中国翻訳]",
+          "order": 7.0,
+          "category": "main",
+          "branch": "main"
+        },
+        {
+          "gid": 2896713,
+          "title": "[Himeya (Abe Inori)] Rental Tanetsuke Ojisan Collection [Chinese]",
+          "titleJpn": "[姫屋 (阿部いのり)] レンタル種付けおじさん 合集 [中国翻訳]",
+          "order": null,
+          "category": "collection",
+          "branch": "main"
+        }
+      ]
+    },
+    {
+      "status": "collection",
+      "label": "合集待核",
+      "series": "不檢點的姐姐們~ 3話（Iapoc）",
+      "reason": "合集待核：见第3话与同题未编号整本；未核目录，不能断言缺首篇。",
+      "members": [
+        {
+          "gid": 2365013,
+          "title": "[Iapoc] DA RA SHI NA SISTER Ch. 3 | 不檢點的姐姐們~ 3話 (COMIC ExE 39) [Chinese] [正义的月亮个人汉化] [Digital]",
+          "titleJpn": "[IAPOC] だらしな シスター 3話 (コミック エグゼ 39) [中国翻訳] [DL版]",
+          "order": 3.0,
+          "category": "main",
+          "branch": "main"
+        },
+        {
+          "gid": 3335775,
+          "title": "[IAPOC] だらしなシスター",
+          "titleJpn": "",
+          "order": null,
+          "category": "collection",
+          "branch": "main"
+        }
+      ]
+    },
+    {
+      "status": "numbering",
+      "label": "编号待核",
+      "series": "Kyou no Misako-san 2025-A（Kill the King）",
+      "reason": "编号待核：Request 支线见2–4；暑假篇用年份／字母，OutStory 又是独立分支，编号体系不同。",
+      "members": [
+        {
+          "gid": 3707807,
+          "title": "[Kill the King] Kyou no Misako-san (haruhiko kun no natuyasu mi) 2025-A [chinese]",
+          "titleJpn": null,
+          "order": null,
+          "category": "main",
+          "branch": "暑假篇"
+        },
+        {
+          "gid": 3707844,
+          "title": "[Kill the King] Kyou no Misako-san (haruhiko kun no natuyasu mi) 2025-B [chinese]",
+          "titleJpn": "[きるきん] 今日の美沙子さん (晴彦君の夏休み) 2025-B [中国翻訳]",
+          "order": null,
+          "category": "main",
+          "branch": "暑假篇"
+        },
+        {
+          "gid": 3569468,
+          "title": "[Kill the King] Kyou no Misako-san Request project 2 [Chinese] [憂狸非專業漢化]",
+          "titleJpn": null,
+          "order": 2.0,
+          "category": "main",
+          "branch": "Request"
+        },
+        {
+          "gid": 3569609,
+          "title": "[Kill the King] Kyou no Misako-san Request project 3 [Chinese] [憂狸非專業漢化]",
+          "titleJpn": null,
+          "order": 3.0,
+          "category": "main",
+          "branch": "Request"
+        },
+        {
+          "gid": 3569629,
+          "title": "[Kill the King] Kyou no Misako-san Request project 4 [Chinese] [憂狸非專業漢化]",
+          "titleJpn": null,
+          "order": 4.0,
+          "category": "main",
+          "branch": "Request"
+        },
+        {
+          "gid": 2232644,
+          "title": "[Kill the King] Kyou no Misako-san 2019：OutStory2(Chinese)",
+          "titleJpn": null,
+          "order": null,
+          "category": "extra",
+          "branch": "OutStory"
+        }
+      ]
+    },
+    {
+      "status": "numbering",
+      "label": "编号待核",
+      "series": "Shiriana Benjo KaiNi（Kurogoma Seizou Koujou (Goma Gorilla)）",
+      "reason": "编号待核：改二／改三与李B线可能属于改版／分支，不能仅用2、3推定主线第1篇缺失。",
+      "members": [
+        {
+          "gid": 3593609,
+          "title": "[Kurogoma Seizou Koujou (Goma Gorilla)] Shiriana Benjo KaiNi [Chinese] [rej6个人汉化]",
+          "titleJpn": null,
+          "order": 2.0,
+          "category": "main",
+          "branch": "main"
+        },
+        {
+          "gid": 4077984,
+          "title": "[Kurogoma Seizou Koujou (Goma Gorilla)] Shiriana Benjo Kaisan [Chinese] [Decensored]",
+          "titleJpn": null,
+          "order": 3.0,
+          "category": "main",
+          "branch": "main"
+        },
+        {
+          "gid": 3830766,
+          "title": "[Kurogoma Seizou Koujou (Goma Gorilla)] Shiriana Benjo Lee √B [Chinese]",
+          "titleJpn": "[黒ごま製造工場 (ごまゴリラ)] 尻穴便女 李 √B [中国翻訳]",
+          "order": null,
+          "category": "main",
+          "branch": "李B线"
+        }
+      ]
+    },
+    {
+      "status": "collection",
+      "label": "合集待核",
+      "series": "Inran Shounen（Jairou / Kozi）",
+      "reason": "合集待核：卷6只标人物介绍，另有同系列总集篇；首卷与完整正篇的覆盖范围无法从题名确定。",
+      "members": [
+        {
+          "gid": 4236242,
+          "title": "[Inran Shounen, Shinsei Frontier (Shinsei Lolishota) (Jairou, Kozi)] Inran Shounen Nazo no Bitch Shota to Ossan no Monogatari Vol. 6 [Digital] [古月个人汉化]人物介绍",
+          "titleJpn": null,
+          "order": 6,
+          "category": "other",
+          "branch": "main"
+        },
+        {
+          "gid": 3242425,
+          "title": "[Inran Shounen, Shinsei Frontier (Shinsei Lolishota) (Jairou, Kozi)] Inran Shounen Soushuuhen ~Ojisan to Bitch na Shota Tachi no Subete~ [Digital]【汉化整合】",
+          "titleJpn": "[淫乱少年、新生フロンティア (ジャイロウ、Kozi)] 淫乱少年総集編〜おじさんとビッチなショタ達の全て〜 [DL版] 中国翻译",
+          "order": null,
+          "category": "collection",
+          "branch": "main"
+        }
+      ]
+    },
+    {
+      "status": "suspected",
+      "label": "疑缺首篇",
+      "series": "Dungeon Travelers - Their Secret - BADend 4（Tiba-Santi (Misuke)）",
+      "reason": "疑缺首篇：题名明确有后续编号／续篇标记，当前库未见可可靠对应的首篇。此为题名线索，非作品页或内容核实。 同作者 BADend 2／4 的「二人的秘密」与「皆的秘密」题名不同，关系待核，分别保留。",
+      "members": [
+        {
+          "gid": 4237162,
+          "title": "[Tiba-Santi (Misuke)] Dungeon Travelers - Their Secret - BADend 4 [Chinese] [zxc5623汉化] [Decensored] [Digital]",
+          "titleJpn": "[千葉産地 (ミー助)] ダンジョントラベラーズ 皆の秘め事 BADend4 (トゥハート2 ダンジョントラベラーズ) [中国翻訳] [無修正] [DL版]",
+          "order": null,
+          "category": "main",
+          "branch": "main"
+        }
+      ]
+    },
+    {
+      "status": "suspected",
+      "label": "疑缺首篇",
+      "series": "Enka Boots no Manga 2 \"Kuro Gal Bondage\"（Enka Boots）",
+      "reason": "疑缺首篇：题名明确有后续编号／续篇标记，当前库未见可可靠对应的首篇。此为题名线索，非作品页或内容核实。",
+      "members": [
+        {
+          "gid": 4238152,
+          "title": "[Enka Boots] Enka Boots no Manga 2 \"Kuro Gal Bondage\" [Chinese] [BH汉化] [AI Generated]",
+          "titleJpn": null,
+          "order": null,
+          "category": "main",
+          "branch": "main"
+        }
+      ]
+    },
+    {
+      "status": "suspected",
+      "label": "疑缺首篇",
+      "series": "Kasshoku Dekadeka Boyish! Nagisa-chan 3 Ninshin-chuu no Nagisa-chan no Kawari ni Goumou Nagisa Mama to Seishori Ecchi Hen | 褐色大碼Boyish風！小渚3 由剛毛的渚媽媽代替懷孕中的小渚進行性慾處理篇（Ishikarian (Maruyama Akira)）",
+      "reason": "疑缺首篇：题名明确有后续编号／续篇标记，当前库未见可可靠对应的首篇。此为题名线索，非作品页或内容核实。",
+      "members": [
+        {
+          "gid": 4216373,
+          "title": "[Ishikarian (Maruyama Akira)] Kasshoku Dekadeka Boyish! Nagisa-chan 3 Ninshin-chuu no Nagisa-chan no Kawari ni Goumou Nagisa Mama to Seishori Ecchi Hen | 褐色大碼Boyish風！小渚3 由剛毛的渚媽媽代替懷孕中的小渚進行性慾處理篇 [Chinese] [Decensored] [Digital]",
+          "titleJpn": null,
+          "order": null,
+          "category": "main",
+          "branch": "main"
+        }
+      ]
+    },
+    {
+      "status": "suspected",
+      "label": "疑缺首篇",
+      "series": "Papa no Shinshitsu wa Musume Tomodachi no Tamariba 5 -Ninshin Houkoku Hen- - Daddy's bedroom is a hangout for my daughter's friends | 和朋友在寢室內盡情玩耍5—懷孕報告篇—（Kisei Toukyoku (Richard Bahman)）",
+      "reason": "疑缺首篇：题名明确有后续编号／续篇标记，当前库未见可可靠对应的首篇。此为题名线索，非作品页或内容核实。",
+      "members": [
+        {
+          "gid": 4202764,
+          "title": "[Kisei Toukyoku (Richard Bahman)] Papa no Shinshitsu wa Musume Tomodachi no Tamariba 5 -Ninshin Houkoku Hen- - Daddy's bedroom is a hangout for my daughter's friends | 和朋友在寢室內盡情玩耍5—懷孕報告篇— [Chinese] [Decensored] [Digital]",
+          "titleJpn": "[規制当局 (リヒャルト・バフマン)] パパの寝室は娘友達のたまり場5 ―妊娠報告編― [中国翻訳] [無修正] [DL版]",
+          "order": null,
+          "category": "main",
+          "branch": "main"
+        }
+      ]
+    },
+    {
+      "status": "suspected",
+      "label": "疑缺首篇",
+      "series": "我强势的妻子今天也正被BBC睡走2（むち妻）",
+      "reason": "疑缺首篇：题名明确有后续编号／续篇标记，当前库未见可可靠对应的首篇。此为题名线索，非作品页或内容核实。",
+      "members": [
+        {
+          "gid": 4230169,
+          "title": "[むち妻][muchitsuma] 我强势的妻子今天也正被BBC睡走2 [Chinese] [AI Generated]",
+          "titleJpn": "[むち妻][muchitsuma] 僕の強気な妻は今日もBBCに寝取られている2 [Chinese] [AI Generated]",
+          "order": null,
+          "category": "main",
+          "branch": "main"
+        }
+      ]
+    },
+    {
+      "status": "suspected",
+      "label": "疑缺首篇",
+      "series": "黒ギャルママさん孕ませっくす 最終話（大嶋亮）",
+      "reason": "疑缺首篇：当前仅见后篇／下篇／最终话标记，未见可对应的前篇；不猜测具体章号。",
+      "members": [
+        {
+          "gid": 4203755,
+          "title": "[大嶋亮] 黒ギャルママさん孕ませっくす 最終話 [流木个人汉化]",
+          "titleJpn": "[大嶋亮] 黒ギャルママさん孕ませっくす 最終話 [流木个人汉化]",
+          "order": null,
+          "category": "main",
+          "branch": "main"
+        }
+      ]
+    },
+    {
+      "status": "suspected",
+      "label": "疑缺首篇",
+      "series": "私ノオマ○コハ皆ノモノ2 (机翻)（ONEONE1）",
+      "reason": "疑缺首篇：题名明确有后续编号／续篇标记，当前库未见可可靠对应的首篇。此为题名线索，非作品页或内容核实。",
+      "members": [
+        {
+          "gid": 3976823,
+          "title": "(同人誌) [ONEONE1] 私ノオマ○コハ皆ノモノ2 (机翻)",
+          "titleJpn": "(同人誌) [ONEONE1] 私ノオマ○コハ皆ノモノ2 (机翻)",
+          "order": null,
+          "category": "main",
+          "branch": "main"
+        }
+      ]
+    },
+    {
+      "status": "suspected",
+      "label": "疑缺首篇",
+      "series": "SNS de Otoko dato Omotteita Aite ga Buaisou dakedo Sukihoudai Yarasetekureru Se no Takai Onna datta Hanashi 2（Kurihara Kenshirou）",
+      "reason": "疑缺首篇：题名明确有后续编号／续篇标记，当前库未见可可靠对应的首篇。此为题名线索，非作品页或内容核实。",
+      "members": [
+        {
+          "gid": 4222083,
+          "title": "[Kurihara Kenshirou] SNS de Otoko dato Omotteita Aite ga Buaisou dakedo Sukihoudai Yarasetekureru Se no Takai Onna datta Hanashi 2 [Chinese]",
+          "titleJpn": "[栗原ケンシロウ] SNSで男だと思っていた相手が 不愛想だけど好き放題ヤらせてくれる 背の高い女だった話 2 [中国翻訳]",
+          "order": null,
+          "category": "main",
+          "branch": "main"
+        }
+      ]
+    },
+    {
+      "status": "suspected",
+      "label": "疑缺首篇",
+      "series": "40-sai Doutei ga Mahoutsukai ni Natta Ken 2 ｜40歲處男變成魔法師這件事 2（Kokusan JK (Velzhe)）",
+      "reason": "疑缺首篇：题名明确有后续编号／续篇标记，当前库未见可可靠对应的首篇。此为题名线索，非作品页或内容核实。",
+      "members": [
+        {
+          "gid": 4208132,
+          "title": "(C97) [Kokusan JK (Velzhe)] 40-sai Doutei ga Mahoutsukai ni Natta Ken 2 ｜40歲處男變成魔法師這件事 2 [Chinese] [uwuAI翻譯]",
+          "titleJpn": null,
+          "order": null,
+          "category": "main",
+          "branch": "main"
+        }
+      ]
+    },
+    {
+      "status": "suspected",
+      "label": "疑缺首篇",
+      "series": "Karaoke Tenin no Uragawa 3 ~Namaiki Arbeit Kekkai~（LESSER PANTS (Retsu)）",
+      "reason": "疑缺首篇：题名明确有后续编号／续篇标记，当前库未见可可靠对应的首篇。此为题名线索，非作品页或内容核实。",
+      "members": [
+        {
+          "gid": 4168518,
+          "title": "[LESSER PANTS (Retsu)] Karaoke Tenin no Uragawa 3 ~Namaiki Arbeit Kekkai~ [Chinese] [Digital]",
+          "titleJpn": null,
+          "order": null,
+          "category": "main",
+          "branch": "main"
+        }
+      ]
+    },
+    {
+      "status": "suspected",
+      "label": "疑缺首篇",
+      "series": "Omoide wa Yogosareru 2.5 ｜ 回忆被玷污 2.5（Touketsu Shamen (Touketsu)）",
+      "reason": "疑缺首篇：题名明确有后续编号／续篇标记，当前库未见可可靠对应的首篇。此为题名线索，非作品页或内容核实。",
+      "members": [
+        {
+          "gid": 4104065,
+          "title": "[Touketsu Shamen (Touketsu)] Omoide wa Yogosareru 2.5 ｜ 回忆被玷污 2.5 [Chinese] [Morgan@clovers studio]",
+          "titleJpn": "[トウケツ斜面 (トウケツ)] 思い出は汚される 2.5 [中国翻訳]",
+          "order": null,
+          "category": "main",
+          "branch": "main"
+        }
+      ]
+    },
+    {
+      "status": "suspected",
+      "label": "疑缺首篇",
+      "series": "YGO学院系列(12)-让嚣张的百合骑士雌小鬼们屈服于快感吧！（斩机 圆武）",
+      "reason": "疑缺首篇：题名明确有后续编号／续篇标记，当前库未见可可靠对应的首篇。此为题名线索，非作品页或内容核实。",
+      "members": [
+        {
+          "gid": 4095904,
+          "title": "[斩机 圆武] YGO学院系列(12)-让嚣张的百合骑士雌小鬼们屈服于快感吧！ [AI Generated]",
+          "titleJpn": "",
+          "order": null,
+          "category": "main",
+          "branch": "main"
+        }
+      ]
+    },
+    {
+      "status": "suspected",
+      "label": "疑缺首篇",
+      "series": "Boshi Jouji 2 ~Daisuki na Musukoni Konyamo Dakareru~（Shiono kou）",
+      "reason": "疑缺首篇：题名明确有后续编号／续篇标记，当前库未见可可靠对应的首篇。此为题名线索，非作品页或内容核实。",
+      "members": [
+        {
+          "gid": 4061279,
+          "title": "[Shiono kou] Boshi Jouji 2 ~Daisuki na Musukoni Konyamo Dakareru~ [Chinese]",
+          "titleJpn": null,
+          "order": null,
+          "category": "main",
+          "branch": "main"
+        }
+      ]
+    },
+    {
+      "status": "suspected",
+      "label": "疑缺首篇",
+      "series": "Totsuzen Ane ga Dekita Hanashi 4（Oshima Aki）",
+      "reason": "疑缺首篇：题名明确有后续编号／续篇标记，当前库未见可可靠对应的首篇。此为题名线索，非作品页或内容核实。",
+      "members": [
+        {
+          "gid": 4080385,
+          "title": "[Oshima Aki] Totsuzen Ane ga Dekita Hanashi 4 [Chinese]",
+          "titleJpn": "[大島あき] 突然姉ができた話4 [中国翻訳]",
+          "order": null,
+          "category": "main",
+          "branch": "main"
+        }
+      ]
+    },
+    {
+      "status": "suspected",
+      "label": "疑缺首篇",
+      "series": "Kaa-san Datte Onna Nandayo! 6",
+      "reason": "疑缺首篇：题名明确有后续编号／续篇标记，当前库未见可可靠对应的首篇。此为题名线索，非作品页或内容核实。",
+      "members": [
+        {
+          "gid": 4086288,
+          "title": "Kaa-san Datte Onna Nandayo! 6 [Chinese] [宇宙田协]",
+          "titleJpn": "母さんだって女なんだよ！6 [中国翻訳]",
+          "order": null,
+          "category": "main",
+          "branch": "main"
+        }
+      ]
+    },
+    {
+      "status": "suspected",
+      "label": "疑缺首篇",
+      "series": "Kuppuku 3 ~Fuuki Iinchou wa Motomerarete Dokusensarete...~（Zenjidou Shimoneta Seizou Machine (Chinetsu)）",
+      "reason": "疑缺首篇：题名明确有后续编号／续篇标记，当前库未见可可靠对应的首篇。此为题名线索，非作品页或内容核实。",
+      "members": [
+        {
+          "gid": 4084645,
+          "title": "[Zenjidou Shimoneta Seizou Machine (Chinetsu)] Kuppuku 3 ~Fuuki Iinchou wa Motomerarete Dokusensarete...~[Chinese]",
+          "titleJpn": null,
+          "order": null,
+          "category": "main",
+          "branch": "main"
+        }
+      ]
+    },
+    {
+      "status": "suspected",
+      "label": "疑缺首篇",
+      "series": "NTR甜心岛-雪江篇 Day 7-2（点点滴滴灬）",
+      "reason": "疑缺首篇：题名明确有后续编号／续篇标记，当前库未见可可靠对应的首篇。此为题名线索，非作品页或内容核实。",
+      "members": [
+        {
+          "gid": 4083217,
+          "title": "[点点滴滴灬] NTR甜心岛-雪江篇 Day 7-2",
+          "titleJpn": null,
+          "order": null,
+          "category": "main",
+          "branch": "main"
+        }
+      ]
+    },
+    {
+      "status": "suspected",
+      "label": "疑缺首篇",
+      "series": "Zoku Tonari no Wakaba-san（Kohakutei (Sakai Hamachi)）",
+      "reason": "疑缺首篇：题名明确有后续编号／续篇标记，当前库未见可可靠对应的首篇。此为题名线索，非作品页或内容核实。",
+      "members": [
+        {
+          "gid": 4079582,
+          "title": "[Kohakutei (Sakai Hamachi)] Zoku Tonari no Wakaba-san [Chinese] [Digital]",
+          "titleJpn": null,
+          "order": null,
+          "category": "main",
+          "branch": "main"
+        }
+      ]
+    },
+    {
+      "status": "suspected",
+      "label": "疑缺首篇",
+      "series": "Ashita Mata Taiiku Souko de 2 -Koukai Dappun Onanie Hen-（Komickers (Kurei Daisuke)）",
+      "reason": "疑缺首篇：题名明确有后续编号／续篇标记，当前库未见可可靠对应的首篇。此为题名线索，非作品页或内容核实。",
+      "members": [
+        {
+          "gid": 4082312,
+          "title": "[Komickers (Kurei Daisuke)] Ashita Mata Taiiku Souko de 2 -Koukai Dappun Onanie Hen-[Chinese] [zph233个人ai汉化][Digital]",
+          "titleJpn": "[Komickers (暮井大助)] 明日また体育倉庫で2 -公開脱糞オナニー編-[中国翻訳][DL版]",
+          "order": null,
+          "category": "main",
+          "branch": "main"
+        }
+      ]
+    },
+    {
+      "status": "suspected",
+      "label": "疑缺首篇",
+      "series": "Yama no Susume no Erohon 3 Yama no Mesu to Zatsu ni Koubi suru Hon | 和登山母狗随便交配的本本 (Yama no Susume)（Kagimushi (Kagimushi)）",
+      "reason": "疑缺首篇：题名明确有后续编号／续篇标记，当前库未见可可靠对应的首篇。此为题名线索，非作品页或内容核实。",
+      "members": [
+        {
+          "gid": 4073585,
+          "title": "[Kagimushi (Kagimushi)] Yama no Susume no Erohon 3 Yama no Mesu to Zatsu ni Koubi suru Hon | 和登山母狗随便交配的本本 (Yama no Susume) [Chinese] [百破汉化] [Digital]",
+          "titleJpn": "[かぎむし (かぎむし)] ヤマノススメのえろほん3 ヤマノメスと雑に交尾する本 (ヤマノススメ) [中国翻訳] [DL版]",
+          "order": null,
+          "category": "main",
+          "branch": "main"
+        }
+      ]
+    },
+    {
+      "status": "suspected",
+      "label": "疑缺首篇",
+      "series": "主动献身的爱宕2",
+      "reason": "疑缺首篇：题名明确有后续编号／续篇标记，当前库未见可可靠对应的首篇。此为题名线索，非作品页或内容核实。",
+      "members": [
+        {
+          "gid": 4077604,
+          "title": "主动献身的爱宕2[xx笑笑生个人机翻]",
+          "titleJpn": null,
+          "order": null,
+          "category": "main",
+          "branch": "main"
+        }
+      ]
+    },
+    {
+      "status": "suspected",
+      "label": "疑缺首篇",
+      "series": "Unique Job \"Tanetsuke Oji-san\" o Kakutoku shimashita 17 | 特殊職業【種付大叔】已獲得 17（pastime774）",
+      "reason": "疑缺首篇：题名明确有后续编号／续篇标记，当前库未见可可靠对应的首篇。此为题名线索，非作品页或内容核实。",
+      "members": [
+        {
+          "gid": 3338918,
+          "title": "[pastime774] Unique Job \"Tanetsuke Oji-san\" o Kakutoku shimashita 17 | 特殊職業【種付大叔】已獲得 17 [Chinese]",
+          "titleJpn": "[pastime774] ユニークジョブ【種付けおじさん】を獲得しました 17 [中国翻訳]",
+          "order": null,
+          "category": "main",
+          "branch": "main"
+        }
+      ]
+    },
+    {
+      "status": "suspected",
+      "label": "疑缺首篇",
+      "series": "Seishori Gimuka Sekai Ch. 9 (COMIC GEE vol.39)（Tawara Hiryuu）",
+      "reason": "疑缺首篇：题名明确有后续编号／续篇标记，当前库未见可可靠对应的首篇。此为题名线索，非作品页或内容核实。",
+      "members": [
+        {
+          "gid": 3730639,
+          "title": "[Tawara Hiryuu] Seishori Gimuka Sekai Ch. 9 (COMIC GEE vol.39) [Chinese] [zhuke渣翻]",
+          "titleJpn": null,
+          "order": null,
+          "category": "main",
+          "branch": "main"
+        }
+      ]
+    },
+    {
+      "status": "suspected",
+      "label": "疑缺首篇",
+      "series": "Manbiki Shounen to Part no Hitozuma 3（takaya (Fukuhara Takaya)）",
+      "reason": "疑缺首篇：题名明确有后续编号／续篇标记，当前库未见可可靠对应的首篇。此为题名线索，非作品页或内容核实。",
+      "members": [
+        {
+          "gid": 3268511,
+          "title": "[takaya (Fukuhara Takaya)] Manbiki Shounen to Part no Hitozuma 3 [Chinese]",
+          "titleJpn": "[takaya (福原たかや)] 万引き少年とパートの人妻 3 [中国翻訳]",
+          "order": null,
+          "category": "main",
+          "branch": "main"
+        }
+      ]
+    },
+    {
+      "status": "suspected",
+      "label": "疑缺首篇",
+      "series": "Inmon ~Kaa-san wa Onahole~ Sono 7 (Kaa-san wa Onahole)（SINK）",
+      "reason": "疑缺首篇：题名明确有后续编号／续篇标记，当前库未见可可靠对应的首篇。此为题名线索，非作品页或内容核实。",
+      "members": [
+        {
+          "gid": 3125000,
+          "title": "[SINK] Inmon ~Kaa-san wa Onahole~ Sono 7 (Kaa-san wa Onahole) [Chinese] [流木个人汉化] [Digital]",
+          "titleJpn": "[SINK] 婬悶 〜母さんはオナホール〜 その7 (母さんはオナホール) [中国翻訳] [DL版]",
+          "order": null,
+          "category": "main",
+          "branch": "main"
+        }
+      ]
+    },
+    {
+      "status": "suspected",
+      "label": "疑缺首篇",
+      "series": "沉沦的妈妈柳淑10 番外",
+      "reason": "疑缺首篇：题名明确有后续编号／续篇标记，当前库未见可可靠对应的首篇。此为题名线索，非作品页或内容核实。",
+      "members": [
+        {
+          "gid": 3186692,
+          "title": "沉沦的妈妈柳淑10 番外",
+          "titleJpn": "",
+          "order": null,
+          "category": "main",
+          "branch": "main"
+        }
+      ]
+    },
+    {
+      "status": "suspected",
+      "label": "疑缺首篇",
+      "series": "Imouto Haramasenai to Derarenai Shima 2 | 不让妹妹怀孕就无法离开的小岛2（Airandou）",
+      "reason": "疑缺首篇：题名明确有后续编号／续篇标记，当前库未见可可靠对应的首篇。此为题名线索，非作品页或内容核实。",
+      "members": [
+        {
+          "gid": 3973997,
+          "title": "[Airandou] Imouto Haramasenai to Derarenai Shima 2 | 不让妹妹怀孕就无法离开的小岛2 [Chinese] [欶澜汉化组]",
+          "titleJpn": null,
+          "order": null,
+          "category": "main",
+          "branch": "main"
+        }
+      ]
+    },
+    {
+      "status": "suspected",
+      "label": "疑缺首篇",
+      "series": "Shiri de Onna o Miwakeru Ore wa Onna Joushi no Yowami o Nigiru 2 (COMIC X-EROS #127)（Eco Heeky）",
+      "reason": "疑缺首篇：题名明确有后续编号／续篇标记，当前库未见可可靠对应的首篇。此为题名线索，非作品页或内容核实。",
+      "members": [
+        {
+          "gid": 3525918,
+          "title": "[Eco Heeky] Shiri de Onna o Miwakeru Ore wa Onna Joushi no Yowami o Nigiru 2 (COMIC X-EROS #127) [Digital][Chinese][Amerins漢化]",
+          "titleJpn": null,
+          "order": null,
+          "category": "main",
+          "branch": "main"
+        }
+      ]
+    },
+    {
+      "status": "suspected",
+      "label": "疑缺首篇",
+      "series": "Mesugaki Succubus Pandemic 2 ~Otoko o Hametsu ni Michibiku Isshuukan~（Seiheki Master）",
+      "reason": "疑缺首篇：题名明确有后续编号／续篇标记，当前库未见可可靠对应的首篇。此为题名线索，非作品页或内容核实。",
+      "members": [
+        {
+          "gid": 1863531,
+          "title": "[Seiheki Master] Mesugaki Succubus Pandemic 2 ~Otoko o Hametsu ni Michibiku Isshuukan~ [Chinese] [不可视汉化组]",
+          "titleJpn": null,
+          "order": null,
+          "category": "main",
+          "branch": "main"
+        }
+      ]
+    },
+    {
+      "status": "suspected",
+      "label": "疑缺首篇",
+      "series": "Futari no Himegoto BADend 2 (ToHeart2 Dungeon Travelers)（Tiba-Santi (Misuke)）",
+      "reason": "疑缺首篇：题名明确有后续编号／续篇标记，当前库未见可可靠对应的首篇。此为题名线索，非作品页或内容核实。 同作者 BADend 2／4 的「二人的秘密」与「皆的秘密」题名不同，关系待核，分别保留。",
+      "members": [
+        {
+          "gid": 3022174,
+          "title": "[Tiba-Santi (Misuke)] Futari no Himegoto BADend 2 (ToHeart2 Dungeon Travelers) [Chinese] [Digital]",
+          "titleJpn": null,
+          "order": null,
+          "category": "main",
+          "branch": "main"
+        }
+      ]
+    },
+    {
+      "status": "suspected",
+      "label": "疑缺首篇",
+      "series": "Fubuki 2 (23.11)（6no1）",
+      "reason": "疑缺首篇：题名明确有后续编号／续篇标记，当前库未见可可靠对应的首篇。此为题名线索，非作品页或内容核实。",
+      "members": [
+        {
+          "gid": 3089131,
+          "title": "[6no1] Fubuki 2 (23.11) [Chinese] [Uncensored] [路小茜个人汉化]",
+          "titleJpn": "",
+          "order": null,
+          "category": "main",
+          "branch": "main"
+        }
+      ]
+    },
+    {
+      "status": "suspected",
+      "label": "疑缺首篇",
+      "series": "Kawaii Shota ni wa Manko o Tsukeyo! 3 ~Oppai Misete Gaiden~ Super Sentou Hen（Airimiash (Rabu)）",
+      "reason": "疑缺首篇：题名明确有后续编号／续篇标记，当前库未见可可靠对应的首篇。此为题名线索，非作品页或内容核实。",
+      "members": [
+        {
+          "gid": 2377051,
+          "title": "[Airimiash (Rabu)] Kawaii Shota ni wa Manko o Tsukeyo! 3 ~Oppai Misete Gaiden~ Super Sentou Hen [Chinese] [异界小卖部出资汉化]",
+          "titleJpn": null,
+          "order": null,
+          "category": "main",
+          "branch": "main"
+        }
+      ]
+    },
+    {
+      "status": "suspected",
+      "label": "疑缺首篇",
+      "series": "人妻スパイとマフィアの息子3（水無月三日）",
+      "reason": "疑缺首篇：题名明确有后续编号／续篇标记，当前库未见可可靠对应的首篇。此为题名线索，非作品页或内容核实。",
+      "members": [
+        {
+          "gid": 3607940,
+          "title": "[水無月三日]人妻スパイとマフィアの息子3[中国翻译]",
+          "titleJpn": null,
+          "order": null,
+          "category": "main",
+          "branch": "main"
+        }
+      ]
+    },
+    {
+      "status": "suspected",
+      "label": "疑缺首篇",
+      "series": "Chuuto Nyuusha shite kita Ko ga Ore no Suki na Moto AV Joyuu datta 2（Kumanikotec (Kozakura Kumaneko)）",
+      "reason": "疑缺首篇：题名明确有后续编号／续篇标记，当前库未见可可靠对应的首篇。此为题名线索，非作品页或内容核实。",
+      "members": [
+        {
+          "gid": 3595947,
+          "title": "[Kumanikotec (Kozakura Kumaneko)] Chuuto Nyuusha shite kita Ko ga Ore no Suki na Moto AV Joyuu datta 2 [Chinese]",
+          "titleJpn": null,
+          "order": null,
+          "category": "main",
+          "branch": "main"
+        }
+      ]
+    },
+    {
+      "status": "suspected",
+      "label": "疑缺首篇",
+      "series": "Futanari Champion Kaoruga Karide Defeat Kelhazganai 3 | 扶她冠军狩出薰，绝不可能会输【3】（Rosetta Stone (Teterun)）",
+      "reason": "疑缺首篇：题名明确有后续编号／续篇标记，当前库未见可可靠对应的首篇。此为题名线索，非作品页或内容核实。",
+      "members": [
+        {
+          "gid": 3936142,
+          "title": "[Rosetta Stone (Teterun)] Futanari Champion Kaoruga Karide Defeat Kelhazganai 3 | 扶她冠军狩出薰，绝不可能会输【3】 [Chinese] [退役苍蓝星汉化组]",
+          "titleJpn": null,
+          "order": null,
+          "category": "main",
+          "branch": "main"
+        }
+      ]
+    },
+    {
+      "status": "suspected",
+      "label": "疑缺首篇",
+      "series": "\"23-seiki no Otona no Omochaya-san 2\" Ningen RadiCon de Akogare no Seito Kaichou o Piston-shiki Onahole ni Shitemita（Furitendou）",
+      "reason": "疑缺首篇：题名明确有后续编号／续篇标记，当前库未见可可靠对应的首篇。此为题名线索，非作品页或内容核实。",
+      "members": [
+        {
+          "gid": 2944407,
+          "title": "[Furitendou] \"23-seiki no Otona no Omochaya-san 2\" Ningen RadiCon de Akogare no Seito Kaichou o Piston-shiki Onahole ni Shitemita [Chinese] [影黑个人机翻]",
+          "titleJpn": null,
+          "order": null,
+          "category": "main",
+          "branch": "main"
+        }
+      ]
+    },
+    {
+      "status": "suspected",
+      "label": "疑缺首篇",
+      "series": "Bukkake Off Kai Sanka Kibou! 3|希望参加射爆聚会！3（Fuaku Yuu (Yufuck)）",
+      "reason": "疑缺首篇：题名明确有后续编号／续篇标记，当前库未见可可靠对应的首篇。此为题名线索，非作品页或内容核实。",
+      "members": [
+        {
+          "gid": 3362158,
+          "title": "[Fuaku Yuu (Yufuck)] Bukkake Off Kai Sanka Kibou! 3|希望参加射爆聚会！3[Chinese] [ai忍者翻译]",
+          "titleJpn": null,
+          "order": null,
+          "category": "main",
+          "branch": "main"
+        }
+      ]
+    },
+    {
+      "status": "suspected",
+      "label": "疑缺首篇",
+      "series": "Uchi no Kaa-chan no Doko ga Iinda yo!? Konna Babaa, Hoshikerya Kurete Yaru yo Kouhen（Kaientai (Shuten Douji)）",
+      "reason": "疑缺首篇：当前仅见后篇／下篇／最终话标记，未见可对应的前篇；不猜测具体章号。",
+      "members": [
+        {
+          "gid": 3924169,
+          "title": "[Kaientai (Shuten Douji)] Uchi no Kaa-chan no Doko ga Iinda yo!? Konna Babaa, Hoshikerya Kurete Yaru yo Kouhen [Chinese] [Digital]",
+          "titleJpn": null,
+          "order": null,
+          "category": "main",
+          "branch": "main"
+        }
+      ]
+    },
+    {
+      "status": "suspected",
+      "label": "疑缺首篇",
+      "series": "Kajitsu 8（Cior (Ken-1)）",
+      "reason": "疑缺首篇：题名明确有后续编号／续篇标记，当前库未见可可靠对应的首篇。此为题名线索，非作品页或内容核实。",
+      "members": [
+        {
+          "gid": 3853075,
+          "title": "[Cior (Ken-1)] Kajitsu 8 [Chinese] [Decensored] [Digital]",
+          "titleJpn": null,
+          "order": null,
+          "category": "main",
+          "branch": "main"
+        }
+      ]
+    },
+    {
+      "status": "suspected",
+      "label": "疑缺首篇",
+      "series": "Zukyoon Kiss nante Nakatta vol.2 | 一吻钟情什么的才没有呢 vol.2 (Kimi to Idol PreCure)（Jukusei Kakuzatou (sugarBt)）",
+      "reason": "疑缺首篇：题名明确有后续编号／续篇标记，当前库未见可可靠对应的首篇。此为题名线索，非作品页或内容核实。",
+      "members": [
+        {
+          "gid": 3777757,
+          "title": "(C107) [Jukusei Kakuzatou (sugarBt)] Zukyoon Kiss nante Nakatta vol.2 | 一吻钟情什么的才没有呢 vol.2 (Kimi to Idol PreCure) [Chinese] [锈楼莉月汉化]",
+          "titleJpn": null,
+          "order": null,
+          "category": "main",
+          "branch": "main"
+        }
+      ]
+    },
+    {
+      "status": "suspected",
+      "label": "疑缺首篇",
+      "series": "Hajimete no Dorei Keiyaku \"DomSub\" 2 ~Sukisuki Osananajimi no Aruji-sama ni Jinsei Bukkowashite Moraimasu~ | 第一次的奴隸契約2〜讓最最喜歡的青梅竹馬主人破壞掉自己的人生〜♥〜（Studio Diamond (Kakino Nashiko)）",
+      "reason": "疑缺首篇：题名明确有后续编号／续篇标记，当前库未见可可靠对应的首篇。此为题名线索，非作品页或内容核实。",
+      "members": [
+        {
+          "gid": 3916208,
+          "title": "[Studio Diamond (Kakino Nashiko)] Hajimete no Dorei Keiyaku \"DomSub\" 2 ~Sukisuki Osananajimi no Aruji-sama ni Jinsei Bukkowashite Moraimasu~ | 第一次的奴隸契約2〜讓最最喜歡的青梅竹馬主人破壞掉自己的人生〜♥〜 [Chinese] [Digital]",
+          "titleJpn": null,
+          "order": null,
+          "category": "main",
+          "branch": "main"
+        }
+      ]
+    },
+    {
+      "status": "suspected",
+      "label": "疑缺首篇",
+      "series": "Toriko no Haha 3 ~Hahatorare~（Nekohachi Eigyoubu (Neko Samurai)）",
+      "reason": "疑缺首篇：题名明确有后续编号／续篇标记，当前库未见可可靠对应的首篇。此为题名线索，非作品页或内容核实。",
+      "members": [
+        {
+          "gid": 3591176,
+          "title": "[Nekohachi Eigyoubu (Neko Samurai)] Toriko no Haha 3 ~Hahatorare~ [Chinese] [石莱姆汉化组]",
+          "titleJpn": null,
+          "order": null,
+          "category": "main",
+          "branch": "main"
+        }
+      ]
+    },
+    {
+      "status": "suspected",
+      "label": "疑缺首篇",
+      "series": "Love ja Nakereba Hame Houdai 2（electromonkey (Migihaji)）",
+      "reason": "疑缺首篇：题名明确有后续编号／续篇标记，当前库未见可可靠对应的首篇。此为题名线索，非作品页或内容核实。",
+      "members": [
+        {
+          "gid": 3911628,
+          "title": "[electromonkey (Migihaji)] Love ja Nakereba Hame Houdai 2 [Chinese] [空気系☆漢化] [Digital]",
+          "titleJpn": "[electromonkey (右端)] ラブじゃなければハメ放題2 [中国翻訳] [DL版]",
+          "order": null,
+          "category": "main",
+          "branch": "main"
+        }
+      ]
+    },
+    {
+      "status": "suspected",
+      "label": "疑缺首篇",
+      "series": "Kyouran no Toubatsu Hime Daria VI（Raid Sox (Tricky)）",
+      "reason": "疑缺首篇：题名明确有后续编号／续篇标记，当前库未见可可靠对应的首篇。此为题名线索，非作品页或内容核实。",
+      "members": [
+        {
+          "gid": 3908430,
+          "title": "[Raid Sox (Tricky)] Kyouran no Toubatsu Hime Daria VI [Chinese] [Digital]",
+          "titleJpn": "[レイドソックス] 狂乱の討伐姫ダリアVI [中国翻訳] [DL版]",
+          "order": null,
+          "category": "main",
+          "branch": "main"
+        }
+      ]
+    },
+    {
+      "status": "suspected",
+      "label": "疑缺首篇",
+      "series": "Hitozuma Sentai Ero Ranger Ch. 5 Yoru no Sakusen Kaigi (COMIC Kuriberon DUMA 2026-03 Vol. 83)（Ero no Teishokuya）",
+      "reason": "疑缺首篇：题名明确有后续编号／续篇标记，当前库未见可可靠对应的首篇。此为题名线索，非作品页或内容核实。",
+      "members": [
+        {
+          "gid": 3841629,
+          "title": "[Ero no Teishokuya] Hitozuma Sentai Ero Ranger Ch. 5 Yoru no Sakusen Kaigi (COMIC Kuriberon DUMA 2026-03 Vol. 83) [Chinese] [Digital]",
+          "titleJpn": null,
+          "order": null,
+          "category": "main",
+          "branch": "main"
+        }
+      ]
+    },
+    {
+      "status": "suspected",
+      "label": "疑缺首篇",
+      "series": "Rikujou-bu no Kanojo ga Akutoku Komon no Onaho ni Ochita Hi 2（Unian (Uni18)）",
+      "reason": "疑缺首篇：题名明确有后续编号／续篇标记，当前库未见可可靠对应的首篇。此为题名线索，非作品页或内容核实。",
+      "members": [
+        {
+          "gid": 3623121,
+          "title": "[Unian (Uni18)] Rikujou-bu no Kanojo ga Akutoku Komon no Onaho ni Ochita Hi 2 [Chinese] [小枫个人机翻润色]",
+          "titleJpn": null,
+          "order": null,
+          "category": "main",
+          "branch": "main"
+        }
+      ]
+    },
+    {
+      "status": "suspected",
+      "label": "疑缺首篇",
+      "series": "Milf Truck 5：Chichi & Gohan 【玛莎骑士汉化】（MoomooDairy）",
+      "reason": "疑缺首篇：题名明确有后续编号／续篇标记，当前库未见可可靠对应的首篇。此为题名线索，非作品页或内容核实。",
+      "members": [
+        {
+          "gid": 3892113,
+          "title": "[MoomooDairy] Milf Truck 5：Chichi & Gohan 【玛莎骑士汉化】",
+          "titleJpn": null,
+          "order": null,
+          "category": "main",
+          "branch": "main"
+        }
+      ]
+    },
+    {
+      "status": "suspected",
+      "label": "疑缺首篇",
+      "series": "Osananajimi no Futago wa Hoka no Otoko no Onaho ni Naru (3) | 青梅竹馬的雙子姐妹成為了別的男人的飛機杯 (3)（Take Shinshi）",
+      "reason": "疑缺首篇：题名明确有后续编号／续篇标记，当前库未见可可靠对应的首篇。此为题名线索，非作品页或内容核实。",
+      "members": [
+        {
+          "gid": 3898663,
+          "title": "[Take Shinshi] Osananajimi no Futago wa Hoka no Otoko no Onaho ni Naru (3) | 青梅竹馬的雙子姐妹成為了別的男人的飛機杯 (3) [Chinese]",
+          "titleJpn": null,
+          "order": null,
+          "category": "main",
+          "branch": "main"
+        }
+      ]
+    },
+    {
+      "status": "suspected",
+      "label": "疑缺首篇",
+      "series": "Heroine to Saoyaku ga Ichido mo Shaberanai Ero Manga 2 | 女主角与男主角一句话都不说的色情漫画2（Kinakobou (Bakkanki)）",
+      "reason": "疑缺首篇：题名明确有后续编号／续篇标记，当前库未见可可靠对应的首篇。此为题名线索，非作品页或内容核实。",
+      "members": [
+        {
+          "gid": 3899324,
+          "title": "[Kinakobou (Bakkanki)] Heroine to Saoyaku ga Ichido mo Shaberanai Ero Manga 2 | 女主角与男主角一句话都不说的色情漫画2 [Chinese] [IA的个人AI汉化] [Decensored]",
+          "titleJpn": null,
+          "order": null,
+          "category": "main",
+          "branch": "main"
+        }
+      ]
+    },
+    {
+      "status": "suspected",
+      "label": "疑缺首篇",
+      "series": "NTR Midnight Pool Season 2 #4（C.N.P (clone Ningen)）",
+      "reason": "疑缺首篇（第2季分支）：见 Season 2 #4，未见此季#1；Season 2本身不当作第2章。",
+      "members": [
+        {
+          "gid": 3646586,
+          "title": "[C.N.P (clone Ningen)] NTR Midnight Pool Season 2 #4 [Chinese] [XY个人翻译] [Digital]",
+          "titleJpn": "[C.N.P (clone人間)] NTRミッドナイトプール しーずん2 ＃4 [中国翻訳] [DL版]",
+          "order": null,
+          "category": "main",
+          "branch": "main"
+        }
+      ]
+    },
+    {
+      "status": "suspected",
+      "label": "疑缺首篇",
+      "series": "Rental Suieibu Kanojo 4 | 出租游泳社女友4（8cm (Hassen)）",
+      "reason": "疑缺首篇：题名明确有后续编号／续篇标记，当前库未见可可靠对应的首篇。此为题名线索，非作品页或内容核实。",
+      "members": [
+        {
+          "gid": 3877266,
+          "title": "[8cm (Hassen)] Rental Suieibu Kanojo 4 | 出租游泳社女友4 [Chinese] [Digital]",
+          "titleJpn": "[8cm (はっせん)] レンタル水泳部カノジョ4 [中国翻訳] [DL版]",
+          "order": null,
+          "category": "main",
+          "branch": "main"
+        }
+      ]
+    },
+    {
+      "status": "suspected",
+      "label": "疑缺首篇",
+      "series": "Shirayama Karin no Shidou Seido 2 | 白山華凛的指導制度2（LAMINARIA (Shiokonbu)）",
+      "reason": "疑缺首篇：题名明确有后续编号／续篇标记，当前库未见可可靠对应的首篇。此为题名线索，非作品页或内容核实。",
+      "members": [
+        {
+          "gid": 3896987,
+          "title": "[LAMINARIA (Shiokonbu)] Shirayama Karin no Shidou Seido 2 | 白山華凛的指導制度2 [Chinese] [Decensored] [Digital]",
+          "titleJpn": null,
+          "order": null,
+          "category": "main",
+          "branch": "main"
+        }
+      ]
+    },
+    {
+      "status": "suspected",
+      "label": "疑缺首篇",
+      "series": "Class no Seiso na Iinchou to Yaritomo ni natta Hanashi 2 | 和清純委員長變成了玩伴2（P:P (Oryou)）",
+      "reason": "疑缺首篇：题名明确有后续编号／续篇标记，当前库未见可可靠对应的首篇。此为题名线索，非作品页或内容核实。",
+      "members": [
+        {
+          "gid": 3897009,
+          "title": "[P:P (Oryou)] Class no Seiso na Iinchou to Yaritomo ni natta Hanashi 2 | 和清純委員長變成了玩伴2 [Chinese] [Decensored] [Digital]",
+          "titleJpn": "[P:P (おりょう)] クラスの清楚な委員長とヤリ友になった話2 [中国翻訳] [無修正] [DL版]",
+          "order": null,
+          "category": "main",
+          "branch": "main"
+        }
+      ]
+    },
+    {
+      "status": "suspected",
+      "label": "疑缺首篇",
+      "series": "Makoto ni Zannendesuga Bouken no Sho 10 wa Kiete shimaimashita. | 真是非常抱歉，冒險之書10被消滅了。（KAMINENDO.CORP (Akazawa RED)）",
+      "reason": "疑缺首篇：题名明确有后续编号／续篇标记，当前库未见可可靠对应的首篇。此为题名线索，非作品页或内容核实。",
+      "members": [
+        {
+          "gid": 3897014,
+          "title": "[KAMINENDO.CORP (Akazawa RED)] Makoto ni Zannendesuga Bouken no Sho 10 wa Kiete shimaimashita. | 真是非常抱歉，冒險之書10被消滅了。 [Chinese] [Decensored] [Digital]",
+          "titleJpn": "[KAMINENDO.CORP (あかざわRED)] まことにざんねんですが ぼうけんのしょ10は きえてしまいました。 [中国翻訳] [無修正] [DL版]",
+          "order": null,
+          "category": "main",
+          "branch": "main"
+        }
+      ]
+    },
+    {
+      "status": "suspected",
+      "label": "疑缺首篇",
+      "series": "催眠大叔支配彩南高中、全員懷孕休育嬰假3(To LOVE 出包王女)Saimin Oji-san ni Shihaisareta Sainan Koukou, Zenin, Aka-chan Ninshin Ikukyuu 3 (To LOVE-Ru)（Panic america）",
+      "reason": "疑缺首篇：题名明确有后续编号／续篇标记，当前库未见可可靠对应的首篇。此为题名线索，非作品页或内容核实。",
+      "members": [
+        {
+          "gid": 3625395,
+          "title": "[Panic america]催眠大叔支配彩南高中、全員懷孕休育嬰假3(To LOVE 出包王女)[AI Generated][Chinese][機翻]Saimin Oji-san ni Shihaisareta Sainan Koukou, Zenin, Aka-chan Ninshin Ikukyuu 3 (To LOVE-Ru) [AI Generated]",
+          "titleJpn": null,
+          "order": null,
+          "category": "main",
+          "branch": "main"
+        }
+      ]
+    },
+    {
+      "status": "suspected",
+      "label": "疑缺首篇",
+      "series": "Eri to Nozomi no Joujiroku - THE SEX RECORDS OF ERI AND NOZOMI 5 (Love Live!)（Sobabu (Rasson)）",
+      "reason": "疑缺首篇：题名明确有后续编号／续篇标记，当前库未见可可靠对应的首篇。此为题名线索，非作品页或内容核实。",
+      "members": [
+        {
+          "gid": 3736406,
+          "title": "[Sobabu (Rasson)] Eri to Nozomi no Joujiroku - THE SEX RECORDS OF ERI AND NOZOMI 5 (Love Live!) [Chinese] [Digital]",
+          "titleJpn": null,
+          "order": null,
+          "category": "main",
+          "branch": "main"
+        }
+      ]
+    },
+    {
+      "status": "suspected",
+      "label": "疑缺首篇",
+      "series": "Musume ga Fuzai no Aida, Musume no Tomodachi to Nakadashi Sex Shimakurimashita. 3.7 ~After Happiness Story~ | 趁女儿不在和她的朋友反复内射了个爽 3.7〜After Happiness Story〜（Yamanashi Musume. (Kotora)）",
+      "reason": "疑缺首篇：仅见3.7后日谈，当前库未见可对应原篇；不把3.7改为整数篇。",
+      "members": [
+        {
+          "gid": 3892706,
+          "title": "[Yamanashi Musume. (Kotora)] Musume ga Fuzai no Aida, Musume no Tomodachi to Nakadashi Sex Shimakurimashita. 3.7 ~After Happiness Story~ | 趁女儿不在和她的朋友反复内射了个爽 3.7〜After Happiness Story〜[Chinese] [白杨汉化组] [Digital]",
+          "titleJpn": null,
+          "order": null,
+          "category": "main",
+          "branch": "main"
+        }
+      ]
+    },
+    {
+      "status": "suspected",
+      "label": "疑缺首篇",
+      "series": "Watashi ni Konna Kuchi Kiite, Oya Gatcha Shippai shita no ka Lv.2 | 敢這麼和我說話你的媽是批發的? Lv2（Hoshoku Shoujo (Karasu Chan)）",
+      "reason": "疑缺首篇：题名明确有后续编号／续篇标记，当前库未见可可靠对应的首篇。此为题名线索，非作品页或内容核实。",
+      "members": [
+        {
+          "gid": 3889390,
+          "title": "[Hoshoku Shoujo (Karasu Chan)] Watashi ni Konna Kuchi Kiite, Oya Gatcha Shippai shita no ka Lv.2 | 敢這麼和我說話你的媽是批發的? Lv2 [Chinese] [Digital]",
+          "titleJpn": null,
+          "order": null,
+          "category": "main",
+          "branch": "main"
+        }
+      ]
+    },
+    {
+      "status": "suspected",
+      "label": "疑缺首篇",
+      "series": "Onaho Uri no Shoujo 2 ~Waruiko to Papa no Eroi Manga~ - The little ONAHO girl comic book（Chouzankai (TER)）",
+      "reason": "疑缺首篇：题名明确有后续编号／续篇标记，当前库未见可可靠对应的首篇。此为题名线索，非作品页或内容核实。",
+      "members": [
+        {
+          "gid": 3723501,
+          "title": "[Chouzankai (TER)] Onaho Uri no Shoujo 2 ~Waruiko to Papa no Eroi Manga~ - The little ONAHO girl comic book [Chinese] [ESTEST个人汉化] [Decensored] [Digital]",
+          "titleJpn": null,
+          "order": null,
+          "category": "main",
+          "branch": "main"
+        }
+      ]
+    },
+    {
+      "status": "suspected",
+      "label": "疑缺首篇",
+      "series": "Goblin nanka ni Zettai Makenai Mon LIBERATOR 2 (Digimon Story Cyber Sleuth)（Mugen Mountain (Basuta)）",
+      "reason": "疑缺首篇：题名明确有后续编号／续篇标记，当前库未见可可靠对应的首篇。此为题名线索，非作品页或内容核实。",
+      "members": [
+        {
+          "gid": 3712066,
+          "title": "[Mugen Mountain (Basuta)] Goblin nanka ni Zettai Makenai Mon LIBERATOR 2 (Digimon Story Cyber Sleuth) [Chinese] [Digital]",
+          "titleJpn": null,
+          "order": null,
+          "category": "main",
+          "branch": "main"
+        }
+      ]
+    },
+    {
+      "status": "suspected",
+      "label": "疑缺首篇",
+      "series": "Koumi-jima 2&3 ~Ima, Onaka Aiteru yo~（Aomizuan (Aomizuan, Niyasuke)）",
+      "reason": "疑缺首篇：题名明确有后续编号／续篇标记，当前库未见可可靠对应的首篇。此为题名线索，非作品页或内容核实。",
+      "members": [
+        {
+          "gid": 3876134,
+          "title": "[Aomizuan (Aomizuan, Niyasuke)] Koumi-jima 2&3 ~Ima, Onaka Aiteru yo~ [Chinese] [hhh个人汉化] [Ongoing]",
+          "titleJpn": "[青水庵 (にやすけ、青水庵)] 子産み島2&3～今、お腹あいてるよ～ [中国翻訳] [進行中]",
+          "order": null,
+          "category": "main",
+          "branch": "main"
+        }
+      ]
+    },
+    {
+      "status": "suspected",
+      "label": "疑缺首篇",
+      "series": "Jogakuryou ni Sasowarete 2（Himawari no Tane (Taneno Nakami)）",
+      "reason": "疑缺首篇：题名明确有后续编号／续篇标记，当前库未见可可靠对应的首篇。此为题名线索，非作品页或内容核实。",
+      "members": [
+        {
+          "gid": 3867536,
+          "title": "[Himawari no Tane (Taneno Nakami)] Jogakuryou ni Sasowarete 2 [Chinese]",
+          "titleJpn": null,
+          "order": null,
+          "category": "main",
+          "branch": "main"
+        }
+      ]
+    },
+    {
+      "status": "suspected",
+      "label": "疑缺首篇",
+      "series": "Imouto no Tomodachi ni Guigui Semerareru Hanashi 2（Tamanegiya (MK)）",
+      "reason": "疑缺首篇：题名明确有后续编号／续篇标记，当前库未见可可靠对应的首篇。此为题名线索，非作品页或内容核实。",
+      "members": [
+        {
+          "gid": 3848145,
+          "title": "[Tamanegiya (MK)] Imouto no Tomodachi ni Guigui Semerareru Hanashi 2 [Chinese] [Decensored] [Digital]",
+          "titleJpn": null,
+          "order": null,
+          "category": "main",
+          "branch": "main"
+        }
+      ]
+    },
+    {
+      "status": "suspected",
+      "label": "疑缺首篇",
+      "series": "Choukyou Inroku Ni ~Kunoichi Hiiragi no Junan~ | 调教淫录2~女忍者柊的受难～（Yoshimoto Arena (Yoshimoto)）",
+      "reason": "疑缺首篇：题名明确有后续编号／续篇标记，当前库未见可可靠对应的首篇。此为题名线索，非作品页或内容核实。",
+      "members": [
+        {
+          "gid": 3802887,
+          "title": "[Yoshimoto Arena (Yoshimoto)] Choukyou Inroku Ni ~Kunoichi Hiiragi no Junan~ | 调教淫录2~女忍者柊的受难～ [Chinese] [白杨汉化组] [Digital]",
+          "titleJpn": null,
+          "order": null,
+          "category": "main",
+          "branch": "main"
+        }
+      ]
+    },
+    {
+      "status": "suspected",
+      "label": "疑缺首篇",
+      "series": "Mama Tomo Harem 3 ~Daisuki na Mama-tachi to Icha Love Seifuku Ecchi~（Tarobaumu）",
+      "reason": "疑缺首篇：题名明确有后续编号／续篇标记，当前库未见可可靠对应的首篇。此为题名线索，非作品页或内容核实。",
+      "members": [
+        {
+          "gid": 3602672,
+          "title": "[Tarobaumu] Mama Tomo Harem 3 ~Daisuki na Mama-tachi to Icha Love Seifuku Ecchi~ [Chinese]",
+          "titleJpn": "[たろバウム] ママ友ハーレム3 ~大好きなママ達といちゃらぶ制服えっち~ [中国翻訳]",
+          "order": null,
+          "category": "main",
+          "branch": "main"
+        }
+      ]
+    },
+    {
+      "status": "suspected",
+      "label": "疑缺首篇",
+      "series": "Ore wa ◯◯-sama no Gochisou Ch. 2 | 我被献给〇〇大人尽情享用 第二话（Okkina Tama）",
+      "reason": "疑缺首篇：题名明确有后续编号／续篇标记，当前库未见可可靠对应的首篇。此为题名线索，非作品页或内容核实。",
+      "members": [
+        {
+          "gid": 3825830,
+          "title": "[Okkina Tama] Ore wa ◯◯-sama no Gochisou Ch. 2 | 我被献给〇〇大人尽情享用 第二话 [Chinese] [白杨汉化组] [Digital]",
+          "titleJpn": "[おっきなタマ] おれは◯◯様のごちそう 第弐話 [中国翻訳] [DL版]",
+          "order": null,
+          "category": "main",
+          "branch": "main"
+        }
+      ]
+    },
+    {
+      "status": "suspected",
+      "label": "疑缺首篇",
+      "series": "Dekachin Futanari Gal ~Suzu-chan no Chi Nichijou 2~ Zenpen（Byururun★Youkeijou (Beruru)）",
+      "reason": "疑缺首篇（日常2分支）：本书是日常2的前篇，当前库未见日常1；前篇标记不等于整个系列首篇。",
+      "members": [
+        {
+          "gid": 3824194,
+          "title": "[Byururun★Youkeijou (Beruru)] Dekachin Futanari Gal ~Suzu-chan no Chi Nichijou 2~ Zenpen [Chinese] [机翻] [Digital]",
+          "titleJpn": null,
+          "order": null,
+          "category": "main",
+          "branch": "main"
+        }
+      ]
+    },
+    {
+      "status": "suspected",
+      "label": "疑缺首篇",
+      "series": "Boku wa Hero Paranoia Kouhen（Oni Kizoku）",
+      "reason": "疑缺首篇：当前仅见后篇／下篇／最终话标记，未见可对应的前篇；不猜测具体章号。",
+      "members": [
+        {
+          "gid": 3823851,
+          "title": "[Oni Kizoku] Boku wa Hero Paranoia Kouhen[个人机翻]",
+          "titleJpn": "",
+          "order": null,
+          "category": "main",
+          "branch": "main"
+        }
+      ]
+    },
+    {
+      "status": "suspected",
+      "label": "疑缺首篇",
+      "series": "Do Inran Dolly 2 ~Manatsu no Kimo Dameshi Hen!~（Hathor）",
+      "reason": "疑缺首篇：题名明确有后续编号／续篇标记，当前库未见可可靠对应的首篇。此为题名线索，非作品页或内容核实。",
+      "members": [
+        {
+          "gid": 3745787,
+          "title": "[Hathor] Do Inran Dolly 2 ~Manatsu no Kimo Dameshi Hen!~ [Chinese] [没人汉化的我来汉化]",
+          "titleJpn": null,
+          "order": null,
+          "category": "main",
+          "branch": "main"
+        }
+      ]
+    },
+    {
+      "status": "suspected",
+      "label": "疑缺首篇",
+      "series": "Classmate no Hahaoya wo Seikangu ni Shite Moteasobu 2（Zurumuke Tarou）",
+      "reason": "疑缺首篇：题名明确有后续编号／续篇标记，当前库未见可可靠对应的首篇。此为题名线索，非作品页或内容核实。",
+      "members": [
+        {
+          "gid": 3803641,
+          "title": "[Zurumuke Tarou] Classmate no Hahaoya wo Seikangu ni Shite Moteasobu 2 [Chinese]",
+          "titleJpn": null,
+          "order": null,
+          "category": "main",
+          "branch": "main"
+        }
+      ]
+    },
+    {
+      "status": "suspected",
+      "label": "疑缺首篇",
+      "series": "5 No 2 to 3 no 2 no Koibana. 2 Jikanme!! | 五年二班与三年二班的恋爱话题。第2节!!（Mayafufu -Kakko- Kashikoi）",
+      "reason": "疑缺首篇：题名明确有后续编号／续篇标记，当前库未见可可靠对应的首篇。此为题名线索，非作品页或内容核实。",
+      "members": [
+        {
+          "gid": 3797986,
+          "title": "[Mayafufu -Kakko- Kashikoi] 5 No 2 to 3 no 2 no Koibana. 2 Jikanme!! | 五年二班与三年二班的恋爱话题。第2节!! [Chinese] [Sky110036个人汉化] [Decensored] [Digital]",
+          "titleJpn": null,
+          "order": null,
+          "category": "main",
+          "branch": "main"
+        }
+      ]
+    },
+    {
+      "status": "suspected",
+      "label": "疑缺首篇",
+      "series": "Mothercorn Vol. 2|母控 vol.2【盗墓团伙汉化组】（Ukishiki (UKI_S)）",
+      "reason": "疑缺首篇：题名明确有后续编号／续篇标记，当前库未见可可靠对应的首篇。此为题名线索，非作品页或内容核实。",
+      "members": [
+        {
+          "gid": 3724860,
+          "title": "[Ukishiki (UKI_S)] Mothercorn Vol. 2|母控 vol.2【盗墓团伙汉化组】",
+          "titleJpn": null,
+          "order": null,
+          "category": "main",
+          "branch": "main"
+        }
+      ]
+    },
+    {
+      "status": "suspected",
+      "label": "疑缺首篇",
+      "series": "ToroTsuna 2 - Mirai Byakugan Hime Shuurai no Maki (Naruto)（NARUHO-Dou (Naruhodo)）",
+      "reason": "疑缺首篇：题名明确有后续编号／续篇标记，当前库未见可可靠对应的首篇。此为题名线索，非作品页或内容核实。",
+      "members": [
+        {
+          "gid": 3719460,
+          "title": "[NARUHO-Dou (Naruhodo)] ToroTsuna 2 - Mirai Byakugan Hime Shuurai no Maki (Naruto) [Chinese] [古月个人汉化]",
+          "titleJpn": null,
+          "order": null,
+          "category": "main",
+          "branch": "main"
+        }
+      ]
+    },
+    {
+      "status": "suspected",
+      "label": "疑缺首篇",
+      "series": "Migawari 2 ~Ochita Kyonyuu Gal ni Kurikaesu Wana~（Smile Foran Company. (Minegami Aya)）",
+      "reason": "疑缺首篇：题名明确有后续编号／续篇标记，当前库未见可可靠对应的首篇。此为题名线索，非作品页或内容核实。",
+      "members": [
+        {
+          "gid": 3719997,
+          "title": "[Smile Foran Company. (Minegami Aya)] Migawari 2 ~Ochita Kyonyuu Gal ni Kurikaesu Wana~ [Chinese] [Digital]",
+          "titleJpn": null,
+          "order": null,
+          "category": "main",
+          "branch": "main"
+        }
+      ]
+    },
+    {
+      "status": "suspected",
+      "label": "疑缺首篇",
+      "series": "Katei Saien Vol 3",
+      "reason": "疑缺首篇：题名明确有后续编号／续篇标记，当前库未见可可靠对应的首篇。此为题名线索，非作品页或内容核实。",
+      "members": [
+        {
+          "gid": 3712221,
+          "title": "[rough translate][Kakutou Oukoku] Katei Saien Vol 3",
+          "titleJpn": null,
+          "order": null,
+          "category": "main",
+          "branch": "main"
+        }
+      ]
+    },
+    {
+      "status": "suspected",
+      "label": "疑缺首篇",
+      "series": "Gekkakou no Ori Ch. 23 (COMIC HOTMiLK Koime Vol. 17)（Sanbun Kyoden）",
+      "reason": "疑缺首篇：题名明确有后续编号／续篇标记，当前库未见可可靠对应的首篇。此为题名线索，非作品页或内容核实。",
+      "members": [
+        {
+          "gid": 1639905,
+          "title": "[Sanbun Kyoden] Gekkakou no Ori Ch. 23 (COMIC HOTMiLK Koime Vol. 17) [Chinese] [不咕鸟汉化组] [Digital]",
+          "titleJpn": "[山文京伝] 月下香の檻 第23話 (コミックホットミルク濃いめ vol.17) [中国翻訳] [DL版]",
+          "order": null,
+          "category": "main",
+          "branch": "main"
+        }
+      ]
+    },
+    {
+      "status": "suspected",
+      "label": "疑缺首篇",
+      "series": "Ore ga Dairi Tanetsuke Suru Koto ni Natta Hitozuma Tachibana Shizuka-san wa Nannimo Shiranai!! Sono 2（Date Roku）",
+      "reason": "疑缺首篇：题名明确有后续编号／续篇标记，当前库未见可可靠对应的首篇。此为题名线索，非作品页或内容核实。",
+      "members": [
+        {
+          "gid": 3699338,
+          "title": "[Date Roku] Ore ga Dairi Tanetsuke Suru Koto ni Natta Hitozuma Tachibana Shizuka-san wa Nannimo Shiranai!! Sono 2",
+          "titleJpn": null,
+          "order": null,
+          "category": "main",
+          "branch": "main"
+        }
+      ]
+    },
+    {
+      "status": "suspected",
+      "label": "疑缺首篇",
+      "series": "Koushinchou Volley-bu no Seisokei Kanojo ga Senpai no Mono ni Natte Shimau Ichibushijuu 2 | 高身材排球部清纯系女友变成了前辈的东西的全过程2（Kansai Gyogyou Kyoudou Kumiai (Marushin)）",
+      "reason": "疑缺首篇：题名明确有后续编号／续篇标记，当前库未见可可靠对应的首篇。此为题名线索，非作品页或内容核实。",
+      "members": [
+        {
+          "gid": 3685512,
+          "title": "[Kansai Gyogyou Kyoudou Kumiai (Marushin)] Koushinchou Volley-bu no Seisokei Kanojo ga Senpai no Mono ni Natte Shimau Ichibushijuu 2 | 高身材排球部清纯系女友变成了前辈的东西的全过程2 [Chinese] [欶澜汉化组] [Digital]",
+          "titleJpn": null,
+          "order": null,
+          "category": "main",
+          "branch": "main"
+        }
+      ]
+    },
+    {
+      "status": "suspected",
+      "label": "疑缺首篇",
+      "series": "Nandemo Yurushichau Riimu-chan 2（Puranpuman）",
+      "reason": "疑缺首篇：题名明确有后续编号／续篇标记，当前库未见可可靠对应的首篇。此为题名线索，非作品页或内容核实。",
+      "members": [
+        {
+          "gid": 2338949,
+          "title": "[Puranpuman] Nandemo Yurushichau Riimu-chan 2 [Chinese]",
+          "titleJpn": null,
+          "order": null,
+          "category": "main",
+          "branch": "main"
+        }
+      ]
+    },
+    {
+      "status": "suspected",
+      "label": "疑缺首篇",
+      "series": "Zoku - Kaigo Beit de Roujin no Gouin na Yokkyuu to Okane no Mae ni Chitai o Sarasu JK（Kocho Kocho Koukou (Bonten)）",
+      "reason": "疑缺首篇：题名明确有后续编号／续篇标记，当前库未见可可靠对应的首篇。此为题名线索，非作品页或内容核实。",
+      "members": [
+        {
+          "gid": 3704449,
+          "title": "[Kocho Kocho Koukou (Bonten)] Zoku - Kaigo Beit de Roujin no Gouin na Yokkyuu to Okane no Mae ni Chitai o Sarasu JK [Chinese] [個人機翻] [Digital]",
+          "titleJpn": null,
+          "order": null,
+          "category": "main",
+          "branch": "main"
+        }
+      ]
+    },
+    {
+      "status": "suspected",
+      "label": "疑缺首篇",
+      "series": "Please Relieve Me EP5 帮我释放 第五话 【皮断腿个人汉化】（Silk Route）",
+      "reason": "疑缺首篇：题名明确有后续编号／续篇标记，当前库未见可可靠对应的首篇。此为题名线索，非作品页或内容核实。",
+      "members": [
+        {
+          "gid": 3640291,
+          "title": "[Silk Route] Please Relieve Me EP5 帮我释放 第五话 【皮断腿个人汉化】",
+          "titleJpn": null,
+          "order": null,
+          "category": "main",
+          "branch": "main"
+        }
+      ]
+    },
+    {
+      "status": "suspected",
+      "label": "疑缺首篇",
+      "series": "SinMama Papakatsu 3（Chinjao Girl (Special G)）",
+      "reason": "疑缺首篇：题名明确有后续编号／续篇标记，当前库未见可可靠对应的首篇。此为题名线索，非作品页或内容核实。",
+      "members": [
+        {
+          "gid": 3678828,
+          "title": "[Chinjao Girl (Special G)] SinMama Papakatsu 3 [Chinese] [XY个人翻译]",
+          "titleJpn": "[チンジャオ娘。] シンママパパカツ3 [中国翻訳]",
+          "order": null,
+          "category": "main",
+          "branch": "main"
+        }
+      ]
+    },
+    {
+      "status": "suspected",
+      "label": "疑缺首篇",
+      "series": "Dekiai Kansatsu Nikki 3 Kaede Mama (45) Hen（Vadass (Oltlo)）",
+      "reason": "疑缺首篇：题名明确有后续编号／续篇标记，当前库未见可可靠对应的首篇。此为题名线索，非作品页或内容核实。",
+      "members": [
+        {
+          "gid": 3697741,
+          "title": "[Vadass (Oltlo)] Dekiai Kansatsu Nikki 3 Kaede Mama (45) Hen [Chinese] [廉价汉化组]",
+          "titleJpn": null,
+          "order": null,
+          "category": "main",
+          "branch": "main"
+        }
+      ]
+    },
+    {
+      "status": "suspected",
+      "label": "疑缺首篇",
+      "series": "Oyako Swap 3 Kaasan wa Ore no Mono!（Hirekatsu）",
+      "reason": "疑缺首篇：题名明确有后续编号／续篇标记，当前库未见可可靠对应的首篇。此为题名线索，非作品页或内容核实。",
+      "members": [
+        {
+          "gid": 3701254,
+          "title": "[Hirekatsu] Oyako Swap 3 Kaasan wa Ore no Mono! [Chinese]",
+          "titleJpn": null,
+          "order": null,
+          "category": "main",
+          "branch": "main"
+        }
+      ]
+    },
+    {
+      "status": "suspected",
+      "label": "疑缺首篇",
+      "series": "Plain Mom 3 ~ Mom succumbs to her sexual desire and has sex with her new husband ~（Mei's Mother）",
+      "reason": "疑缺首篇：题名明确有后续编号／续篇标记，当前库未见可可靠对应的首篇。此为题名线索，非作品页或内容核实。",
+      "members": [
+        {
+          "gid": 3664591,
+          "title": "[Mei's Mother] Plain Mom 3 ~ Mom succumbs to her sexual desire and has sex with her new husband ~ [Old Husband's Personal Machine]",
+          "titleJpn": "[めいの母]地味かーちゃん3〜性欲に負けたかーちゃん、新しい旦那と交尾三昧〜【老夫个人机翻润色】",
+          "order": null,
+          "category": "main",
+          "branch": "main"
+        }
+      ]
+    },
+    {
+      "status": "suspected",
+      "label": "疑缺首篇",
+      "series": "SYG -Sell your girlfriend-2（Metamor (Ryo)）",
+      "reason": "疑缺首篇：题名明确有后续编号／续篇标记，当前库未见可可靠对应的首篇。此为题名线索，非作品页或内容核实。",
+      "members": [
+        {
+          "gid": 2804588,
+          "title": "[Metamor (Ryo)] SYG -Sell your girlfriend-2 [Chinese] [Digital]",
+          "titleJpn": null,
+          "order": null,
+          "category": "main",
+          "branch": "main"
+        }
+      ]
+    },
+    {
+      "status": "suspected",
+      "label": "疑缺首篇",
+      "series": "Precure no Rakujitsu 2 (Yes! Precure 5)（Setouchi Mao no Yamiichi (Setouchi Mao)）",
+      "reason": "疑缺首篇：题名明确有后续编号／续篇标记，当前库未见可可靠对应的首篇。此为题名线索，非作品页或内容核实。",
+      "members": [
+        {
+          "gid": 3640363,
+          "title": "(C101) [Setouchi Mao no Yamiichi (Setouchi Mao)] Precure no Rakujitsu 2 (Yes! Precure 5) [Chinese] [娜维娅の单推人出资x廉价汉化组]",
+          "titleJpn": null,
+          "order": null,
+          "category": "main",
+          "branch": "main"
+        }
+      ]
+    },
+    {
+      "status": "suspected",
+      "label": "疑缺首篇",
+      "series": "Benki Seijo Blanca Ch.2 ~Neroaras no Chika Seidou~（Henry Plaza (Henrybird)）",
+      "reason": "疑缺首篇：题名明确有后续编号／续篇标记，当前库未见可可靠对应的首篇。此为题名线索，非作品页或内容核实。",
+      "members": [
+        {
+          "gid": 3070271,
+          "title": "[Henry Plaza (Henrybird)] Benki Seijo Blanca Ch.2 ~Neroaras no Chika Seidou~ [Chinese] [鱼饼干个人汉化]",
+          "titleJpn": "[半里プラザー (半里バード)] 便器聖女ブランカ［第二章］～ネロアラスの地下聖堂～ [中国翻訳]",
+          "order": null,
+          "category": "main",
+          "branch": "main"
+        }
+      ]
+    },
+    {
+      "status": "suspected",
+      "label": "疑缺首篇",
+      "series": "YanMama Oba-san no Miwaku no Karada 2 -Dakara Boku wa Hitozuma Sex o Yamerarenai-（Hari Poteto）",
+      "reason": "疑缺首篇：题名明确有后续编号／续篇标记，当前库未见可可靠对应的首篇。此为题名线索，非作品页或内容核实。",
+      "members": [
+        {
+          "gid": 2182308,
+          "title": "[Hari Poteto] YanMama Oba-san no Miwaku no Karada 2 -Dakara Boku wa Hitozuma Sex o Yamerarenai- [Chinese] [转尾巴猫汉化]",
+          "titleJpn": null,
+          "order": null,
+          "category": "main",
+          "branch": "main"
+        }
+      ]
+    },
+    {
+      "status": "suspected",
+      "label": "疑缺首篇",
+      "series": "Zoku Bodamu（Urban Doujin Magazine）",
+      "reason": "疑缺首篇：题名明确有后续编号／续篇标记，当前库未见可可靠对应的首篇。此为题名线索，非作品页或内容核实。",
+      "members": [
+        {
+          "gid": 2770073,
+          "title": "[Urban Doujin Magazine] Zoku Bodamu [Chinese] [便宜汉化组]",
+          "titleJpn": "[街中同人誌會] 続・媽堕夢 [中国翻訳]",
+          "order": null,
+          "category": "main",
+          "branch": "main"
+        }
+      ]
+    },
+    {
+      "status": "suspected",
+      "label": "疑缺首篇",
+      "series": "Tsuma no Bakunyuu ni Muragaru Otokotachi ~Zoku Bakunyuu Tsuma Namatame Kyouko~（Mosquito Man）",
+      "reason": "疑缺首篇：题名明确有后续编号／续篇标记，当前库未见可可靠对应的首篇。此为题名线索，非作品页或内容核实。",
+      "members": [
+        {
+          "gid": 3660012,
+          "title": "[Mosquito Man] Tsuma no Bakunyuu ni Muragaru Otokotachi ~Zoku Bakunyuu Tsuma Namatame Kyouko~ [Chinese] [拉拉肥個人漢化]",
+          "titleJpn": null,
+          "order": null,
+          "category": "main",
+          "branch": "main"
+        }
+      ]
+    },
+    {
+      "status": "suspected",
+      "label": "疑缺首篇",
+      "series": "Arie-san wants to go anywhere!! 2（YAGEN Nankotsu (Inukami Inoji)）",
+      "reason": "疑缺首篇：题名明确有后续编号／续篇标记，当前库未见可可靠对应的首篇。此为题名线索，非作品页或内容核实。",
+      "members": [
+        {
+          "gid": 3660833,
+          "title": "[YAGEN Nankotsu (Inukami Inoji)] Arie-san wants to go anywhere!! 2",
+          "titleJpn": null,
+          "order": null,
+          "category": "main",
+          "branch": "main"
+        }
+      ]
+    },
+    {
+      "status": "suspected",
+      "label": "疑缺首篇",
+      "series": "Haikei, Anal Vampire Senpai. Kouhen - Dear anal vampire. (WEEKLY Kairakuten 2022 No.44)（Dramus）",
+      "reason": "疑缺首篇：当前仅见后篇／下篇／最终话标记，未见可对应的前篇；不猜测具体章号。",
+      "members": [
+        {
+          "gid": 2938679,
+          "title": "[Dramus] Haikei, Anal Vampire Senpai. Kouhen - Dear anal vampire. (WEEKLY Kairakuten 2022 No.44) [Chinese] [六哥儿个人汉化]",
+          "titleJpn": null,
+          "order": null,
+          "category": "main",
+          "branch": "main"
+        }
+      ]
+    },
+    {
+      "status": "suspected",
+      "label": "疑缺首篇",
+      "series": "Ema 3 ~Ama toro Bijo ni Oshioki sarete~（Junshain Inoue）",
+      "reason": "疑缺首篇：题名明确有后续编号／续篇标记，当前库未见可可靠对应的首篇。此为题名线索，非作品页或内容核实。",
+      "members": [
+        {
+          "gid": 3656311,
+          "title": "[Junshain Inoue] Ema 3 ~Ama toro Bijo ni Oshioki sarete~ [Chinese]",
+          "titleJpn": null,
+          "order": null,
+          "category": "main",
+          "branch": "main"
+        }
+      ]
+    },
+    {
+      "status": "suspected",
+      "label": "疑缺首篇",
+      "series": "InCha Couple ga You Gal-tachi to SEX Training Suru Hanashi 5 | 阴角情侣与阳角辣妹们的SEX特训计划5（Bottle Ship Bottler (Kazakura)）",
+      "reason": "疑缺首篇：题名明确有后续编号／续篇标记，当前库未见可可靠对应的首篇。此为题名线索，非作品页或内容核实。",
+      "members": [
+        {
+          "gid": 3642517,
+          "title": "[Bottle Ship Bottler (Kazakura)] InCha Couple ga You Gal-tachi to SEX Training Suru Hanashi 5 | 阴角情侣与阳角辣妹们的SEX特训计划5 [Chinese]",
+          "titleJpn": null,
+          "order": null,
+          "category": "main",
+          "branch": "main"
+        }
+      ]
+    },
+    {
+      "status": "suspected",
+      "label": "疑缺首篇",
+      "series": "Hisashiburi ni Saikai shita Osananajimi wa Dosukebe Gal ni Nattemashita. 2（Kamakiri Farm）",
+      "reason": "疑缺首篇：题名明确有后续编号／续篇标记，当前库未见可可靠对应的首篇。此为题名线索，非作品页或内容核实。",
+      "members": [
+        {
+          "gid": 3655339,
+          "title": "[Kamakiri Farm] Hisashiburi ni Saikai shita Osananajimi wa Dosukebe Gal ni Nattemashita. 2[中国翻訳]",
+          "titleJpn": null,
+          "order": null,
+          "category": "main",
+          "branch": "main"
+        }
+      ]
+    },
+    {
+      "status": "suspected",
+      "label": "疑缺首篇",
+      "series": "Wakai Seijyuu ni Mesu Kaikisaserareru Haha 2（Ver9）",
+      "reason": "疑缺首篇：题名明确有后续编号／续篇标记，当前库未见可可靠对应的首篇。此为题名线索，非作品页或内容核实。",
+      "members": [
+        {
+          "gid": 3650552,
+          "title": "[Ver9] Wakai Seijyuu ni Mesu Kaikisaserareru Haha 2 [Chinese]",
+          "titleJpn": null,
+          "order": null,
+          "category": "main",
+          "branch": "main"
+        }
+      ]
+    },
+    {
+      "status": "suspected",
+      "label": "疑缺首篇",
+      "series": "Kyouei Mizugi Gal-chan 2（Vivido (Kumasaku Tamizou)）",
+      "reason": "疑缺首篇：题名明确有后续编号／续篇标记，当前库未见可可靠对应的首篇。此为题名线索，非作品页或内容核实。",
+      "members": [
+        {
+          "gid": 3653837,
+          "title": "[Vivido (Kumasaku Tamizou)] Kyouei Mizugi Gal-chan 2 [Chinese] [Digital]",
+          "titleJpn": null,
+          "order": null,
+          "category": "main",
+          "branch": "main"
+        }
+      ]
+    },
+    {
+      "status": "suspected",
+      "label": "疑缺首篇",
+      "series": "辣辣辣辣妹·后宫2",
+      "reason": "疑缺首篇：题名明确有后续编号／续篇标记，当前库未见可可靠对应的首篇。此为题名线索，非作品页或内容核实。",
+      "members": [
+        {
+          "gid": 3649650,
+          "title": "辣辣辣辣妹·后宫2 [Chinese] [白杨汉化组] [Digital]",
+          "titleJpn": null,
+          "order": null,
+          "category": "main",
+          "branch": "main"
+        }
+      ]
+    },
+    {
+      "status": "suspected",
+      "label": "疑缺首篇",
+      "series": "Kairaku Ochi shita Joyuu no Matsuro Kouhen | 堕入快乐的女演员的末路 后编（Atugi de 5 (Murlachrot)）",
+      "reason": "疑缺首篇：当前仅见后篇／下篇／最终话标记，未见可对应的前篇；不猜测具体章号。",
+      "members": [
+        {
+          "gid": 3641500,
+          "title": "[Atugi de 5 (Murlachrot)] Kairaku Ochi shita Joyuu no Matsuro Kouhen | 堕入快乐的女演员的末路 后编 [Chinese] [白杨汉化组]",
+          "titleJpn": null,
+          "order": null,
+          "category": "main",
+          "branch": "main"
+        }
+      ]
+    },
+    {
+      "status": "suspected",
+      "label": "疑缺首篇",
+      "series": "Beast Tamer 2 (Fate/Grand Order)（IRON GRIMOIRE (SAKULA)）",
+      "reason": "疑缺首篇：题名明确有后续编号／续篇标记，当前库未见可可靠对应的首篇。此为题名线索，非作品页或内容核实。",
+      "members": [
+        {
+          "gid": 3618602,
+          "title": "[IRON GRIMOIRE (SAKULA)] Beast Tamer 2 (Fate/Grand Order) [Chinese] [黑锅汉化组] [Digital]",
+          "titleJpn": null,
+          "order": null,
+          "category": "main",
+          "branch": "main"
+        }
+      ]
+    },
+    {
+      "status": "suspected",
+      "label": "疑缺首篇",
+      "series": "Rikujoubu Buchou, Yankee-tachi ni Otosareru 2｜田径社社长♀、被不良少年们拖进堕落深渊2（Eat in (Toin)）",
+      "reason": "疑缺首篇：题名明确有后续编号／续篇标记，当前库未见可可靠对应的首篇。此为题名线索，非作品页或内容核实。",
+      "members": [
+        {
+          "gid": 3618306,
+          "title": "[Eat in (Toin)] Rikujoubu Buchou, Yankee-tachi ni Otosareru 2｜田径社社长♀、被不良少年们拖进堕落深渊2 [Chinese] [Digital]",
+          "titleJpn": null,
+          "order": null,
+          "category": "main",
+          "branch": "main"
+        }
+      ]
+    },
+    {
+      "status": "suspected",
+      "label": "疑缺首篇",
+      "series": "Alpha wa maketa 2 (Kage no Jitsuryokusha ni Naritakute!)（Merkonig）",
+      "reason": "疑缺首篇：题名明确有后续编号／续篇标记，当前库未见可可靠对应的首篇。此为题名线索，非作品页或内容核实。",
+      "members": [
+        {
+          "gid": 3591117,
+          "title": "[Merkonig] Alpha wa maketa 2 (Kage no Jitsuryokusha ni Naritakute!) [Decensored] [Chinese]",
+          "titleJpn": null,
+          "order": null,
+          "category": "main",
+          "branch": "main"
+        }
+      ]
+    },
+    {
+      "status": "suspected",
+      "label": "疑缺首篇",
+      "series": "Sex Hijoukin Koushi to no Jisshuu Kiroku 5 Kimatsu Test wa Joshi Kousei 4-nin to Harem Sex! Sensei. Watashitachi Ippai Ecchi na Koto Dekiru You ni Natta yo?（Hakutoutei (rikazu)）",
+      "reason": "疑缺首篇：题名明确有后续编号／续篇标记，当前库未见可可靠对应的首篇。此为题名线索，非作品页或内容核实。",
+      "members": [
+        {
+          "gid": 3581630,
+          "title": "[Hakutoutei (rikazu)] Sex Hijoukin Koushi to no Jisshuu Kiroku 5 Kimatsu Test wa Joshi Kousei 4-nin to Harem Sex! Sensei. Watashitachi Ippai Ecchi na Koto Dekiru You ni Natta yo? [Chinese] [蕪菁堂]",
+          "titleJpn": null,
+          "order": null,
+          "category": "main",
+          "branch": "main"
+        }
+      ]
+    },
+    {
+      "status": "suspected",
+      "label": "疑缺首篇",
+      "series": "Ninshiki Sogai de Ninshiki Sarenai Uchuujin ga Chikyuu de Hanshoku suru Hanashi 2 | 因认知阻碍而无人察觉的外星人在地球繁衍的故事2（Nani (Nanita)）",
+      "reason": "疑缺首篇：题名明确有后续编号／续篇标记，当前库未见可可靠对应的首篇。此为题名线索，非作品页或内容核实。",
+      "members": [
+        {
+          "gid": 3576202,
+          "title": "[Nani (Nanita)] Ninshiki Sogai de Ninshiki Sarenai Uchuujin ga Chikyuu de Hanshoku suru Hanashi 2 | 因认知阻碍而无人察觉的外星人在地球繁衍的故事2 [Chinese] [Sainae]",
+          "titleJpn": "[なに (ナニタ)] 認識阻害で認識されない宇宙人が地球で繁殖する話2 [中国翻訳]",
+          "order": null,
+          "category": "main",
+          "branch": "main"
+        }
+      ]
+    },
+    {
+      "status": "suspected",
+      "label": "疑缺首篇",
+      "series": "Reku Pakko! Sono ni! ~Natsuyasumi! Mizugi de Yuu~waku Pako Pako Kagai Jugyou~ | 休闲打炮！第2卷！～在暑假！穿上泳装诱～惑色气满满的课外教学～（Lemon Drop (Neri Yume Yuna)）",
+      "reason": "疑缺首篇：题名明确有后续编号／续篇标记，当前库未见可可靠对应的首篇。此为题名线索，非作品页或内容核实。",
+      "members": [
+        {
+          "gid": 3569741,
+          "title": "[Lemon Drop (Neri Yume Yuna)] Reku Pakko! Sono ni! ~Natsuyasumi! Mizugi de Yuu~waku Pako Pako Kagai Jugyou~ | 休闲打炮！第2卷！～在暑假！穿上泳装诱～惑色气满满的课外教学～ [Chinese] [欶澜汉化组] [Digital]",
+          "titleJpn": null,
+          "order": null,
+          "category": "main",
+          "branch": "main"
+        }
+      ]
+    },
+    {
+      "status": "suspected",
+      "label": "疑缺首篇",
+      "series": "Schale Senzoku Seishori Touban 2 | 夏萊專屬性處理值日2 (Blue Archive)（Mandara Ryuuseigun (Signo Mandara)）",
+      "reason": "疑缺首篇：题名明确有后续编号／续篇标记，当前库未见可可靠对应的首篇。此为题名线索，非作品页或内容核实。",
+      "members": [
+        {
+          "gid": 3326766,
+          "title": "(C103) [Mandara Ryuuseigun (Signo Mandara)] Schale Senzoku Seishori Touban 2 | 夏萊專屬性處理值日2 (Blue Archive) [Chinese]",
+          "titleJpn": null,
+          "order": null,
+          "category": "main",
+          "branch": "main"
+        }
+      ]
+    },
+    {
+      "status": "suspected",
+      "label": "疑缺首篇",
+      "series": "Hitozuma Otokonoko to Seishori no Tsudoi 3 | 人妻伪娘的性处理集会3（Gyuumagyuuma (Umadura, Ushiking)）",
+      "reason": "疑缺首篇：题名明确有后续编号／续篇标记，当前库未见可可靠对应的首篇。此为题名线索，非作品页或内容核实。",
+      "members": [
+        {
+          "gid": 3381991,
+          "title": "[Gyuumagyuuma (Umadura, Ushiking)] Hitozuma Otokonoko to Seishori no Tsudoi 3 | 人妻伪娘的性处理集会3 [Chinese] [贱兔汉化组]",
+          "titleJpn": null,
+          "order": null,
+          "category": "main",
+          "branch": "main"
+        }
+      ]
+    },
+    {
+      "status": "suspected",
+      "label": "疑缺首篇",
+      "series": "Toshikoshi Shinseki no Oba-chan-tachi to no Ichiya 2（Mynashi (Ecoruby)）",
+      "reason": "疑缺首篇：题名明确有后续编号／续篇标记，当前库未见可可靠对应的首篇。此为题名线索，非作品页或内容核实。",
+      "members": [
+        {
+          "gid": 3466360,
+          "title": "[Mynashi (Ecoruby)] Toshikoshi Shinseki no Oba-chan-tachi to no Ichiya 2 [Chinese] [廉价汉化组]",
+          "titleJpn": null,
+          "order": null,
+          "category": "main",
+          "branch": "main"
+        }
+      ]
+    },
+    {
+      "status": "suspected",
+      "label": "疑缺首篇",
+      "series": "Onna Amarimura no Inshuu 2 ~Onna wa Kairaku ni Hitari Kodane o Shibori Haramu Hatake de Are to Iu Inaka no Oshie~ | 女儿村的淫习2~「女人是沉浸于快感之中榨取种子然后怀孕的良田」之乡下的教条~（Tiramisu Tart (Kazuhiro)）",
+      "reason": "疑缺首篇：题名明确有后续编号／续篇标记，当前库未见可可靠对应的首篇。此为题名线索，非作品页或内容核实。",
+      "members": [
+        {
+          "gid": 3533868,
+          "title": "[Tiramisu Tart (Kazuhiro)] Onna Amarimura no Inshuu 2 ~Onna wa Kairaku ni Hitari Kodane o Shibori Haramu Hatake de Are to Iu Inaka no Oshie~ | 女儿村的淫习2~「女人是沉浸于快感之中榨取种子然后怀孕的良田」之乡下的教条~ [Chinese] [白杨汉化组]",
+          "titleJpn": null,
+          "order": null,
+          "category": "main",
+          "branch": "main"
+        }
+      ]
+    },
+    {
+      "status": "suspected",
+      "label": "疑缺首篇",
+      "series": "Haha to Tsuma o Yameru Toki 7-14（Bai Asuka）",
+      "reason": "疑缺首篇：题名明确有后续编号／续篇标记，当前库未见可可靠对应的首篇。此为题名线索，非作品页或内容核实。",
+      "members": [
+        {
+          "gid": 3476632,
+          "title": "[Bai Asuka] Haha to Tsuma o Yameru Toki 7-14[Chinese] [廉价汉化组]",
+          "titleJpn": "[唄飛鳥] 母と妻をやめるとき (7-14) [中国翻訳]",
+          "order": null,
+          "category": "main",
+          "branch": "main"
+        }
+      ]
+    },
+    {
+      "status": "suspected",
+      "label": "疑缺首篇",
+      "series": "Are? Joshikousei Saimin tte Konna ni Kantan datta no? 2（Bomb Shelter (Orange Bull)）",
+      "reason": "疑缺首篇：题名明确有后续编号／续篇标记，当前库未见可可靠对应的首篇。此为题名线索，非作品页或内容核实。",
+      "members": [
+        {
+          "gid": 3498221,
+          "title": "[Bomb Shelter (Orange Bull)] Are? Joshikousei Saimin tte Konna ni Kantan datta no? 2 [Chinese] [心海汉化组] [Digital]",
+          "titleJpn": "[核弾避難室 (牛橘)] あれ?女子Ｏ生催眠ってこんなに簡単だったの? 2 [中国翻訳] [DL版]",
+          "order": null,
+          "category": "main",
+          "branch": "main"
+        }
+      ]
+    },
+    {
+      "status": "suspected",
+      "label": "疑缺首篇",
+      "series": "Futanari Ashi Feti no Tenshi to Akuma ga Ecchi suru Hanashi 2（W）",
+      "reason": "疑缺首篇：题名明确有后续编号／续篇标记，当前库未见可可靠对应的首篇。此为题名线索，非作品页或内容核实。",
+      "members": [
+        {
+          "gid": 3443422,
+          "title": "[W] Futanari Ashi Feti no Tenshi to Akuma ga Ecchi suru Hanashi 2 [Chinese] [柯基个人汉化]",
+          "titleJpn": "[W] ふたなり足フェチの天使と悪魔がエッチする話 2 [中国翻訳]",
+          "order": null,
+          "category": "main",
+          "branch": "main"
+        }
+      ]
+    },
+    {
+      "status": "suspected",
+      "label": "疑缺首篇",
+      "series": "Seitei Gakuen Soccer-bu no Nichijou Kouhen（Fetio）",
+      "reason": "疑缺首篇：当前仅见后篇／下篇／最终话标记，未见可对应的前篇；不猜测具体章号。",
+      "members": [
+        {
+          "gid": 3416733,
+          "title": "[Fetio] Seitei Gakuen Soccer-bu no Nichijou Kouhen [Chinese] [甜族星人赞助汉化]",
+          "titleJpn": "[フェチ男] 聖帝学園サッカー部の日常 後編 [中国翻訳]",
+          "order": null,
+          "category": "main",
+          "branch": "main"
+        }
+      ]
+    },
+    {
+      "status": "suspected",
+      "label": "疑缺首篇",
+      "series": "Risou no Onna wa Omae no Tsuma (Onna) Kouhen | 你的妻子是我理想中的女人 后篇（Ijiise）",
+      "reason": "疑缺首篇：当前仅见后篇／下篇／最终话标记，未见可对应的前篇；不猜测具体章号。",
+      "members": [
+        {
+          "gid": 2872018,
+          "title": "[Ijiise] Risou no Onna wa Omae no Tsuma (Onna) Kouhen | 你的妻子是我理想中的女人 后篇 [Chinese] [NTR YYDS 个人汉化]",
+          "titleJpn": null,
+          "order": null,
+          "category": "main",
+          "branch": "main"
+        }
+      ]
+    },
+    {
+      "status": "suspected",
+      "label": "疑缺首篇",
+      "series": "Abukano 2 -Yume Miru Waiyoku Kanojo wa Boku o Shihai shitai- | 留洋女友2 ー沉溺在扭曲幻想中的她想要支配我ー（Dramus Genrouin (Dramus)）",
+      "reason": "疑缺首篇：题名明确有后续编号／续篇标记，当前库未见可可靠对应的首篇。此为题名线索，非作品页或内容核实。",
+      "members": [
+        {
+          "gid": 3397604,
+          "title": "[Dramus Genrouin (Dramus)] Abukano 2 -Yume Miru Waiyoku Kanojo wa Boku o Shihai shitai- | 留洋女友2 ー沉溺在扭曲幻想中的她想要支配我ー [Chinese] [ANDX個人漢化]",
+          "titleJpn": "[ドラムス元老院 (ドラムス)] アブカノ2 ーユメ見る歪欲カノジョはぼくを支配したいー [中国翻訳]",
+          "order": null,
+          "category": "main",
+          "branch": "main"
+        }
+      ]
+    },
+    {
+      "status": "suspected",
+      "label": "疑缺首篇",
+      "series": "Mama Mansion! 4 | 媽媽公寓！4（ERECT TOUCH (Erect Sawaru)）",
+      "reason": "疑缺首篇：题名明确有后续编号／续篇标记，当前库未见可可靠对应的首篇。此为题名线索，非作品页或内容核实。",
+      "members": [
+        {
+          "gid": 3394037,
+          "title": "[ERECT TOUCH (Erect Sawaru)] Mama Mansion! 4 | 媽媽公寓！4 [Chinese] [Sensato] [Digital]",
+          "titleJpn": null,
+          "order": null,
+          "category": "main",
+          "branch": "main"
+        }
+      ]
+    },
+    {
+      "status": "suspected",
+      "label": "疑缺首篇",
+      "series": "Netorareta Hitozuma to Netorareru Hitozuma 2（Arakureta Monotachi (Arakure)）",
+      "reason": "疑缺首篇：题名明确有后续编号／续篇标记，当前库未见可可靠对应的首篇。此为题名线索，非作品页或内容核实。",
+      "members": [
+        {
+          "gid": 3384097,
+          "title": "[Arakureta Monotachi (Arakure)] Netorareta Hitozuma to Netorareru Hitozuma 2 [Chinese] [Digital]",
+          "titleJpn": "[あらくれた者たち (あらくれ)] 寝取られた人妻と寝取られる人妻2 [中国翻訳] [DL版]",
+          "order": null,
+          "category": "main",
+          "branch": "main"
+        }
+      ]
+    },
+    {
+      "status": "suspected",
+      "label": "疑缺首篇",
+      "series": "Usagi no Koubi 2 (Blue Archive)（Fly Dish (Jakko)）",
+      "reason": "疑缺首篇：题名明确有后续编号／续篇标记，当前库未见可可靠对应的首篇。此为题名线索，非作品页或内容核实。",
+      "members": [
+        {
+          "gid": 2876431,
+          "title": "[Fly Dish (Jakko)] Usagi no Koubi 2 (Blue Archive) [Chinese] [Banana手工漢化] [Digital]",
+          "titleJpn": null,
+          "order": null,
+          "category": "main",
+          "branch": "main"
+        }
+      ]
+    },
+    {
+      "status": "suspected",
+      "label": "疑缺首篇",
+      "series": "妻子最近不太对劲 6（点点滴滴灬）",
+      "reason": "疑缺首篇：题名明确有后续编号／续篇标记，当前库未见可可靠对应的首篇。此为题名线索，非作品页或内容核实。",
+      "members": [
+        {
+          "gid": 3367180,
+          "title": "[点点滴滴灬] 妻子最近不太对劲 6",
+          "titleJpn": "[点点滴滴灬] 妻子最近不太对劲 6",
+          "order": null,
+          "category": "main",
+          "branch": "main"
+        }
+      ]
+    },
+    {
+      "status": "suspected",
+      "label": "疑缺首篇",
+      "series": "Inyoku no Tou 2 - Ootori Miyabi ~ Kasou Seiatsu（Shouchuu MAC (Hozumi Kenji)）",
+      "reason": "疑缺首篇：题名明确有后续编号／续篇标记，当前库未见可可靠对应的首篇。此为题名线索，非作品页或内容核实。",
+      "members": [
+        {
+          "gid": 3364229,
+          "title": "[Shouchuu MAC (Hozumi Kenji)] Inyoku no Tou 2 - Ootori Miyabi ~ Kasou Seiatsu [Chinese] [禁漫漢化組] [Digital]",
+          "titleJpn": "[焼酎MAC (ほずみけんじ)] 淫慾の塔2 鳳みやび〜下層制圧 [中国翻訳] [DL版]",
+          "order": null,
+          "category": "main",
+          "branch": "main"
+        }
+      ]
+    },
+    {
+      "status": "suspected",
+      "label": "疑缺首篇",
+      "series": "妻子的奉献 5 雪江（点点滴滴灬）",
+      "reason": "疑缺首篇：题名明确有后续编号／续篇标记，当前库未见可可靠对应的首篇。此为题名线索，非作品页或内容核实。",
+      "members": [
+        {
+          "gid": 3364317,
+          "title": "[点点滴滴灬] 妻子的奉献 5 雪江",
+          "titleJpn": "[点点滴滴灬] 妻子的奉献 5 雪江",
+          "order": null,
+          "category": "main",
+          "branch": "main"
+        }
+      ]
+    },
+    {
+      "status": "suspected",
+      "label": "疑缺首篇",
+      "series": "黒ギャルVS風紀委員 2（核座頭市 (核座頭)）",
+      "reason": "疑缺首篇：题名明确有后续编号／续篇标记，当前库未见可可靠对应的首篇。此为题名线索，非作品页或内容核实。",
+      "members": [
+        {
+          "gid": 3364928,
+          "title": "[核座頭市 (核座頭)] 黒ギャルVS風紀委員 2",
+          "titleJpn": null,
+          "order": null,
+          "category": "main",
+          "branch": "main"
+        }
+      ]
+    },
+    {
+      "status": "suspected",
+      "label": "疑缺首篇",
+      "series": "Mitasaretai Onna 2 | 坐地吸土的女人2（Kabuto 3-gou (Adeshi)）",
+      "reason": "疑缺首篇：题名明确有后续编号／续篇标记，当前库未见可可靠对应的首篇。此为题名线索，非作品页或内容核实。",
+      "members": [
+        {
+          "gid": 3356761,
+          "title": "[Kabuto 3-gou (Adeshi)] Mitasaretai Onna 2 | 坐地吸土的女人2 [Chinese]",
+          "titleJpn": "[カブト3号 (アデシ)] 満たされたいオンナ2 [中国翻訳]",
+          "order": null,
+          "category": "main",
+          "branch": "main"
+        }
+      ]
+    },
+    {
+      "status": "suspected",
+      "label": "疑缺首篇",
+      "series": "SISUANA - sister hole 4（In The Sky (Nakano Sora)）",
+      "reason": "疑缺首篇：题名明确有后续编号／续篇标记，当前库未见可可靠对应的首篇。此为题名线索，非作品页或内容核实。",
+      "members": [
+        {
+          "gid": 2302751,
+          "title": "[In The Sky (Nakano Sora)] SISUANA - sister hole 4 [Chinese] [空気系☆漢化~超市扫货个人重嵌] [Decensored] [Digital]",
+          "titleJpn": null,
+          "order": null,
+          "category": "main",
+          "branch": "main"
+        }
+      ]
+    },
+    {
+      "status": "suspected",
+      "label": "疑缺首篇",
+      "series": "Otona no Dagashi 3 (Dagashi Kashi)（Pochi-Goya. (Pochi.)）",
+      "reason": "疑缺首篇：题名明确有后续编号／续篇标记，当前库未见可可靠对应的首篇。此为题名线索，非作品页或内容核实。",
+      "members": [
+        {
+          "gid": 2177417,
+          "title": "(C89) [Pochi-Goya. (Pochi.)] Otona no Dagashi 3 (Dagashi Kashi) [Chinese] [脸肿汉化组] [Colorized]",
+          "titleJpn": null,
+          "order": null,
+          "category": "main",
+          "branch": "main"
+        }
+      ]
+    },
+    {
+      "status": "suspected",
+      "label": "疑缺首篇",
+      "series": "Ichiban Michika de Eroi Mesu Miyuki 2 ~Haha Dakedo, Musuko to Kinyoku Hajimemasu.~（Golden Bazooka (Gagarin Kichi)）",
+      "reason": "疑缺首篇：题名明确有后续编号／续篇标记，当前库未见可可靠对应的首篇。此为题名线索，非作品页或内容核实。",
+      "members": [
+        {
+          "gid": 3350641,
+          "title": "[Golden Bazooka (Gagarin Kichi)] Ichiban Michika de Eroi Mesu Miyuki 2 ~Haha Dakedo, Musuko to Kinyoku Hajimemasu.~ [Chinese]",
+          "titleJpn": "[ゴールデンバズーカ (ガガーリン吉)] いちばん身近でエロい雌みゆき2 〜母だけど、息子と禁欲はじめます。〜 [中国翻訳]",
+          "order": null,
+          "category": "main",
+          "branch": "main"
+        }
+      ]
+    },
+    {
+      "status": "suspected",
+      "label": "疑缺首篇",
+      "series": "Stepmother Fallen 2（Aonatsusou (Aonatsusu)）",
+      "reason": "疑缺首篇：题名明确有后续编号／续篇标记，当前库未见可可靠对应的首篇。此为题名线索，非作品页或内容核实。",
+      "members": [
+        {
+          "gid": 3321355,
+          "title": "[Aonatsusou (Aonatsusu)] Stepmother Fallen 2 [Chinese]",
+          "titleJpn": "[蒼夏荘 (蒼夏酢)] 継母堕天2～ママハハダテン2～ [中国翻訳]",
+          "order": null,
+          "category": "main",
+          "branch": "main"
+        }
+      ]
+    },
+    {
+      "status": "suspected",
+      "label": "疑缺首篇",
+      "series": "Mahou Shoujo Martel Rare 2 -Toraware shi Inyoku-（Sumisuzu）",
+      "reason": "疑缺首篇：题名明确有后续编号／续篇标记，当前库未见可可靠对应的首篇。此为题名线索，非作品页或内容核实。",
+      "members": [
+        {
+          "gid": 3045915,
+          "title": "[Sumisuzu] Mahou Shoujo Martel Rare 2 -Toraware shi Inyoku- [Chinese] [不咕鸟汉化组] [Incomplete] [Digital]",
+          "titleJpn": "[すみすず] 魔法少女マーテルレア2 -囚われし淫欲- [中国翻訳] [ページ欠落] [DL版]",
+          "order": null,
+          "category": "main",
+          "branch": "main"
+        }
+      ]
+    },
+    {
+      "status": "suspected",
+      "label": "疑缺首篇",
+      "series": "Muishiki Sex si te kuru kaa san wo boku no dekatin de sanzan ika se makuxtu ta hanasi chapter.2（Kansen Shoujo (Noto Kurumi)）",
+      "reason": "疑缺首篇：题名明确有后续编号／续篇标记，当前库未见可可靠对应的首篇。此为题名线索，非作品页或内容核实。",
+      "members": [
+        {
+          "gid": 3305440,
+          "title": "[Kansen Shoujo (Noto Kurumi)] Muishiki Sex si te kuru kaa san wo boku no dekatin de sanzan ika se makuxtu ta hanasi chapter.2 [Chinese]",
+          "titleJpn": "[甘泉少女 (のとくるみ)] 無意識セックスしてくる母さんをボクのデカチンで散々イカせまくった話chapter.2 [中国翻訳]",
+          "order": null,
+          "category": "main",
+          "branch": "main"
+        }
+      ]
+    },
+    {
+      "status": "suspected",
+      "label": "疑缺首篇",
+      "series": "Arofour Dokushin BariCare Oba-san ga Yuujin no Musuko demo Aru Toshishita Danshi to no Kankei ni Hamaru Hanashi 4 Ninkatsu Tanetsuke Hen（MEAN MACHINE (Mifune Seijirou)）",
+      "reason": "疑缺首篇：题名明确有后续编号／续篇标记，当前库未见可可靠对应的首篇。此为题名线索，非作品页或内容核实。",
+      "members": [
+        {
+          "gid": 3241485,
+          "title": "[MEAN MACHINE (Mifune Seijirou)] Arofour Dokushin BariCare Oba-san ga Yuujin no Musuko demo Aru Toshishita Danshi to no Kankei ni Hamaru Hanashi 4 Ninkatsu Tanetsuke Hen [Chinese]",
+          "titleJpn": "[MEAN MACHINE (三船誠二郎)] アラフォー独身バリキャリおばさんが友人の息子でもある年下男子との関係にハマる話 4 妊活種付編 [中国翻訳]",
+          "order": null,
+          "category": "main",
+          "branch": "main"
+        }
+      ]
+    },
+    {
+      "status": "suspected",
+      "label": "疑缺首篇",
+      "series": "Onii-san, Watashi-tachi to Ocha Shimasen kaa? 11 + Suko-chan to Inran Dosukebe Eroi（Kamishiki (Kamizuki Shiki)）",
+      "reason": "疑缺首篇：题名明确有后续编号／续篇标记，当前库未见可可靠对应的首篇。此为题名线索，非作品页或内容核实。",
+      "members": [
+        {
+          "gid": 3304099,
+          "title": "[Kamishiki (Kamizuki Shiki)] Onii-san, Watashi-tachi to Ocha Shimasen kaa? 11 + Suko-chan to Inran Dosukebe Eroi [Digital] [Chinese] [禁漫漢化組]",
+          "titleJpn": null,
+          "order": null,
+          "category": "main",
+          "branch": "main"
+        }
+      ]
+    },
+    {
+      "status": "suspected",
+      "label": "疑缺首篇",
+      "series": "Okane Daisuki 1.5（Memeya (Meme50)）",
+      "reason": "疑缺首篇：题名明确有后续编号／续篇标记，当前库未见可可靠对应的首篇。此为题名线索，非作品页或内容核实。",
+      "members": [
+        {
+          "gid": 3195286,
+          "title": "[Memeya (Meme50)] Okane Daisuki 1.5 [Chinese] [Digital]",
+          "titleJpn": null,
+          "order": null,
+          "category": "main",
+          "branch": "main"
+        }
+      ]
+    },
+    {
+      "status": "suspected",
+      "label": "疑缺首篇",
+      "series": "Suieibu Bihin Minase Suzuka 2（Zetsu Red Zone (Zetsu Red)）",
+      "reason": "疑缺首篇：题名明确有后续编号／续篇标记，当前库未见可可靠对应的首篇。此为题名线索，非作品页或内容核实。",
+      "members": [
+        {
+          "gid": 3192375,
+          "title": "[Zetsu Red Zone (Zetsu Red)] Suieibu Bihin Minase Suzuka 2 [Chinese] [BLUE氪个人翻译] [Digital]",
+          "titleJpn": "[ゼツレッドゾーン (ゼツレッド)] 水泳部備品 水瀬鈴華② [中国翻訳] [DL版]",
+          "order": null,
+          "category": "main",
+          "branch": "main"
+        }
+      ]
+    },
+    {
+      "status": "suspected",
+      "label": "疑缺首篇",
+      "series": "Seito to Issen Koechau Hon -All Star Hen 5- (Blue Archive)（Mimoneland (Mimonel)）",
+      "reason": "疑缺首篇：题名明确有后续编号／续篇标记，当前库未见可可靠对应的首篇。此为题名线索，非作品页或内容核实。",
+      "members": [
+        {
+          "gid": 3186362,
+          "title": "[Mimoneland (Mimonel)] Seito to Issen Koechau Hon -All Star Hen 5- (Blue Archive) [Chinese] [Digital]",
+          "titleJpn": "[ミモネランド (ミモネル)] 生徒と一線越えちゃう本 -オールスター編5- (ブルーアーカイブ) [中国翻訳] [DL版]",
+          "order": null,
+          "category": "main",
+          "branch": "main"
+        }
+      ]
+    },
+    {
+      "status": "suspected",
+      "label": "疑缺首篇",
+      "series": "Kaizoku Kyonyuu 5 (One Piece)（BRAVE HEART petit (KOJIROU!)）",
+      "reason": "疑缺首篇：题名明确有后续编号／续篇标记，当前库未见可可靠对应的首篇。此为题名线索，非作品页或内容核实。",
+      "members": [
+        {
+          "gid": 3185355,
+          "title": "[BRAVE HEART petit (KOJIROU!)] Kaizoku Kyonyuu 5 (One Piece) [Digital] [chinese] [vex個人機翻]",
+          "titleJpn": null,
+          "order": null,
+          "category": "main",
+          "branch": "main"
+        }
+      ]
+    },
+    {
+      "status": "suspected",
+      "label": "疑缺首篇",
+      "series": "Seito to Nakayoku Nareru Tatta Hitotsu no Houhou 2 | 与学生建立友好唯一方法2 (Blue Archive)（Syunichi Kansuu (Syunichi)）",
+      "reason": "疑缺首篇：题名明确有后续编号／续篇标记，当前库未见可可靠对应的首篇。此为题名线索，非作品页或内容核实。 同作者另有不同题名的教学总集篇，无法证明收录本作首篇，暂不并组。",
+      "members": [
+        {
+          "gid": 3178758,
+          "title": "[Syunichi Kansuu (Syunichi)] Seito to Nakayoku Nareru Tatta Hitotsu no Houhou 2 | 与学生建立友好唯一方法2 (Blue Archive) [Chinese] [白杨汉化组] [Digital]",
+          "titleJpn": null,
+          "order": null,
+          "category": "main",
+          "branch": "main"
+        }
+      ]
+    },
+    {
+      "status": "suspected",
+      "label": "疑缺首篇",
+      "series": "NyanPuni2 Nyanderful Mama Cure (Wonderful PreCure!)（Gambler Club (Kousaka Jun)）",
+      "reason": "疑缺首篇：只有后续篇的题名线索；未核正文，不能排除题名变化或同一册收录前作。",
+      "members": [
+        {
+          "gid": 3510235,
+          "title": "[Gambler Club (Kousaka Jun)] NyanPuni2 Nyanderful Mama Cure (Wonderful PreCure!) [Chinese] [Digital]",
+          "titleJpn": null,
+          "order": null,
+          "category": "main",
+          "branch": "main"
+        }
+      ]
+    },
+    {
+      "status": "suspected",
+      "label": "疑缺首篇",
+      "series": "Cool-kei Toshiue BariCare Kanojo Songen Hakai Wakan2 Jun-ai NTR Gokko Hen~（hatsuden pengin）",
+      "reason": "疑缺首篇：只有后续篇的题名线索；未核正文，不能排除题名变化或同一册收录前作。",
+      "members": [
+        {
+          "gid": 3901225,
+          "title": "[hatsuden pengin] Cool-kei Toshiue BariCare Kanojo Songen Hakai Wakan2 Jun-ai NTR Gokko Hen~ [Chinese]",
+          "titleJpn": null,
+          "order": null,
+          "category": "main",
+          "branch": "main"
+        }
+      ]
+    },
+    {
+      "status": "suspected",
+      "label": "疑缺首篇",
+      "series": "OYAOYAKODON3  chinese]【ai个人翻译】（Rienia(kmvt)）",
+      "reason": "疑缺首篇：只有后续篇的题名线索；未核正文，不能排除题名变化或同一册收录前作。",
+      "members": [
+        {
+          "gid": 3388584,
+          "title": "[Rienia(kmvt)] OYAOYAKODON3 [Digital] chinese]【ai个人翻译】",
+          "titleJpn": null,
+          "order": null,
+          "category": "main",
+          "branch": "main"
+        }
+      ]
+    },
+    {
+      "status": "suspected",
+      "label": "疑缺首篇",
+      "series": "Memory2（laliberte）",
+      "reason": "疑缺首篇：只有后续篇的题名线索；未核正文，不能排除题名变化或同一册收录前作。",
+      "members": [
+        {
+          "gid": 2485283,
+          "title": "[laliberte] Memory2 [Chinese] [老w个人汉化]",
+          "titleJpn": null,
+          "order": null,
+          "category": "main",
+          "branch": "main"
+        }
+      ]
+    },
+    {
+      "status": "suspected",
+      "label": "疑缺首篇",
+      "series": "Motto! x2 Onemuri Rune Sensei (Ragnarok Online)（Xration (mil)）",
+      "reason": "疑缺首篇：只有后续篇的题名线索；未核正文，不能排除题名变化或同一册收录前作。",
+      "members": [
+        {
+          "gid": 1652408,
+          "title": "[Xration (mil)] Motto! x2 Onemuri Rune Sensei (Ragnarok Online) [Chinese] [NG-PCB自嵌] [Decensored] [Digital]",
+          "titleJpn": "[Xration (mil)] もっと!×2お眠りルーン先生 (ラグナロクオンライン) [中国翻訳] [無修正] [DL版]",
+          "order": null,
+          "category": "main",
+          "branch": "main"
+        }
+      ]
+    },
+    {
+      "status": "suspected",
+      "label": "疑缺首篇",
+      "series": "Bakunyuu Idol wa Inkyou ni Somaru - Nikke Fallen Indecent3 Taeget Noise (Goddess of Victory: Nikke)（CotesDeNoix (Cru)）",
+      "reason": "疑缺首篇：只有后续篇的题名线索；未核正文，不能排除题名变化或同一册收录前作。",
+      "members": [
+        {
+          "gid": 3490106,
+          "title": "(C104) [CotesDeNoix (Cru)] Bakunyuu Idol wa Inkyou ni Somaru - Nikke Fallen Indecent3 Taeget Noise (Goddess of Victory: Nikke) [Chinese] [心海汉化组]",
+          "titleJpn": null,
+          "order": null,
+          "category": "main",
+          "branch": "main"
+        }
+      ]
+    },
+    {
+      "status": "suspected",
+      "label": "疑缺首篇",
+      "series": "Mayaku Sousakan Reina After - Tokkyuu Houmu-kan Emily -（Crooked Navel (Sanada, Kuro Chimosaku, Hata)）",
+      "reason": "疑缺首篇：只有后续篇的题名线索；未核正文，不能排除题名变化或同一册收录前作。",
+      "members": [
+        {
+          "gid": 3380228,
+          "title": "(C104) [Crooked Navel (Sanada, Kuro Chimosaku, Hata)] Mayaku Sousakan Reina After - Tokkyuu Houmu-kan Emily -[Chinese]",
+          "titleJpn": "(C104) [Crooked Navel (真田クロ, ちもさく , 波多)] 魔薬捜査官レイナAfter 特級法務官エミリー[中国翻訳]",
+          "order": null,
+          "category": "main",
+          "branch": "main"
+        }
+      ]
+    },
+    {
+      "status": "suspected",
+      "label": "疑缺首篇",
+      "series": "Boku dake no Bakunyuu Ona-maid Ge | 專屬我的爆乳淫女俏女傭 下（KEN）",
+      "reason": "疑缺首篇：只有后续篇的题名线索；未核正文，不能排除题名变化或同一册收录前作。",
+      "members": [
+        {
+          "gid": 1079559,
+          "title": "[KEN] Boku dake no Bakunyuu Ona-maid Ge | 專屬我的爆乳淫女俏女傭 下 [Chinese]",
+          "titleJpn": null,
+          "order": null,
+          "category": "main",
+          "branch": "main"
+        }
+      ]
+    },
+    {
+      "status": "suspected",
+      "label": "疑缺首篇",
+      "series": "Otonari no Moto Sakura-san Sono Ni (Puella Magi Madoka Magica)（Nikutai Gengo Club (Dekosuke)）",
+      "reason": "疑缺首篇：题名末端标 Ni／Sono Ni（二），当前库未见可可靠对应的前篇；不将日语助词 ni 当章号。",
+      "members": [
+        {
+          "gid": 2455209,
+          "title": "(C97) [Nikutai Gengo Club (Dekosuke)] Otonari no Moto Sakura-san Sono Ni (Puella Magi Madoka Magica) [Chinese] [潇洒个人汉化]",
+          "titleJpn": "(C97) [肉体言語倶楽部 (デコ助)] おとなりの元佐倉さん そのに (魔法少女まどか☆マギカ) [中国翻訳]",
+          "order": null,
+          "category": "main",
+          "branch": "main"
+        }
+      ]
+    },
+    {
+      "status": "suspected",
+      "label": "疑缺首篇",
+      "series": "Shiranui Harami Ochi Ni (Taimanin Yukikaze)（Shouchuu MAC (Hozumi Kenji)）",
+      "reason": "疑缺首篇：题名末端标 Ni／Sono Ni（二），当前库未见可可靠对应的前篇；不将日语助词 ni 当章号。",
+      "members": [
+        {
+          "gid": 3103925,
+          "title": "[Shouchuu MAC (Hozumi Kenji)] Shiranui Harami Ochi Ni (Taimanin Yukikaze) [Chinese] [不咕鸟汉化组] [Decensored] [Digital]",
+          "titleJpn": null,
+          "order": null,
+          "category": "main",
+          "branch": "main"
+        }
+      ]
+    },
+    {
+      "status": "numbering",
+      "label": "编号待核",
+      "series": "Isekai no Onnatachi Soushuuhen II（Kireinabuta (Butachang)）",
+      "reason": "编号待核：当前仅见较后编号的合集／选集；未见同题第1册，卷号不自动代表故事章号。",
+      "members": [
+        {
+          "gid": 4193066,
+          "title": "[Kireinabuta (Butachang)] Isekai no Onnatachi Soushuuhen II [Chinese] [Incomplete] [Digital]",
+          "titleJpn": "[キレイナブタ (ぶたちゃんぐ)] 異世界の女たち総集編II [中国翻訳] [ページ欠落] [DL版]",
+          "order": null,
+          "category": "collection",
+          "branch": "main"
+        }
+      ]
+    },
+    {
+      "status": "numbering",
+      "label": "编号待核",
+      "series": "2D Comic Magazine TS Kyousei Shoufu Nyotaika Baishun de Hameiki Chuudoku! Vol. 2（Anthology）",
+      "reason": "编号待核：当前仅见较后编号的合集／选集；未见同题第1册，卷号不自动代表故事章号。",
+      "members": [
+        {
+          "gid": 4089146,
+          "title": "[Anthology] 2D Comic Magazine TS Kyousei Shoufu Nyotaika Baishun de Hameiki Chuudoku! Vol. 2 [Chinese] [牢大个人机翻] [Digital]",
+          "titleJpn": "[アンソロジー] 二次元コミックマガジン TS強制娼婦 女体化売春でハメイキ中毒! Vol.2 [中国翻訳] [DL版]",
+          "order": null,
+          "category": "collection",
+          "branch": "main"
+        }
+      ]
+    },
+    {
+      "status": "numbering",
+      "label": "编号待核",
+      "series": "Kisei sareta Bishoujo ga Midara ni Kawaru Vol.2（Anthology）",
+      "reason": "编号待核：当前仅见较后编号的合集／选集；未见同题第1册，卷号不自动代表故事章号。",
+      "members": [
+        {
+          "gid": 2853602,
+          "title": "[Anthology] Kisei sareta Bishoujo ga Midara ni Kawaru Vol.2 [Chinese] [SR] [Digital]",
+          "titleJpn": null,
+          "order": null,
+          "category": "collection",
+          "branch": "main"
+        }
+      ]
+    },
+    {
+      "status": "numbering",
+      "label": "编号待核",
+      "series": "Bessatsu Comic Unreal Joutai Henka & Nikutai Kaizou Hen Vol. 4（Anthology）",
+      "reason": "编号待核：当前仅见较后编号的合集／选集；未见同题第1册，卷号不自动代表故事章号。",
+      "members": [
+        {
+          "gid": 3434001,
+          "title": "[Anthology] Bessatsu Comic Unreal Joutai Henka & Nikutai Kaizou Hen Vol. 4 [Chinese] [Digital]",
+          "titleJpn": "[アンソロジー] 別冊コミックアンリアル 状態変化&肉体改造編 Vol.4 [中国翻訳] [DL版]",
+          "order": null,
+          "category": "collection",
+          "branch": "main"
+        }
+      ]
+    },
+    {
+      "status": "numbering",
+      "label": "编号待核",
+      "series": "2D Comic Magazine Futanari Kabe Sao Kabe Shiri Futanari Heroine Sakusei Iki Jigoku! Vol. 2（Anthology）",
+      "reason": "编号待核：当前仅见较后编号的合集／选集；未见同题第1册，卷号不自动代表故事章号。",
+      "members": [
+        {
+          "gid": 3513216,
+          "title": "[Anthology] 2D Comic Magazine Futanari Kabe Sao Kabe Shiri Futanari Heroine Sakusei Iki Jigoku! Vol. 2 [真不可视汉化组] [Digital]",
+          "titleJpn": null,
+          "order": null,
+          "category": "collection",
+          "branch": "main"
+        }
+      ]
+    },
+    {
+      "status": "numbering",
+      "label": "编号待核",
+      "series": "ZenZero Icha Love Ero Goudou \"ZenEro\" Vol.2 (Zenless Zone Zero)（Kakuzatou (Various)）",
+      "reason": "编号待核：当前仅见较后编号的合集／选集；未见同题第1册，卷号不自动代表故事章号。",
+      "members": [
+        {
+          "gid": 3541749,
+          "title": "[Kakuzatou (Various)] ZenZero Icha Love Ero Goudou \"ZenEro\" Vol.2 (Zenless Zone Zero) [Chinese] [禁漫漢化組] [Digital]",
+          "titleJpn": null,
+          "order": null,
+          "category": "collection",
+          "branch": "main"
+        }
+      ]
+    },
+    {
+      "status": "numbering",
+      "label": "编号待核",
+      "series": "BluArch Icha Love Ero Goudou \"Zetsurin Taisai 3-Kaisen\" | 蔚蓝档案浓密恩爱エロ合同「绝伦大祭第3战」 (Blue Archive)（Kakuzatou (Various)）",
+      "reason": "编号待核：当前仅见较后编号的合集／选集；未见同题第1册，卷号不自动代表故事章号。",
+      "members": [
+        {
+          "gid": 3512011,
+          "title": "[Kakuzatou (Various)] BluArch Icha Love Ero Goudou \"Zetsurin Taisai 3-Kaisen\" | 蔚蓝档案浓密恩爱エロ合同「绝伦大祭第3战」 (Blue Archive) [Chinese] [欶澜汉化组×白杨汉化组] [Digital]",
+          "titleJpn": null,
+          "order": null,
+          "category": "collection",
+          "branch": "main"
+        }
+      ]
+    },
+    {
+      "status": "numbering",
+      "label": "编号待核",
+      "series": "Tanic Ya Love Love Moriawase Sono 2 + Omake Paper (Various)（Tanic Ya (Okutani Tanishi)）",
+      "reason": "编号待核：当前仅见较后编号的合集／选集；未见同题第1册，卷号不自动代表故事章号。",
+      "members": [
+        {
+          "gid": 3756434,
+          "title": "[Tanic Ya (Okutani Tanishi)] Tanic Ya Love Love Moriawase Sono 2 + Omake Paper (Various) [Digital] [Chinese] [黑锅汉化组]",
+          "titleJpn": null,
+          "order": null,
+          "category": "collection",
+          "branch": "main"
+        }
+      ]
+    },
+    {
+      "status": "numbering",
+      "label": "编号待核",
+      "series": "Kedamono Musume Friends Sono 3（Anthology）",
+      "reason": "编号待核：当前仅见较后编号的合集／选集；未见同题第1册，卷号不自动代表故事章号。",
+      "members": [
+        {
+          "gid": 3064212,
+          "title": "[Anthology] Kedamono Musume Friends Sono 3 [Chinese] [逃亡者×真不可视汉化组]",
+          "titleJpn": null,
+          "order": null,
+          "category": "collection",
+          "branch": "main"
+        }
+      ]
+    },
+    {
+      "status": "numbering",
+      "label": "编号待核",
+      "series": "Urabambi Vol. 48 Ochi Mama ~Kazoku ni Kakurete Hard SEX ni Hamaru Hahaoya-tachi~ (Dokidoki! Precure)（Urakata Honpo (SINK)）",
+      "reason": "编号待核：当前仅见较后编号的合集／选集；未见同题第1册，卷号不自动代表故事章号。",
+      "members": [
+        {
+          "gid": 3465493,
+          "title": "(C85) [Urakata Honpo (SINK)] Urabambi Vol. 48 Ochi Mama ~Kazoku ni Kakurete Hard SEX ni Hamaru Hahaoya-tachi~ (Dokidoki! Precure) [Chinese] [塔洛斯一号个人机翻]",
+          "titleJpn": null,
+          "order": null,
+          "category": "collection",
+          "branch": "main"
+        }
+      ]
+    },
+    {
+      "status": "numbering",
+      "label": "编号待核",
+      "series": "2D Comic Magazine Shokubutsukan de Monzetsu Acme Saki! Vol. 2 中国翻译-机翻（Anthology）",
+      "reason": "编号待核：当前仅见较后编号的合集／选集；未见同题第1册，卷号不自动代表故事章号。",
+      "members": [
+        {
+          "gid": 3831595,
+          "title": "[Anthology] 2D Comic Magazine Shokubutsukan de Monzetsu Acme Saki! Vol. 2 [Digital]中国翻译-机翻",
+          "titleJpn": null,
+          "order": null,
+          "category": "collection",
+          "branch": "main"
+        }
+      ]
+    },
+    {
+      "status": "collection",
+      "label": "合集待核",
+      "series": "Bijyo mo Yajyuu - BEAUTIES ARE ALSO BEAST + Hatoba-san to Saruyama-kun 2（GURIDA）",
+      "reason": "合集待核：本册混收主作品与 Hatoba-san to Saruyama-kun 2，前篇可能收在同册，未核目录。",
+      "members": [
+        {
+          "gid": 3893759,
+          "title": "[GURIDA] Bijyo mo Yajyuu - BEAUTIES ARE ALSO BEAST + Hatoba-san to Saruyama-kun 2 [Chinese] [Digital]",
+          "titleJpn": null,
+          "order": null,
+          "category": "collection",
+          "branch": "main"
+        }
+      ]
+    },
+    {
+      "status": "numbering",
+      "label": "编号待核",
+      "series": "Nakadashi Selection Vol.2（Whitish Blacker (Andojing)）",
+      "reason": "编号待核：当前仅见较后编号的合集／选集；未见同题第1册，卷号不自动代表故事章号。",
+      "members": [
+        {
+          "gid": 3731159,
+          "title": "[Whitish Blacker (Andojing)] Nakadashi Selection Vol.2 [Chinese] [凑乎看个人汉化]",
+          "titleJpn": "[ホワイティッシュ・ブラッカー (ANDO人)] 膣内射精セレクション Vol.2",
+          "order": null,
+          "category": "collection",
+          "branch": "main"
+        }
+      ]
+    },
+    {
+      "status": "numbering",
+      "label": "编号待核",
+      "series": "B-Kyuu Archives 2 Torawareta Onna Kaizoku (One Piece)（B-Kyuu Site (bkyu)）",
+      "reason": "编号待核：当前仅见较后编号的合集／选集；未见同题第1册，卷号不自动代表故事章号。",
+      "members": [
+        {
+          "gid": 3867745,
+          "title": "[B-Kyuu Site (bkyu)] B-Kyuu Archives 2 Torawareta Onna Kaizoku (One Piece)[chinese]",
+          "titleJpn": null,
+          "order": null,
+          "category": "collection",
+          "branch": "main"
+        }
+      ]
+    },
+    {
+      "status": "numbering",
+      "label": "编号待核",
+      "series": "Seikyouiku Series Soushuuhen - Sex Education Series Summary 2（micro page (Kuromotokun)）",
+      "reason": "编号待核：当前仅见较后编号的合集／选集；未见同题第1册，卷号不自动代表故事章号。",
+      "members": [
+        {
+          "gid": 2536022,
+          "title": "[micro page (Kuromotokun)] Seikyouiku Series Soushuuhen - Sex Education Series Summary 2 [Chinese] [ミッケのニラ] [Digital]",
+          "titleJpn": null,
+          "order": null,
+          "category": "collection",
+          "branch": "main"
+        }
+      ]
+    },
+    {
+      "status": "numbering",
+      "label": "编号待核",
+      "series": "2D Comic Magazine: Personality Excretion - The Righteous Maidens Who Became Meat Puppets Without Will Vol.2",
+      "reason": "编号待核：当前仅见较后编号的合集／选集；未见同题第1册，卷号不自动代表故事章号。",
+      "members": [
+        {
+          "gid": 3419062,
+          "title": "2D Comic Magazine: Personality Excretion - The Righteous Maidens Who Became Meat Puppets Without Will Vol.2 [Chinese] [北极星个人汉化]",
+          "titleJpn": null,
+          "order": null,
+          "category": "collection",
+          "branch": "main"
+        }
+      ]
+    },
+    {
+      "status": "numbering",
+      "label": "编号待核",
+      "series": "Irodori Midori ~Eien ni Iroasenu Furou no Otome~ 2（Anthology）",
+      "reason": "编号待核：当前仅见较后编号的合集／选集；未见同题第1册，卷号不自动代表故事章号。",
+      "members": [
+        {
+          "gid": 2947148,
+          "title": "[Anthology] Irodori Midori ~Eien ni Iroasenu Furou no Otome~ 2 [Chinese] [甜族星人赞助汉化] [Digital]",
+          "titleJpn": null,
+          "order": null,
+          "category": "collection",
+          "branch": "main"
+        }
+      ]
+    },
+    {
+      "status": "numbering",
+      "label": "编号待核",
+      "series": "Gensou Mousou Soushuuhen 2 (Touhou Project)（Circle Eden (Diisuke)）",
+      "reason": "编号待核：当前仅见较后编号的合集／选集；未见同题第1册，卷号不自动代表故事章号。",
+      "members": [
+        {
+          "gid": 3091393,
+          "title": "[Circle Eden (Diisuke)] Gensou Mousou Soushuuhen 2 (Touhou Project) [Chinese] [Digital]",
+          "titleJpn": null,
+          "order": null,
+          "category": "collection",
+          "branch": "main"
+        }
+      ]
+    },
+    {
+      "status": "suspected",
+      "label": "疑缺首篇",
+      "series": "OC Story “All the way”（Potions）",
+      "reason": "疑缺首篇：标题明确 Chapter 8；当前库按作者 Potions、主体题名 All the way 和 OC Story 检索仅见此条，未找到前篇。其他译名或作者别名仍可能未识别，不能断言前篇一定缺失。",
+      "members": [
+        {
+          "gid": 4241330,
+          "title": "[Potions] OC Story \"All the way\" Chapter 8 [Chinese] [AI Generated]",
+          "titleJpn": null,
+          "originalPosition": 1,
+          "order": 8,
+          "category": "main",
+          "branch": "main"
+        }
+      ]
+    }
+  ]
+}

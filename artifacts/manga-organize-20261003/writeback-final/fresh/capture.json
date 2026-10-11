@@ -1,0 +1,15 @@
+{
+  "device": "5da3329",
+  "package": "com.ehviewer.manbo.debug",
+  "capture": "application force-stopped immediately before writeback",
+  "files": {
+    "eh.db": {
+      "bytes": 3641344,
+      "sha256": "0d9d52fe5fdda1c52c61f1e51fddf915f2edc152b55806cba343e4e38343e9f6"
+    },
+    "eh.db-journal": {
+      "bytes": 512,
+      "sha256": "076a27c79e5ace2a3d47f9dd2e83e4ff6ea8872b3c2218f66c92b89b55f36560"
+    }
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "itemCount": 3315,
+  "multiSeries": 385,
+  "groupedItems": 1039,
+  "singleItems": 2276,
+  "flags": {
+    "suspected": 196,
+    "collection": 5,
+    "numbering": 19
+  },
+  "uncertainRelations": 26,
+  "inheritedTitleJudgments": 3314,
+  "newTitlesRead": 1,
+  "confirmed": true,
+  "phoneWritten": true,
+  "writebackReport": "writeback/phone-writeback.json"
+}

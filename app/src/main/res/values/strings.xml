@@ -1290,4 +1290,5 @@
     <string name="local_update_all_title">Bookmark and follow updates</string>
     <string name="local_update_all_history">Follows: %1$d · Bookmarks: %2$d\nFollow scan boundary: %3$s\nBookmark scan boundary: %4$s</string>
     <string name="local_update_empty">No bookmarks or follows to update</string>
+    <string name="bookmark_tag_marker_description">Bookmark tags: %1$s</string>
 </resources>

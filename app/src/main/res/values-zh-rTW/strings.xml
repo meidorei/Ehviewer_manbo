@@ -1025,4 +1025,5 @@
     <string name="settings_reading_queue_file_warning">開啟自動刪除後，會永久刪除舊漫畫的整個本機下載目錄，檔案無法復原。</string>
     <string name="settings_reading_queue_cleanup_title">刪除舊下載？</string>
     <string name="settings_reading_queue_cleanup_message">將永久刪除閱讀佇列中最早觀看的 %1$d 部漫畫的整個本機下載目錄，此操作無法復原。</string>
+    <string name="bookmark_tag_marker_description">書籤標籤：%1$s</string>
 </resources>

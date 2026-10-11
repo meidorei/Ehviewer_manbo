@@ -1,0 +1,21 @@
+{
+  "device": "5da3329",
+  "package": "com.ehviewer.manbo.debug",
+  "version": [
+    "versionCode=162 minSdk=23 targetSdk=30",
+    "versionName=162"
+  ],
+  "capturedAt": "2026-10-09T15:29:18.629556+08:00",
+  "files": {
+    "eh.db": {
+      "bytes": 3387392,
+      "sha256": "ed17c3ca47364f4409ea3bc628720bb384cb226b44c0e6ca31a3a225373ad51d"
+    },
+    "eh.db-journal": {
+      "bytes": 512,
+      "sha256": "076a27c79e5ace2a3d47f9dd2e83e4ff6ea8872b3c2218f66c92b89b55f36560"
+    }
+  },
+  "captureMethod": "Force-stop Debug app; copy main DB and all present sidecars; relaunch",
+  "launch": "Starting: Intent { cmp=com.ehviewer.manbo.debug/com.hippo.ehviewer.ui.MainActivity }\r\n"
+}

@@ -1,0 +1,25 @@
+{
+  "checks": {
+    "all3314GidsAndBothTitlesPreserved": true,
+    "unconfirmed": true,
+    "taihaiBaseBefore2": true,
+    "teacherBaseBefore2Before3": true,
+    "gesu1Before2Before3Before4": true,
+    "sinful4Before5Before6": true,
+    "nurse1Before2": true,
+    "mukatsukuFirstCollectionBeforeStandalone3Before36": true,
+    "uncertainDifferentTitlesSeparate": true,
+    "noFalseMissingKnownFirst": true,
+    "unnumberedNotAssigned1": true,
+    "phoneRawEqualsSnapshotContents": true,
+    "sqliteIntegrity": true,
+    "htmlEmbeddedPlanMatches": true,
+    "offlineNoExternalDependencies": true,
+    "noTemplatePlaceholders": true,
+    "eachFlagShownOnEveryMember": true
+  },
+  "sourceSha256": "61cabdd3d6a3f3d56fb5cb2f08e37411f300df3abd2ff6a605cfa0509af6380c",
+  "previewSha256": "75b8d905ab01f16cb15c649a442d09dafae2e1e9e4bc664ff0a3b92d460861a5",
+  "databaseWriteback": "not performed",
+  "relationships": "title-based agent judgments; not content verified"
+}

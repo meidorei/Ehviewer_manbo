@@ -1,0 +1,23 @@
+{
+  "device": "5da3329",
+  "package": "com.ehviewer.manbo.debug",
+  "phoneOriginalBackup": "databases/organize-backup-20261009-153413",
+  "status": "passed",
+  "userApproval": "2026-10-09: 写回手机",
+  "phoneWritten": true,
+  "freshFiles": [
+    "eh.db",
+    "eh.db-journal"
+  ],
+  "sortedDatabaseSha256": "b0c3a0e8455717afbab8e3e43a91e13ac86492ccf730e1a403f9c9384e44bddb",
+  "deviceBackupVerified": true,
+  "preLaunchVerify": "passed",
+  "launch": "Starting: Intent { cmp=com.ehviewer.manbo.debug/com.hippo.ehviewer.ui.MainActivity }\r\nStatus: ok\r\nLaunchState: COLD\r\nActivity: com.ehviewer.manbo.debug/com.hippo.ehviewer.ui.MainActivity\r\nTotalTime: 1454\r\nWaitTime: 1457\r\nComplete\r\n",
+  "pidAfterLaunch": "28099",
+  "postLaunchVerify": "passed",
+  "itemCount": 3315,
+  "onlyDownloadsTimeChanged": true,
+  "sqliteIntegrity": "ok",
+  "completedAt": "2026-10-09T15:34:24.862841+08:00",
+  "finalLaunch": "Starting: Intent { cmp=com.ehviewer.manbo.debug/com.hippo.ehviewer.ui.MainActivity }\r\n"
+}

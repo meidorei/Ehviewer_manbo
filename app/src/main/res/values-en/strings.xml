@@ -860,4 +860,5 @@
     <string name="imported_archive_info_message">This is an item imported from local storage</string>
     <string name="imported_archive_category">Local Import</string>
 
+    <string name="bookmark_tag_marker_description">Bookmark tags: %1$s</string>
 </resources>

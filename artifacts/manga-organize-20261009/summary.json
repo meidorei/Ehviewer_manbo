@@ -1,0 +1,15 @@
+{
+  "itemCount": 3314,
+  "multiSeries": 385,
+  "groupedItems": 1039,
+  "singleItems": 2275,
+  "flags": {
+    "suspected": 195,
+    "collection": 5,
+    "numbering": 19
+  },
+  "uncertainRelations": 26,
+  "confirmed": false,
+  "phoneWritten": false,
+  "onlyPreviewLabelsChanged": true
+}
