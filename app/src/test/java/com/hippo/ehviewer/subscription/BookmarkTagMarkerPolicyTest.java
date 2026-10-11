@@ -16,6 +16,13 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 public class BookmarkTagMarkerPolicyTest {
+    @Test public void locationBookmarkMatchesVisibleGalleryTag() {
+        BookmarkTagMarkerPolicy policy = compile(false,
+                bookmark(ListUrlBuilder.MODE_TAG, "location:school", "School"));
+        assertEquals(1, policy.match(tags("location:school")).size());
+        assertTrue(policy.match(tags("location:beach")).isEmpty());
+    }
+
     @Test public void htmlTagsWorkWithoutApiMetadataOrPageCount() {
         GalleryInfo gallery = new GalleryInfo();
         gallery.tgList = new ArrayList<>(Arrays.asList("artist:foo", "language:chinese"));

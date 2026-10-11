@@ -18,22 +18,24 @@
 | 阅读队列 | 记录应用内完整下载的最近阅读与页码；可选择自动删除超出容量的本地下载 |
 | JM 号查询 | 输入编号或支持的链接，查询标题、封面、作者、标签和章节等资料 |
 | 归档下载 | 新下载器支持暂停、继续和完成导入，并兼容升级前的旧系统下载任务 |
+| 本地相册导入 | 在下载页选择图片文件夹，复制到应用下载目录并离线阅读 |
+| 阅读刷新率 | Android 11 及以上可设置系统默认、最高或指定刷新率 |
 
 书签未读记录不设 21 条持久化上限，界面超过 20 条显示 `20+`；本地追更仍保留 21 条明细。阅读队列的自动删除默认关闭，开启后会永久删除被淘汰漫画的本地下载目录。详见[使用指南](docs/usage.md)。
 
 ## 当前版本
 
-以下为 2026-10-05 核对的源码配置，不代表发布页版本。
+以下为 2026-10-11 核对的源码配置，不代表发布页版本。
 
 | 项目 | 当前值 |
 | --- | --- |
 | Android 最低版本 | Android 6.0（API 23） |
 | 本机维护变体 | `appReleaseDebug` |
 | Debug applicationId | `com.ehviewer.manbo.debug` |
-| versionName / Debug versionCode | `162 / 162` |
-| 数据库 schema | `13` |
+| versionName / Debug versionCode | `163 / 163` |
+| 数据库 schema | `14` |
 
-已构建并覆盖安装数字版本 `162 / 162`，主页支持标准标签及“中文分类:英文标签”的书签部分译名继续查词库，并在绑定卡片时读取当前词库；自定义名称保持原样。保留评分与语言同排、独立标签框及既有匹配和更新修复。APK 输出为 `app/build/outputs/apk/appRelease/debug/app-appRelease-debug.apk`。实际组装、核验与安装结果见[变更记录](说明.md)。
+2026-10-11 已构建并覆盖安装 `163 / 163`，包含上游 2.0.2.5 迁移，保留主页书签标签提示、追更/书签及阅读队列等本地功能。固定 Debug 签名核验通过，升级后 22 张原表全部原字段记录保留，数据库 schema 为 14。APK 输出为 `app/build/outputs/apk/appRelease/debug/app-appRelease-debug.apk`。手机锁屏，新界面视觉验收未完成；实际组装、核验与数据检查结果见[变更记录](说明.md)。
 
 ## 开始使用与开发
 
@@ -44,6 +46,6 @@
 
 ## 来源与许可
 
-本分支基于 [xiaojieonly/Ehviewer_CN_SXJ](https://github.com/xiaojieonly/Ehviewer_CN_SXJ)，项目起源于 seven332/EhViewer。最近一次本地同步基线为上游标签 `2.0.2.4`，不表示上游最新版本。
+本分支基于 [xiaojieonly/Ehviewer_CN_SXJ](https://github.com/xiaojieonly/Ehviewer_CN_SXJ)，项目起源于 seven332/EhViewer。当前源码已迁移上游标签 `2.0.2.5`（`c16c1d57`）的适用更新；编译、测试及 APK 交付状态见[变更记录](说明.md)。
 
 项目许可证见 [LICENSE](LICENSE)，版权声明见 [NOTICE](NOTICE)。第三方组件保留各自许可证；上游公告、鸣谢及支持资料见 [feedauthor 文档索引](feedauthor/README.md)。

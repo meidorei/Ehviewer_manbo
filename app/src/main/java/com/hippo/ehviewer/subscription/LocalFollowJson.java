@@ -26,7 +26,7 @@ public final class LocalFollowJson {
     private static final Set<String> NAMESPACES = Collections.unmodifiableSet(
             new LinkedHashSet<>(Arrays.asList("artist", "group", "parody", "character",
                     "female", "male", "misc", "language", "cosplayer", "mixed",
-                    "other", "reclass")));
+                    "other", "reclass", "location")));
 
     private LocalFollowJson() {}
 

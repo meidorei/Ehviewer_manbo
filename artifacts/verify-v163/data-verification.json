@@ -1,0 +1,105 @@
+{
+  "schema": 14,
+  "integrity": "ok",
+  "tables": {
+    "BOOKMARKS": {
+      "rows": 0,
+      "originalColumnsUnchanged": true
+    },
+    "Black_List": {
+      "rows": 0,
+      "originalColumnsUnchanged": true
+    },
+    "DOWNLOADS": {
+      "rows": 3308,
+      "originalColumnsUnchanged": true
+    },
+    "DOWNLOAD_DIRNAME": {
+      "rows": 4751,
+      "originalColumnsUnchanged": true
+    },
+    "DOWNLOAD_LABELS": {
+      "rows": 0,
+      "originalColumnsUnchanged": true
+    },
+    "FEED_CHECKPOINT": {
+      "rows": 2773,
+      "originalColumnsUnchanged": true
+    },
+    "FILTER": {
+      "rows": 0,
+      "originalColumnsUnchanged": true
+    },
+    "Gallery_Tags": {
+      "rows": 772,
+      "originalColumnsUnchanged": true
+    },
+    "HISTORY": {
+      "rows": 100,
+      "originalColumnsUnchanged": true
+    },
+    "LOCAL_BASELINE_QUEUE": {
+      "rows": 18,
+      "originalColumnsUnchanged": true
+    },
+    "LOCAL_FAVORITES": {
+      "rows": 0,
+      "originalColumnsUnchanged": true
+    },
+    "LOCAL_FOLLOW_TAG": {
+      "rows": 565,
+      "originalColumnsUnchanged": true
+    },
+    "LOCAL_GLOBAL_CURSOR": {
+      "rows": 3,
+      "originalColumnsUnchanged": true
+    },
+    "LOCAL_REFRESH_JOB": {
+      "rows": 1,
+      "originalColumnsUnchanged": true
+    },
+    "LOCAL_REFRESH_META": {
+      "rows": 11,
+      "originalColumnsUnchanged": true
+    },
+    "LOCAL_UNREAD_GALLERY": {
+      "rows": 2144,
+      "originalColumnsUnchanged": true
+    },
+    "LOCAL_UPDATE_STATE": {
+      "rows": 657,
+      "originalColumnsUnchanged": true
+    },
+    "QUICK_SEARCH": {
+      "rows": 91,
+      "originalColumnsUnchanged": true
+    },
+    "READING_QUEUE": {
+      "rows": 2,
+      "originalColumnsUnchanged": true
+    },
+    "SUBSCRIPTION_TAG_CACHE": {
+      "rows": 0,
+      "originalColumnsUnchanged": true
+    },
+    "SUBSCRIPTION_TAG_UPDATE_STATE": {
+      "rows": 0,
+      "originalColumnsUnchanged": true
+    },
+    "android_metadata": {
+      "rows": 1,
+      "originalColumnsUnchanged": true
+    }
+  },
+  "changedOriginalTables": [],
+  "locationColumn": true,
+  "preferences": {
+    "beforeFiles": 4,
+    "afterFiles": 4,
+    "missingFiles": [],
+    "changedFiles": [
+      "shared_prefs/com.ehviewer.manbo.debug_preferences.xml",
+      "shared_prefs/com.google.android.gms.measurement.prefs.xml"
+    ]
+  }
+}

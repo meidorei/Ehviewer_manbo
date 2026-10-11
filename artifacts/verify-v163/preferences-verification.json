@@ -1,0 +1,9 @@
+{
+  "missingKeys": [],
+  "addedKeys": [],
+  "changedKeys": [
+    "data_map_next_id",
+    "global_stuff_next_id",
+    "version_code"
+  ]
+}

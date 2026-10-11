@@ -75,6 +75,8 @@ cosplayer mixed other reclass
 
 `l:` 和 `lang:` 可映射为 `language:`；其他简写如 `f:`、`m:` 未被识别时降级。全文关键词、标签混全文、OR、模糊表达式、通配符和负向 uploader 等无法由列表元数据精确重现的查询也降级。
 
+同步上游 2.0.2.5 后，本地追更 JSON 和书签精确查询支持完整 `location:` 命名空间；翻译词库使用 `loc:` 前缀，但本地精确查询的简写规则不变，建议保存完整 `location:school`。
+
 这是匹配能力判断；`BookmarkUpdatePolicy` 还会先验证更新资格。特殊模式和非中文正向语言条件分别返回 `unsupported mode`、`language conflict`，不发更新请求。
 
 书签签名包含 mode、分类、关键词、高级搜索、评分、页数及中文策略。名称不参与签名；条件变化会清理旧状态和边界并重建基线。

@@ -52,7 +52,7 @@ UI 发起刷新，Service 串行请求与计算，Repository 提交数据库，�
 
 ## 数据库与范围
 
-当前 `DaoMaster.SCHEMA_VERSION = 13`。追更扩展表由 `SubscriptionSchema` 管理，阅读队列表由 `ReadingQueueSchema` 管理；不能把历史 schema 11 的描述当作当前版本。
+当前 `DaoMaster.SCHEMA_VERSION = 14`。追更扩展表由 `SubscriptionSchema` 管理，阅读队列表由 `ReadingQueueSchema` 管理；`GalleryTagsSchema` 负责 LOCATION 列的增量迁移。不能把历史 schema 11、13 或上游 schema 8 的描述当作当前版本。
 
 | 表 | 用途 |
 | --- | --- |
@@ -77,13 +77,13 @@ UI 发起刷新，Service 串行请求与计算，Repository 提交数据库，�
 
 ## 书签手动重置状态
 
-`FEED_CHECKPOINT` 的 `BOOKMARK_RESET` 逻辑来源保存按书签 ID、查询签名隔离的重置下限，账号键固定 `shared`；数据库 schema 仍为 13，无新增表或字段。`SubscriptionRepository` 仅在扫描读取 `BOOKMARK_SYNC` 时应用下限；写入时读取原始 checkpoint，保存实际内容顶部和 previous，同秒合并已知 GID，允许普通自动基线细化到较早的真实顶部。原检查时间及独立阅读边界在重置时保持不变，联动已读继续使用已保存的实际同步顶部。`LocalBaselineResetPolicy` 负责纯 Java 边界合并，`LocalUpdateGate` 串行化更新与重置，`LocalFollowRepository` 在事务中完成批量写入和队列/游标失效。
+`FEED_CHECKPOINT` 的 `BOOKMARK_RESET` 逻辑来源保存按书签 ID、查询签名隔离的重置下限，账号键固定 `shared`；重置功能不新增表或字段，当前数据库 schema 为 14。`SubscriptionRepository` 仅在扫描读取 `BOOKMARK_SYNC` 时应用下限；写入时读取原始 checkpoint，保存实际内容顶部和 previous，同秒合并已知 GID，允许普通自动基线细化到较早的真实顶部。原检查时间及独立阅读边界在重置时保持不变，联动已读继续使用已保存的实际同步顶部。`LocalBaselineResetPolicy` 负责纯 Java 边界合并，`LocalUpdateGate` 串行化更新与重置，`LocalFollowRepository` 在事务中完成批量写入和队列/游标失效。
 
 重置沿用 `EhDB` 的书签操作锁顺序（先书签锁，再事务），避免与删除、改名和导入交错。删除书签和查询签名变化同时清理重置记录，改名不清理。现有数据库导出仅复制书签主体等既有数据，不导出同步 checkpoint、未读或重置记录；导入新增书签重新建立基线，保留在本机的已有书签状态不变。该功能不改变备份范围或升级/恢复流程。
 
 ## 追更手动重置状态
 
-追更使用同表中的 `shared / LOCAL_FOLLOW_RESET / 标准化标签 / 固定中文查询签名`，schema 保持 13。`LocalBaselineResetPolicy` 由书签原策略改名而来，复用时间和同秒 GID 合并规则；追更、书签分别持有重置记录、基线队列与共享游标。`LocalFollowRepository.resetFollowBaselines()` 在同一数据库事务内读取追更列表并写入下限；`LocalUpdateGate` 防止重置与更新交错，设置页两个入口共用确认和执行反馈。
+追更使用同表中的 `shared / LOCAL_FOLLOW_RESET / 标准化标签 / 固定中文查询签名`，重置功能不新增 schema 变更，当前 schema 为 14。`LocalBaselineResetPolicy` 由书签原策略改名而来，复用时间和同秒 GID 合并规则；追更、书签分别持有重置记录、基线队列与共享游标。`LocalFollowRepository.resetFollowBaselines()` 在同一数据库事务内读取追更列表并写入下限；`LocalUpdateGate` 防止重置与更新交错，设置页两个入口共用确认和执行反馈。
 
 追更扫描读取有效边界，写入继续使用原始内容历史；不改变阅读队列、打开分割线、未读保留量及检查时间。删除和替换导入通过统一清理方法删除被移除标签的重置状态，保留标签的重置状态继续有效。现有备份范围不变，重置状态与同步 checkpoint 一样不导出；新增恢复标签继续按原流程初始化。
 
@@ -97,6 +97,12 @@ IGNEOUS 刷新使用应用共享网络配置，删除旧值后请求新值；空
 
 ## 上游同步
 
-最近一次同步标签为 `2.0.2.4`，提交 `e99590da6e69e3a8a37b847a8e3df3eb8f5cb22a`，本地合并提交为 `e4fac386`。
+2026-10-11 源码从上次 `2.0.2.4`（`e99590da6e69e3a8a37b847a8e3df3eb8f5cb22a`，本地合并提交 `e4fac386`）迁移到 `2.0.2.5`（`c16c1d57`）。本次尚未创建合并提交，验证记录见根目录说明。
+
+上游新增 LOCATION 的 schema 8 不能覆盖本地 schema 13。新库由 `GalleryTagsDao` 建立含 LOCATION 的表；旧库升级沿用原有 case 7–12，再由 case 13 调用 `GalleryTagsSchema.upgradeToV14()`，检查列存在后追加。`EhDB.importDB()` 使用同一升级入口，兼容已含 LOCATION 的上游备份；不重建追更、书签、阅读队列或下载表。
+
+下载页使用上游拆出的导入、批量操作、搜索、分页和选择控制器及 Kotlin 适配器，保留本地 `DownloadGalleryActivity` 连续阅读、队列快照和黄色已观看标记。点击和多选阅读共用本地入口，返回后刷新连续阅读经过的下载进度并使用分页控制器的同一缓存。相册复制到下载目录，保留 `local-album:` 导入标识；和外部归档一样，不进入本地自动删除阅读队列。上游阅读刷新率应用于普通和下载阅读器，Android 11 以下不显示设置。
+
+保留本地身份、更新清单和构建配置，未迁移上游 README 下载链接及历史公告、版本号和生成器 class 二进制；已删除的 `GalleryListTagsSyncTask` 不恢复。生成器源码只追加 LOCATION 定义，仍不得直接运行旧生成任务。
 
 后续合并须保留 manbo 身份与更新入口、固定 Debug 签名、追更与书签规则、阅读队列、JM、IGNEOUS 和旧归档任务兼容。请求编号中 `METHOD_SCAN_SUBSCRIPTIONS = 29`、`METHOD_GET_EDIT_COMMENT = 30`；修改分发后运行 `EhClientMethodTest`。

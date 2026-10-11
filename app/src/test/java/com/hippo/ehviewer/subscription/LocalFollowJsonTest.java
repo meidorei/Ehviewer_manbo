@@ -11,6 +11,15 @@ import java.nio.charset.StandardCharsets;
 import java.util.Arrays;
 
 public class LocalFollowJsonTest {
+    @Test public void locationTagsRoundTripWithoutBeingRejected() throws Exception {
+        ByteArrayOutputStream output = new ByteArrayOutputStream();
+        LocalFollowJson.write(output, Arrays.asList("location:school"));
+        LocalFollowJson.ParseResult result = LocalFollowJson.read(
+                new ByteArrayInputStream(output.toByteArray()));
+        assertTrue(result.tags.contains("location:school"));
+        assertEquals(0, result.invalid);
+    }
+
     @Test public void utf8RoundTripNormalizesAndReportsInvalidEntries() throws Exception {
         ByteArrayOutputStream output = new ByteArrayOutputStream();
         LocalFollowJson.write(output, Arrays.asList("artist:foo", "group:中文组"));
