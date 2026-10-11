@@ -11,6 +11,11 @@ final class BookmarkQueryNormalizer {
     private BookmarkQueryNormalizer() {}
 
     static ParseResult parseExactQuery(String raw) {
+        return parseExactQuery(raw, false);
+    }
+
+    /** Namespace aliases are opt-in for homepage hints; update/diagnostic callers stay unchanged. */
+    static ParseResult parseExactQuery(String raw, boolean allowNamespaceAliases) {
         TokenizeResult tokenized = tokenize(raw);
         if (!tokenized.balanced) {
             return ParseResult.fallback(BookmarkGlobalMatcher.FallbackReason.COMPLEX_OPERATOR);
@@ -31,7 +36,7 @@ final class BookmarkQueryNormalizer {
                 return ParseResult.fallback(
                         BookmarkGlobalMatcher.FallbackReason.FULL_TEXT_KEYWORD);
             }
-            String namespace = normalizeNamespace(token.substring(0, colon));
+            String namespace = normalizeNamespace(token.substring(0, colon), allowNamespaceAliases);
             String value = cleanValue(token.substring(colon + 1));
             if (value.isEmpty() || containsFuzzyOperator(value)) {
                 return ParseResult.fallback(
@@ -58,10 +63,14 @@ final class BookmarkQueryNormalizer {
     }
 
     static String normalizeStandaloneTag(String raw) {
+        return normalizeStandaloneTag(raw, false);
+    }
+
+    static String normalizeStandaloneTag(String raw, boolean allowNamespaceAliases) {
         String expression = unwrapWholeExpression(raw);
         int colon = expression.indexOf(':');
         if (colon <= 0 || colon == expression.length() - 1) return null;
-        String namespace = normalizeNamespace(expression.substring(0, colon));
+        String namespace = normalizeNamespace(expression.substring(0, colon), allowNamespaceAliases);
         String value = cleanValue(expression.substring(colon + 1));
         if (value.isEmpty() || containsFuzzyOperator(value)) return null;
         return normalizeTag(namespace + ':' + value);
@@ -110,9 +119,27 @@ final class BookmarkQueryNormalizer {
         return value.length() >= 2 && value.startsWith("\"") && value.endsWith("\"");
     }
 
-    private static String normalizeNamespace(String raw) {
+    private static String normalizeNamespace(String raw, boolean allowNamespaceAliases) {
         String namespace = raw == null ? "" : raw.trim().toLowerCase(Locale.ROOT);
         if ("l".equals(namespace) || "lang".equals(namespace)) return "language";
+        if (allowNamespaceAliases) {
+            switch (namespace) {
+                case "a": return "artist";
+                case "c":
+                case "char": return "character";
+                case "cos": return "cosplayer";
+                case "f": return "female";
+                case "g":
+                case "circle": return "group";
+                case "loc": return "location";
+                case "m": return "male";
+                case "x": return "mixed";
+                case "o": return "other";
+                case "p":
+                case "series": return "parody";
+                case "r": return "reclass";
+            }
+        }
         return namespace;
     }
 

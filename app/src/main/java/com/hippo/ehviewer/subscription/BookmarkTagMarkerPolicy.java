@@ -33,13 +33,13 @@ public final class BookmarkTagMarkerPolicy {
             if (bookmark == null) continue;
             Set<String> positiveTags = new LinkedHashSet<>();
             if (bookmark.mode == ListUrlBuilder.MODE_TAG) {
-                String tag = BookmarkQueryNormalizer.normalizeStandaloneTag(bookmark.keyword);
+                String tag = BookmarkQueryNormalizer.normalizeStandaloneTag(bookmark.keyword, true);
                 if (tag == null) continue;
                 positiveTags.add(tag);
             } else if (bookmark.mode == ListUrlBuilder.MODE_NORMAL
                     || bookmark.mode == ListUrlBuilder.MODE_FILTER) {
                 BookmarkQueryNormalizer.ParseResult parsed =
-                        BookmarkQueryNormalizer.parseExactQuery(bookmark.keyword);
+                        BookmarkQueryNormalizer.parseExactQuery(bookmark.keyword, true);
                 if (!parsed.exact || hasUploader(parsed)) continue;
                 for (BookmarkQueryNormalizer.QueryToken token : parsed.tokens) {
                     if (!token.negative) positiveTags.add(token.canonical());
@@ -140,7 +140,7 @@ public final class BookmarkTagMarkerPolicy {
         }
 
         private boolean isTagName(TagTranslator translator) {
-            if (tag.equals(BookmarkQueryNormalizer.normalizeStandaloneTag(bookmarkName))) {
+            if (tag.equals(BookmarkQueryNormalizer.normalizeStandaloneTag(bookmarkName, true))) {
                 return true;
             }
             // Older saved names may translate only the namespace, e.g. 女性:focus handjob.
@@ -149,7 +149,7 @@ public final class BookmarkTagMarkerPolicy {
             if (nameColon <= 0) return false;
             String namespace = tag.substring(0, tag.indexOf(':'));
             String restoredTag = BookmarkQueryNormalizer.normalizeStandaloneTag(
-                    namespace + ':' + bookmarkName.substring(nameColon + 1));
+                    namespace + ':' + bookmarkName.substring(nameColon + 1), true);
             if (!tag.equals(restoredTag)) return false;
             String translatedNamespace = translator.translateNamespace(namespace);
             return translatedNamespace != null && translatedNamespace.trim().equals(

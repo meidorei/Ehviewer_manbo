@@ -1,0 +1,40 @@
+{
+  "suites": [
+    {
+      "tests": 8,
+      "name": "com.hippo.ehviewer.subscription.BookmarkDiagnosticsTest",
+      "timestamp": "2026-10-11T07:00:10.299Z"
+    },
+    {
+      "tests": 34,
+      "name": "com.hippo.ehviewer.subscription.BookmarkTagMarkerPolicyTest",
+      "timestamp": "2026-10-11T07:00:10.340Z"
+    },
+    {
+      "tests": 11,
+      "name": "com.hippo.ehviewer.subscription.BookmarkUpdatePolicyTest",
+      "timestamp": "2026-10-11T07:00:10.381Z"
+    },
+    {
+      "tests": 3,
+      "name": "com.hippo.ehviewer.subscription.LocalFollowJsonTest",
+      "timestamp": "2026-10-11T07:00:10.402Z"
+    },
+    {
+      "tests": 14,
+      "name": "com.hippo.ehviewer.subscription.UnifiedGlobalScanTest",
+      "timestamp": "2026-10-11T07:00:10.526Z"
+    },
+    {
+      "tests": 9,
+      "name": "com.hippo.ehviewer.widget.BookmarkTagLayoutTest",
+      "timestamp": "2026-10-11T07:00:10.554Z"
+    }
+  ],
+  "totals": {
+    "failures": 0,
+    "skipped": 0,
+    "tests": 79,
+    "errors": 0
+  }
+}

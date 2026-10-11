@@ -18,11 +18,11 @@
 | ABI | armeabi-v7a、arm64-v8a、x86、x86_64 |
 | namespace | `com.hippo.ehviewer` |
 | Debug applicationId | `com.ehviewer.manbo.debug` |
-| versionName / Debug versionCode | 163 / 163 |
+| versionName / Debug versionCode | 164 / 164 |
 | Release applicationId / versionCode | `com.ehviewer.manbo` / 112（仅配置参考） |
 | GreenDAO schema | 14 |
 
-2026-10-11 已完成 v163 的离线组装、固定签名与版本核验、USB Debug覆盖安装及存量数据库升级/数据保留核对。最终APK为下方固定输出路径；大小、SHA-256和备份位置见[当次记录](../说明.md)。手机锁屏，真机界面与交互验收未完成。
+2026-10-11 已完成 v164 的离线编译、79 项相关单元测试、组装、固定签名与版本核验、USB Debug 覆盖安装和启动。分类简写兼容仅用于主页；APK 输出仍为下方固定路径，大小与 SHA-256 见[当次记录](../说明.md)。手机锁屏，真机视觉/交互验收未完成。
 
 其他环境需要自行提供对应 JDK、SDK、NDK 与依赖访问条件，未在本次任务中验证 Linux 构建。Google Services/Crashlytics 插件仅在 `app/google-services.json` 存在时应用，Firebase 依赖仍在构建文件中声明，不能仅凭缺少该文件承诺所有构建均禁用分析功能。
 

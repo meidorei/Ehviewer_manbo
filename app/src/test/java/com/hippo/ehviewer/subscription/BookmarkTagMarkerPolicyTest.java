@@ -1,6 +1,7 @@
 package com.hippo.ehviewer.subscription;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
 
@@ -16,6 +17,77 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 public class BookmarkTagMarkerPolicyTest {
+    @Test public void allNamespacesAndAliasesWorkInAllSupportedModes() {
+        String[][] namespaces = {
+                {"artist", "a"}, {"character", "c", "char"}, {"cosplayer", "cos"},
+                {"female", "f"}, {"group", "g", "circle"}, {"language", "l", "lang"},
+                {"location", "loc"}, {"male", "m"}, {"mixed", "x"}, {"other", "o"},
+                {"parody", "p", "series"}, {"reclass", "r"}, {"misc"}
+        };
+        for (String[] names : namespaces) {
+            String canonical = names[0] + ":example tag";
+            for (String name : names) {
+                String query = name.toUpperCase(java.util.Locale.ROOT) + ":\"EXAMPLE   TAG\"$";
+                for (int mode : new int[] {ListUrlBuilder.MODE_TAG,
+                        ListUrlBuilder.MODE_NORMAL, ListUrlBuilder.MODE_FILTER}) {
+                    QuickSearch saved = bookmark(mode, query, query);
+                    List<BookmarkTagMarkerPolicy.Match> matches = compile(false, saved)
+                            .match(tags(canonical));
+                    assertEquals(query + " mode=" + mode, 1, matches.size());
+                    assertEquals(canonical, matches.get(0).tag);
+                    assertEquals("Translated", matches.get(0).displayLabel(true, tag -> {
+                        assertEquals(canonical, tag);
+                        return "Translated";
+                    }));
+                    assertEquals(query, saved.keyword);
+                    assertEquals(query, saved.name);
+                    assertTrue(compile(false, saved).match(tags(canonical + " extended")).isEmpty());
+                }
+            }
+        }
+    }
+
+    @Test public void aliasCombinationMarksPresentPositiveTagsOnly() {
+        BookmarkTagMarkerPolicy policy = compile(false,
+                bookmark(ListUrlBuilder.MODE_NORMAL, "a:foo m:bar -o:baz", "Combined"));
+        assertEquals(Arrays.asList("artist:foo", "male:bar"),
+                tagNames(policy.match(tags("other:baz", "male:bar", "artist:foo"))));
+        assertTrue(policy.match(tags("other:baz")).isEmpty());
+    }
+
+    @Test public void aliasAndFullNameShareOneHintAndKeepFirstSingleName() {
+        BookmarkTagMarkerPolicy policy = compile(false,
+                bookmark(ListUrlBuilder.MODE_NORMAL, "m:bar a:foo", "Combined"),
+                bookmark(ListUrlBuilder.MODE_TAG, "male:bar$", "First"),
+                bookmark(ListUrlBuilder.MODE_TAG, "m:bar", "Later"));
+        List<BookmarkTagMarkerPolicy.Match> matches = policy.match(tags("male:bar"));
+        assertEquals(1, matches.size());
+        assertEquals("First", matches.get(0).bookmarkName);
+    }
+
+    @Test public void aliasesKeepExplicitAndAutomaticLanguageConstraints() {
+        BookmarkTagMarkerPolicy policy = compile(true,
+                bookmark(ListUrlBuilder.MODE_NORMAL, "m:bar lang:english", "English"),
+                bookmark(ListUrlBuilder.MODE_TAG, "m:bar", "Chinese"));
+        assertTrue(policy.match(tags("male:bar")).isEmpty());
+        assertEquals(Arrays.asList("male:bar", "language:english"),
+                tagNames(policy.match(tags("male:bar", "language:english"))));
+        assertEquals("Chinese", policy.match(tags("male:bar", "language:chinese"))
+                .get(0).bookmarkName);
+    }
+
+    @Test public void aliasesAreOptInAndDoNotChangeUpdateOrDiagnosticParsing() {
+        assertNull(BookmarkQueryNormalizer.normalizeStandaloneTag("m:bar"));
+        assertFalse(BookmarkQueryNormalizer.parseExactQuery("m:bar").exact);
+        assertEquals("male:bar", BookmarkQueryNormalizer.normalizeStandaloneTag("m:bar", true));
+        assertTrue(BookmarkQueryNormalizer.parseExactQuery("m:bar", true).exact);
+        assertEquals("language:english", BookmarkQueryNormalizer.normalizeStandaloneTag("l:english"));
+        assertEquals(0, BookmarkDiagnostics.analyze(Arrays.asList(
+                bookmark(ListUrlBuilder.MODE_NORMAL, "m:bar", "Alias"),
+                bookmark(ListUrlBuilder.MODE_NORMAL, "male:bar", "Full")))
+                .duplicateGroups.size());
+    }
+
     @Test public void locationBookmarkMatchesVisibleGalleryTag() {
         BookmarkTagMarkerPolicy policy = compile(false,
                 bookmark(ListUrlBuilder.MODE_TAG, "location:school", "School"));
@@ -154,7 +226,7 @@ public class BookmarkTagMarkerPolicyTest {
 
     @Test public void ignoresUnsupportedQueriesInsteadOfGuessingFromWords() {
         String[] queries = {"ordinary title", "artist:foo title", "artist:foo OR female:bar",
-                "artist:foo*", "artist:foo?", "~artist:foo", "f:bar", "artist:\"foo",
+                "artist:foo*", "artist:foo?", "~artist:foo", "unknown:bar", "artist:\"foo",
                 "uploader:someone", "artist:foo uploader:someone", "-uploader:someone"};
         for (String query : queries) {
             assertTrue(query, compile(false,

@@ -32,10 +32,10 @@
 | Android 最低版本 | Android 6.0（API 23） |
 | 本机维护变体 | `appReleaseDebug` |
 | Debug applicationId | `com.ehviewer.manbo.debug` |
-| versionName / Debug versionCode | `163 / 163` |
+| versionName / Debug versionCode | `164 / 164` |
 | 数据库 schema | `14` |
 
-2026-10-11 已构建并覆盖安装 `163 / 163`，包含上游 2.0.2.5 迁移，保留主页书签标签提示、追更/书签及阅读队列等本地功能。固定 Debug 签名核验通过，升级后 22 张原表全部原字段记录保留，数据库 schema 为 14。APK 输出为 `app/build/outputs/apk/appRelease/debug/app-appRelease-debug.apk`。手机锁屏，新界面视觉验收未完成；实际组装、核验与数据检查结果见[变更记录](说明.md)。
+2026-10-11 已构建并覆盖安装 `164 / 164`，主页书签标签标记支持全部分类及站点分类简写，兼容仅用于主页；79 项相关测试和固定 Debug 签名核验通过。APK 输出为 `app/build/outputs/apk/appRelease/debug/app-appRelease-debug.apk`；手机锁屏，真机视觉验收未完成。实际结果见[变更记录](说明.md)。
 
 ## 开始使用与开发
 
