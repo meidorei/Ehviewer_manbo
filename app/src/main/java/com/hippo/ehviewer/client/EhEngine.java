@@ -268,6 +268,12 @@ public class EhEngine {
 
     public static GalleryListParser.Result getGalleryList(@Nullable EhClient.Task task, OkHttpClient okHttpClient,
                                                           String url,int mode) throws Throwable {
+        return getGalleryList(task, okHttpClient, url, mode, false);
+    }
+
+    public static GalleryListParser.Result getGalleryList(@Nullable EhClient.Task task, OkHttpClient okHttpClient,
+                                                          String url, int mode,
+                                                          boolean completeBookmarkTags) throws Throwable {
         String referer = EhUrl.getReferer();
         Log.d(TAG, url);
         Request request = new EhRequestBuilder(url, referer).build();
@@ -296,6 +302,7 @@ public class EhEngine {
         }
 
         fillGalleryList(task, okHttpClient, result.galleryInfoList, url, true);
+        completeBookmarkTags(task, okHttpClient, result.galleryInfoList, url, completeBookmarkTags);
         if (code == 200 && url.equals("https://exhentai.org/") && body.isEmpty()) {
             result.customErrorString = GetText.getString(R.string.error_igneous_wrong);
         }
@@ -742,8 +749,23 @@ public class EhEngine {
         return result;
     }
 
+    private static void completeBookmarkTags(@Nullable EhClient.Task task, OkHttpClient client,
+                                            List<GalleryInfo> galleries, String referer,
+                                            boolean enabled) throws Throwable {
+        if (!enabled) return;
+        boolean complete = HomeBookmarkTagSupplement.fillMissing(true, galleries,
+                missing -> fillGalleryListByApi(task, client, missing, referer));
+        Log.i("BookmarkTagMetadata", "complete=" + complete + " galleries=" + galleries.size());
+    }
+
     public static FavoritesParser.Result getFavorites(@Nullable EhClient.Task task, OkHttpClient okHttpClient,
                                                       String url, boolean callApi) throws Throwable {
+        return getFavorites(task, okHttpClient, url, callApi, false);
+    }
+
+    public static FavoritesParser.Result getFavorites(@Nullable EhClient.Task task, OkHttpClient okHttpClient,
+                                                      String url, boolean callApi,
+                                                      boolean completeBookmarkTags) throws Throwable {
         String referer = EhUrl.getReferer();
         Log.d(TAG, url);
         Request request = new EhRequestBuilder(url, referer).build();
@@ -771,6 +793,7 @@ public class EhEngine {
             throw e;
         }
         fillGalleryList(task, okHttpClient, result.galleryInfoList, url, false);
+        completeBookmarkTags(task, okHttpClient, result.galleryInfoList, url, completeBookmarkTags);
         return result;
     }
 
@@ -837,6 +860,12 @@ public class EhEngine {
 
     public static FavoritesParser.Result modifyFavorites(@Nullable EhClient.Task task, OkHttpClient okHttpClient,
                                                          String url, long[] gidArray, int dstCat, boolean callApi) throws Throwable {
+        return modifyFavorites(task, okHttpClient, url, gidArray, dstCat, callApi, false);
+    }
+
+    public static FavoritesParser.Result modifyFavorites(@Nullable EhClient.Task task, OkHttpClient okHttpClient,
+                                                         String url, long[] gidArray, int dstCat, boolean callApi,
+                                                         boolean completeBookmarkTags) throws Throwable {
         String catStr;
         if (dstCat == -1) {
             catStr = "delete";
@@ -882,6 +911,7 @@ public class EhEngine {
 
         fillGalleryList(task, okHttpClient, result.galleryInfoList, url, false);
 
+        completeBookmarkTags(task, okHttpClient, result.galleryInfoList, url, completeBookmarkTags);
         return result;
     }
 
@@ -1231,6 +1261,12 @@ public class EhEngine {
      */
     public static GalleryListParser.Result imageSearch(@Nullable EhClient.Task task, OkHttpClient okHttpClient,
                                                        File image, boolean uss, boolean osc, boolean se) throws Throwable {
+        return imageSearch(task, okHttpClient, image, uss, osc, se, false);
+    }
+
+    public static GalleryListParser.Result imageSearch(@Nullable EhClient.Task task, OkHttpClient okHttpClient,
+                                                       File image, boolean uss, boolean osc, boolean se,
+                                                       boolean completeBookmarkTags) throws Throwable {
         String imageName = image.getName();
         String fileName;
         File imageFile;
@@ -1324,6 +1360,7 @@ public class EhEngine {
         }
         fillGalleryList(task, okHttpClient, result.galleryInfoList, url, true);
 
+        completeBookmarkTags(task, okHttpClient, result.galleryInfoList, url, completeBookmarkTags);
         return result;
     }
 

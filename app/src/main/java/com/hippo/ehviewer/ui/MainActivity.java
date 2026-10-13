@@ -976,6 +976,10 @@ public final class MainActivity extends StageActivity
                 ((GalleryListScene) fragment).onAutoAppendChineseChanged();
                 return;
             }
+            if (fragment instanceof FavoritesScene && fragment.isVisible()) {
+                ((FavoritesScene) fragment).refreshBookmarkTagMarkers();
+                return;
+            }
         }
     }
 

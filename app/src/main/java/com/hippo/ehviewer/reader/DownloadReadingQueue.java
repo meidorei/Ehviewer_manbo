@@ -4,13 +4,20 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
 import com.hippo.ehviewer.client.data.GalleryInfo;
+import com.hippo.ehviewer.dao.DownloadInfo;
 
 import java.util.List;
+import java.util.Map;
+import java.util.HashMap;
 
 public final class DownloadReadingQueue {
 
     public interface Availability {
         boolean isAvailable(long gid) throws Exception;
+    }
+
+    public interface CandidateLookup {
+        DownloadInfo get(long gid);
     }
 
     private DownloadReadingQueue() {
@@ -26,6 +33,24 @@ public final class DownloadReadingQueue {
             gids[i] = list.get(i).gid;
         }
         return gids;
+    }
+
+    /** Call on the manager's owning thread; workers receive detached file-check metadata. */
+    public static Map<Long, DownloadInfo> snapshotCandidates(long[] gids, int afterIndex,
+            CandidateLookup lookup) {
+        Map<Long, DownloadInfo> result = new HashMap<>();
+        if (gids == null) {
+            return result;
+        }
+        for (int i = Math.max(0, afterIndex + 1); i < gids.length; i++) {
+            DownloadInfo info = lookup.get(gids[i]);
+            if (info != null) {
+                DownloadInfo copy = new DownloadInfo(info);
+                copy.archiveUri = info.archiveUri;
+                result.put(gids[i], copy);
+            }
+        }
+        return result;
     }
 
     public static int indexOf(@Nullable long[] gids, long gid) {

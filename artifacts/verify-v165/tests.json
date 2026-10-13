@@ -1,0 +1,50 @@
+{
+  "totals": {
+    "failures": 0,
+    "errors": 0,
+    "tests": 89,
+    "skipped": 0
+  },
+  "suites": [
+    {
+      "name": "com.hippo.ehviewer.client.EhClientMethodTest",
+      "tests": 2,
+      "timestamp": "2026-10-11T07:13:30.868Z"
+    },
+    {
+      "name": "com.hippo.ehviewer.client.HomeBookmarkTagSupplementTest",
+      "tests": 8,
+      "timestamp": "2026-10-11T07:13:30.884Z"
+    },
+    {
+      "name": "com.hippo.ehviewer.subscription.BookmarkDiagnosticsTest",
+      "tests": 8,
+      "timestamp": "2026-10-11T07:13:30.969Z"
+    },
+    {
+      "name": "com.hippo.ehviewer.subscription.BookmarkTagMarkerPolicyTest",
+      "tests": 34,
+      "timestamp": "2026-10-11T07:13:30.988Z"
+    },
+    {
+      "name": "com.hippo.ehviewer.subscription.BookmarkUpdatePolicyTest",
+      "tests": 11,
+      "timestamp": "2026-10-11T07:13:31.010Z"
+    },
+    {
+      "name": "com.hippo.ehviewer.subscription.LocalFollowJsonTest",
+      "tests": 3,
+      "timestamp": "2026-10-11T07:13:31.034Z"
+    },
+    {
+      "name": "com.hippo.ehviewer.subscription.UnifiedGlobalScanTest",
+      "tests": 14,
+      "timestamp": "2026-10-11T07:13:31.129Z"
+    },
+    {
+      "name": "com.hippo.ehviewer.widget.BookmarkTagLayoutTest",
+      "tests": 9,
+      "timestamp": "2026-10-11T07:13:31.150Z"
+    }
+  ]
+}

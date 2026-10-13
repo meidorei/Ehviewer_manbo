@@ -1,0 +1,10 @@
+{
+  "catalog": "catalog/catalog.json",
+  "previousCatalog": "../manga-organize-20261011/catalog/catalog.json",
+  "candidatesRead": 353,
+  "nextOffset": null,
+  "status": "phone_writeback_complete",
+  "phoneWritten": true,
+  "confirmed": true,
+  "writebackReport": "writeback/phone-writeback.json"
+}

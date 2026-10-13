@@ -24,30 +24,34 @@ class DownloadSpiderInfoExecutor(
 
     fun execute() {
         service.execute(Runnable {
-            for (i in mList.indices) {
-                val info = mList.get(i)
-                try {
-                    resultMap.put(info.gid, getSpiderInfo(info))
-                } catch (e: OutOfMemoryError) {
-                    Log.e(TAG, "OOM reading spider info header for gid=" + info.gid, e)
-                    resultMap.put(info.gid, null)
-                } catch (e: Exception) {
-                    Log.e(TAG, "Failed reading spider info header for gid=" + info.gid, e)
-                    resultMap.put(info.gid, null)
+            try {
+                for (i in mList.indices) {
+                    val info = mList.get(i)
+                    try {
+                        resultMap.put(info.gid, getSpiderInfo(info))
+                    } catch (e: OutOfMemoryError) {
+                        Log.e(TAG, "OOM reading spider info header for gid=" + info.gid, e)
+                        resultMap.put(info.gid, null)
+                    } catch (e: Exception) {
+                        Log.e(TAG, "Failed reading spider info header for gid=" + info.gid, e)
+                        resultMap.put(info.gid, null)
+                    }
                 }
+                handler.post(Runnable {
+                    if (callBack == null) {
+                        return@Runnable
+                    }
+                    callBack.resultCallBack(resultMap)
+                })
+            } finally {
+                service.shutdown()
             }
-            handler.post(Runnable {
-                if (callBack == null) {
-                    return@Runnable
-                }
-                callBack.resultCallBack(resultMap)
-            })
         })
     }
 
     private fun getSpiderInfo(info: GalleryInfo): SpiderInfo? {
         val spiderInfo: SpiderInfo?
-        val mDownloadDir = SpiderDen.getGalleryDownloadDir(info)
+        val mDownloadDir = SpiderDen.getExistingGalleryDownloadDir(info)
         if (mDownloadDir != null && mDownloadDir.isDirectory()) {
             val file = mDownloadDir.findFile(SpiderQueen.SPIDER_INFO_FILENAME)
             spiderInfo = SpiderInfo.readHeader(file)

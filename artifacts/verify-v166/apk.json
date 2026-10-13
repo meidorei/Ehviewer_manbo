@@ -1,0 +1,12 @@
+{
+  "variant": "appReleaseDebug",
+  "applicationId": "com.ehviewer.manbo.debug",
+  "versionCode": 166,
+  "versionName": "166",
+  "size": 33181713,
+  "sha256": "E9D7A3CAAC4C8213C052BAF933B10557C99389C87D903B7FF8DBDBC85B901421",
+  "certificateSha256": "af169dcf1d3e44c326b55a1c631c371d3adfe06b8bed34839f03a89cf1f1e9df",
+  "v1": true,
+  "v2": true,
+  "apkPath": "C:\\CWorkWork\\Ehviewer_manbo\\app\\build\\outputs\\apk\\appRelease\\debug\\app-appRelease-debug.apk"
+}

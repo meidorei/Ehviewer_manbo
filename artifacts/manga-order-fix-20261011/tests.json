@@ -1,0 +1,8 @@
+{
+  "tests": 17,
+  "failures": 0,
+  "errors": 0,
+  "skipped": 0,
+  "framework": "Python unittest",
+  "scope": "organize skill toolkit, synthetic data"
+}

@@ -20,8 +20,10 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.annotation.Nullable;
 import com.hippo.ehviewer.R;
 import com.hippo.ehviewer.widget.SimpleRatingView;
+import com.hippo.ehviewer.widget.BookmarkTagGroup;
 import com.hippo.widget.LoadImageView;
 
 public class GalleryHolder extends RecyclerView.ViewHolder {
@@ -36,6 +38,7 @@ public class GalleryHolder extends RecyclerView.ViewHolder {
     public final TextView simpleLanguage;
     public final ImageView favourited;
     public final ImageView downloaded;
+    @Nullable public final BookmarkTagGroup bookmarkTags;
 
     public GalleryHolder(View itemView) {
         super(itemView);
@@ -49,6 +52,7 @@ public class GalleryHolder extends RecyclerView.ViewHolder {
         simpleLanguage = itemView.findViewById(R.id.simple_language);
         favourited = itemView.findViewById(R.id.favourited);
         downloaded = itemView.findViewById(R.id.downloaded);
+        bookmarkTags = itemView.findViewById(R.id.bookmark_tags);
     }
 
 }

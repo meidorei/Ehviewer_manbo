@@ -48,6 +48,8 @@ import com.hippo.widget.recyclerview.AutoStaggeredGridLayoutManager;
 import com.hippo.lib.yorozuya.ViewUtils;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
+import java.util.Collections;
+import java.util.List;
 import java.util.concurrent.ExecutorService;
 
 import com.hippo.ehviewer.spider.SpiderQueen;
@@ -166,18 +168,7 @@ abstract class GalleryAdapter extends RecyclerView.Adapter<GalleryHolder> {
     @NonNull
     @Override
     public GalleryHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        int layoutId;
-        switch (viewType) {
-            default:
-            case TYPE_LIST:
-                layoutId = R.layout.item_gallery_list;
-                break;
-            case TYPE_GRID:
-                layoutId = R.layout.item_gallery_grid;
-                break;
-        }
-
-        GalleryHolder holder = new GalleryHolder(mInflater.inflate(layoutId, parent, false));
+        GalleryHolder holder = new GalleryHolder(mInflater.inflate(getLayoutId(viewType), parent, false));
 
         if (viewType == TYPE_LIST) {
             ViewGroup.LayoutParams lp = holder.thumb.getLayoutParams();
@@ -189,6 +180,21 @@ abstract class GalleryAdapter extends RecyclerView.Adapter<GalleryHolder> {
         return holder;
     }
 
+    protected int getLayoutId(int viewType) {
+        int layoutId;
+        switch (viewType) {
+            default:
+            case TYPE_LIST:
+                layoutId = R.layout.item_gallery_list;
+                break;
+            case TYPE_GRID:
+                layoutId = R.layout.item_gallery_grid;
+                break;
+        }
+
+        return layoutId;
+    }
+
     @Override
     public int getItemViewType(int position) {
         return mType;
@@ -197,9 +203,29 @@ abstract class GalleryAdapter extends RecyclerView.Adapter<GalleryHolder> {
     @Nullable
     public abstract GalleryInfo getDataAt(int position);
 
+    protected List<String> getBookmarkTagMarkers(GalleryInfo gallery) {
+        return Collections.emptyList();
+    }
+
+    private void bindBookmarkTagMarkers(GalleryHolder holder, @Nullable GalleryInfo gallery) {
+        if (holder.bookmarkTags == null) return;
+        List<String> labels = gallery == null ? Collections.emptyList() : getBookmarkTagMarkers(gallery);
+        holder.bookmarkTags.setLabels(labels);
+        holder.bookmarkTags.setContentDescription(labels.isEmpty() ? null
+                : mResources.getString(R.string.bookmark_tag_marker_description, TextUtils.join(" · ", labels)));
+        holder.bookmarkTags.setVisibility(labels.isEmpty() ? View.GONE : View.VISIBLE);
+    }
+
+    @Override
+    public void onViewRecycled(@NonNull GalleryHolder holder) {
+        bindBookmarkTagMarkers(holder, null);
+        super.onViewRecycled(holder);
+    }
+
     @Override
     public void onBindViewHolder(@NonNull GalleryHolder holder, int position) {
         GalleryInfo gi = getDataAt(position);
+        bindBookmarkTagMarkers(holder, gi);
         if (null == gi) {
             return;
         }

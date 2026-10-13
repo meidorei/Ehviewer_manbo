@@ -173,7 +173,8 @@ public class EhClient {
                     case METHOD_SIGN_IN:
                         return EhEngine.signIn(this, mOkHttpClient, (String) params[0], (String) params[1]);
                     case METHOD_GET_GALLERY_LIST:
-                        return EhEngine.getGalleryList(this, mOkHttpClient, (String) params[0], (int) params[1]);
+                        return EhEngine.getGalleryList(this, mOkHttpClient, (String) params[0], (int) params[1],
+                                params.length > 2 && Boolean.TRUE.equals(params[2]));
                     case METHOD_GET_GALLERY_DETAIL:
                         return EhEngine.getGalleryDetail(this, mOkHttpClient, (String) params[0]);
                     case METHOD_GET_PREVIEW_SET:
@@ -188,13 +189,15 @@ public class EhClient {
                     case METHOD_GET_GALLERY_TOKEN:
                         return EhEngine.getGalleryToken(this, mOkHttpClient, (Long) params[0], (String) params[1], (Integer) params[2]);
                     case METHOD_GET_FAVORITES:
-                        return EhEngine.getFavorites(this, mOkHttpClient, (String) params[0], (Boolean) params[1]);
+                        return EhEngine.getFavorites(this, mOkHttpClient, (String) params[0], (Boolean) params[1],
+                                params.length > 2 && Boolean.TRUE.equals(params[2]));
                     case METHOD_ADD_FAVORITES:
                         return EhEngine.addFavorites(this, mOkHttpClient, (Long) params[0], (String) params[1], (Integer) params[2], (String) params[3]);
                     case METHOD_ADD_FAVORITES_RANGE:
                         return EhEngine.addFavoritesRange(this, mOkHttpClient, (long[]) params[0], (String[]) params[1], (Integer) params[2]);
                     case METHOD_MODIFY_FAVORITES:
-                        return EhEngine.modifyFavorites(this, mOkHttpClient, (String) params[0], (long[]) params[1], (Integer) params[2], (Boolean) params[3]);
+                        return EhEngine.modifyFavorites(this, mOkHttpClient, (String) params[0], (long[]) params[1], (Integer) params[2], (Boolean) params[3],
+                                params.length > 4 && Boolean.TRUE.equals(params[4]));
                     case METHOD_GET_TORRENT_LIST:
                         return EhEngine.getTorrentList(this, mOkHttpClient, (String) params[0], (Long) params[1], (String) params[2]);
                     case METHOD_GET_TOP_LIST:
@@ -204,7 +207,8 @@ public class EhClient {
                     case METHOD_VOTE_COMMENT:
                         return EhEngine.voteComment(this, mOkHttpClient, (Long) params[0], (String) params[1], (Long) params[2], (String) params[3], (Long) params[4], (Integer) params[5]);
                     case METHOD_IMAGE_SEARCH:
-                        return EhEngine.imageSearch(this, mImageOkHttpClient, (File) params[0], (Boolean) params[1], (Boolean) params[2], (Boolean) params[3]);
+                        return EhEngine.imageSearch(this, mImageOkHttpClient, (File) params[0], (Boolean) params[1], (Boolean) params[2], (Boolean) params[3],
+                                params.length > 4 && Boolean.TRUE.equals(params[4]));
                     case METHOD_ARCHIVE_LIST:
                         return EhEngine.getArchiveList(this, mOkHttpClient, (String) params[0], (Long) params[1], (String) params[2]);
                     case METHOD_ARCHIVER:

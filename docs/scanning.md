@@ -2,7 +2,7 @@
 
 [文档索引](README.md) · [使用指南](usage.md) · [架构与数据](architecture.md)
 
-本文描述当前源码行为。旧文档中的“所有来源最多 21 条”“逐书签只检查第一页”已不适用。
+本文描述 2026-10-13 核对的当前源码行为。旧文档中的“所有来源最多 21 条”“逐书签只检查第一页”已不适用。
 
 ## 边界、时间和计数
 
@@ -66,24 +66,28 @@
 
 ```text
 artist group parody character female male misc language
-cosplayer mixed other reclass
+cosplayer mixed other reclass location
 ```
 
 追更只接受标准 `namespace:value`，统一首尾空格、连续空白和大小写。完整多词值不会拆词；不要给追更标签加末尾 `$`，也不要使用命名空间简写。
 
 书签的本地精确匹配支持标准标签、正负标签的 AND 组合、正向 uploader、分类、最低评分及页数范围。普通搜索的多词标签须带引号；标签模式按整体处理。标准标签末尾 `$` 可有可无。
 
-`l:` 和 `lang:` 可映射为 `language:`；其他简写如 `f:`、`m:` 未被识别时降级。全文关键词、标签混全文、OR、模糊表达式、通配符和负向 uploader 等无法由列表元数据精确重现的查询也降级。
+更新扫描和书签诊断中，`l:` 和 `lang:` 可映射为 `language:`；其他简写如 `f:`、`m:` 未被识别时降级。全文关键词、标签混全文、OR、模糊表达式、通配符和负向 uploader 等无法由列表元数据精确重现的查询也降级。
 
 同步上游 2.0.2.5 后，本地追更 JSON 和书签精确查询支持完整 `location:` 命名空间；翻译词库使用 `loc:` 前缀，但本地精确查询的简写规则不变，建议保存完整 `location:school`。
 
-这是匹配能力判断；`BookmarkUpdatePolicy` 还会先验证更新资格。特殊模式和非中文正向语言条件分别返回 `unsupported mode`、`language conflict`，不发更新请求。
+在线列表和云收藏的书签命中标签另由 `BookmarkTagMarkerPolicy` 显式启用分类简写解析，只用于卡片提示。它使用普通浏览的语言策略，按正向标签显示命中，不等同于更新资格或完整查询匹配；提示出现不代表该书签可参与更新。具体分类简写、显示和标签来源见[使用指南](usage.md)。
+
+更新扫描除匹配能力判断外，还会先由 `BookmarkUpdatePolicy` 验证更新资格。特殊模式和非中文正向语言条件分别返回 `unsupported mode`、`language conflict`，不发更新请求。
 
 书签签名包含 mode、分类、关键词、高级搜索、评分、页数及中文策略。名称不参与签名；条件变化会清理旧状态和边界并重建基线。
 
 ## 请求与提交完整性
 
 更新使用 `EhEngine.getGalleryListForUpdate()`，不套用普通浏览的本地过滤器。必要的标签、发布时间、分类、上传者、页数或评分不完整时通过 gdata 补齐，每批最多 25 项。
+
+在线书签提示使用的 `HomeBookmarkTagSupplement` 属于普通浏览请求的可选补取路径，仅为 `simpleTags == null` 的条目补取并复制 API 标签，普通失败保留原列表，取消和中断继续传播。提示合并网页 `tgList` 与 API `simpleTags`；更新精确匹配使用 `simpleTags`，不启用这一新增开关，仍使用上述元数据补齐机制，失败会中断对应扫描。卡片提示不写入未读、checkpoint 或全局游标。
 
 搜索请求间隔在每次列表请求前执行，不额外限制 gdata、图片或普通浏览。任务创建时保存间隔快照。
 

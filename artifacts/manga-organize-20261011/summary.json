@@ -1,0 +1,15 @@
+{
+  "itemCount": 3341,
+  "newTitlesRead": 35,
+  "removedSincePrevious": 9,
+  "changedTitles": 0,
+  "inheritedTitleJudgments": 3306,
+  "multiSeries": 388,
+  "groupedItems": 1047,
+  "singleItems": 2294,
+  "newMultiSeries": 3,
+  "extendedSeries": 2,
+  "phoneWritten": true,
+  "confirmed": true,
+  "writebackReport": "writeback/phone-writeback.json"
+}

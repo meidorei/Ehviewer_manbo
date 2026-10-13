@@ -1,0 +1,80 @@
+{
+  "variant": "appReleaseDebug",
+  "version": "165/165 (unchanged)",
+  "offline": true,
+  "compilation": "passed",
+  "totals": {
+    "tests": 33,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "reports": [
+    {
+      "name": "com.hippo.ehviewer.reader.DownloadReadingNoticePolicyTest",
+      "modified": "2026-10-11T15:53:19.791324",
+      "tests": 5,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "name": "com.hippo.ehviewer.reader.DownloadReadingQueueTest",
+      "modified": "2026-10-11T15:53:19.795602",
+      "tests": 7,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "name": "com.hippo.ehviewer.reader.ReadingQueuePolicyTest",
+      "modified": "2026-10-11T15:53:19.799804",
+      "tests": 6,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "name": "com.hippo.ehviewer.reader.ReadingQueueSchemaContractTest",
+      "modified": "2026-10-11T15:53:19.802114",
+      "tests": 1,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "name": "com.hippo.ehviewer.reader.ReadingQueueSnapshotTest",
+      "modified": "2026-10-11T15:53:19.804187",
+      "tests": 2,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "name": "com.hippo.ehviewer.ui.DownloadGalleryActivityTest",
+      "modified": "2026-10-11T15:53:19.806281",
+      "tests": 1,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "name": "com.hippo.ehviewer.ui.scene.download.part.DownloadListPolicyTest",
+      "modified": "2026-10-11T15:53:19.808405",
+      "tests": 3,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "name": "com.hippo.ehviewer.ui.scene.download.part.DownloadPaginationPolicyTest",
+      "modified": "2026-10-11T15:53:19.811639",
+      "tests": 8,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    }
+  ],
+  "apkAssembled": false,
+  "deviceAcceptance": "not performed"
+}

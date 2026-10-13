@@ -116,6 +116,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.util.Locale;
+import java.util.Map;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
@@ -894,6 +895,14 @@ public class GalleryActivity extends EhActivity implements SeekBar.OnSeekBarChan
 
     @Override
     public void onReadingEndAttempt() {
+        // GalleryView dispatches gestures on the GL thread. Activity state belongs to main.
+        runOnUiThread(this::advanceDownloadQueue);
+    }
+
+    private void advanceDownloadQueue() {
+        if (isFinishing() || isDestroyed() || mQueueExecutor.isShutdown()) {
+            return;
+        }
         if (!Settings.getDownloadContinuousReading()
                 || mDownloadReadingQueue == null
                 || mDownloadReadingIndex < 0) {
@@ -910,49 +919,55 @@ public class GalleryActivity extends EhActivity implements SeekBar.OnSeekBarChan
         if (resumeAutoTransfer) {
             setAutoTransferring(false);
         }
-        mQueueExecutor.execute(() -> findAndOpenNextDownload(resumeAutoTransfer));
+        findAndOpenNextDownload(mDownloadReadingIndex, 0, resumeAutoTransfer);
     }
 
-    private void findAndOpenNextDownload(boolean resumeAutoTransfer) {
+    private void findAndOpenNextDownload(int afterIndex, int alreadySkipped,
+            boolean resumeAutoTransfer) {
+        if (isFinishing() || isDestroyed() || mQueueExecutor.isShutdown()) {
+            return;
+        }
+        // Copy only the fields used by the background file check; never read the manager there.
+        long[] queue = mDownloadReadingQueue.clone();
         DownloadManager manager = EhApplication.getDownloadManager(getApplicationContext());
-        DownloadInfo[] resolved = new DownloadInfo[1];
-        int nextIndex = DownloadReadingQueue.findNextAvailableIndex(
-                mDownloadReadingQueue, mDownloadReadingIndex, gid -> {
-                    DownloadInfo candidate = manager.getDownloadInfo(gid);
-                    if (candidate != null && isQueuedDownloadReadable(candidate)) {
-                        resolved[0] = candidate;
-                        return true;
-                    }
-                    return false;
-                });
-        int skipped = nextIndex >= 0
-                ? nextIndex - mDownloadReadingIndex - 1
-                : mDownloadReadingQueue.length - mDownloadReadingIndex - 1;
-        DownloadInfo resolvedInfo = resolved[0];
-        int resolvedIndex = nextIndex;
-        int skippedCount = skipped;
-        runOnUiThread(() -> {
-            if (isFinishing() || isDestroyed()) {
-                return;
-            }
-            for (DownloadReadingNoticePolicy.Notice notice
-                    : DownloadReadingNoticePolicy.buildAdvanceNotices(
-                            skippedCount, resolvedInfo != null)) {
-                if (notice == DownloadReadingNoticePolicy.Notice.SKIPPED) {
-                    Toast.makeText(getApplicationContext(), getString(
-                            R.string.download_reading_queue_skipped, skippedCount),
-                            Toast.LENGTH_SHORT).show();
-                } else if (notice == DownloadReadingNoticePolicy.Notice.END) {
-                    mQueueAdvanceInProgress = false;
-                    Toast.makeText(getApplicationContext(),
-                            R.string.download_reading_queue_end,
-                            Toast.LENGTH_SHORT).show();
+        Map<Long, DownloadInfo> candidates = DownloadReadingQueue.snapshotCandidates(
+                queue, afterIndex, manager::getDownloadInfo);
+        mQueueExecutor.execute(() -> {
+            int nextIndex = DownloadReadingQueue.findNextAvailableIndex(
+                    queue, afterIndex, gid -> {
+                        DownloadInfo candidate = candidates.get(gid);
+                        return candidate != null && isQueuedDownloadReadable(candidate);
+                    });
+            int skipped = alreadySkipped + (nextIndex >= 0
+                    ? nextIndex - afterIndex - 1 : queue.length - afterIndex - 1);
+            runOnUiThread(() -> {
+                if (isFinishing() || isDestroyed()) {
+                    return;
                 }
-            }
-            if (resolvedInfo == null) {
-                return;
-            }
-            openQueuedDownload(resolvedInfo, resolvedIndex, resumeAutoTransfer);
+                DownloadInfo resolvedInfo = nextIndex >= 0
+                        ? manager.getDownloadInfo(queue[nextIndex]) : null;
+                if (nextIndex >= 0 && resolvedInfo == null) {
+                    // Deletion finished after the file check. Continue without opening stale metadata.
+                    findAndOpenNextDownload(nextIndex, skipped + 1, resumeAutoTransfer);
+                    return;
+                }
+                for (DownloadReadingNoticePolicy.Notice notice
+                        : DownloadReadingNoticePolicy.buildAdvanceNotices(
+                                skipped, resolvedInfo != null)) {
+                    if (notice == DownloadReadingNoticePolicy.Notice.SKIPPED) {
+                        Toast.makeText(getApplicationContext(), getString(
+                                R.string.download_reading_queue_skipped, skipped),
+                                Toast.LENGTH_SHORT).show();
+                    } else if (notice == DownloadReadingNoticePolicy.Notice.END) {
+                        mQueueAdvanceInProgress = false;
+                        Toast.makeText(getApplicationContext(),
+                                R.string.download_reading_queue_end, Toast.LENGTH_SHORT).show();
+                    }
+                }
+                if (resolvedInfo != null) {
+                    openQueuedDownload(resolvedInfo, nextIndex, resumeAutoTransfer);
+                }
+            });
         });
     }
 

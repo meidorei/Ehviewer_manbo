@@ -17,6 +17,22 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 public class BookmarkTagMarkerPolicyTest {
+    @Test public void oldManTagAndQuotedSearchBothMatchChineseGalleryAlongsideFemaleHints() {
+        for (QuickSearch oldMan : Arrays.asList(
+                bookmark(ListUrlBuilder.MODE_TAG, "male:old man", "男性:老人"),
+                bookmark(ListUrlBuilder.MODE_NORMAL, "male:\"old man$\"", "男性:老人"))) {
+            BookmarkTagMarkerPolicy policy = compile(true,
+                    bookmark(ListUrlBuilder.MODE_TAG, "female:blowjob", "女性:口交"),
+                    bookmark(ListUrlBuilder.MODE_TAG, "female:swallowing", "女性:饮精"), oldMan);
+            List<BookmarkTagMarkerPolicy.Match> matches = policy.match(tags(
+                    "language:chinese", "language:english", "female:blowjob",
+                    "female:swallowing", "male:old man"));
+            assertEquals(Arrays.asList("female:blowjob", "female:swallowing", "male:old man"),
+                    tagNames(matches));
+            assertEquals("男性:老人", matches.get(2).bookmarkName);
+        }
+    }
+
     @Test public void allNamespacesAndAliasesWorkInAllSupportedModes() {
         String[][] namespaces = {
                 {"artist", "a"}, {"character", "c", "char"}, {"cosplayer", "cos"},

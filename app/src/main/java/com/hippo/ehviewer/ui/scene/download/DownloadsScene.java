@@ -90,6 +90,7 @@ import com.hippo.ehviewer.ui.scene.download.part.DownloadArchiveImporter;
 import com.hippo.ehviewer.ui.scene.download.part.DownloadBatchActions;
 import com.hippo.ehviewer.ui.scene.download.part.DownloadChoiceListener;
 import com.hippo.ehviewer.ui.scene.download.part.DownloadGuideHelper;
+import com.hippo.ehviewer.ui.scene.download.part.DownloadListPolicy;
 import com.hippo.ehviewer.ui.scene.download.part.DownloadPaginationController;
 import com.hippo.ehviewer.ui.scene.download.part.DownloadSearchController;
 import com.hippo.ehviewer.widget.MyEasyRecyclerView;
@@ -315,13 +316,13 @@ public class DownloadsScene extends ToolbarScene
             }
         }
 
+        mPaginationController.updatePaginationIndicator();
         if (mAdapter != null) {
             mAdapter.notifyDataSetChanged();
         }
         mBackList = mList;
 //        filterByCategory();
         updateTitle();
-        mPaginationController.updatePaginationIndicator();
         Settings.putRecentDownloadLabel(mLabel);
         mPaginationController.queryUnreadSpiderInfo();
     }
@@ -911,18 +912,55 @@ public class DownloadsScene extends ToolbarScene
         mBatchActions.onClickSecondaryFab(view, fab, position);
     }
 
+    @SuppressLint("NotifyDataSetChanged")
+    private void refreshDownloadStructure() {
+        mPaginationController.updatePaginationIndicator();
+        mPaginationController.trimSpiderInfoMapToCurrentPage();
+        if (mAdapter != null) {
+            mAdapter.notifyDataSetChanged();
+        }
+        updateView();
+        mPaginationController.queryUnreadSpiderInfo();
+    }
+
+    private boolean containsDownload(List<DownloadInfo> list, long gid) {
+        if (list != null) {
+            for (DownloadInfo info : list) {
+                if (info.gid == gid) return true;
+            }
+        }
+        return false;
+    }
+
+    private boolean containsRemovedDownload(List<DownloadInfo> list) {
+        if (list != null && mDownloadManager != null) {
+            for (DownloadInfo info : list) {
+                if (mDownloadManager.getDownloadInfo(info.gid) == null) return true;
+            }
+        }
+        return false;
+    }
+
+    private List<DownloadInfo> retainExistingDownloads(List<DownloadInfo> source) {
+        if (mDownloadManager != null && source != null
+                && (source == mDownloadManager.getDefaultDownloadInfoList()
+                || (mLabel != null && source == mDownloadManager.getLabelDownloadInfoList(mLabel)))) {
+            // Keep manager-owned lists live when clearing search or restoring default order.
+            return source;
+        }
+        return DownloadListPolicy.retainAvailable(source,
+                gid -> mDownloadManager != null && mDownloadManager.getDownloadInfo(gid) != null);
+    }
+
     @Override
     public void onAdd(@NonNull DownloadInfo info, @NonNull List<DownloadInfo> list, int position) {
         if (mList != list) {
             return;
         }
-        if (mAdapter != null) {
-            mAdapter.notifyItemInserted(position);
-        }
+        refreshDownloadStructure();
         if (downloadLabelDraw != null) {
             downloadLabelDraw.updateDownloadLabels();
         }
-        updateView();
     }
 
     @Override
@@ -934,9 +972,9 @@ public class DownloadsScene extends ToolbarScene
         updateView();
 
         int index = mList.indexOf(newInfo);
-        if (index >= 0 && mAdapter != null) {
-//            mSpiderInfoMap.put(info.gid,getSpiderInfo(info));
-            mAdapter.notifyItemChanged(listIndexInPage(index));
+        int pageIndex = listIndexInPage(index);
+        if (pageIndex >= 0 && mAdapter != null) {
+            mAdapter.notifyItemChanged(pageIndex);
         }
         List<DownloadInfo> infos = new ArrayList<>();
         infos.add(newInfo);
@@ -945,12 +983,13 @@ public class DownloadsScene extends ToolbarScene
 
     @Override
     public void onUpdate(@NonNull DownloadInfo info, @NonNull List<DownloadInfo> list, LinkedList<DownloadInfo> mWaitList) {
-        if (mList != list && !mList.contains(info)) {
+        if (mList == null || (mList != list && !mList.contains(info))) {
             return;
         }
         int index = mList.indexOf(info);
-        if (index >= 0 && mAdapter != null) {
-            mAdapter.notifyItemChanged(listIndexInPage(index));
+        int pageIndex = listIndexInPage(index);
+        if (pageIndex >= 0 && mAdapter != null) {
+            mAdapter.notifyItemChanged(pageIndex);
         }
     }
 
@@ -962,13 +1001,17 @@ public class DownloadsScene extends ToolbarScene
         }
     }
 
-    @SuppressLint("NotifyDataSetChanged")
     @Override
     public void onReload() {
-        if (mAdapter != null) {
-            mAdapter.notifyDataSetChanged();
+        // Bulk deletion only emits onReload. Preserve live manager lists and prune copies.
+        if (containsRemovedDownload(mList)) {
+            mList = retainExistingDownloads(mList);
         }
-        updateView();
+        if (containsRemovedDownload(mBackList)) {
+            mBackList = retainExistingDownloads(mBackList);
+        }
+        refreshDownloadStructure();
+        refreshReadingQueueSnapshot();
     }
 
     @Override
@@ -991,13 +1034,16 @@ public class DownloadsScene extends ToolbarScene
 
     @Override
     public void onRemove(@NonNull DownloadInfo info, @NonNull List<DownloadInfo> list, int position) {
-        if (mList != list) {
-            return;
+        mPaginationController.getSpiderInfoMap().remove(info.gid);
+        // Manager-owned lists are already changed; filtered/search lists are independent copies.
+        if (mList != list && containsDownload(mList, info.gid)) {
+            mList = retainExistingDownloads(mList);
         }
-        if (mAdapter != null) {
-            mAdapter.notifyItemRemoved(listIndexInPage(position));
+        if (mBackList != list && containsDownload(mBackList, info.gid)) {
+            mBackList = retainExistingDownloads(mBackList);
         }
-        updateView();
+        refreshDownloadStructure();
+        refreshReadingQueueSnapshot();
     }
 
     @Override
@@ -1174,6 +1220,7 @@ public class DownloadsScene extends ToolbarScene
         if (!isAdded()) {
             return;
         }
+        mPaginationController.updatePaginationIndicator();
         mOriginalAdapter = new DownloadAdapter(this, this);
         mOriginalAdapter.setHasStableIds(true);
         // 避免重复创建包装适配器，直接使用原始适配器
@@ -1181,6 +1228,7 @@ public class DownloadsScene extends ToolbarScene
         if (mRecyclerView != null) {
             mRecyclerView.setAdapter(mAdapter);
         }
+        mPaginationController.bindPageChangeListener(mAdapter, mRecyclerView);
     }
 
     @Override
@@ -1212,10 +1260,10 @@ public class DownloadsScene extends ToolbarScene
     @Override
     public void onDownloadSearchSuccess(List<DownloadInfo> list) {
         // 检查 Fragment 是否已附加，如果未附加则忽略回调
-        if (!isAdded()) {
+        if (!isAdded() || mProgressView == null) {
             return;
         }
-        mList = list;
+        mList = retainExistingDownloads(list);
         updateAdapter();
         mProgressView.setVisibility(View.GONE);
         if (mRecyclerView != null) {
@@ -1228,10 +1276,10 @@ public class DownloadsScene extends ToolbarScene
     @Override
     public void onDownloadListHandleSuccess(List<DownloadInfo> list) {
         // 检查 Fragment 是否已附加，如果未附加则忽略回调
-        if (!isAdded()) {
+        if (!isAdded() || mProgressView == null) {
             return;
         }
-        mList = list;
+        mList = retainExistingDownloads(list);
         updateAdapter();
         mProgressView.setVisibility(View.GONE);
         if (mRecyclerView != null) {
@@ -1242,8 +1290,11 @@ public class DownloadsScene extends ToolbarScene
 
     @Override
     public void onDownloadSearchFailed(List<DownloadInfo> list) {
+        if (!isAdded() || mProgressView == null) {
+            return;
+        }
         Toast.makeText(getEHContext(), R.string.download_searching_failed, Toast.LENGTH_LONG).show();
-        mList = list;
+        mList = retainExistingDownloads(list);
         updateAdapter();
         mProgressView.setVisibility(View.GONE);
         if (mRecyclerView != null) {
@@ -1289,10 +1340,7 @@ public class DownloadsScene extends ToolbarScene
         }
         DownloadSpiderInfoExecutor executor = new DownloadSpiderInfoExecutor(
                 refreshList, refreshed -> {
-                    mPaginationController.getSpiderInfoMap().putAll(refreshed);
-                    if (mAdapter != null) {
-                        mAdapter.notifyDataSetChanged();
-                    }
+                    mPaginationController.spiderInfoResultCallBack(refreshed);
                 });
         executor.execute();
     }
@@ -1322,11 +1370,11 @@ public class DownloadsScene extends ToolbarScene
                 }
             }
         }
+        mPaginationController.updatePaginationIndicator();
         if (mAdapter != null) {
             mAdapter.notifyDataSetChanged();
         }
         updateTitle();
-        mPaginationController.updatePaginationIndicator();
         updateView();
         mPaginationController.queryUnreadSpiderInfo();
     }

@@ -2,13 +2,13 @@
 
 [文档索引](README.md) · [架构与数据](architecture.md) · [变更记录](../说明.md)
 
-本机默认只使用 `appReleaseDebug`，包名为 `com.ehviewer.manbo.debug`。以下命令在仓库根目录的 PowerShell 中执行，路径对应本机已验证环境。
+本机默认只使用 `appReleaseDebug`，包名为 `com.ehviewer.manbo.debug`。以下命令在仓库根目录的 PowerShell 中执行，路径为本机固定配置，每次运行仍须预检。
 
 ## 构建参数
 
 以 [app/build.gradle](../app/build.gradle)、[build.gradle](../build.gradle) 和 [Gradle Wrapper 配置](../gradle/wrapper/gradle-wrapper.properties) 为准。
 
-| 项目 | 2026-10-11 源码值 |
+| 项目 | 2026-10-13 源码值 |
 | --- | --- |
 | Gradle / Android Gradle Plugin | 9.5.0 / 9.3.1 |
 | Kotlin Android / Parcelize | 2.2.10 / 2.1.0 |
@@ -18,11 +18,11 @@
 | ABI | armeabi-v7a、arm64-v8a、x86、x86_64 |
 | namespace | `com.hippo.ehviewer` |
 | Debug applicationId | `com.ehviewer.manbo.debug` |
-| versionName / Debug versionCode | 164 / 164 |
+| versionName / Debug versionCode | 167 / 167 |
 | Release applicationId / versionCode | `com.ehviewer.manbo` / 112（仅配置参考） |
 | GreenDAO schema | 14 |
 
-2026-10-11 已完成 v164 的离线编译、79 项相关单元测试、组装、固定签名与版本核验、USB Debug 覆盖安装和启动。分类简写兼容仅用于主页；APK 输出仍为下方固定路径，大小与 SHA-256 见[当次记录](../说明.md)。手机锁屏，真机视觉/交互验收未完成。
+最近一次交付记录为 2026-10-11 的 `167 / 167`：已组装、通过固定 Debug v1/v2 签名及 APK 版本核验，并覆盖安装和基本启动，保留应用数据。此前功能阶段 102 项相关测试通过，交付阶段未重跑测试；在线列表、云收藏及各主题的完整真机视觉与交互验收尚未完成。大小、SHA-256 及各阶段结果见[当次记录](../说明.md)。2026-10-13 的文档更新只核对源码配置，未重新执行构建、测试、APK 签名核验或手机操作。
 
 其他环境需要自行提供对应 JDK、SDK、NDK 与依赖访问条件，未在本次任务中验证 Linux 构建。Google Services/Crashlytics 插件仅在 `app/google-services.json` 存在时应用，Firebase 依赖仍在构建文件中声明，不能仅凭缺少该文件承诺所有构建均禁用分析功能。
 
@@ -30,6 +30,7 @@
 
 ```powershell
 $buildJdk = 'C:\Users\21555\.gradle\jdks\eclipse_adoptium-21-amd64-windows.2'
+$env:JAVA_HOME = $buildJdk
 $env:ANDROID_HOME = 'C:\Users\21555\AppData\Local\Android\Sdk'
 $env:USERPROFILE = 'C:\Users\21555'
 $debugKey = 'C:\Users\21555\.android\debug.keystore'
@@ -59,6 +60,10 @@ af169dcf1d3e44c326b55a1c631c371d3adfe06b8bed34839f03a89cf1f1e9df
 
 Codex 沙箱的 Java home 可能指向临时用户，其自动生成的 Debug key 不能用于覆盖主机现有 Debug 应用。Gradle 编译、测试和组装在本机需要沙箱外执行权限，避免读取 SDK 文件时遇到 AccessDeniedException。
 
+每次 Gradle 检查、编译、测试或组装都先确认 JDK/SDK 存在，并在实际命令进程设置上述环境；不要依赖 PATH、`local.properties` 或自动发现。签名预检是新 APK 组装的前置要求。环境缺失时先只读探测现有安装；若仍需安装工具、依赖或创建环境，先说明版本、用途、来源和命令、展开后的绝对目录、可否改位置、影响及撤销方法，等待用户明确同意后执行。
+
+已有 Gradle 分发与依赖缓存时，可给下方命令追加 `--offline`。它不会阻止 Wrapper 在分发缺失时下载 Gradle；首次使用或缓存缺失时应先确认所需安装与下载方案。正常构建可能超过 60 秒，使用异步执行并等待同一次构建完成。
+
 ## 版本与最小验证
 
 修改前运行 `git status --short` 和针对性 `git diff`，保留已有改动。每个需要新 APK 的任务在签名预检完成后、首次构建前，将 Debug versionCode 递增一次并同步 versionName。失败重试不再递增。
@@ -72,7 +77,7 @@ Debug versionCode 来自 `applicationVariants` 中的 `output.versionCodeOverrid
 if ($LASTEXITCODE -ne 0) { throw '编译失败' }
 ```
 
-单元测试任务为 `:app:testAppReleaseDebugUnitTest`，可使用 `--tests` 限定相关类。更新策略优先纯 Java 测试；解析修改需运行样本，数据库修改需运行 schema 和迁移相关测试。不要执行旧 `:daogenerator:executeDaoGenerator`。
+单元测试任务为 `:app:testAppReleaseDebugUnitTest`，可使用 `--tests` 限定相关类。更新策略优先纯 Java 测试；解析修改需运行样本，数据库修改需运行 schema 和迁移相关测试。旧 `:daogenerator:executeDaoGenerator` 使用 schema 6，生成前会删除 DAO 目录，而应用已为 schema 14；不能直接执行，确需生成时先核对迁移与全部定制并取得用户明确授权。
 
 测试后汇总实际 XML：
 
@@ -116,6 +121,8 @@ Get-FileHash -LiteralPath $apkPath -Algorithm SHA256
 ```
 
 逐项核对 variant、applicationId、versionName、versionCode、v1/v2 签名、证书摘要、文件大小和 SHA-256。证书必须与上述固定值一致。不要用历史哈希描述新产物。
+
+组装后生产代码、资源或构建输入再次改变时，重新组装并核验最终产物；仅补充说明无需重建。
 
 ## USB 覆盖安装
 

@@ -862,12 +862,7 @@ public final class GalleryListScene extends BaseScene
     }
 
     private boolean showsBookmarkTagMarkers() {
-        return mFeedSourceContext != null
-                && mFeedSourceContext.type == FeedSourceContext.Type.HOME
-                && mUrlBuilder != null
-                && mUrlBuilder.getMode() == ListUrlBuilder.MODE_NORMAL
-                && mUrlBuilder.getCategory() == EhUtils.NONE
-                && TextUtils.isEmpty(mUrlBuilder.getKeyword());
+        return mUrlBuilder != null;
     }
 
     void refreshBookmarkTagMarkers() {
@@ -1578,6 +1573,7 @@ public final class GalleryListScene extends BaseScene
     }
 
     public void onAutoAppendChineseChanged() {
+        refreshBookmarkTagMarkers();
         if (mUrlBuilder == null || mHelper == null || !mUrlBuilder.supportsChineseFilter()) {
             return;
         }
@@ -2565,24 +2561,7 @@ public final class GalleryListScene extends BaseScene
         @Override
         protected List<String> getBookmarkTagMarkers(GalleryInfo gallery) {
             if (!showsBookmarkTagMarkers()) return Collections.emptyList();
-            List<String> names = new ArrayList<>();
-            boolean showTranslations = Settings.getShowTagTranslations();
-            Context context = getEHContext();
-            EhTagDatabase markerTags = showTranslations && context != null
-                    ? EhTagDatabase.getInstance(context) : null;
-            BookmarkTagMarkerPolicy.TagTranslator translator = new BookmarkTagMarkerPolicy.TagTranslator() {
-                @Override public String translate(String tag) {
-                    return TagTranslationUtil.getTagCN(tag, markerTags);
-                }
-
-                @Override public String translateNamespace(String namespace) {
-                    return markerTags == null ? null : markerTags.getTranslation("n:" + namespace);
-                }
-            };
-            for (BookmarkTagMarkerPolicy.Match match : mBookmarkTagMarkers.matchGallery(gallery)) {
-                names.add(match.displayLabel(showTranslations, translator));
-            }
-            return names;
+            return BookmarkTagMarkerLabels.get(mBookmarkTagMarkers, gallery, getEHContext());
         }
 
     }
@@ -2604,7 +2583,8 @@ public final class GalleryListScene extends BaseScene
                         activity.getStageId(), getTag(), taskId));
                 request.setArgs(new File(StringUtils.avoidNull(mUrlBuilder.getImagePath())),
                         mUrlBuilder.isUseSimilarityScan(),
-                        mUrlBuilder.isOnlySearchCovers(), mUrlBuilder.isShowExpunged());
+                        mUrlBuilder.isOnlySearchCovers(), mUrlBuilder.isShowExpunged(),
+                        showsBookmarkTagMarkers() && mBookmarkTagMarkers.getRuleCount() > 0);
                 mClient.execute(request);
             } else {
                 FeedSourceContext source = mFeedSourceContext;
@@ -2617,7 +2597,8 @@ public final class GalleryListScene extends BaseScene
                 request.setMethod(EhClient.METHOD_GET_GALLERY_LIST);
                 request.setCallback(new GetGalleryListListener(getContext(),
                         activity.getStageId(), getTag(), taskId));
-                request.setArgs(url, mUrlBuilder.getMode());
+                request.setArgs(url, mUrlBuilder.getMode(),
+                        showsBookmarkTagMarkers() && mBookmarkTagMarkers.getRuleCount() > 0);
                 mClient.execute(request);
             }
         }
@@ -2646,7 +2627,8 @@ public final class GalleryListScene extends BaseScene
             request.setMethod(EhClient.METHOD_GET_GALLERY_LIST);
             request.setCallback(new GetGalleryListListener(getContext(),
                     activity.getStageId(), getTag(), taskId));
-            request.setArgs(url, mUrlBuilder.getMode());
+            request.setArgs(url, mUrlBuilder.getMode(),
+                    showsBookmarkTagMarkers() && mBookmarkTagMarkers.getRuleCount() > 0);
             mClient.execute(request);
         }
 

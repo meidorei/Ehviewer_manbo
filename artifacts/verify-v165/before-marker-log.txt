@@ -1,0 +1,9 @@
+--------- beginning of main
+10-11 15:03:34.367 22569 22569 I BookmarkTagMarker: home=true source=HOME rules=88 galleries=25 apiTags=0 htmlTags=25 matched=11
+10-11 15:06:25.591 22569 22569 I BookmarkTagMarker: home=true source=HOME rules=88 galleries=25 apiTags=0 htmlTags=25 matched=11
+10-11 15:06:29.965 22569 22569 I BookmarkTagMarker: home=false source=none rules=0 galleries=25 apiTags=0 htmlTags=25 matched=0
+10-11 15:06:39.380 22569 22569 I BookmarkTagMarker: home=false source=QUICK_SEARCH rules=0 galleries=25 apiTags=0 htmlTags=25 matched=0
+10-11 15:06:52.807 22569 22569 I BookmarkTagMarker: home=true source=HOME rules=88 galleries=25 apiTags=0 htmlTags=25 matched=11
+10-11 15:07:29.129 22569 22569 I BookmarkTagMarker: home=true source=HOME rules=88 galleries=25 apiTags=0 htmlTags=25 matched=11
+10-11 15:07:33.135 22823 22823 I BookmarkTagMarker: home=true source=HOME rules=88 galleries=25 apiTags=0 htmlTags=25 matched=11
+10-11 15:13:03.716 22823 22823 I BookmarkTagMarker: home=true source=HOME rules=88 galleries=25 apiTags=0 htmlTags=25 matched=11

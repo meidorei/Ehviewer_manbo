@@ -1,0 +1,22 @@
+{
+  "device": "5da3329",
+  "package": "com.ehviewer.manbo.debug",
+  "phoneOriginalBackup": "databases/organize-backup-20261011-161526",
+  "status": "passed",
+  "userApproval": "2026-10-11: 整理漫画系列并写入",
+  "phoneWritten": true,
+  "freshFiles": [
+    "eh.db"
+  ],
+  "sortedDatabaseSha256": "bb4f0e5ebe50981aba24b6981e8a7d7883f91b3da4ec4ee40830651ac2aaeba2",
+  "deviceBackupVerified": true,
+  "preLaunchVerify": "passed",
+  "launch": "Starting: Intent { cmp=com.ehviewer.manbo.debug/com.hippo.ehviewer.ui.MainActivity }\r\nStatus: ok\r\nLaunchState: COLD\r\nActivity: com.ehviewer.manbo.debug/com.hippo.ehviewer.ui.MainActivity\r\nTotalTime: 1554\r\nWaitTime: 1556\r\nComplete\r\n",
+  "pidAfterLaunch": "15145",
+  "postLaunchVerify": "passed",
+  "itemCount": 3341,
+  "onlyDownloadsTimeChanged": true,
+  "sqliteIntegrity": "ok",
+  "completedAt": "2026-10-11T16:15:35.436752+08:00",
+  "finalLaunch": "Starting: Intent { cmp=com.ehviewer.manbo.debug/com.hippo.ehviewer.ui.MainActivity }\r\n"
+}

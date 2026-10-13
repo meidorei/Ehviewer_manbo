@@ -1,0 +1,4 @@
+    versionCode=166 minSdk=23 targetSdk=30
+    versionName=166
+    lastUpdateTime=2026-10-11 16:03:01
+      firstInstallTime=2026-07-30 13:02:24

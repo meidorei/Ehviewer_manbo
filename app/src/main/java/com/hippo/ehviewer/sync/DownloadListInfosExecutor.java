@@ -44,18 +44,23 @@ public class DownloadListInfosExecutor {
 
     @Nullable
     private final List<DownloadInfo> mList;
+    // Used only by the main-thread callback when no filtering/sorting changed membership.
+    @Nullable
+    private final List<DownloadInfo> mSourceList;
 
     private List<DownloadInfo> resultList;
 
     private final String mSearchKey;
 
     public DownloadListInfosExecutor(@Nullable List<DownloadInfo> mList, String searchKey) {
-        this.mList = mList;
+        this.mSourceList = mList;
+        this.mList = mList == null ? null : new ArrayList<>(mList);
         this.mSearchKey = searchKey;
     }
 
     public DownloadListInfosExecutor(@Nullable List<DownloadInfo> mList, DownloadManager downloadManager) {
-        this.mList = mList;
+        this.mSourceList = mList;
+        this.mList = mList == null ? null : new ArrayList<>(mList);
         this.mSearchKey = "";
     }
 
@@ -71,7 +76,8 @@ public class DownloadListInfosExecutor {
                 if (mDownloadSearchCallback == null) {
                     return;
                 }
-                mDownloadSearchCallback.onDownloadSearchSuccess(resultList);
+                mDownloadSearchCallback.onDownloadSearchSuccess(
+                        resultList == mList ? mSourceList : resultList);
             });
         });
     }
@@ -133,7 +139,8 @@ public class DownloadListInfosExecutor {
                 if (mDownloadSearchCallback == null) {
                     return;
                 }
-                mDownloadSearchCallback.onDownloadSearchSuccess(resultList);
+                mDownloadSearchCallback.onDownloadSearchSuccess(
+                        resultList == mList ? mSourceList : resultList);
             });
         });
     }

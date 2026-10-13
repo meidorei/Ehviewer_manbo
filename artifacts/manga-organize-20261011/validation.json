@@ -1,0 +1,11 @@
+{
+  "checks": {
+    "allGidsExactlyOnce": true,
+    "originalTitlesPreserved": true,
+    "planValid": true,
+    "allNewTitlesRead": true,
+    "rawMatchesSnapshot": true
+  },
+  "passed": 5,
+  "failed": 0
+}

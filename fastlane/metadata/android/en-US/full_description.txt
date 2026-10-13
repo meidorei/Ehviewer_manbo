@@ -3,10 +3,14 @@ EhViewer manbo is an Android client fork based on EhViewer_CN_SXJ, with gallery 
 Features:
 • Follow tags locally and import or export follow tags as JSON.
 • Check saved searches across pages and mark shared unread gallery IDs as read across bookmarks.
+• Show matching bookmark tags in online gallery lists and cloud favorites, fetching missing API tags as needed.
 • Run global Chinese scans or individual checks, with pause, resume and stop controls.
 • Keep reading boundaries for follows and bookmarks, and a manual marker on the home list.
 • Add Chinese search conditions automatically and look up JM metadata.
 • Track recent reading and page progress for completed in-app downloads.
+• Page through downloads and continue reading in the filter and sort order captured when opening a gallery.
+• Import local image folders by copying them into the download directory for offline reading.
+• Choose a reading refresh rate on Android 11 and later.
 • Pause, resume and import new archive downloads.
 
 Bookmark badges display 20+ above twenty unread entries while retaining all unread gallery IDs. Local follows retain up to 21 unread entries. Automatic deletion in the reading queue is off by default; enabling it permanently deletes local downloads evicted from the queue.

@@ -69,6 +69,8 @@ import com.hippo.ehviewer.client.EhUrl
 import com.hippo.ehviewer.client.data.FavListUrlBuilder
 import com.hippo.ehviewer.client.data.GalleryInfo
 import com.hippo.ehviewer.client.parser.FavoritesParser
+import com.hippo.ehviewer.event.SomethingNeedRefresh
+import com.hippo.ehviewer.subscription.BookmarkTagMarkerPolicy
 import com.hippo.ehviewer.ui.CommonOperations
 import com.hippo.ehviewer.ui.annotation.DrawerLifeCircle
 import com.hippo.ehviewer.ui.annotation.ViewLifeCircle
@@ -76,6 +78,7 @@ import com.hippo.ehviewer.ui.annotation.WholeLifeCircle
 import com.hippo.ehviewer.ui.dialog.FavoriteListSortDialog
 import com.hippo.ehviewer.ui.scene.BaseScene
 import com.hippo.ehviewer.ui.scene.EhCallback
+import com.hippo.ehviewer.ui.scene.GalleryHolder
 import com.hippo.ehviewer.ui.scene.gallery.detail.GalleryDetailScene
 import com.hippo.ehviewer.widget.EhDrawerLayout
 import com.hippo.ehviewer.widget.GalleryInfoContentHelper
@@ -97,6 +100,9 @@ import com.hippo.widget.FabLayout.OnClickFabListener
 import com.hippo.widget.FabLayout.OnExpandListener
 import com.hippo.widget.SearchBarMover
 import okhttp3.OkHttpClient
+import org.greenrobot.eventbus.EventBus
+import org.greenrobot.eventbus.Subscribe
+import org.greenrobot.eventbus.ThreadMode
 import java.util.concurrent.ExecutorService
 
 // TODO Get favorite, modify favorite, add favorite, what a mess!
@@ -114,6 +120,8 @@ class FavoritesScene : BaseScene(), EasyRecyclerView.OnItemClickListener,
 
     @ViewLifeCircle
     private var mAdapter: FavoritesAdapter? = null
+
+    private var mBookmarkTagMarkers = BookmarkTagMarkerPolicy.EMPTY
 
     @ViewLifeCircle
     private var mHelper: FavoritesHelper? = null
@@ -203,6 +211,31 @@ class FavoritesScene : BaseScene(), EasyRecyclerView.OnItemClickListener,
         } else {
             onRestore(savedInstanceState)
         }
+        refreshBookmarkTagMarkers()
+        if (!EventBus.getDefault().isRegistered(this)) EventBus.getDefault().register(this)
+    }
+
+    private fun showsBookmarkTagMarkers(): Boolean =
+        mUrlBuilder != null && mUrlBuilder!!.getFavCat() != FavListUrlBuilder.FAV_CAT_LOCAL
+
+    fun refreshBookmarkTagMarkers() {
+        mBookmarkTagMarkers = if (showsBookmarkTagMarkers()) {
+            BookmarkTagMarkerPolicy.compile(EhDB.getAllQuickSearch(), Settings.getAutoAppendChinese())
+        } else BookmarkTagMarkerPolicy.EMPTY
+        mAdapter?.notifyDataSetChanged()
+    }
+
+    private fun completeBookmarkTags(): Boolean =
+        showsBookmarkTagMarkers() && mBookmarkTagMarkers.getRuleCount() > 0
+
+    override fun onResume() {
+        super.onResume()
+        refreshBookmarkTagMarkers()
+    }
+
+    @Subscribe(threadMode = ThreadMode.MAIN)
+    fun onQuickSearchDataChanged(refresh: SomethingNeedRefresh) {
+        if (refresh.isBookmarkDrawNeed()) refreshBookmarkTagMarkers()
     }
 
     private fun onInit() {
@@ -238,6 +271,8 @@ class FavoritesScene : BaseScene(), EasyRecyclerView.OnItemClickListener,
 
     override fun onDestroy() {
         super.onDestroy()
+        EventBus.getDefault().unregister(this)
+        mBookmarkTagMarkers = BookmarkTagMarkerPolicy.EMPTY
 
         mClient = null
         mFavCatArray = null
@@ -577,6 +612,7 @@ class FavoritesScene : BaseScene(), EasyRecyclerView.OnItemClickListener,
 
             mUrlBuilder!!.setKeyword(null)
             mUrlBuilder!!.setFavCat(newFavCat)
+            refreshBookmarkTagMarkers()
             updateSearchBar()
             mHelper!!.refresh()
 
@@ -1224,6 +1260,23 @@ class FavoritesScene : BaseScene(), EasyRecyclerView.OnItemClickListener,
         inflater: LayoutInflater, resources: Resources,
         recyclerView: RecyclerView, type: Int
     ) : GalleryAdapter(inflater, resources, recyclerView, type, false, executorService) {
+        // Separate pools so cloud cards cannot be reused as local-favorite cards.
+        override fun getItemViewType(position: Int): Int =
+            super.getItemViewType(position) + if (showsBookmarkTagMarkers()) 2 else 0
+
+        override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): GalleryHolder =
+            super.onCreateViewHolder(parent, viewType % 2)
+
+        override fun getLayoutId(viewType: Int): Int =
+            if (!showsBookmarkTagMarkers()) super.getLayoutId(viewType)
+            else if (viewType == TYPE_GRID) R.layout.item_gallery_bookmark_grid
+            else R.layout.item_gallery_bookmark_list
+
+        override fun getBookmarkTagMarkers(gallery: GalleryInfo): List<String> =
+            if (showsBookmarkTagMarkers()) {
+                BookmarkTagMarkerLabels.get(mBookmarkTagMarkers, gallery, getEHContext())
+            } else emptyList()
+
         override fun getItemCount(): Int {
             return if (null != mHelper) mHelper!!.size() else 0
         }
@@ -1299,7 +1352,7 @@ class FavoritesScene : BaseScene(), EasyRecyclerView.OnItemClickListener,
                             taskId, local, mUrlBuilder!!.getKeyword()
                         )
                     )
-                    request.setArgs(url, gidArray, mModifyFavCat, Settings.getShowJpnTitle())
+                    request.setArgs(url, gidArray, mModifyFavCat, Settings.getShowJpnTitle(), completeBookmarkTags())
                     mClient!!.execute(request)
                 }
             } else if (mUrlBuilder!!.getFavCat() == FavListUrlBuilder.FAV_CAT_LOCAL) {
@@ -1317,7 +1370,7 @@ class FavoritesScene : BaseScene(), EasyRecyclerView.OnItemClickListener,
                         taskId, false, mUrlBuilder!!.getKeyword()
                     )
                 )
-                request.setArgs(url, Settings.getShowJpnTitle())
+                request.setArgs(url, Settings.getShowJpnTitle(), completeBookmarkTags())
                 mClient!!.execute(request)
             }
         }
@@ -1343,7 +1396,7 @@ class FavoritesScene : BaseScene(), EasyRecyclerView.OnItemClickListener,
                     taskId, false, mUrlBuilder!!.getKeyword()
                 )
             )
-            request.setArgs(url, Settings.getShowJpnTitle())
+            request.setArgs(url, Settings.getShowJpnTitle(), completeBookmarkTags())
             mClient!!.execute(request)
         }
 
@@ -1412,7 +1465,7 @@ class FavoritesScene : BaseScene(), EasyRecyclerView.OnItemClickListener,
                             taskId, local, mUrlBuilder!!.getKeyword()
                         )
                     )
-                    request.setArgs(url, gidArray, mModifyFavCat, Settings.getShowJpnTitle())
+                    request.setArgs(url, gidArray, mModifyFavCat, Settings.getShowJpnTitle(), completeBookmarkTags())
                     mClient!!.execute(request)
                 }
             } else if (mUrlBuilder!!.getFavCat() == FavListUrlBuilder.FAV_CAT_LOCAL) {
@@ -1447,7 +1500,7 @@ class FavoritesScene : BaseScene(), EasyRecyclerView.OnItemClickListener,
                         taskId, false, mUrlBuilder!!.getKeyword()
                     )
                 )
-                request.setArgs(url, Settings.getShowJpnTitle())
+                request.setArgs(url, Settings.getShowJpnTitle(), completeBookmarkTags())
                 mClient!!.execute(request)
             }
         }

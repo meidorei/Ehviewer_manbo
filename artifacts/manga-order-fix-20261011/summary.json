@@ -1,0 +1,11 @@
+{
+  "itemCount": 3341,
+  "multiSeries": 388,
+  "singleItems": 2294,
+  "changedSeries": 111,
+  "inferredPredecessors": 105,
+  "chapterRangeCollectionsReviewed": 17,
+  "phoneWritten": true,
+  "confirmed": true,
+  "writebackReport": "writeback/phone-writeback.json"
+}

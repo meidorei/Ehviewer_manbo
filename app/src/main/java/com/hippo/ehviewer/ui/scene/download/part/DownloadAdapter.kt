@@ -263,15 +263,10 @@ class DownloadAdapter(scene: DownloadsScene, callback: DownloadAdapterCallback) 
         }
     }
 
-    override fun getItemCount(): Int {
-        val list = mCallback.list ?: return 0
-        val listSize = list.size
-        if (listSize < mCallback.paginationSize || !mCallback.isCanPagination) {
-            return listSize
-        }
-        val count = listSize - mCallback.pageSize * (mCallback.indexPage - 1)
-        return min(count, mCallback.pageSize)
-    }
+    override fun getItemCount(): Int = DownloadPaginationPolicy.itemCount(
+        mCallback.list?.size ?: 0, mCallback.pageSize, mCallback.indexPage,
+        mCallback.isCanPagination
+    )
 
     private fun isImportedArchive(info: DownloadInfo?): Boolean {
         return info != null && info.archiveUri != null && info.archiveUri.startsWith("content://")

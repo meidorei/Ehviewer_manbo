@@ -1,0 +1,7 @@
+Starting: Intent { cmp=com.ehviewer.manbo.debug/com.hippo.ehviewer.ui.MainActivity }
+Status: ok
+LaunchState: COLD
+Activity: com.ehviewer.manbo.debug/com.hippo.ehviewer.ui.MainActivity
+TotalTime: 1410
+WaitTime: 1412
+Complete

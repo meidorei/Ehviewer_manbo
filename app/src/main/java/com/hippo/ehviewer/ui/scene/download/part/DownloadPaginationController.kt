@@ -28,7 +28,6 @@ import com.hippo.ehviewer.ui.scene.download.DownloadsScene
 import com.hippo.ehviewer.ui.scene.download.part.MyPageChangeListener.PageChangeCallback
 import com.hippo.ehviewer.widget.MyEasyRecyclerView
 import com.sxj.paginationlib.PaginationIndicator
-import kotlin.math.min
 
 /**
  * 下载列表分页与阅读进度。
@@ -60,6 +59,8 @@ class DownloadPaginationController(private val mHost: Host) {
     private var doNotScroll = false
     var isNeedInitPage: Boolean = false
     private var needInitPageSize = false
+    private var spiderInfoRequestInFlight = false
+    private var spiderInfoRefreshPending = false
 
     fun bindPageChangeListener(
         adapter: RecyclerView.Adapter<*>?,
@@ -82,28 +83,30 @@ class DownloadPaginationController(private val mHost: Host) {
         }
     }
 
-    fun positionInList(position: Int): Int {
-        val list = mHost.list
-        if (list != null && list.size > paginationSize && this.isCanPagination) {
-            return position + pageSize * (indexPage - 1)
-        }
-        return position
-    }
+    fun positionInList(position: Int): Int = DownloadPaginationPolicy.positionInList(
+        position, mHost.list?.size ?: 0, pageSize, indexPage, isCanPagination
+    )
 
-    fun listIndexInPage(position: Int): Int {
-        val list = mHost.list
-        if (list != null && list.size > paginationSize && this.isCanPagination) {
-            return position % pageSize
-        }
-        return position
+    fun listIndexInPage(position: Int): Int = DownloadPaginationPolicy.indexInPage(
+        position, mHost.list?.size ?: 0, pageSize, indexPage, isCanPagination
+    )
+
+    fun normalizePage() {
+        pageSize = pageSize.coerceAtLeast(1)
+        indexPage = DownloadPaginationPolicy.clampPage(
+            mHost.list?.size ?: 0, pageSize, indexPage, isCanPagination
+        )
+        myPageChangeListener?.indexPage = indexPage
+        myPageChangeListener?.pageSize = pageSize
     }
 
     fun updatePaginationIndicator() {
+        normalizePage()
         val list = mHost.list
         if (this.paginationIndicator == null || list == null) {
             return
         }
-        if (list.size < paginationSize || !this.isCanPagination) {
+        if (!DownloadPaginationPolicy.isPaged(list.size, isCanPagination)) {
             paginationIndicator!!.visibility = View.GONE
             return
         }
@@ -165,7 +168,7 @@ class DownloadPaginationController(private val mHost: Host) {
                         break
                     }
                 }
-                if (position != -1) {
+                if (position >= 0) {
                     adapter.notifyItemChanged(position)
                 } else {
                     adapter.notifyDataSetChanged()
@@ -187,19 +190,14 @@ class DownloadPaginationController(private val mHost: Host) {
 
     val currentPageList: MutableList<DownloadInfo>
         get() {
-            val list = mHost.list ?: return mutableListOf<DownloadInfo>()
-            if (list.size > paginationSize && this.isCanPagination) {
-                var from = pageSize * (indexPage - 1)
-                if (from < 0) {
-                    from = 0
-                }
-                if (from >= list.size) {
-                    return mutableListOf<DownloadInfo>()
-                }
-                val to = min(from + pageSize, list.size)
-                return list.subList(from, to)
-            }
-            return list
+            val list = mHost.list ?: return mutableListOf()
+            val from = DownloadPaginationPolicy.pageStart(
+                list.size, pageSize, indexPage, isCanPagination
+            )
+            val count = DownloadPaginationPolicy.itemCount(
+                list.size, pageSize, indexPage, isCanPagination
+            )
+            return ArrayList(list.subList(from, from + count))
         }
 
     fun trimSpiderInfoMapToCurrentPage() {
@@ -229,19 +227,28 @@ class DownloadPaginationController(private val mHost: Host) {
     }
 
     fun fetchSpiderInfo(infos: MutableList<DownloadInfo>) {
-        val executor = DownloadSpiderInfoExecutor(
-            infos
-        ) { resultMap: MutableMap<Long?, SpiderInfo?>? ->
-            this.spiderInfoResultCallBack(
-                resultMap!!
-            )
+        if (spiderInfoRequestInFlight) {
+            spiderInfoRefreshPending = true
+            return
+        }
+        spiderInfoRequestInFlight = true
+        val executor = DownloadSpiderInfoExecutor(ArrayList(infos)) { resultMap ->
+            spiderInfoRequestInFlight = false
+            if (resultMap != null) spiderInfoResultCallBack(resultMap)
+            if (spiderInfoRefreshPending) {
+                spiderInfoRefreshPending = false
+                queryUnreadSpiderInfo()
+            }
         }
         executor.execute()
     }
 
     @SuppressLint("NotifyDataSetChanged")
     fun spiderInfoResultCallBack(resultMap: MutableMap<Long?, SpiderInfo?>) {
-        spiderInfoMap.putAll(resultMap)
+        val available = mHost.list?.map { it.gid }?.toSet() ?: emptySet()
+        for ((gid, info) in resultMap) {
+            if (gid in available) spiderInfoMap[gid] = info
+        }
         trimSpiderInfoMapToCurrentPage()
         val adapter = mHost.notifyAdapter
         if (adapter != null) {
@@ -252,15 +259,17 @@ class DownloadPaginationController(private val mHost: Host) {
     @SuppressLint("NotifyDataSetChanged")
     fun initPage(position: Int) {
         val list = mHost.list
-        if (list != null && list.size > paginationSize && this.isCanPagination) {
+        if (list != null && DownloadPaginationPolicy.isPaged(list.size, isCanPagination)) {
             indexPage = position / pageSize + 1
         }
+        normalizePage()
         doNotScroll = true
         if (this.paginationIndicator != null) {
             paginationIndicator!!.skip2Pos(indexPage)
         }
         val recyclerView = mHost.recyclerView
-        recyclerView!!.scrollToPosition(listIndexInPage(position))
+        val pagePosition = listIndexInPage(position)
+        if (pagePosition >= 0) recyclerView?.scrollToPosition(pagePosition)
     }
 
     fun getPageSizePos(pageSize: Int): Int {
