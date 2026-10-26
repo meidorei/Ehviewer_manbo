@@ -8,7 +8,7 @@
 
 以 [app/build.gradle](../app/build.gradle)、[build.gradle](../build.gradle) 和 [Gradle Wrapper 配置](../gradle/wrapper/gradle-wrapper.properties) 为准。
 
-| 项目 | 2026-10-13 源码值 |
+| 项目 | 2026-10-25 源码值 |
 | --- | --- |
 | Gradle / Android Gradle Plugin | 9.5.0 / 9.3.1 |
 | Kotlin Android / Parcelize | 2.2.10 / 2.1.0 |
@@ -18,11 +18,11 @@
 | ABI | armeabi-v7a、arm64-v8a、x86、x86_64 |
 | namespace | `com.hippo.ehviewer` |
 | Debug applicationId | `com.ehviewer.manbo.debug` |
-| versionName / Debug versionCode | 167 / 167 |
+| versionName / Debug versionCode | 168 / 168 |
 | Release applicationId / versionCode | `com.ehviewer.manbo` / 112（仅配置参考） |
 | GreenDAO schema | 14 |
 
-最近一次交付记录为 2026-10-11 的 `167 / 167`：已组装、通过固定 Debug v1/v2 签名及 APK 版本核验，并覆盖安装和基本启动，保留应用数据。此前功能阶段 102 项相关测试通过，交付阶段未重跑测试；在线列表、云收藏及各主题的完整真机视觉与交互验收尚未完成。大小、SHA-256 及各阶段结果见[当次记录](../说明.md)。2026-10-13 的文档更新只核对源码配置，未重新执行构建、测试、APK 签名核验或手机操作。
+最近一次交付为 2026-10-25 的 `168 / 168`：已完成代码审查、固定 Debug 签名预检、离线组装、最终 APK 的 v1/v2 签名及包名/版本核验，并覆盖安装和基本启动，保留应用数据。功能合入阶段 35 项相关测试通过，交付阶段未重跑测试。固定输出为 `app/build/outputs/apk/appRelease/debug/app-appRelease-debug.apk`，大小 33,200,752 字节，SHA-256 为 `4ca783d821871cb1cd29358dd6de5ec900d64bb501fcf37aac5fbfec1380dc01`；完整记录见[当次记录](../说明.md)。图床联网及菜单真机交互尚未验收。
 
 其他环境需要自行提供对应 JDK、SDK、NDK 与依赖访问条件，未在本次任务中验证 Linux 构建。Google Services/Crashlytics 插件仅在 `app/google-services.json` 存在时应用，Firebase 依赖仍在构建文件中声明，不能仅凭缺少该文件承诺所有构建均禁用分析功能。
 

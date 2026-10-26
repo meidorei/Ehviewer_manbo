@@ -1,0 +1,14 @@
+{
+  "path": "C:\\CWorkWork\\Ehviewer_manbo\\app\\build\\outputs\\apk\\appRelease\\debug\\app-appRelease-debug.apk",
+  "variant": "appReleaseDebug",
+  "applicationId": "com.ehviewer.manbo.debug",
+  "versionCode": 168,
+  "versionName": "168",
+  "bytes": 33200752,
+  "sha256": "4ca783d821871cb1cd29358dd6de5ec900d64bb501fcf37aac5fbfec1380dc01",
+  "certificateSha256": "af169dcf1d3e44c326b55a1c631c371d3adfe06b8bed34839f03a89cf1f1e9df",
+  "v1": true,
+  "v2": true,
+  "modified": "2026-10-25T16:51:55.1317510+08:00",
+  "verified": "2026-10-25T16:52:14.0187911+08:00"
+}

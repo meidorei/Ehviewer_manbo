@@ -26,19 +26,19 @@
 
 ## 当前版本
 
-以下为 2026-10-13 核对的源码配置，不代表发布页版本。
+以下为 2026-10-25 核对的源码配置，不代表发布页版本。
 
 | 项目 | 当前值 |
 | --- | --- |
 | Android 最低版本 | Android 6.0（API 23） |
 | 本机维护变体 | `appReleaseDebug` |
 | Debug applicationId | `com.ehviewer.manbo.debug` |
-| versionName / Debug versionCode | `167 / 167` |
+| versionName / Debug versionCode | `168 / 168` |
 | 数据库 schema | `14` |
 
-最近一次交付记录为 2026-10-11 的 `167 / 167`：已组装、通过固定 Debug v1/v2 签名及 APK 版本核验，并覆盖安装和基本启动，保留应用数据。此前功能阶段 102 项相关测试通过，交付阶段未重跑测试；在线列表、云收藏及各主题的完整真机视觉与交互验收尚未完成。详见[变更记录](说明.md)，固定 APK 输出为 `app/build/outputs/apk/appRelease/debug/app-appRelease-debug.apk`。
+最近一次交付为 2026-10-25 的 `168 / 168`，包含上游 2.0.2.6 的表站图床地址修复和本地导入筛选；已完成离线组装、固定 Debug v1/v2 签名及包名/版本核验，并覆盖安装和基本启动，保留应用数据。详见[变更记录](说明.md)，固定 APK 输出为 `app/build/outputs/apk/appRelease/debug/app-appRelease-debug.apk`。
 
-2026-10-13 仅更新文档并核对源码配置，未重新编译、测试、组装 APK、核验签名或操作手机。
+2026-10-25 功能合入阶段的 appReleaseDebug 编译及 35 项相关测试通过；交付阶段完成代码审查、打包安装，未重复运行单元测试。图床联网及菜单真机交互尚未验收。
 
 ## 开始使用与开发
 
@@ -49,6 +49,6 @@
 
 ## 来源与许可
 
-本分支基于 [xiaojieonly/Ehviewer_CN_SXJ](https://github.com/xiaojieonly/Ehviewer_CN_SXJ)，项目起源于 seven332/EhViewer。当前源码已迁移上游标签 `2.0.2.5`（`c16c1d57`）的适用更新；编译、测试及 APK 交付状态见[变更记录](说明.md)。
+本分支基于 [xiaojieonly/Ehviewer_CN_SXJ](https://github.com/xiaojieonly/Ehviewer_CN_SXJ)，项目起源于 seven332/EhViewer。当前源码已迁移上游标签 [2.0.2.6](https://github.com/xiaojieonly/Ehviewer_CN_SXJ/releases/tag/2.0.2.6)（`dfe35624`）的适用更新，包括表站图床内置地址修复和下载页“本地导入”筛选；编译、测试及 APK 交付状态见[变更记录](说明.md)。
 
 项目许可证见 [LICENSE](LICENSE)，版权声明见 [NOTICE](NOTICE)。第三方组件保留各自许可证；上游公告、鸣谢及支持资料见 [feedauthor 文档索引](feedauthor/README.md)。

@@ -128,6 +128,9 @@ public class DownloadListInfosExecutor {
                 case R.id.unknown:
                     resultList = filterDownloadKind(id);
                     break;
+                case R.id.local_import:
+                    resultList = filterLocalImport(mList);
+                    break;
                 case R.id.all:
                 case R.id.sort_by_default:
                 default:
@@ -350,6 +353,19 @@ public class DownloadListInfosExecutor {
         return list;
     }
 
+
+    static List<DownloadInfo> filterLocalImport(@Nullable List<DownloadInfo> source) {
+        List<DownloadInfo> list = new ArrayList<>();
+        if (source == null) {
+            return list;
+        }
+        for (DownloadInfo info : source) {
+            if (info.archiveUri != null && !info.archiveUri.isEmpty()) {
+                list.add(info);
+            }
+        }
+        return list;
+    }
 
     protected List<DownloadInfo> searchingInBackground() {
         if (mDownloadSearchCallback == null) {

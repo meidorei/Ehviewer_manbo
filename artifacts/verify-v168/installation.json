@@ -1,0 +1,12 @@
+{
+  "device": "5da3329",
+  "applicationId": "com.ehviewer.manbo.debug",
+  "beforeVersion": 167,
+  "afterVersion": 168,
+  "install": "Success",
+  "startup": "Status: ok",
+  "pid": "18276",
+  "firstInstallTime": "2026-07-30 13:02:24",
+  "firstInstallTimeUnchanged": true,
+  "verified": "2026-10-25T16:52:49.4058072+08:00"
+}
