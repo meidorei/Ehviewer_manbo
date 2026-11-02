@@ -1,0 +1,19 @@
+{
+  "device": "5da3329",
+  "package": "com.ehviewer.manbo.debug",
+  "version": [
+    "versionCode=168 minSdk=23 targetSdk=30",
+    "versionName=168"
+  ],
+  "capturedAt": "2026-10-28T16:12:00.391888+08:00",
+  "method": "Stop Debug app; copy main DB plus every present sidecar; preserve phone files",
+  "status": "captured",
+  "files": {
+    "databases/eh.db": {
+      "bytes": 3510272,
+      "sha256": "6952c0afa26dc79e6f031c48363969fee7917efe146a05fd89b494e6be547d31"
+    }
+  },
+  "hashesStable": true,
+  "launch": "Starting: Intent { cmp=com.ehviewer.manbo.debug/com.hippo.ehviewer.ui.MainActivity }\r\nStatus: ok\r\nLaunchState: COLD\r\nActivity: com.ehviewer.manbo.debug/com.hippo.ehviewer.ui.MainActivity\r\nTotalTime: 1805\r\nWaitTime: 1807\r\nComplete\r\n"
+}

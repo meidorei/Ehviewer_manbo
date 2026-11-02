@@ -1,0 +1,37 @@
+{
+  "device": "5da3329",
+  "package": "com.ehviewer.manbo.debug",
+  "status": "passed",
+  "userApproval": "2026-10-28: 可以，写回手机",
+  "confirmedPreview": "preview-final/order.json",
+  "phoneOriginalBackup": "databases/organize-backup-20261028-163118",
+  "phoneWritten": true,
+  "replacementAttempted": true,
+  "launchAttempted": true,
+  "sidecarMoveIntent": [],
+  "version": [
+    "versionCode=168 minSdk=23 targetSdk=30",
+    "versionName=168"
+  ],
+  "freshFiles": [
+    "eh.db"
+  ],
+  "originalHashes": {
+    "eh.db": "1c05d1e029283c5cfe6109bdf8dc94f806cdad281d1d06df6f3e9f549c51cb30"
+  },
+  "freshLibraryUnchanged": true,
+  "sortedDatabaseSha256": "fc2165ac4448b119b13a47de0ca2c9b3e2e6af68a3c62d86c58c7f62ae3fb703",
+  "originalLogicalDigest": "fdeb0e13a8e22b0d2f83624d2c8ef1c8aff52a0fa1291bd8e71422a2869708c5",
+  "sortedLogicalDigest": "f950477f943df2ac7da38051ea95020a64f1c87a724cf025ee92a98e5c7c6675",
+  "deviceBackupVerified": true,
+  "preLaunchVerify": "passed",
+  "launch": "Starting: Intent { cmp=com.ehviewer.manbo.debug/com.hippo.ehviewer.ui.MainActivity }\r\nStatus: ok\r\nLaunchState: COLD\r\nActivity: com.ehviewer.manbo.debug/com.hippo.ehviewer.ui.MainActivity\r\nTotalTime: 1515\r\nWaitTime: 1519\r\nComplete\r\n",
+  "pidAfterLaunch": "22255",
+  "pidAfterReadback": "22255",
+  "postLaunchVerify": "passed",
+  "itemCount": 3442,
+  "onlyDownloadsTimeChanged": true,
+  "sqliteIntegrity": "ok",
+  "appLeftRunning": true,
+  "completedAt": "2026-10-28T16:31:27.538723+08:00"
+}

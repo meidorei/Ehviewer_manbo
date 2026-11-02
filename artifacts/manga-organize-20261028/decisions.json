@@ -1,0 +1,279 @@
+[
+  {
+    "groups": [
+      {
+        "base": 3935102,
+        "name": "Celeb de Takabisha na Ijimekko no Mama o Netoru Hanashi（Kiyama Haru）",
+        "note": "作者与主体原题相同，未编号本为明确续篇2的前作，保留未知章号。",
+        "members": [
+          {
+            "gid": 3935102,
+            "sortOrder": 1
+          },
+          {
+            "gid": 4266161,
+            "order": 2
+          }
+        ]
+      },
+      {
+        "base": 3901030,
+        "members": [
+          {
+            "gid": 4167822,
+            "order": 2,
+            "note": "日文原题、作者及编号2与已有译本一致，保留两个GID并相邻。"
+          }
+        ]
+      }
+    ],
+    "relatedRead": [
+      "related-batch1.json:0-28"
+    ],
+    "questions": [
+      "绿母情事03/05、Mom is a woman too 5和MrSadbat PART 2需回看其他译名与相关新条目。"
+    ]
+  },
+  {
+    "range": [
+      40,
+      77
+    ],
+    "groups": [
+      {
+        "name": "Musuko wo Nakaseta Warufutago ni Haha Haiboku（Boiler）",
+        "note": "作者与原题完全一致的不同汉化版本，保留全部GID。",
+        "members": [
+          4275174,
+          4258573
+        ]
+      },
+      {
+        "name": "Ichigun Joshi no Otoshikata（Gagaga Honpo／Gar）",
+        "note": "同作者同原题明确前篇、后篇，按前后顺序排列。",
+        "members": [
+          {
+            "gid": 4113999,
+            "order": 1,
+            "note": "原题Zenpen（前篇）。"
+          },
+          {
+            "gid": 4253110,
+            "order": 2,
+            "note": "原题Kouhen（后篇）。"
+          }
+        ]
+      }
+    ],
+    "questions": [
+      "Monster Master的0.9视为版本而非第0.9章；查同题其他版本。",
+      "title与titleJpn的Haizuriya署名写法不一致，核对主体题名。"
+    ]
+  },
+  {
+    "range": [
+      77,
+      112
+    ],
+    "groups": [
+      {
+        "name": "Sex Shinai to Shinu Yamai（Minazuki Mikka）",
+        "note": "同作者同主体题名，1–4总集篇按范围起点先于第5篇，全部版本保留。",
+        "members": [
+          {
+            "gid": 4042745,
+            "category": "collection",
+            "order": 1,
+            "end": 4
+          },
+          {
+            "gid": 4045015,
+            "order": 5
+          }
+        ]
+      },
+      {
+        "name": "Tomodachi no Mama ga Boku no Dekachin de Ikimakutta Halloween（RK-2）",
+        "note": "作者、原题与节日副题一致的不同译本，保留全部GID。",
+        "members": [
+          4275328,
+          4251921
+        ]
+      },
+      {
+        "name": "MrSadbat PART（风有汉化）",
+        "note": "三个条目同作者、同汉化者、PART命名。PART 2两GID保留，具体故事题名未标出；不并入该作者其他作品。",
+        "members": [
+          {
+            "gid": 4253099,
+            "order": 1
+          },
+          {
+            "gid": 4255867,
+            "order": 2
+          },
+          {
+            "gid": 4282227,
+            "order": 2
+          }
+        ]
+      }
+    ],
+    "relatedRead": [
+      "related-batch1-extra.json:0-37"
+    ]
+  },
+  {
+    "range": [
+      112,
+      119
+    ],
+    "groups": [
+      {
+        "name": "绿母情事（Ann）",
+        "note": "同作者、同题名明确03和05，按原章号排列，未补造缺失篇章。",
+        "members": [
+          {
+            "gid": 4071912,
+            "order": 3
+          },
+          {
+            "gid": 4280573,
+            "order": 5
+          }
+        ]
+      },
+      {
+        "base": 4246195,
+        "name": "Boku no Megami-sama（Batsu Jirushi DX／Batsu）",
+        "note": "作者与两种标题完全相同的不同GID，保留全部版本。",
+        "members": [
+          4246195,
+          4248561
+        ]
+      },
+      {
+        "base": 4223833,
+        "members": [
+          {
+            "gid": 4262209,
+            "category": "collection",
+            "order": 36,
+            "end": 40,
+            "note": "与已有36–40合集同题同作者的汉化版本，保留GID并相邻。"
+          }
+        ]
+      },
+      {
+        "base": 4224558,
+        "name": "只有立希不是扶她的世界",
+        "note": "相同完整题名的①与②，按原编号顺序。",
+        "members": [
+          {
+            "gid": 4224558,
+            "order": 1
+          },
+          {
+            "gid": 4250066,
+            "order": 2
+          }
+        ]
+      }
+    ],
+    "relatedRead": [
+      "related-batch1-extra.json:37-46",
+      "related-batch2.json:0-18"
+    ],
+    "questions": [
+      "Leebo的玲子社长两本只有同人物线索，暂独立保留；日期不作章号。",
+      "MrSadbat PART三条按同作者同文件题名及汉化者暂归同组，无法从题名证明具体故事关系，预览注明。"
+    ]
+  },
+  {
+    "groups": [
+      {
+        "base": 3594933,
+        "members": [
+          {
+            "gid": 4246381,
+            "order": 5,
+            "note": "主体Hanshoku Haha与作者Saimonke／西門家一致，原日文明确第5部和第一部完结篇。"
+          }
+        ]
+      },
+      {
+        "base": 3551609,
+        "members": [
+          {
+            "gid": 3551569,
+            "category": "remaster",
+            "order": 0,
+            "end": 4,
+            "note": "同作者的重制版0–4，与重制版5–7使用相同编号体系，按范围起点置前。"
+          },
+          {
+            "gid": 3551609,
+            "category": "remaster",
+            "order": 5,
+            "end": 7,
+            "note": "原题重置版5–7附赵老师番外，整本保留。"
+          }
+        ]
+      },
+      {
+        "base": 4236242,
+        "name": "Inran Shounen（Jairou／Kozi）",
+        "note": "同作者团队与系列题名。第6卷完整条目、原人物介绍及收录范围不明的总集篇分别保留。",
+        "members": [
+          {
+            "gid": 4246713,
+            "order": 6,
+            "note": "原标题明确VOL.6，未标人物介绍，与旧介绍条目分开保留。"
+          },
+          {
+            "gid": 4236242,
+            "category": "other",
+            "order": 6,
+            "note": "原题明确人物介绍，保留为附属资料，不当作完整正篇。"
+          },
+          {
+            "gid": 3242425,
+            "category": "collection",
+            "note": "总集篇收录范围不明，不与正篇第6卷比较起止号。"
+          }
+        ]
+      }
+    ],
+    "relatedRead": [
+      "related-batch3.json:0-39",
+      "related-batch3.json:39-43",
+      "related-batch4.json:0-25"
+    ],
+    "questions": [
+      "TYPE.90两本Bocchi-sama副题不同，尚无续篇证据，独立保留。",
+      "Inran Shounen旧人物介绍与新VOL.6内容是否部分重叠未核正文，全部保留。"
+    ]
+  },
+  {
+    "groups": [
+      {
+        "base": 4092879,
+        "name": "皇帝的指导官（Sakuranbo Nouen／Kondo Yume）",
+        "note": "同作者社团和主体原题Koutei no Shinanyaku。未编号本与明确弐的后续按阅读顺序排列，原作章号保持未知。",
+        "members": [
+          {
+            "gid": 4279369,
+            "sortOrder": 1
+          },
+          {
+            "gid": 4092879,
+            "order": 2
+          }
+        ]
+      }
+    ],
+    "relatedRead": [
+      "related-final.json:0-1"
+    ]
+  }
+]

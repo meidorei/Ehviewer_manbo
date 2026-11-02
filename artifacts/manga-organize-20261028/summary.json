@@ -1,0 +1,19 @@
+{
+  "itemCount": 3442,
+  "addedItems": 119,
+  "removedSincePrevious": 18,
+  "retitledItems": 0,
+  "readNewItems": 119,
+  "multiSeries": 397,
+  "groupedItems": 1067,
+  "singleItems": 2375,
+  "newItemsInMultiSeries": 22,
+  "affectedMultiSeries": 15,
+  "phoneWritten": true,
+  "confirmed": true,
+  "preview": "preview-final/review.html",
+  "applicationVersion": "168 / 168",
+  "schema": 14,
+  "writebackReport": "writeback/phone-writeback.json",
+  "phoneOriginalBackup": "databases/organize-backup-20261028-163118"
+}
