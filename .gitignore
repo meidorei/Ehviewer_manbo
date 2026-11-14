@@ -31,3 +31,8 @@ AGENTS.md
 *.sqlite3
 *.sqlite3-*
 **/shared_prefs/
+
+# Local signing key, generated DAO classes, and obsolete empty file.
+/test.key
+/daogenerator/bin/
+/123

@@ -132,6 +132,12 @@ Get-FileHash -LiteralPath $apkPath -Algorithm SHA256
 
 组装后生产代码、资源或构建输入再次改变时，重新组装并核验最终产物；仅补充说明无需重建。
 
+## Azure Pipelines 签名凭据
+
+`azure-pipelines.yml` 的两个签名密码只引用 `$(AndroidSigningKeystorePassword)` 和 `$(AndroidSigningKeyPassword)`。使用这份流水线前，在 Azure Pipelines 的 Variables 中配置这两个变量，并启用 **Keep this value secret**；填入对应原签名的密码，不要写回 YAML、命令或日志。配置方式见 [Azure 秘密变量文档](https://learn.microsoft.com/en-us/azure/devops/pipelines/process/set-secret-variables?view=azure-devops)。
+
+沿用原 `AndroidSigning@2` 任务、Secure Files 中的 `text.key` 引用及原 alias；私钥文件不进入仓库，需在 Azure 的 Secure Files 中提供并授权给流水线，参见[签名任务说明](https://learn.microsoft.com/en-us/azure/devops/pipelines/tasks/reference/android-signing-v2?view=azure-pipelines)。本次仅移除硬编码密码，不调整现有触发分支、构建任务、APK 路径或签名方式；未配置秘密变量时不能完成 CI 签名。本机固定 Debug keystore 和构建流程不受影响，Azure 流水线需要另行实际运行验证。
+
 ## 本地隐私产物
 
 手机数据库、WAL/journal、Cookie、SharedPreferences、搜索记录、书库清单、带实际数据的预览、截图和设备日志仅存放于仓库根目录 `.private/<任务名>/<日期时间>/`（即 `<仓库根目录>\.private\`），不得提交或上传。采集前用 `git check-ignore` 核实预期文件被忽略，并用 `git ls-files -- .private` 确认没有已跟踪文件；不得用 `git add -f` 绕过。优先只采集所需的单库及一致性关联文件，不为普通验证导出整个应用私有目录。
