@@ -1,0 +1,230 @@
+apply plugin: 'com.android.application'
+apply plugin: "org.jetbrains.kotlin.android"
+apply plugin: "org.jetbrains.kotlin.plugin.parcelize"
+apply plugin: "org.jetbrains.kotlin.kapt"
+apply plugin: "com.jaredsburrows.license"
+if (file('google-services.json').exists()) {
+    apply plugin: 'com.google.gms.google-services'
+    apply plugin: 'com.google.firebase.crashlytics'
+}
+
+def hostDebugKeystore = System.getenv('USERPROFILE') == null
+        ? null : file("${System.getenv('USERPROFILE')}/.android/debug.keystore")
+
+android {
+    namespace 'com.hippo.ehviewer'
+    testNamespace 'com.hippo.ehviewer.debug'
+    compileSdk 35
+//    buildToolsVersion "30.0.3"
+    ndkVersion '30.0.15729638'
+
+    flavorDimensions "distribute"
+    productFlavors {
+        appRelease {
+            dimension "distribute"
+        }
+//        googlePlay {
+//            dimension "distribute"
+//        }
+    }
+
+    defaultConfig {
+        applicationId "com.ehviewer.manbo"
+        minSdkVersion 23
+        //noinspection ExpiredTargetSdkVersion
+        targetSdkVersion 30
+        versionCode 112
+        versionName "170"
+        vectorDrawables.useSupportLibrary = true
+        resourceConfigurations += ['zh', 'zh-rCN', 'zh-rHK', 'zh-rTW', 'es', 'ja', 'ko', 'fr', 'de', 'th']
+        testOptions.unitTests.includeAndroidResources = true
+        multiDexEnabled true
+        ndk {
+            moduleName "native-lib"
+            abiFilters "armeabi-v7a", "arm64-v8a", "x86", "x86_64"
+        }
+        externalNativeBuild {
+            cmake {
+//                path 'src/main/cpp/CMakeLists.txt'
+                cppFlags ''
+            }
+        }
+    }
+
+    lint {
+        disable 'MissingTranslation'
+        abortOnError true
+        checkReleaseBuilds true
+    }
+
+    signingConfigs {
+        debug {
+            // Codex runs Gradle with a sandboxed Java user.home. Prefer the Windows user's
+            // standard debug key so locally built updates keep the phone's existing signer.
+            if (hostDebugKeystore != null && hostDebugKeystore.isFile()) {
+                storeFile hostDebugKeystore
+                storePassword 'android'
+                keyAlias 'androiddebugkey'
+                keyPassword 'android'
+            }
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            buildConfigField 'String', 'FILE_PROVIDER_AUTHORITY', '"com.ehviewer.manbo.fileprovider"'
+        }
+        debug {
+            applicationIdSuffix ".debug"
+            buildConfigField 'String', 'FILE_PROVIDER_AUTHORITY', '"com.ehviewer.manbo.debug.fileprovider"'
+        }
+    }
+
+    applicationVariants.all { variant ->
+        if (variant.buildType.name == "debug") {
+            variant.outputs.all { output ->
+                output.versionCodeOverride = 170
+            }
+        }
+    }
+
+    externalNativeBuild {
+        cmake {
+//            version '3.30.5'
+            path file('src/main/cpp/CMakeLists.txt')
+        }
+    }
+//    sourceSets {
+//        main {
+//            java.srcDirs += 'src/main/java-gen'
+//        }
+//    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_21
+        targetCompatibility JavaVersion.VERSION_21
+    }
+    kotlinOptions {
+        jvmTarget = '21'
+    }
+
+    buildFeatures {
+        viewBinding true
+        buildConfig = true
+    }
+
+}
+
+//tasks.withType(JavaCompile) {
+//    task -> task.dependsOn copyNotice
+//}
+
+dependencies {
+//    测试工具
+//    debugCompileOnly 'com.gu.android:toolargetool:0.3.0'
+
+    implementation 'com.google.android.material:material:1.14.0'
+
+    // app使用情况数据收集
+    // Import the BoM for the Firebase platform
+//    implementation platform('com.google.firebase:firebase-bom:32.1.0')
+
+    // Add the dependencies for the Crashlytics and Analytics libraries
+    // When using the BoM, you don't specify versions in Firebase library dependencies
+    implementation 'com.google.firebase:firebase-crashlytics:20.1.0'
+    implementation 'com.google.firebase:firebase-analytics:23.2.0'
+//    implementation 'com.google.firebase:firebase-analytics:21.5.1'
+
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation "androidx.activity:activity:1.2.4"
+    implementation 'androidx.appcompat:appcompat:1.7.0'
+    implementation 'androidx.biometric:biometric:1.2.0-alpha01'
+    implementation "androidx.browser:browser:1.4.0"
+    implementation 'androidx.cardview:cardview:1.0.0'
+    implementation "androidx.fragment:fragment:1.8.6"
+    implementation "androidx.preference:preference-ktx:1.2.1"
+    implementation 'androidx.recyclerview:recyclerview:1.2.1'
+    implementation 'org.conscrypt:conscrypt-android:2.5.3'
+    // https://mvnrepository.com/artifact/androidx.core/core-ktx
+    implementation 'androidx.core:core-ktx:1.15.0'
+//    implementation 'com.android.support:recyclerview-v7:25.0.1'
+
+//     https://mvnrepository.com/artifact/com.fpliu.ndk.pkg.prefab.android.21/libpng
+    implementation 'com.fpliu.ndk.pkg.prefab.android.21:libpng:1.6.37'
+    // https://mvnrepository.com/artifact/com.getkeepsafe.relinker/relinker
+    implementation 'com.getkeepsafe.relinker:relinker:1.4.4'
+    implementation 'com.github.amlcurran.showcaseview:library:5.4.3'
+    implementation 'com.github.ybq:Android-SpinKit:1.4.0'
+    implementation 'com.alibaba:fastjson:1.2.83'
+
+    implementation 'com.android.support:multidex:1.0.3'
+    /**
+     * 原始依赖
+     */
+    implementation 'com.github.xiaojieonly.a7zip_XJ:extract-lite:1.0.3'
+    implementation 'com.github.seven332:android-recaptcha:2bbb3459a8'
+    implementation 'com.github.seven332:android-resource:0.1.0'
+    implementation 'com.github.seven332:animator:0.1.0'
+    implementation 'com.github.seven332:drawerlayout:ea2bb388f0'
+    implementation 'com.github.seven332:easyrecyclerview:0.1.1'
+//    分页组件
+    implementation 'com.github.xiaojieonly:Pagination_Sxj:8d2c34d8f53927aeaa1d405d8653969379cb37ec'
+    implementation 'com.github.seven332:hotspot:0.1.0'
+    implementation 'com.github.seven332:refreshlayout:0.1.0'
+    implementation 'com.github.seven332:ripple:0.1.2'
+    implementation 'com.github.seven332:streampipe:0.1.0'
+//   列表组件
+//    implementation "androidx.paging:paging-runtime:3.2.1"
+//    implementation "androidx.paging:paging-rxjava3:3.2.1" // 如果需要 RxJava
+//    implementation "androidx.paging:paging-guava:3.2.1" // 如果需要 Guava
+
+
+    implementation 'com.h6ah4i.android.widget.advrecyclerview:advrecyclerview:1.0.0'
+
+//    implementation 'com.squareup.okhttp3:okhttp:5.0.0-alpha.11'
+//    implementation 'com.squareup.okhttp3:okhttp-dnsoverhttps:5.0.0-alpha.11'
+    // 还是旧版稳定好用
+    implementation 'com.squareup.okhttp3:okhttp:3.14.7'
+    implementation 'com.squareup.okhttp3:okhttp-dnsoverhttps:3.14.7'
+    implementation 'com.github.xiaojieonly:Android-Request-Inspector-WebView:70403bb'
+
+    implementation 'org.ccil.cowan.tagsoup:tagsoup:1.2.1'
+    implementation 'org.greenrobot:greendao:3.0.0'
+    // 1.18.x 在部分 Android 运行环境上出现 NoClassDefFoundError(org.jsoup.parser.Tag)
+    // 回退到 Android 侧更稳定的版本，避免运行时缺类
+    implementation 'org.jsoup:jsoup:1.15.4'
+
+    // Glide 图片加载库
+//    implementation 'com.github.bumptech.glide:glide:5.0.5'
+//    kapt 'com.github.bumptech.glide:compiler:5.0.5'
+
+    //事件通知
+    implementation 'org.greenrobot:eventbus:3.3.1'
+    //loading组件
+    implementation 'com.github.ybq:Android-SpinKit:1.4.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+    // 引入 Google 的弹性流式布局库
+    implementation 'com.google.android.flexbox:flexbox:3.0.0'
+
+
+    testImplementation 'junit:junit:4.13.2'
+    testImplementation 'org.robolectric:robolectric:4.2.1'
+    testImplementation 'org.jooq:joor:0.9.6'
+
+    // https://mvnrepository.com/artifact/androidx.webkit/webkit
+    runtimeOnly group: 'androidx.webkit', name: 'webkit', version: '1.13.0'
+
+}
+
+configurations.configureEach {
+    resolutionStrategy {
+        force 'com.github.seven332:glgallery:25893283ca'
+        force 'com.github.seven332:glview:ba6aee61d7'
+        force 'com.github.seven332:glview-image:68d94b0fc2'
+        force 'com.github.seven332:image:09b43c0c68'
+
+        exclude group: 'com.github.seven332', module: 'okhttp'
+    }
+}

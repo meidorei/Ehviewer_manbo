@@ -1,0 +1,57 @@
+# EhViewer manbo
+
+![应用图标](fastlane/metadata/android/en-US/images/icon.png)
+
+基于 EhViewer_CN_SXJ 的 Android 客户端分支，在浏览、搜索、收藏和下载功能上，增加本地追更、书签未读、阅读边界、阅读队列和 JM 资料查询。
+
+[下载发布版本](https://github.com/meidorei/Ehviewer_CN_SXJ_manbo/releases) · [使用指南](docs/usage.md) · [开发与构建](docs/build.md) · [常见问题](docs/troubleshooting.md) · [全部文档](docs/README.md)
+
+## 主要功能
+
+| 功能 | 说明 |
+| --- | --- |
+| 本地追更 | 长按标签添加，不依赖服务器订阅；支持更新计数、管理和 JSON 导入导出 |
+| 追更更新页 | 从追更栏进入，集中查看最近 1000 本新增漫画，支持独立已读与未读筛选 |
+| 书签更新 | 检查保存的搜索条件，连续翻页记录新增画廊；相同 GID 在多个书签间联动已读 |
+| 书签命中标签 | 在线漫画列表和云收藏展示命中的书签标签；缺少完整标签时按需补取 |
+| 更新任务 | 支持全局中文扫描、逐项检查和单书签检查，可暂停、继续、停止 |
+| 阅读边界 | 追更和书签显示“上次更新到这”；首页有可手动重置的独立分割线 |
+| 自动中文条件 | 普通浏览可自动追加中文语言条件，已有正向语言条件时保留原条件 |
+| 阅读队列 | 记录应用内完整下载的最近阅读与页码；可选择自动删除超出容量的本地下载 |
+| JM 号查询 | 输入编号或支持的链接，查询标题、封面、作者、标签和章节等资料 |
+| 归档下载 | 新下载器支持暂停、继续和完成导入，并兼容升级前的旧系统下载任务 |
+| 本地相册导入 | 在下载页选择图片文件夹，复制到应用下载目录并离线阅读 |
+| 阅读刷新率 | Android 11 及以上可设置系统默认、最高或指定刷新率 |
+
+书签未读记录不设 21 条持久化上限，界面超过 20 条显示 `20+`；本地追更仍保留 21 条明细。阅读队列的自动删除默认关闭，开启后会永久删除被淘汰漫画的本地下载目录。详见[使用指南](docs/usage.md)。
+
+## 当前版本
+
+以下为 2026-11-10 核对的本机源码配置。
+
+| 项目 | 当前值 |
+| --- | --- |
+| Android 最低版本 | Android 6.0（API 23） |
+| 本机维护变体 | `appReleaseDebug` |
+| Debug applicationId | `com.ehviewer.manbo.debug` |
+| versionName / Debug versionCode | `170 / 170` |
+| 数据库 schema | `15` |
+
+2026-11-10 源码新增追更更新页，数据库增量升级至 schema 15。此轮不产出 APK，应用版本仍为 170；下述 2026-11-09 APK 不包含此功能。[功能说明](docs/usage.md#追更更新漫画页)
+
+2026-11-09 的 Debug v170 移植上游 2.0.2.7 的下载恢复兼容及 JNI 修复；APK 输出为 `app/build/outputs/apk/appRelease/debug/app-appRelease-debug.apk`。Java/Kotlin 与四种 ABI 原生编译、APK 包名/版本及固定签名核验通过；276 项测试通过，2 项既有 schema 测试跳过。未安装手机，未做真机恢复验收。[变更记录](说明.md)
+
+2026-10-25 功能合入阶段的 appReleaseDebug 编译及 35 项相关测试通过；交付阶段完成代码审查、打包安装，未重复运行单元测试。图床联网及菜单真机交互尚未验收。
+
+## 开始使用与开发
+
+- 使用者：从发布页获取所需 APK，按照[使用指南](docs/usage.md)添加追更、管理书签和阅读队列。
+- 开发者：先阅读[开发与构建](docs/build.md)，完成 JDK、SDK 和固定签名预检，再执行 `:app:assembleAppReleaseDebug`。
+- 维护更新算法：[扫描与未读机制](docs/scanning.md)说明分页、checkpoint、全局游标和提交边界。
+- 排查问题：[常见问题](docs/troubleshooting.md)区分基线、计数、网络、安装和测试环境问题。
+
+## 来源与许可
+
+本分支基于 [xiaojieonly/Ehviewer_CN_SXJ](https://github.com/xiaojieonly/Ehviewer_CN_SXJ)，项目起源于 seven332/EhViewer。当前源码已迁移上游标签 [2.0.2.6](https://github.com/xiaojieonly/Ehviewer_CN_SXJ/releases/tag/2.0.2.6)（`dfe35624`）的适用更新，包括表站图床内置地址修复和下载页“本地导入”筛选；编译、测试及 APK 交付状态见[变更记录](说明.md)。
+
+项目许可证见 [LICENSE](LICENSE)，版权声明见 [NOTICE](NOTICE)。第三方组件保留各自许可证；上游公告、鸣谢及支持资料见 [feedauthor 文档索引](feedauthor/README.md)。

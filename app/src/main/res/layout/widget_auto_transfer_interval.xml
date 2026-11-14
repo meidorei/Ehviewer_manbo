@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/auto_transfer_interval_control"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <SeekBar
+            android:id="@+id/auto_transfer_interval_seekbar"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_weight="1"
+            android:contentDescription="@string/settings_read_auto_transfer_time" />
+
+        <TextView
+            android:id="@+id/auto_transfer_interval_value"
+            android:layout_width="72dp"
+            android:layout_height="wrap_content"
+            android:gravity="end"
+            android:textColor="?android:attr/textColorPrimary"
+            android:textSize="16sp" />
+    </LinearLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/auto_transfer_interval_input_layout"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:hint="@string/auto_transfer_interval_input_label"
+        app:errorEnabled="true"
+        app:helperText="@string/auto_transfer_interval_helper"
+        app:suffixText="@string/auto_transfer_interval_unit">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/auto_transfer_interval_input"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:digits="0123456789."
+            android:imeOptions="actionDone"
+            android:inputType="numberDecimal"
+            android:maxLength="3"
+            android:selectAllOnFocus="true"
+            android:singleLine="true" />
+    </com.google.android.material.textfield.TextInputLayout>
+</LinearLayout>
