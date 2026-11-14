@@ -1302,11 +1302,11 @@
     <string name="bookmark_baseline_reset_success">Reset scan baselines for %1$d bookmarks. Unread counts and reading markers were kept.</string>
     <string name="bookmark_baseline_reset_failed">Could not reset bookmark baselines. No changes were saved. Please try again.</string>
     <string name="settings_advanced_reset_follow_baselines">Reset all local follow scan baselines</string>
-    <string name="settings_advanced_reset_follow_baselines_summary">Skip unchecked local follow history; keep unread counts and reading markers.</string>
-    <string name="follow_baseline_reset_confirm">Future local follow checks will start from now, skipping previously unchecked history. Existing unread counts and last-opened markers will be kept.</string>
+    <string name="settings_advanced_reset_follow_baselines_summary">Check local follow updates from now, clear unread counts, and move reading markers to the reset time.</string>
+    <string name="follow_baseline_reset_confirm">Clear all local follow unread counts and move reading markers to the reset time. Content from the reset second and earlier will be marked as read; content from the next second can still count as new. This works offline and cannot be undone.</string>
     <string name="follow_baseline_reset_running">Resetting local follow scan baselines…</string>
     <string name="follow_baseline_reset_empty">No local follows to reset.</string>
-    <string name="follow_baseline_reset_success">Reset scan baselines for %1$d followed tags. Unread counts and reading markers were kept.</string>
+    <string name="follow_baseline_reset_success">Reset %1$d followed tags. Unread counts were cleared and reading markers were updated.</string>
     <string name="follow_baseline_reset_failed">Could not reset local follow baselines. No changes were saved. Please try again.</string>
     <string name="local_update_all_title">Bookmark and follow updates</string>
     <string name="local_update_all_history">Follows: %1$d · Bookmarks: %2$d\nFollow scan boundary: %3$s\nBookmark scan boundary: %4$s</string>

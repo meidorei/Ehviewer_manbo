@@ -31,6 +31,7 @@ public class FollowBaselineResetTest {
             fixture.seed(key("guest|e", type), 20, 30, "1", "2");
         }
         Map<List<String>, Object[]> before = new LinkedHashMap<>(fixture.rows);
+        fixture.seed(key("shared", "LOCAL_FOLLOW_OPEN"), 10, 30, "1", "2");
         assertEquals(1, local.resetFollowBaselines(fixture.db, 100_999));
         for (List<String> saved : before.keySet()) assertArrayEquals(before.get(saved), fixture.rows.get(saved));
         Fixture reopened = new Fixture();
@@ -43,6 +44,11 @@ public class FollowBaselineResetTest {
                 "SUBSCRIPTION_AGGREGATE", "HOME_MANUAL")) {
             assertEquals(30, repository.readCheckpoint(reopened.db, key("guest|e", type)).current.time);
         }
+        FeedCheckpoint open = repository.readStoredCheckpoint(reopened.db, key("shared", "LOCAL_FOLLOW_OPEN"));
+        assertEquals(101, open.current.time);
+        assertEquals(FeedBoundary.Precision.SECOND, open.current.precision);
+        assertTrue(open.current.gids.isEmpty());
+        assertEquals(30, open.previous.time);
         assertEquals(10, repository.readStoredCheckpoint(reopened.db,
                 key("guest|e", "LOCAL_FOLLOW_SYNC")).updatedAt);
     }
@@ -52,7 +58,9 @@ public class FollowBaselineResetTest {
         local.resetFollowBaselines(fixture.db, 100_000);
         local.resetFollowBaselines(fixture.db, 200_000);
         local.resetFollowBaselines(fixture.db, 150_000);
-        assertEquals(1, fixture.rows.size());
+        assertEquals(2, fixture.rows.size());
+        assertEquals(201, repository.readCheckpoint(fixture.db,
+                key("shared", "LOCAL_FOLLOW_OPEN")).current.time);
         assertEquals(201, repository.readCheckpoint(fixture.db,
                 key("guest|e", "LOCAL_FOLLOW_SYNC")).current.time);
     }
@@ -93,7 +101,7 @@ public class FollowBaselineResetTest {
     @Test public void failureAfterFirstMarkerRollsBackAndEndsTransaction() {
         Fixture fixture = fixture();
         fixture.tags.add("group:example");
-        fixture.failAtWrite = 2;
+        fixture.failAtWrite = 7;
         try {
             local.resetFollowBaselines(fixture.db, 100_000);
             fail("write failure ignored");
@@ -135,20 +143,57 @@ public class FollowBaselineResetTest {
 
     @Test public void exportsProductionResetAndRemovalSqlForRealSqliteReplay() throws Exception {
         Fixture fixture = fixture();
-        fixture.tags.add("group:kept");
-        assertEquals(2, local.resetFollowBaselines(fixture.db, 100_000));
-        assertEquals(4, fixture.writes.size());
+        fixture.tags.addAll(Arrays.asList("group:kept", "other:new", "parody:exact"));
+        assertEquals(4, local.resetFollowBaselines(fixture.db, 100_000));
+        assertEquals(22, fixture.writes.size());
         Map<String, Object> trace = new LinkedHashMap<>();
         Field field = SubscriptionSchema.class.getDeclaredField("SQL");
         field.setAccessible(true);
         trace.put("schema", field.get(null));
         trace.put("writes", new ArrayList<>(fixture.writes));
         fixture.writes.clear();
+        fixture.unreadCount = 1;
+        local.completeSuccessfulOpen(fixture.db, LocalFollowRepository.SOURCE_FOLLOW,
+                TAG, SIGNATURE, boundary(90, 1), 21);
+        trace.put("lateOpen", new ArrayList<>(fixture.writes));
+        fixture.writes.clear();
         LocalFollowRepository.deleteFollowData(fixture.db, TAG);
         trace.put("removal", fixture.writes);
         Path target = Paths.get("build", "reports", "follow-reset", "sql-trace.json");
         Files.createDirectories(target.getParent());
         Files.write(target, JSON.toJSONString(trace).getBytes(StandardCharsets.UTF_8));
+    }
+
+    @Test public void lateOpenKeepsResetAndNewerReadingBoundaries() {
+        Fixture fixture = fixture();
+        local.resetFollowBaselines(fixture.db, 100_000);
+        local.completeSuccessfulOpen(fixture.db, LocalFollowRepository.SOURCE_FOLLOW,
+                TAG, SIGNATURE, boundary(90, 1), 21);
+        CheckpointKey open = key("shared", "LOCAL_FOLLOW_OPEN");
+        assertEquals(101, repository.readStoredCheckpoint(fixture.db, open).current.time);
+        local.completeSuccessfulOpen(fixture.db, LocalFollowRepository.SOURCE_FOLLOW,
+                TAG, SIGNATURE, boundary(110, 2), 22);
+        local.completeSuccessfulOpen(fixture.db, LocalFollowRepository.SOURCE_FOLLOW,
+                TAG, SIGNATURE, boundary(105, 3), 21);
+        assertEquals(110, repository.readStoredCheckpoint(fixture.db, open).current.time);
+        assertEquals(Collections.singleton(2L), repository.readStoredCheckpoint(fixture.db, open).current.gids);
+        local.completeSuccessfulOpen(fixture.db, LocalFollowRepository.SOURCE_FOLLOW,
+                TAG, SIGNATURE, boundary(110, 4), 22);
+        assertEquals(Set.of(2L, 4L), repository.readStoredCheckpoint(fixture.db, open).current.gids);
+        // A repeated reset with an older clock must also keep the newer read position.
+        local.resetFollowBaselines(fixture.db, 95_000);
+        assertEquals(110, repository.readStoredCheckpoint(fixture.db, open).current.time);
+        assertEquals(101, repository.readStoredCheckpoint(fixture.db,
+                FeedCheckpointKeys.followReset(TAG, SIGNATURE)).current.time);
+    }
+
+    @Test public void missingReadingBoundaryIsCreatedButNoSyncTopIsInvented() {
+        Fixture fixture = fixture();
+        local.resetFollowBaselines(fixture.db, 100_000);
+        assertEquals(101, repository.readStoredCheckpoint(fixture.db,
+                key("shared", "LOCAL_FOLLOW_OPEN")).current.time);
+        assertTrue(repository.readStoredCheckpoint(fixture.db,
+                key("guest|e", "LOCAL_FOLLOW_SYNC")).current.isEmpty());
     }
 
     private static Fixture fixture() { Fixture f = new Fixture(); f.tags.add(TAG); return f; }

@@ -458,7 +458,8 @@ public final class GalleryListScene extends BaseScene
     private void loadFeedBoundary() {
         FeedSourceContext context = mFeedSourceContext;
         mFeedBoundaryError = null;
-        mFeedBoundaryReady = context == null || !context.showsMarker() || context.isFollowedArtist();
+        mFeedBoundaryReady = context == null || !context.showsMarker()
+                || (mArtistUnread != null && mArtistUnread.usesUnreadMarker());
         mFeedBoundaryLoading = !mFeedBoundaryReady;
         if (mFeedBoundaryReady) return;
         SubscriptionRepository repository = SubscriptionRepository.getInstance();
@@ -717,7 +718,8 @@ public final class GalleryListScene extends BaseScene
             if (mFeedSourceContext.isFollowedArtist()) {
                 mArtistUnread = new ArtistUnreadSnapshot(mUnreadSnapshotAt, SubscriptionRepository
                         .parseGids(savedInstanceState.getString(KEY_ARTIST_UNREAD_GIDS)));
-                mVisibleFeedBoundary = FeedBoundary.EMPTY;
+                // Preserve this entry's boundary, even if it was empty before a successful open.
+                mVisibleFeedBoundary = mArtistUnread.displayBoundary(mVisibleFeedBoundary);
             }
             if (!mFeedBoundaryReady) loadFeedBoundary();
         }
@@ -2685,9 +2687,12 @@ public final class GalleryListScene extends BaseScene
         }
 
         private void updateArtistMarker() {
-            if (mArtistUnread != null && mFeedBoundaryDecoration != null) {
+            if (mArtistUnread != null && mArtistUnread.usesUnreadMarker()
+                    && mFeedBoundaryDecoration != null) {
+                mFeedBoundaryDecoration.setBoundary(FeedBoundary.EMPTY);
                 mFeedBoundaryDecoration.setMarkerAfter(mArtistUnread.lastMatch(getData()));
             } else if (mFeedBoundaryDecoration != null) {
+                mFeedBoundaryDecoration.setMarkerAfter(RecyclerView.NO_POSITION);
                 // Legacy anchors can be split across several loaded pages.
                 mVisibleFeedBoundary = FeedMarkerPolicy.resolveLegacyBoundary(
                         mVisibleFeedBoundary, getData());

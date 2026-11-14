@@ -66,7 +66,9 @@ def replay(db, writes):
 
 def verify_follow_reset(bookmark_trace):
     follow_trace = json.loads((ROOT / "app/build/reports/follow-reset/sql-trace.json").read_text(encoding="utf-8"))
-    markers = [w["args"] for w in follow_trace["writes"] if w["sql"].startswith("INSERT")]
+    markers = [w["args"] for w in follow_trace["writes"]
+               if w["sql"].startswith("INSERT OR REPLACE INTO FEED_CHECKPOINT")
+               and w["args"][1] == "LOCAL_FOLLOW_RESET"]
 
     def prepare(db):
         seed(db, bookmark_trace)
@@ -77,9 +79,13 @@ def verify_follow_reset(bookmark_trace):
         for marker in markers:
             tag, signature = marker[2:4]
             db.execute("INSERT INTO LOCAL_FOLLOW_TAG VALUES (?,17,18)", (tag,))
-            db.execute("INSERT INTO LOCAL_UPDATE_STATE VALUES ('LOCAL_FOLLOW',?,?,21,'LOWER_BOUND',18,'kept error')", (tag, signature))
-            for gid in range(1, 22):
-                db.execute("INSERT INTO LOCAL_UNREAD_GALLERY VALUES ('LOCAL_FOLLOW',?,?,18)", (tag, gid))
+            if tag != "other:new":
+                count = 0 if tag == "group:kept" else 21
+                state = "LOWER_BOUND" if tag == "artist:example" else "EXACT"
+                db.execute("INSERT INTO LOCAL_UPDATE_STATE VALUES ('LOCAL_FOLLOW',?,?,?,?,18,'old error')",
+                           (tag, signature, count, state))
+                for gid in range(1, count + 1):
+                    db.execute("INSERT INTO LOCAL_UNREAD_GALLERY VALUES ('LOCAL_FOLLOW',?,?,18)", (tag, gid))
             for account, kind in [("guest|e", "LOCAL_FOLLOW_SYNC"), ("guest|ex", "LOCAL_FOLLOW_SYNC"), ("shared", "LOCAL_FOLLOW_OPEN")]:
                 db.execute("INSERT INTO FEED_CHECKPOINT(ACCOUNT_KEY,SOURCE_TYPE,SOURCE_KEY,QUERY_SIGNATURE,"
                            'PREVIOUS_TIME,"CURRENT_TIME",PREVIOUS_GIDS,CURRENT_GIDS,UPDATED_AT) '
@@ -88,6 +94,8 @@ def verify_follow_reset(bookmark_trace):
                        "VALUES ('old','LOCAL_FOLLOW',?,?,'FOLLOW_TAG',17)", (tag, signature))
         db.execute("INSERT INTO FEED_CHECKPOINT(ACCOUNT_KEY,SOURCE_TYPE,SOURCE_KEY,QUERY_SIGNATURE,UPDATED_AT) "
                    "VALUES ('guest','SUBSCRIPTION_AGGREGATE','watched','',18)")
+        db.execute("INSERT INTO LOCAL_FOLLOW_UPDATES VALUES (42,17,0,'{}','[]')")
+        db.execute("INSERT INTO LOCAL_FOLLOW_UPDATES VALUES (43,17,18,'{}','[]')")
         db.commit()
 
     with tempfile.TemporaryDirectory(prefix="follow-reset-test-") as directory:
@@ -97,9 +105,20 @@ def verify_follow_reset(bookmark_trace):
         before = snapshot(db)
         replay(db, follow_trace["writes"])
         after = snapshot(db)
-        for table in before.keys() - {"FEED_CHECKPOINT", "LOCAL_BASELINE_QUEUE", "LOCAL_GLOBAL_CURSOR"}:
+        for table in before.keys() - {"FEED_CHECKPOINT", "LOCAL_BASELINE_QUEUE", "LOCAL_GLOBAL_CURSOR",
+                                      "LOCAL_UPDATE_STATE", "LOCAL_UNREAD_GALLERY"}:
             assert after[table] == before[table], table
-        assert db.execute("SELECT * FROM FEED_CHECKPOINT WHERE SOURCE_TYPE<>'LOCAL_FOLLOW_RESET' ORDER BY rowid").fetchall() == before["FEED_CHECKPOINT"]
+        assert db.execute("SELECT * FROM FEED_CHECKPOINT WHERE SOURCE_TYPE NOT IN "
+                          "('LOCAL_FOLLOW_RESET','LOCAL_FOLLOW_OPEN') ORDER BY rowid").fetchall() == [
+                              row for row in before["FEED_CHECKPOINT"] if row[2] != "LOCAL_FOLLOW_OPEN"]
+        assert db.execute("SELECT SOURCE_KEY,COUNT,COUNT_STATE,CHECKED_AT,ERROR FROM LOCAL_UPDATE_STATE "
+                          "WHERE SOURCE_TYPE='LOCAL_FOLLOW' ORDER BY SOURCE_KEY").fetchall() == [
+                              (m[2], 0, "EXACT", 0 if m[2] == "other:new" else 18, "") for m in markers]
+        assert db.execute("SELECT COUNT(*) FROM LOCAL_UNREAD_GALLERY WHERE SOURCE_TYPE='LOCAL_FOLLOW'").fetchone()[0] == 0
+        assert db.execute("SELECT SOURCE_KEY,\"CURRENT_TIME\" FROM FEED_CHECKPOINT "
+                          "WHERE SOURCE_TYPE='LOCAL_FOLLOW_OPEN' ORDER BY SOURCE_KEY").fetchall() == [(m[2], 101) for m in markers]
+        assert db.execute("SELECT * FROM LOCAL_UPDATE_STATE WHERE SOURCE_TYPE='QUICK_SEARCH' ORDER BY rowid").fetchall() == [
+            row for row in before["LOCAL_UPDATE_STATE"] if row[0] == "QUICK_SEARCH"]
         assert db.execute("SELECT COUNT(*) FROM LOCAL_BASELINE_QUEUE WHERE SOURCE_TYPE='LOCAL_FOLLOW'").fetchone()[0] == 0
         assert db.execute("SELECT * FROM LOCAL_BASELINE_QUEUE ORDER BY rowid").fetchall() == [row for row in before["LOCAL_BASELINE_QUEUE"] if row[2] == "QUICK_SEARCH"]
         assert db.execute("SELECT * FROM LOCAL_GLOBAL_CURSOR ORDER BY rowid").fetchall() == [row for row in before["LOCAL_GLOBAL_CURSOR"] if row[1] == "BOOKMARK"]
@@ -108,6 +127,16 @@ def verify_follow_reset(bookmark_trace):
         db.close()
         db = sqlite3.connect(path)
         assert db.execute("SELECT COUNT(*) FROM FEED_CHECKPOINT WHERE SOURCE_TYPE='LOCAL_FOLLOW_RESET'").fetchone()[0] == len(markers)
+        # A response dispatched before reset only owns old rowids, even after new scans.
+        db.execute("INSERT INTO LOCAL_UNREAD_GALLERY(rowid,SOURCE_TYPE,SOURCE_KEY,GID,DETECTED_AT) "
+                   "VALUES (1000,'LOCAL_FOLLOW','artist:example',99,200)")
+        db.commit()
+        replay(db, follow_trace["lateOpen"])
+        assert db.execute("SELECT GID FROM LOCAL_UNREAD_GALLERY WHERE SOURCE_TYPE='LOCAL_FOLLOW'").fetchall() == [(99,)]
+        assert db.execute("SELECT COUNT FROM LOCAL_UPDATE_STATE WHERE SOURCE_TYPE='LOCAL_FOLLOW' "
+                          "AND SOURCE_KEY='artist:example'").fetchone()[0] == 1
+        assert db.execute('SELECT "CURRENT_TIME" FROM FEED_CHECKPOINT '
+                          "WHERE SOURCE_TYPE='LOCAL_FOLLOW_OPEN' AND SOURCE_KEY='artist:example'").fetchone()[0] == 101
         replay(db, follow_trace["removal"])
         assert db.execute("SELECT COUNT(*) FROM FEED_CHECKPOINT WHERE SOURCE_TYPE LIKE 'LOCAL_FOLLOW%' AND SOURCE_KEY='artist:example'").fetchone()[0] == 0
         assert db.execute("SELECT COUNT(*) FROM FEED_CHECKPOINT WHERE SOURCE_TYPE='LOCAL_FOLLOW_RESET' AND SOURCE_KEY='group:kept'").fetchone()[0] == 1
@@ -129,9 +158,11 @@ def verify_follow_reset(bookmark_trace):
             assert "injected failure" in str(error)
         assert snapshot(db) == before
         db.close()
-    print(json.dumps({"follow_checks": 7, "failures": 0,
-                      "scenarios": ["preserved unread and history", "bookmark isolation", "repeat", "reopen",
-                                    "removal and readd", "retained tag", "transaction rollback"]}))
+    print(json.dumps({"follow_checks": 10, "failures": 0,
+                      "scenarios": ["exact and lower-bound counts cleared", "zero and missing states",
+                                    "reading markers advanced", "history and bookmark isolation", "repeat", "reopen",
+                                    "late open preserves new unread and reset boundary", "removal and readd",
+                                    "retained tag", "transaction rollback"]}))
 
 
 def main():

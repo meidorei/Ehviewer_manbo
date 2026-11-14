@@ -1212,11 +1212,11 @@
     <string name="bookmark_baseline_reset_success">已重置 %1$d 个书签的扫描基线，未读数字和分割线已保留。</string>
     <string name="bookmark_baseline_reset_failed">重置书签基线失败，未保存任何修改，请重试。</string>
     <string name="settings_advanced_reset_follow_baselines">重置所有追更扫描基线</string>
-    <string name="settings_advanced_reset_follow_baselines_summary">跳过追更尚未检查的历史更新；保留未读数字和分割线。</string>
-    <string name="follow_baseline_reset_confirm">将从现在开始检查追更更新，跳过此前尚未检查的历史更新。已有未读数字和“上次更新到这”分割线保持不变。</string>
+    <string name="settings_advanced_reset_follow_baselines_summary">从现在开始检查追更更新，清零未读，并将阅读分割线更新到重置时刻。</string>
+    <string name="follow_baseline_reset_confirm">将清零所有追更未读，并以重置时刻更新“上次更新到这”分割线。重置所在秒及以前的内容视为已读，下一秒起仍可计为新增。此操作不联网，无法撤销。</string>
     <string name="follow_baseline_reset_running">正在重置追更扫描基线…</string>
     <string name="follow_baseline_reset_empty">没有需要重置的追更。</string>
-    <string name="follow_baseline_reset_success">已重置 %1$d 个追更标签的扫描基线，未读数字和分割线已保留。</string>
+    <string name="follow_baseline_reset_success">已重置 %1$d 个追更标签，未读已清零，阅读分割线已更新。</string>
     <string name="follow_baseline_reset_failed">重置追更基线失败，未保存任何修改，请重试。</string>
     <string name="local_update_all_title">书签与追更更新</string>
     <string name="local_update_all_history">追更 %1$d 项 · 书签 %2$d 项\n追更扫描边界：%3$s\n书签扫描边界：%4$s</string>

@@ -2,7 +2,7 @@
 
 [文档索引](README.md) · [架构与数据](architecture.md) · [变更记录](../说明.md)
 
-本机默认只使用 `appReleaseDebug`，包名为 `com.ehviewer.manbo.debug`。以下命令在仓库根目录的 PowerShell 中执行。公开文档使用路径占位符，执行前须替换为实际环境并预检；本机 Agent 仍须遵守未提交的 `AGENTS.md` 中的固定配置。
+本机默认只使用 `appReleaseDebug`，包名为 `com.ehviewer.manbo.debug`。以下命令在仓库根目录的 PowerShell 中执行。共享的 [AGENTS.md](../AGENTS.md) 已纳入 Git。路径按当前电脑核实，执行前须替换示例占位符并预检；不固定用户名、盘符或 JDK 厂商目录。
 
 ## 构建参数
 
@@ -32,27 +32,38 @@
 
 ## 先检查环境和签名
 
-将下例 `<用户名>` 替换为持有原 Debug keystore 的 Windows 主机账户目录名，不要使用临时沙箱账户。JDK 和 SDK 若不在示例子目录，也须填写实际安装路径；这里只设置当前命令进程的环境变量。
+先只读检查本机已有的 JDK 21、Android SDK 和主机用户目录。现有 `JAVA_HOME`、`ANDROID_HOME`、`USERPROFILE`、`local.properties` 以及 `Join-Path $env:LOCALAPPDATA 'Android\Sdk'` 等常见位置只能作为候选，必须核实后使用。将下例三个占位符替换为本机实际绝对路径，不要使用临时沙箱账户；这里只设置当前命令进程的环境变量，不安装工具或修改持久配置。新电脑若要覆盖已有 Debug 应用，须经用户授权单独安全迁移原 Debug keystore，并通过下方证书核验；私钥不得提交 Git。
 
 ```powershell
-$buildUserProfile = 'C:\Users\<用户名>'
-if ($buildUserProfile.Contains('<用户名>')) { throw '请先填写实际主机用户目录' }
-$buildJdk = Join-Path $buildUserProfile '.gradle\jdks\eclipse_adoptium-21-amd64-windows.2'
+$buildUserProfile = '<主机用户目录>'
+$buildJdk = '<已核实的 JDK 21 根目录>'
+$buildSdk = '<已核实的 Android SDK 根目录>'
+foreach ($buildPath in @($buildUserProfile, $buildJdk, $buildSdk)) {
+    if ([string]::IsNullOrWhiteSpace($buildPath) -or $buildPath -match '[<>]' -or
+        $buildPath -notmatch '^(?:[A-Za-z]:[\\/]|\\\\[^\\]+\\[^\\]+)') {
+        throw '请先填写并核实三个本机绝对路径'
+    }
+}
 $env:JAVA_HOME = $buildJdk
-$env:ANDROID_HOME = Join-Path $buildUserProfile 'AppData\Local\Android\Sdk'
+$env:ANDROID_HOME = $buildSdk
 $env:USERPROFILE = $buildUserProfile
 $debugKey = Join-Path $buildUserProfile '.android\debug.keystore'
 $requiredPaths = @(
     "$buildJdk\bin\java.exe",
     "$buildJdk\bin\keytool.exe",
+    "$buildJdk\release",
     $env:ANDROID_HOME,
     $debugKey,
-    'gradle\wrapper\gradle-wrapper.jar'
+    'gradle\wrapper\gradle-wrapper.jar',
+    'gradle\wrapper\gradle-wrapper.properties'
 )
 foreach ($requiredPath in $requiredPaths) {
     if (-not (Test-Path -LiteralPath $requiredPath)) {
         throw "缺少构建依赖：$requiredPath"
     }
+}
+if ((Get-Content -LiteralPath "$buildJdk\release" -Raw) -notmatch '(?m)^JAVA_VERSION="21(?:[.+-][^"]*)?"\r?$') {
+    throw '必须使用已核实的 JDK 21'
 }
 & "$buildJdk\bin\keytool.exe" -list -v -keystore $debugKey -storepass android -alias androiddebugkey
 if ($LASTEXITCODE -ne 0) { throw 'Debug keystore 核验失败' }
@@ -66,7 +77,7 @@ af169dcf1d3e44c326b55a1c631c371d3adfe06b8bed34839f03a89cf1f1e9df
 
 同时确认 `app/build.gradle` 的 Debug signingConfig 仍通过 `USERPROFILE` 绑定主机 `.android/debug.keystore`。alias 为 `androiddebugkey`，store/key password 均为 `android`。摘要、alias 或密码不符时停止，不生成或替换 keystore。
 
-Codex 沙箱的 Java home 可能指向临时用户，其自动生成的 Debug key 不能用于覆盖主机现有 Debug 应用。Gradle 编译、测试和组装在本机需要沙箱外执行权限，避免读取 SDK 文件时遇到 AccessDeniedException。
+Codex 沙箱的 Java home 可能指向临时用户，其自动生成的 Debug key 不能用于覆盖主机现有 Debug 应用。若当前沙箱限制工作区外 SDK 访问，Gradle 编译、测试和组装从第一次调用就申请沙箱外执行权限，避免读取 SDK 文件时遇到 AccessDeniedException；非沙箱环境按现有权限运行。
 
 每次 Gradle 检查、编译、测试或组装都先确认 JDK/SDK 存在，并在实际命令进程设置上述环境；不要依赖 PATH、`local.properties` 或自动发现。签名预检是新 APK 组装的前置要求。环境缺失时先只读探测现有安装；若仍需安装工具、依赖或创建环境，先说明版本、用途、来源和命令、展开后的绝对目录、可否改位置、影响及撤销方法，等待用户明确同意后执行。
 

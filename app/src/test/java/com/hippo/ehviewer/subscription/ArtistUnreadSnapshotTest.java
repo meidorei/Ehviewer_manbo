@@ -38,8 +38,28 @@ public class ArtistUnreadSnapshotTest {
         ArtistUnreadSnapshot restored = new ArtistUnreadSnapshot(snapshot.lastRowId(),
                 SubscriptionRepository.parseGids(SubscriptionRepository.serializeGids(snapshot.gids())));
         assertEquals(snapshot, restored);
+        assertTrue(restored.usesUnreadMarker());
         assertEquals(0, restored.lastMatch(List.of(gallery(42))));
-        assertEquals(-1, new ArtistUnreadSnapshot(0, entry).lastMatch(List.of(gallery(42))));
+        ArtistUnreadSnapshot empty = new ArtistUnreadSnapshot(0, entry);
+        assertFalse(empty.usesUnreadMarker());
+        assertEquals(-1, empty.lastMatch(List.of(gallery(42))));
+    }
+
+    @Test public void emptyBatchRetainsSavedTimeBoundaryAcrossRestore() {
+        ArtistUnreadSnapshot empty = new ArtistUnreadSnapshot(0, Set.of());
+        FeedBoundary reset = BaselineBoundaryPolicy.provisional(130_999);
+        FeedBoundary restored = FeedBoundaryCodec.decode(reset.time, FeedBoundaryCodec.encode(reset));
+        assertSame(restored, empty.displayBoundary(restored));
+        GalleryInfo old = gallery(10);
+        old.postedTimestamp = 130;
+        old.postedTimestampPrecision = FeedBoundary.Precision.SECOND;
+        assertTrue(FeedMarkerPolicy.isMarkerBefore(empty.displayBoundary(restored), old, null, false));
+        // First-entry pages without a saved boundary must stay empty when restored.
+        assertTrue(empty.displayBoundary(FeedBoundary.EMPTY).isEmpty());
+        // An entry with unread IDs must never draw a second, time-based marker.
+        ArtistUnreadSnapshot unread = new ArtistUnreadSnapshot(7, Set.of(10L));
+        assertTrue(unread.displayBoundary(restored).isEmpty());
+        assertEquals(0, unread.lastMatch(List.of(old)));
     }
 
     @Test public void onlyArtistFollowsUseIdMarkers() {

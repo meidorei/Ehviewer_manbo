@@ -96,6 +96,20 @@ public class FeedMarkerPolicyTest {
         assertEquals(1, snapshot.lastMatch(Arrays.asList(exact(11, 170), exact(10, 130))));
     }
 
+    @Test public void resetBoundaryShowsAtTopWithoutNewContentAndBelowNewContent() {
+        FeedBoundary reset = BaselineBoundaryPolicy.provisional(130_999);
+        GalleryInfo old = exact(10, 130);
+        GalleryInfo nextSecond = exact(11, 131);
+        assertTrue(FeedMarkerPolicy.isMarkerBefore(reset, old, null, false));
+        assertFalse(FeedMarkerPolicy.isMarkerBefore(reset, nextSecond, null, false));
+        assertTrue(FeedMarkerPolicy.isMarkerBefore(reset, old, nextSecond, false));
+        assertFalse(FeedMarkerPolicy.isMarkerBefore(reset, minute(10, 120), null, false));
+        assertFalse(FeedMarkerPolicy.isMarkerBefore(FeedBoundary.EMPTY, old, null, false));
+        assertFalse(FeedMarkerPolicy.isMarkerBefore(reset, null, null, false));
+        // The homepage still requires an anchor or an actual crossing.
+        assertFalse(FeedMarkerPolicy.isMarkerBefore(reset, old, null, true));
+    }
+
     private static FeedBoundary boundary(long time, FeedBoundary.Precision precision, Long... gids) {
         return new FeedBoundary(time, Set.of(gids), precision);
     }

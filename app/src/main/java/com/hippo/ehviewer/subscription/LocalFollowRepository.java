@@ -182,8 +182,18 @@ public final class LocalFollowRepository {
             for (String tag : tags) {
                 CheckpointKey key = FeedCheckpointKeys.followReset(tag, FIXED_CHINESE_SIGNATURE);
                 FeedBoundary previous = repository.readStoredCheckpoint(db, key).current;
-                repository.establishCheckpoint(db, key,
-                        LocalBaselineResetPolicy.newer(previous, floor));
+                FeedBoundary reset = LocalBaselineResetPolicy.newer(previous, floor);
+                repository.establishCheckpoint(db, key, reset);
+                advanceFollowOpenBoundary(db, tag, FIXED_CHINESE_SIGNATURE, reset);
+                db.execSQL("DELETE FROM LOCAL_UNREAD_GALLERY WHERE SOURCE_TYPE=? AND SOURCE_KEY=?",
+                        new Object[]{SOURCE_FOLLOW, tag});
+                db.execSQL("INSERT OR IGNORE INTO LOCAL_UPDATE_STATE " +
+                                "(SOURCE_TYPE,SOURCE_KEY,QUERY_SIGNATURE) VALUES(?,?,?)",
+                        new Object[]{SOURCE_FOLLOW, tag, FIXED_CHINESE_SIGNATURE});
+                // Reset is a local read action, not a successful network check.
+                db.execSQL("UPDATE LOCAL_UPDATE_STATE SET COUNT=0,COUNT_STATE='EXACT',ERROR='' " +
+                                "WHERE SOURCE_TYPE=? AND SOURCE_KEY=?",
+                        new Object[]{SOURCE_FOLLOW, tag});
             }
             db.execSQL("DELETE FROM LOCAL_BASELINE_QUEUE WHERE SOURCE_TYPE=?",
                     new Object[]{SOURCE_FOLLOW});
@@ -385,23 +395,45 @@ public final class LocalFollowRepository {
         return legacy.current;
     }
 
+    /** Keep late opens and older page tops from undoing a manual reset or a newer open. */
+    void advanceFollowOpenBoundary(Database db, String sourceKey, String signature,
+                                   FeedBoundary pageTop) {
+        SubscriptionRepository repository = SubscriptionRepository.getInstance();
+        CheckpointKey openKey = new CheckpointKey(SHARED_OPEN_ACCOUNT,
+                CHECKPOINT_FOLLOW_OPEN, sourceKey, signature);
+        FeedBoundary current = repository.readStoredCheckpoint(db, openKey).current;
+        FeedBoundary reset = repository.readStoredCheckpoint(db,
+                FeedCheckpointKeys.followReset(sourceKey, signature)).current;
+        repository.advanceCheckpoint(db, openKey, LocalBaselineResetPolicy.newer(
+                LocalBaselineResetPolicy.newer(pageTop, current), reset));
+    }
+
     /**
      * Clears only unread rows present when the list was entered and records the next-entry
      * marker. The currently displayed page keeps the boundary loaded before this transaction.
      */
     public void completeSuccessfulOpen(String sourceType, String sourceKey, String signature,
                                        FeedBoundary pageTop, long unreadSnapshotRowId) {
+        completeSuccessfulOpen(EhDB.getDatabase(), sourceType, sourceKey, signature,
+                pageTop, unreadSnapshotRowId);
+    }
+
+    void completeSuccessfulOpen(Database db, String sourceType, String sourceKey, String signature,
+                                FeedBoundary pageTop, long unreadSnapshotRowId) {
         boolean hasPageTop = pageTop != null && !pageTop.isEmpty();
         if (!hasPageTop && !SOURCE_BOOKMARK.equals(sourceType)) return;
         String checkpointType = SOURCE_FOLLOW.equals(sourceType)
                 ? CHECKPOINT_FOLLOW_OPEN : CHECKPOINT_BOOKMARK_OPEN;
-        Database db = EhDB.getDatabase();
         db.beginTransaction();
         try {
             if (hasPageTop) {
-                SubscriptionRepository.getInstance().advanceCheckpoint(
-                        new CheckpointKey(SHARED_OPEN_ACCOUNT, checkpointType,
-                                sourceKey, signature), pageTop);
+                if (SOURCE_FOLLOW.equals(sourceType)) {
+                    advanceFollowOpenBoundary(db, sourceKey, signature, pageTop);
+                } else {
+                    SubscriptionRepository.getInstance().advanceCheckpoint(db,
+                            new CheckpointKey(SHARED_OPEN_ACCOUNT, checkpointType,
+                                    sourceKey, signature), pageTop);
+                }
             }
             if (SOURCE_BOOKMARK.equals(sourceType)) {
                 Set<Long> openedGids = readUnreadSnapshotGids(

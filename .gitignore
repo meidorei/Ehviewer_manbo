@@ -17,7 +17,6 @@ gradle/wrapper/gradle-wrapper.properties
 /download/00000006.gif
 open_source_licenses.html
 /.vscode/settings.json
-AGENTS.md
 /.codex/
 
 # Local private data and generated task artifacts: never commit or upload.

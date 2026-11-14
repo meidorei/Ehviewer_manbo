@@ -257,6 +257,7 @@ public class BookmarkBaselineResetTest {
         boolean successful;
         boolean oldStateSignature;
         int begun, ended, committed, failAtWrite = -1;
+        int unreadCount;
 
         void seed(CheckpointKey key, long previous, long current, String previousGids, String currentGids) {
             rows.put(Arrays.asList(key.accountKey, key.sourceType, key.sourceKey, key.querySignature),
@@ -289,6 +290,17 @@ public class BookmarkBaselineResetTest {
                                     switch (call.getName()) {
                                         case "moveToNext": return ++index[0] < selectedTags.size();
                                         case "getString": return selectedTags.get(index[0]);
+                                        case "close": return null;
+                                        default: throw new AssertionError(call.getName());
+                                    }
+                                });
+                    }
+                    if (query.startsWith("SELECT COUNT(*) FROM LOCAL_UNREAD_GALLERY")) {
+                        return Proxy.newProxyInstance(Cursor.class.getClassLoader(),
+                                new Class<?>[]{Cursor.class}, (cursor, call, params) -> {
+                                    switch (call.getName()) {
+                                        case "moveToFirst": return true;
+                                        case "getInt": return unreadCount;
                                         case "close": return null;
                                         default: throw new AssertionError(call.getName());
                                     }
@@ -347,7 +359,9 @@ public class BookmarkBaselineResetTest {
                         assertTrue(sql.startsWith("DELETE FROM LOCAL_BASELINE_QUEUE WHERE SOURCE_TYPE=?")
                                 || sql.equals("DELETE FROM LOCAL_GLOBAL_CURSOR WHERE JOB_TYPE=?")
                                 || sql.startsWith("DELETE FROM LOCAL_UPDATE_STATE WHERE SOURCE_TYPE=?")
-                                || sql.startsWith("DELETE FROM LOCAL_UNREAD_GALLERY WHERE SOURCE_TYPE=?"));
+                                || sql.startsWith("DELETE FROM LOCAL_UNREAD_GALLERY WHERE SOURCE_TYPE=?")
+                                || sql.startsWith("INSERT OR IGNORE INTO LOCAL_UPDATE_STATE ")
+                                || sql.startsWith("UPDATE LOCAL_UPDATE_STATE SET COUNT="));
                     }
                     return null;
                 default: throw new AssertionError(method.getName());

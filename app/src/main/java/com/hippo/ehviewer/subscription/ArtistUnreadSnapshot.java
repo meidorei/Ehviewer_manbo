@@ -13,6 +13,15 @@ public record ArtistUnreadSnapshot(long lastRowId, Set<Long> gids) {
         gids = Collections.unmodifiableSet(new LinkedHashSet<>(gids));
     }
 
+    /** Empty entry batches use the saved reading boundary, including after a manual reset. */
+    public boolean usesUnreadMarker() {
+        return !gids.isEmpty();
+    }
+
+    public FeedBoundary displayBoundary(FeedBoundary savedBoundary) {
+        return usesUnreadMarker() ? FeedBoundary.EMPTY : savedBoundary;
+    }
+
     public int lastMatch(List<GalleryInfo> galleries) {
         if (!gids.isEmpty()) {
             for (int i = galleries.size() - 1; i >= 0; i--) {
